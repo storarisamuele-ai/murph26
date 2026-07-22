@@ -13,11 +13,29 @@ navbar.classList.remove('scrolled');
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function (e) {
 e.preventDefault();
-const target = document.querySelector(this.getAttribute('href'));
-if (target) {
+const href = this.getAttribute('href');
+if (href === '#') return;
+
+const targetId = href.slice(1);
+let target = document.getElementById(targetId);
+
+// For scaling category links, fall back to the desktop title if the mobile one is hidden
+if (target && href.startsWith('#scaling-') && target.offsetParent === null) {
+const fallback = document.getElementById(targetId + '-desktop');
+if (fallback) target = fallback;
+}
+
+if (target && target.offsetParent !== null) {
+if (href.startsWith('#scaling-') || href === '#12h-experience') {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+} else {
 target.scrollIntoView({
 behavior: 'smooth'
 });
+}
 }
 });
 });
