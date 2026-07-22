@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+        with:
+          path: src
+
+      - name: Checkout existing gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+        continue-on-error: true
+
+      - name: Prepare gh-pages deployment tree
+        run: |
+          mkdir -p gh-pages
+          cd gh-pages
+
+          # Ensure Jekyll is disabled for the whole Pages site
+          touch .nojekyll
+
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "Deploying production from main"
+            # Remove root files/folders except the staging directory
+            find . -mindepth 1 -maxdepth 1 -type f ! -name '.nojekyll' -delete
+            find . -mindepth 1 -maxdepth 1 -type d ! -name staging -exec rm -rf {} +
+            # Copy production site to root
+            rsync -av --exclude='.git' --exclude='.github' --exclude='.DS_Store' --exclude='README.md' ../src/ .
+          else
+            echo "Deploying staging from ${{ github.ref_name }}"
+            # Recreate the staging folder and copy site into it
+            rm -rf staging
+            mkdir staging
+            rsync -av --exclude='.git' --exclude='.github' --exclude='.DS_Store' --exclude='README.md' ../src/ staging/
+          fi
+
+      - name: Push to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./gh-pages
+          publish_branch: gh-pages
+          keep_files: false
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: "Deploy ${{ github.ref_name }} to ${{ github.ref_name == 'main' && 'production' || 'staging' }}"
