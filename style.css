@@ -2610,6 +2610,56 @@ line-height: 1.6;
 margin: 0 0 1.5rem 0;
 }
 
+/* Back to Top Button */
+.back-to-top {
+position: fixed;
+bottom: calc(1.5rem + env(safe-area-inset-bottom));
+right: 1.5rem;
+width: 52px;
+height: 52px;
+background-color: var(--blue);
+color: var(--white);
+border: none;
+border-radius: 50%;
+box-shadow: 0 4px 14px rgba(0, 163, 255, 0.35);
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+opacity: 0;
+visibility: hidden;
+pointer-events: none;
+transform: translateY(10px);
+transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+z-index: 99;
+}
+
+.back-to-top.visible {
+opacity: 1;
+visibility: visible;
+pointer-events: auto;
+transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+background-color: #0095e6;
+transform: translateY(0) scale(1.05);
+outline: none;
+}
+
+.back-to-top svg {
+width: 24px;
+height: 24px;
+}
+
+@media (max-width: 767px) {
+.back-to-top {
+bottom: calc(1rem + env(safe-area-inset-bottom));
+right: 1rem;
+}
+}
+
 @media (max-width: 767px) {
 .story-so-far {
 padding: 4rem 5%;

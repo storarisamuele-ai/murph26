@@ -39,3 +39,24 @@ behavior: 'smooth'
 }
 });
 });
+
+// Back to top button
+document.addEventListener('DOMContentLoaded', () => {
+const backToTop = document.getElementById('backToTop');
+if (!backToTop) return;
+
+const toggleBackToTop = () => {
+if (window.scrollY > 600) {
+backToTop.classList.add('visible');
+} else {
+backToTop.classList.remove('visible');
+}
+};
+
+window.addEventListener('scroll', toggleBackToTop);
+backToTop.addEventListener('click', () => {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+toggleBackToTop();
+});
