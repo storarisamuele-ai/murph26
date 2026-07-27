@@ -59,4 +59,18 @@ window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 toggleBackToTop();
+
+// Scroll reveal for Operation Timeline
+const revealEls = document.querySelectorAll('.reveal');
+if (revealEls.length) {
+const revealObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('is-visible');
+revealObserver.unobserve(entry.target);
+}
+});
+}, { threshold: 0.1 });
+revealEls.forEach(el => revealObserver.observe(el));
+}
 });
