@@ -3158,13 +3158,13 @@ transform: rotate(-135deg);
 
 .time-table-accordion-panel {
 display: grid;
-grid-template-rows: 0fr;
+grid-template-rows: minmax(0px, 0fr);
 overflow: hidden;
 transition: grid-template-rows 0.4s ease;
 }
 
 .time-table-accordion-item.is-open .time-table-accordion-panel {
-grid-template-rows: 1fr;
+grid-template-rows: minmax(0px, 1fr);
 }
 
 .time-table-accordion-panel-inner {
