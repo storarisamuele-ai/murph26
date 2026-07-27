@@ -2952,11 +2952,22 @@ text-transform: uppercase;
 }
 
 .operation-night-card {
-padding: 2rem;
+padding: 2.5rem;
 background: linear-gradient(135deg, rgba(6, 148, 185, 0.08) 0%, rgba(231, 41, 112, 0.05) 100%);
 border: 1px solid rgba(255, 255, 255, 0.1);
 border-radius: 16px;
 text-align: center;
+}
+
+.operation-night-heading {
+font-family: 'Bebas Neue', sans-serif;
+font-size: clamp(2rem, 4vw, 2.75rem);
+font-weight: 400;
+letter-spacing: 0.08em;
+color: var(--white);
+margin: 0 0 1.5rem 0;
+line-height: 1;
+text-transform: uppercase;
 }
 
 .operation-night-list {
@@ -2973,6 +2984,38 @@ font-family: 'Inter', sans-serif;
 font-size: clamp(1rem, 1.6vw, 1.125rem);
 font-weight: 300;
 color: var(--white);
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 0.75rem;
 opacity: 0.9;
+}
+
+.operation-night-list li::before {
+content: '';
+width: 8px;
+height: 8px;
+border: 1px solid rgba(255, 255, 255, 0.5);
+border-radius: 50%;
+flex-shrink: 0;
+}
+
+.operation-night-divider {
+height: 1px;
+max-width: 220px;
+background: rgba(255, 255, 255, 0.15);
+margin: 1.5rem auto;
+}
+
+.operation-night-footer {
+font-family: 'Inter', sans-serif;
+font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+font-weight: 300;
+font-style: italic;
+color: var(--white);
+opacity: 0.75;
+margin: 0;
+line-height: 1.6;
+letter-spacing: 0.02em;
 }
 }
