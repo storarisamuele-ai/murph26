@@ -2692,7 +2692,7 @@ transform: translateY(0);
 
 @media (min-width: 769px) {
 .time-table-container {
-max-width: 1100px;
+max-width: 1200px;
 }
 
 .time-table-mobile {
@@ -2706,18 +2706,7 @@ width: 100%;
 
 .operation-header {
 text-align: center;
-margin-bottom: 5rem;
-}
-
-.operation-label {
-font-family: 'Inter', sans-serif;
-font-size: 0.7rem;
-font-weight: 600;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: var(--blue);
-opacity: 0.8;
-margin-bottom: 1rem;
+margin-bottom: 4rem;
 }
 
 .operation-heading {
@@ -2748,20 +2737,11 @@ opacity: 0.6;
 margin: 0;
 }
 
-.operation-note span {
-display: block;
-font-weight: 600;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-opacity: 0.8;
-margin-bottom: 0.25rem;
-}
-
 .operation-schedule {
-display: flex;
-flex-direction: column;
-gap: 5rem;
-max-width: 900px;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 3rem;
+max-width: 1200px;
 margin: 0 auto;
 }
 
@@ -2769,65 +2749,82 @@ margin: 0 auto;
 position: relative;
 }
 
-.operation-block-header {
+.operation-hero {
+position: relative;
+aspect-ratio: 16 / 9;
+border-radius: 10px;
+background-color: #0a0a0a;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+overflow: hidden;
+margin-bottom: 2rem;
 display: flex;
 align-items: center;
-gap: 1rem;
-margin-bottom: 2.5rem;
+justify-content: center;
 }
 
-.operation-block-intro {
-display: flex;
-align-items: center;
-gap: 1rem;
+.operation-hero::before {
+content: '';
+position: absolute;
+inset: 0;
+background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+border-radius: 10px;
+z-index: 1;
 }
 
-.operation-block-icon {
-font-size: 2rem;
-line-height: 1;
+.operation-hero--morning {
+background-image: url('assets/morning.jpg');
 }
 
-.operation-block-title-wrap {
-display: flex;
-flex-direction: column;
+.operation-hero--afternoon {
+background-image: url('assets/afternoon.jpg');
 }
 
-.operation-block-title {
+.operation-hero--evening {
+background-image: url('assets/evening.jpg');
+}
+
+.operation-hero--night {
+background-image: url('assets/night.jpg');
+}
+
+.operation-hero-text {
+position: relative;
+z-index: 2;
+text-align: center;
+}
+
+.operation-hero-title {
 font-family: 'Bebas Neue', sans-serif;
-font-size: clamp(1.75rem, 3vw, 2.25rem);
+font-size: clamp(2.5rem, 5vw, 3.5rem);
 font-weight: 400;
 letter-spacing: 0.05em;
 color: var(--white);
 margin: 0;
 line-height: 1;
+text-transform: uppercase;
 }
 
-.operation-block-time {
+.operation-hero-time {
 font-family: 'Inter', sans-serif;
-font-size: 0.85rem;
+font-size: clamp(0.85rem, 1.4vw, 1rem);
 font-weight: 300;
 color: var(--white);
-opacity: 0.5;
-margin: 0.25rem 0 0 0;
+opacity: 0.85;
+margin: 0.5rem 0 0 0;
 letter-spacing: 0.05em;
-}
-
-.operation-block-divider {
-flex: 1;
-height: 1px;
-background: rgba(255, 255, 255, 0.1);
-margin-left: 1rem;
 }
 
 .operation-events {
 position: relative;
-padding-left: 2.5rem;
+padding-left: 2rem;
 }
 
 .operation-events::before {
 content: '';
 position: absolute;
-left: 0.75rem;
+left: 0.5rem;
 top: 0;
 bottom: 0;
 width: 1px;
@@ -2837,17 +2834,17 @@ z-index: 0;
 
 .operation-event {
 position: relative;
-padding: 1rem 0 2rem 0.75rem;
+padding: 0.75rem 1rem 1.75rem 0.75rem;
 }
 
 .operation-event:last-child {
-padding-bottom: 1rem;
+padding-bottom: 0.5rem;
 }
 
 .operation-node {
 position: absolute;
-left: -1.75rem;
-top: 0.75rem;
+left: -1.5rem;
+top: 1rem;
 width: 10px;
 height: 10px;
 border-radius: 50%;
@@ -2873,23 +2870,15 @@ line-height: 1;
 
 .operation-title {
 font-family: 'Inter', sans-serif;
-font-size: clamp(1rem, 1.6vw, 1.125rem);
+font-size: clamp(0.95rem, 1.5vw, 1.05rem);
 font-weight: 400;
 color: var(--white);
 margin: 0 0 0.35rem 0;
-display: flex;
-align-items: center;
-gap: 0.5rem;
-}
-
-.operation-icon {
-font-size: 1.1rem;
-line-height: 1;
 }
 
 .operation-desc {
 font-family: 'Inter', sans-serif;
-font-size: 0.85rem;
+font-size: 0.8rem;
 font-weight: 300;
 color: var(--white);
 opacity: 0.6;
@@ -2898,8 +2887,8 @@ line-height: 1.5;
 }
 
 .operation-event--mission {
-padding: 1.25rem 1.5rem 1.5rem 1.25rem;
-margin-bottom: 1.5rem;
+padding: 1.25rem 1.25rem 1.5rem 1.25rem;
+margin-bottom: 1rem;
 border-radius: 10px;
 background: rgba(6, 148, 185, 0.05);
 border: 1px solid rgba(6, 148, 185, 0.2);
@@ -2914,7 +2903,7 @@ box-shadow: 0 12px 30px var(--mission-glow, rgba(6, 148, 185, 0.12));
 }
 
 .operation-event--mission .operation-node {
-top: 1.25rem;
+top: 1.5rem;
 width: 14px;
 height: 14px;
 background: var(--mission-color, var(--blue));
@@ -2962,51 +2951,12 @@ line-height: 1;
 text-transform: uppercase;
 }
 
-.operation-block--night {
-display: flex;
-justify-content: center;
-}
-
 .operation-night-card {
-width: 100%;
-max-width: 600px;
-padding: 3rem;
+padding: 2rem;
 background: linear-gradient(135deg, rgba(6, 148, 185, 0.08) 0%, rgba(231, 41, 112, 0.05) 100%);
 border: 1px solid rgba(255, 255, 255, 0.1);
 border-radius: 16px;
 text-align: center;
-}
-
-.operation-night-header {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 1rem;
-margin-bottom: 2rem;
-}
-
-.operation-night-icon {
-font-size: 2.5rem;
-line-height: 1;
-}
-
-.operation-night-title {
-font-family: 'Bebas Neue', sans-serif;
-font-size: clamp(2rem, 4vw, 2.75rem);
-font-weight: 400;
-letter-spacing: 0.05em;
-color: var(--white);
-margin: 0;
-line-height: 1;
-}
-
-.operation-night-time {
-font-family: 'Inter', sans-serif;
-font-size: 0.9rem;
-font-weight: 300;
-color: var(--white);
-opacity: 0.6;
-margin: 0.35rem 0 0 0;
 }
 
 .operation-night-list {
@@ -3023,15 +2973,6 @@ font-family: 'Inter', sans-serif;
 font-size: clamp(1rem, 1.6vw, 1.125rem);
 font-weight: 300;
 color: var(--white);
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 0.75rem;
 opacity: 0.9;
-}
-
-.operation-night-list-icon {
-font-size: 1.25rem;
-line-height: 1;
 }
 }
