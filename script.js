@@ -73,4 +73,25 @@ revealObserver.unobserve(entry.target);
 }, { threshold: 0.1 });
 revealEls.forEach(el => revealObserver.observe(el));
 }
+
+// Mobile Time Table accordion (single open)
+const timeTableAccordion = document.querySelector('.time-table-accordion');
+if (timeTableAccordion) {
+const timeTableItems = timeTableAccordion.querySelectorAll('.time-table-accordion-item');
+timeTableItems.forEach(item => {
+const header = item.querySelector('.time-table-accordion-header');
+header.addEventListener('click', () => {
+const isOpen = item.classList.contains('is-open');
+timeTableItems.forEach(i => {
+i.classList.remove('is-open');
+const h = i.querySelector('.time-table-accordion-header');
+if (h) h.setAttribute('aria-expanded', 'false');
+});
+if (!isOpen) {
+item.classList.add('is-open');
+header.setAttribute('aria-expanded', 'true');
+}
+});
+});
+}
 });
