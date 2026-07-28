@@ -306,7 +306,7 @@ font-size: 0.875rem;
 font-weight: 600;
 letter-spacing: 0.12em;
 text-transform: uppercase;
-transition: all 0.3s ease;
+transition: all 0.25s ease;
 min-width: 200px;
 text-align: center;
 display: inline-block;
@@ -315,6 +315,7 @@ display: inline-block;
 .cta-primary:hover {
 background-color: #c91e5c;
 transform: translateY(-2px);
+box-shadow: 0 4px 18px rgba(6, 148, 185, 0.35);
 }
 
 .cta-secondary {
@@ -625,6 +626,10 @@ opacity: 0.15;
 line-height: 1;
 }
 
+.choose-mission .mission-number {
+color: var(--blue);
+}
+
 /* Mission Icon */
 .mission-icon {
 width: 32px;
@@ -691,7 +696,7 @@ font-size: 0.875rem;
 font-weight: 600;
 letter-spacing: 0.12em;
 text-transform: uppercase;
-transition: all 0.3s ease;
+transition: all 0.25s ease;
 min-width: 200px;
 text-align: center;
 display: inline-block;
@@ -700,6 +705,7 @@ display: inline-block;
 .choose-cta-primary:hover {
 background-color: #c91e5c;
 transform: translateY(-2px);
+box-shadow: 0 4px 18px rgba(6, 148, 185, 0.35);
 }
 
 .choose-cta-secondary {
@@ -1482,7 +1488,7 @@ font-family: 'Bebas Neue', sans-serif;
 font-size: clamp(2.5rem, 5vw, 3.5rem);
 font-weight: 400;
 letter-spacing: 0.05em;
-color: var(--pink);
+color: var(--blue);
 margin: 0.5rem 0;
 }
 
