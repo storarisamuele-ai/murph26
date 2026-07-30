@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" fill="none" stroke="white" stroke-width="2">
+  <circle cx="110" cy="110" r="95" stroke-width="3"/>
+  <circle cx="110" cy="110" r="80" stroke-width="1.5"/>
+  <text x="50%" y="92" text-anchor="middle" font-family="Bebas Neue, sans-serif" font-size="22" letter-spacing="3" fill="white" stroke="none">DECLASSIFIED</text>
+  <text x="50%" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="1.5" fill="white" stroke="none">M26-JTO-00</text>
+  <line x1="40" y1="110" x2="180" y2="110" stroke-width="1"/>
+</svg>

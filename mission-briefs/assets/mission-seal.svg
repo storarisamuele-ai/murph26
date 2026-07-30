@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="white" stroke-width="1.5">
+  <circle cx="60" cy="60" r="54" stroke-width="2"/>
+  <circle cx="60" cy="60" r="42" />
+  <path d="M60 22 L67 45 L91 45 L72 60 L80 84 L60 70 L40 84 L48 60 L29 45 L53 45 Z" fill="white" stroke="none" opacity="0.9"/>
+  <text x="60" y="106" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" letter-spacing="2" fill="white" stroke="none">JTO</text>
+</svg>
