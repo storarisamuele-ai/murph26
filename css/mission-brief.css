@@ -442,7 +442,7 @@ img {
   font-weight: 400;
   letter-spacing: 0.06em;
   line-height: 0.95;
-  color: var(--white);
+  color: var(--blue);
   margin-bottom: 0.25rem;
 }
 
@@ -451,7 +451,7 @@ img {
   font-size: clamp(1.1rem, 3.5vw, 1.75rem);
   font-weight: 400;
   letter-spacing: 0.15em;
-  color: var(--blue);
+  color: var(--white);
 }
 
 .mb-document-table {
@@ -503,21 +503,21 @@ img {
 
 .mb-stamp {
   position: absolute;
-  top: 50%;
-  right: -5%;
-  width: clamp(6rem, 16vw, 10rem);
+  top: -0.75rem;
+  left: 50%;
+  width: clamp(8rem, 20vw, 12rem);
   opacity: 0.2;
-  transform: translateY(-55%) rotate(-12deg);
+  transform: translateX(-45%) rotate(-12deg);
   pointer-events: none;
   z-index: 1;
 }
 
 @media (max-width: 767px) {
   .mb-stamp {
-    right: 0;
-    top: 0;
-    width: 5rem;
-    transform: rotate(-12deg);
+    left: 50%;
+    top: -0.25rem;
+    width: 5.5rem;
+    transform: translateX(-45%) rotate(-12deg);
     opacity: 0.15;
   }
 }
@@ -653,13 +653,14 @@ img {
   margin-bottom: 0.35em;
 }
 
-.mission-card:nth-child(1) .mission-card-title::before { content: 'SECT. 01 — DOSSIER'; }
-.mission-card:nth-child(2) .mission-card-title::before { content: 'SECT. 02 — OBJECTIVE'; }
-.mission-card:nth-child(3) .mission-card-title::before { content: 'SECT. 03 — TASKS'; }
-.mission-card:nth-child(4) .mission-card-title::before { content: 'SECT. 04 — INTELLIGENCE'; }
-.mission-card:nth-child(5) .mission-card-title::before { content: 'SECT. 05 — PROTOCOL'; }
-.mission-card:nth-child(6) .mission-card-title::before { content: 'SECT. 06 — NOTE'; }
-.mission-card:nth-child(7) .mission-card-title::before { content: 'SECT. 07 — CLOSURE'; }
+.mission-card:nth-child(1) .mission-card-title::before { content: 'SECT. 01 — REF JTO-01'; }
+.mission-card:nth-child(2) .mission-card-title::before { content: 'SECT. 02 — REF JTO-02'; }
+.mission-card:nth-child(3) .mission-card-title::before { content: 'SECT. 03 — REF JTO-03'; }
+.mission-card:nth-child(4) .mission-card-title::before { content: 'SECT. 04 — REF JTO-04'; }
+.mission-card:nth-child(5) .mission-card-title::before { content: 'SECT. 05 — REF JTO-05'; }
+.mission-card:nth-child(6) .mission-card-title::before { content: 'SECT. 06 — REF JTO-06'; }
+.mission-card:nth-child(7) .mission-card-title::before { content: 'SECT. 07 — REF JTO-07'; }
+.mission-card:nth-child(8) .mission-card-title::before { content: 'SECT. 08 — REF JTO-08'; }
 
 .mb-dossier-body {
   width: 100%;
@@ -669,7 +670,7 @@ img {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .mission-content {
@@ -679,20 +680,16 @@ img {
   align-content: start;
 }
 
-@media (min-width: 768px) {
-  .mission-content {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-}
-
 .mission-timeline {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-left: 3px solid var(--pink);
   border-radius: 0 8px 8px 0;
   padding: 1.5rem;
-  align-self: start;
+  align-self: stretch;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .mission-timeline-header {
@@ -724,20 +721,29 @@ img {
   margin: 0;
   position: relative;
   padding-left: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
 }
 
 .mission-timeline-list::before {
   content: '';
   position: absolute;
   left: 0.35rem;
-  top: 0.4rem;
-  bottom: 0.4rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
   width: 1px;
   background: rgba(255, 255, 255, 0.2);
 }
 
 .mission-timeline-list li {
   position: relative;
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: 0.75rem;
+  align-items: start;
   padding-bottom: 1.25rem;
   font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
@@ -754,7 +760,7 @@ img {
   content: '';
   position: absolute;
   left: -1.15rem;
-  top: 0.35rem;
+  top: 0.45rem;
   width: 6px;
   height: 6px;
   background: var(--blue);
@@ -771,15 +777,54 @@ img {
   line-height: 1;
 }
 
+.mission-timeline-mission-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+  margin-top: 0.2rem;
+}
+
+.mission-timeline-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.mission-timeline-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.mission-timeline-code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+
+.mission-timeline-time {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.mission-timeline-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
 @media (min-width: 1024px) {
   .mb-dossier-body {
-    grid-template-columns: minmax(0, 2fr) 260px;
-    gap: 2rem;
-  }
-
-  .mission-timeline {
-    position: sticky;
-    top: 1.5rem;
+    grid-template-columns: minmax(0, 2fr) 300px;
+    gap: 2.5rem;
   }
 }
 
@@ -832,6 +877,41 @@ img {
   }
 }
 
+.mission-card--classified {
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.redacted-block {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+.redacted-block:last-child {
+  margin-bottom: 0;
+}
+
+.redacted-block--label {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 0.4rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.redacted-block--cross {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.redacted-block--alt {
+  color: rgba(255, 255, 255, 0.2);
+}
+
 /* Print */
 @media print {
   @page {
@@ -870,7 +950,6 @@ img {
 
   .mb-document-logo-wordmark,
   .mb-document-title h1,
-  .mb-document-subtitle,
   .mb-document-table dt,
   .mb-document-table dd,
   .mission-card,
@@ -887,8 +966,13 @@ img {
     color: #000;
   }
 
+  .mb-document-subtitle {
+    color: #000;
+  }
+
   .mission-card,
-  .mission-timeline {
+  .mission-timeline,
+  .mission-card--classified {
     border: 0.75pt solid #ccc;
     border-left: 3pt solid var(--blue);
     background: #fff;
@@ -899,6 +983,7 @@ img {
   .mission-card-icon,
   .mission-check-icon,
   .mission-timeline-icon,
+  .mission-timeline-mission-icon,
   .mb-stamp,
   .status-badge img {
     filter: invert(1);
@@ -906,13 +991,16 @@ img {
 
   .mb-stamp {
     opacity: 0.35;
-    right: 0;
   }
 
   .military-divider,
   .archive-label,
   .operational-badge,
-  .document-meta-item {
+  .document-meta-item,
+  .redacted-block,
+  .redacted-block--label,
+  .redacted-block--cross,
+  .redacted-block--alt {
     color: #000;
     border-color: #999;
   }
@@ -929,13 +1017,14 @@ img {
   }
 
   .mb-dossier-body {
-    grid-template-columns: 1fr 180px;
-    gap: 1.25rem;
+    grid-template-columns: 1fr 220px;
+    gap: 1.5rem;
     padding-bottom: 0;
+    align-items: stretch;
   }
 
   .mission-content {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
