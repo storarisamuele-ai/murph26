@@ -1,0 +1,329 @@
+/* Mission Brief Template Styles */
+
+/* CSS Variables — Murph26 identity */
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --pink: #E72970;
+  --blue: #0694B9;
+  --max-content: 760px;
+  --max-wide: 1200px;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility containers */
+.mb-container {
+  width: 100%;
+  max-width: var(--max-wide);
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.mb-content {
+  width: 100%;
+  max-width: var(--max-content);
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* Header */
+.mb-header {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mb-back-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.mb-back-link:hover {
+  color: var(--blue);
+}
+
+/* Hero */
+.mb-hero {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mb-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 1rem;
+}
+
+.mb-hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 12vw, 8rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.mb-hero-subtitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--blue);
+  margin-bottom: 1.5rem;
+}
+
+.mb-hero-intro {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+}
+
+.mb-hero-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* Article */
+.mb-article {
+  padding: 3.5rem 0;
+}
+
+.mb-h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin: 2.5rem 0 1.25rem;
+  line-height: 1;
+}
+
+.mb-h2:first-child {
+  margin-top: 0;
+}
+
+.mb-article p {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+}
+
+.mb-article .mb-paragraph {
+  color: var(--white);
+}
+
+.mb-image {
+  width: 100%;
+  margin: 2.5rem 0;
+  aspect-ratio: 16 / 9;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* Quote */
+.mb-quote {
+  margin: 2.5rem 0;
+  padding: 1.5rem 0 1.5rem 1.5rem;
+  border-left: 3px solid var(--pink);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--white);
+  font-style: italic;
+}
+
+.mb-quote p {
+  margin-bottom: 0;
+}
+
+/* Callout */
+.mb-callout {
+  margin: 2.5rem 0;
+  padding: 1.25rem;
+  border-left: 3px solid var(--blue);
+  background: rgba(6, 148, 185, 0.08);
+  border-radius: 0 8px 8px 0;
+}
+
+.mb-callout p {
+  margin-bottom: 0;
+  color: var(--white);
+  font-weight: 400;
+}
+
+/* Lists */
+.mb-list {
+  margin: 1.5rem 0 2.5rem;
+  padding-left: 1.25rem;
+  list-style: none;
+}
+
+.mb-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.mb-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--blue);
+}
+
+/* Info box */
+.mb-info {
+  padding: 0 0 4rem;
+}
+
+.mb-info-box {
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--blue);
+  background: rgba(6, 148, 185, 0.05);
+  border-radius: 0 8px 8px 0;
+}
+
+.mb-info-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.mb-info-box p {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Footer CTA */
+.mb-footer {
+  padding: 2.5rem 0 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mb-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--pink);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+
+.mb-cta:hover {
+  background-color: #c91e5c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(6, 148, 185, 0.35);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .mb-hero {
+    padding: 6rem 0 4rem;
+  }
+
+  .mb-article {
+    padding: 5rem 0;
+  }
+
+  .mb-quote,
+  .mb-info-box {
+    padding-left: 2rem;
+  }
+
+  .mb-callout,
+  .mb-info-box {
+    padding: 2rem;
+  }
+
+  .mb-footer {
+    padding: 3rem 0 5rem;
+  }
+}
