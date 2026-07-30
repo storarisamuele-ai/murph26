@@ -214,72 +214,19 @@
 
       </section>
 
-      <aside class='mission-timeline'>
-        <header class='mission-timeline-header'>
-          <img class='mission-timeline-icon' src='assets/timeline.svg' alt='' aria-hidden='true'>
-          <h2 class='mission-timeline-title'>Mission Timeline</h2>
+      <aside class='mission-archive' id='mission-archive'>
+        <header class='mission-archive-header'>
+          <img class='mission-archive-icon' src='assets/timeline.svg' alt='' aria-hidden='true'>
+          <h2 class='mission-archive-title'>Mission Archive</h2>
         </header>
-        <ol class='mission-timeline-list'>
-          <li>
-            <img class='mission-timeline-mission-icon' src='assets/mission-alpha.svg' alt='' aria-hidden='true'>
-            <div class='mission-timeline-item'>
-              <div class='mission-timeline-head'>
-                <span class='mission-timeline-code'>ALPHA</span>
-                <span class='mission-timeline-time'>08:00</span>
-              </div>
-              <div class='mission-timeline-subtitle'>Assemble</div>
-            </div>
-          </li>
-          <li>
-            <img class='mission-timeline-mission-icon' src='assets/mission-bravo.svg' alt='' aria-hidden='true'>
-            <div class='mission-timeline-item'>
-              <div class='mission-timeline-head'>
-                <span class='mission-timeline-code'>BRAVO</span>
-                <span class='mission-timeline-time'>11:00</span>
-              </div>
-              <div class='mission-timeline-subtitle'>Advance</div>
-            </div>
-          </li>
-          <li>
-            <img class='mission-timeline-mission-icon' src='assets/mission-charlie.svg' alt='' aria-hidden='true'>
-            <div class='mission-timeline-item'>
-              <div class='mission-timeline-head'>
-                <span class='mission-timeline-code'>CHARLIE</span>
-                <span class='mission-timeline-time'>14:30</span>
-              </div>
-              <div class='mission-timeline-subtitle'>Endure</div>
-            </div>
-          </li>
-          <li>
-            <img class='mission-timeline-mission-icon' src='assets/mission-delta.svg' alt='' aria-hidden='true'>
-            <div class='mission-timeline-item'>
-              <div class='mission-timeline-head'>
-                <span class='mission-timeline-code'>DELTA</span>
-                <span class='mission-timeline-time'>17:00</span>
-              </div>
-              <div class='mission-timeline-subtitle'>Ready</div>
-            </div>
-          </li>
-          <li>
-            <img class='mission-timeline-mission-icon' src='assets/mission-final.svg' alt='' aria-hidden='true'>
-            <div class='mission-timeline-item'>
-              <div class='mission-timeline-head'>
-                <span class='mission-timeline-code'>FINAL MISSION</span>
-                <span class='mission-timeline-time'>18:30</span>
-              </div>
-              <div class='mission-timeline-subtitle'>Murph</div>
-            </div>
-          </li>
-          <li>
-            <img class='mission-timeline-mission-icon' src='assets/mission-white.svg' alt='' aria-hidden='true'>
-            <div class='mission-timeline-item'>
-              <div class='mission-timeline-head'>
-                <span class='mission-timeline-code'>LAST NIGHT IN WHITE</span>
-                <span class='mission-timeline-time'>After Party</span>
-              </div>
-              <div class='mission-timeline-subtitle'>After Party</div>
-            </div>
-          </li>
+        <ol class='mission-archive-list'>
+          <li><a class='mission-archive-link mission-archive-link--active' href='mission-00.html' aria-current='page'><span class='mission-archive-code'>MISSION BRIEF #00</span><span class='mission-archive-subtitle'>La Missione</span></a></li>
+          <li><a class='mission-archive-link' href='mission-01.html'><span class='mission-archive-code'>MISSION BRIEF #01</span><span class='mission-archive-subtitle'>Il Workout</span></a></li>
+          <li><a class='mission-archive-link' href='mission-02.html'><span class='mission-archive-code'>MISSION BRIEF #02</span><span class='mission-archive-subtitle'>Find Your Murph</span></a></li>
+          <li><a class='mission-archive-link' href='mission-03.html'><span class='mission-archive-code'>MISSION BRIEF #03</span><span class='mission-archive-subtitle'>4 Missions to Murph</span></a></li>
+          <li><a class='mission-archive-link' href='mission-04.html'><span class='mission-archive-code'>MISSION BRIEF #04</span><span class='mission-archive-subtitle'>Wall of Heroes</span></a></li>
+          <li><a class='mission-archive-link' href='mission-05.html'><span class='mission-archive-code'>MISSION BRIEF #05</span><span class='mission-archive-subtitle'>Last Night in White</span></a></li>
+          <li><a class='mission-archive-link' href='mission-06.html'><span class='mission-archive-code'>MISSION BRIEF #06</span><span class='mission-archive-subtitle'>Mission Ready</span></a></li>
         </ol>
       </aside>
 
@@ -300,6 +247,12 @@
         <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Voglia di metterti in gioco</li>
       </ul>
     </section>
+
+    <nav class='dossier-nav' aria-label='Mission Brief navigation'>
+      <a class='dossier-nav__prev' href='#' aria-disabled='true'><span class='dossier-nav__arrow' aria-hidden='true'>&larr;</span> Previous Mission Brief</a>
+      <a class='dossier-nav__archive' href='#mission-archive'>Mission Archive</a>
+      <a class='dossier-nav__next' href='mission-01.html'>Next Mission Brief <span class='dossier-nav__arrow' aria-hidden='true'>&rarr;</span></a>
+    </nav>
 
     <footer class='mb-dossier-footer'>
       <div class='mb-dossier-footer__col'>
