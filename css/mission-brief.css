@@ -1,4 +1,4 @@
-/* Mission Brief Template Styles */
+/* Mission Brief Design System */
 
 /* CSS Variables — Murph26 identity */
 :root {
@@ -6,7 +6,6 @@
   --white: #ffffff;
   --pink: #E72970;
   --blue: #0694B9;
-  --max-content: 760px;
   --max-wide: 1200px;
 }
 
@@ -42,13 +41,6 @@ img {
 .mb-container {
   width: 100%;
   max-width: var(--max-wide);
-  margin: 0 auto;
-  padding: 0 5%;
-}
-
-.mb-content {
-  width: 100%;
-  max-width: var(--max-content);
   margin: 0 auto;
   padding: 0 5%;
 }
@@ -134,131 +126,189 @@ img {
   letter-spacing: 0.05em;
 }
 
-/* Article */
-.mb-article {
-  padding: 3.5rem 0;
+/* Mission Grid */
+.mission-grid {
+  width: 100%;
+  max-width: var(--max-wide);
+  margin: 0 auto;
+  padding: 0 5% 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
-.mb-h2 {
+/* Mission Card */
+.mission-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mission-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.mission-card-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.mission-card-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 400;
   letter-spacing: 0.05em;
   color: var(--white);
-  margin: 2.5rem 0 1.25rem;
   line-height: 1;
 }
 
-.mb-h2:first-child {
-  margin-top: 0;
-}
-
-.mb-article p {
+.mission-card-body {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  font-size: clamp(0.9375rem, 1.6vw, 1.0625rem);
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.7;
   color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 1.5rem;
+  flex-grow: 1;
 }
 
-.mb-article .mb-paragraph {
+.mission-card-body p {
+  margin-bottom: 0.75rem;
+}
+
+.mission-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+.mission-card-body strong {
   color: var(--white);
 }
 
-.mb-image {
-  width: 100%;
-  margin: 2.5rem 0;
-  aspect-ratio: 16 / 9;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px dashed rgba(255, 255, 255, 0.15);
+/* Card variants */
+.mission-card--accent {
+  background: rgba(6, 148, 185, 0.08);
+}
+
+.mission-card--note {
+  border-left-color: var(--pink);
+}
+
+.mission-card--quote {
+  border-left-color: var(--pink);
+  text-align: center;
+}
+
+.mission-card--full {
+  grid-column: 1 / -1;
+}
+
+/* Lists */
+.mission-list,
+.mission-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mission-list li,
+.mission-checklist li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.mission-list li:last-child,
+.mission-checklist li:last-child {
+  margin-bottom: 0;
+}
+
+.mission-list {
+  counter-reset: mission-list;
+}
+
+.mission-list li::before {
+  counter-increment: mission-list;
+  content: counter(mission-list) '.';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.mission-checklist li {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.4);
-  font-family: 'Inter', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 300;
-  letter-spacing: 0.05em;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding-left: 0;
+}
+
+.mission-check-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.35em;
+  object-fit: contain;
+}
+
+/* Intelligence */
+.mission-intel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.mission-intel div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.mission-intel dt {
+  font-weight: 500;
+  color: var(--blue);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.mission-intel dd {
+  margin: 0;
+  color: var(--white);
+  font-weight: 400;
 }
 
 /* Quote */
-.mb-quote {
-  margin: 2.5rem 0;
-  padding: 1.5rem 0 1.5rem 1.5rem;
-  border-left: 3px solid var(--pink);
+.mission-quote {
+  margin: 0;
+  padding: 0;
   font-family: 'Inter', sans-serif;
-  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--white);
   font-style: italic;
 }
 
-.mb-quote p {
+.mission-quote p {
   margin-bottom: 0;
 }
 
-/* Callout */
-.mb-callout {
-  margin: 2.5rem 0;
-  padding: 1.25rem;
-  border-left: 3px solid var(--blue);
-  background: rgba(6, 148, 185, 0.08);
-  border-radius: 0 8px 8px 0;
-}
-
-.mb-callout p {
-  margin-bottom: 0;
-  color: var(--white);
-  font-weight: 400;
-}
-
-/* Lists */
-.mb-list {
-  margin: 1.5rem 0 2.5rem;
-  padding-left: 1.25rem;
-  list-style: none;
-}
-
-.mb-list li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.75rem;
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(1rem, 1.8vw, 1.125rem);
-  font-weight: 300;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.mb-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--blue);
-}
-
-/* Info box */
-.mb-info {
-  padding: 0 0 4rem;
-}
-
-.mb-info-box {
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 3px solid var(--blue);
-  background: rgba(6, 148, 185, 0.05);
-  border-radius: 0 8px 8px 0;
-}
-
-.mb-info-title {
+/* Footer */
+.mb-h2 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 400;
   letter-spacing: 0.05em;
   color: var(--white);
@@ -266,18 +316,19 @@ img {
   line-height: 1;
 }
 
-.mb-info-box p {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
-  font-weight: 300;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* Footer CTA */
 .mb-footer {
   padding: 2.5rem 0 4rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.mb-footer p {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
 }
 
 .mb-cta {
@@ -309,21 +360,25 @@ img {
     padding: 6rem 0 4rem;
   }
 
-  .mb-article {
-    padding: 5rem 0;
+  .mission-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+    padding-bottom: 5rem;
   }
 
-  .mb-quote,
-  .mb-info-box {
-    padding-left: 2rem;
-  }
-
-  .mb-callout,
-  .mb-info-box {
+  .mission-card {
     padding: 2rem;
   }
 
-  .mb-footer {
-    padding: 3rem 0 5rem;
+  .mission-list li,
+  .mission-checklist li {
+    padding-left: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mission-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 }
