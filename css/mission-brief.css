@@ -479,11 +479,11 @@ img {
 
 .mb-document-table dt {
   font-family: 'Inter', sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--blue);
 }
 
 .mb-document-table dd {
@@ -548,8 +548,10 @@ img {
 
 .document-meta-item b {
   color: var(--blue);
+  font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .military-divider {
@@ -646,11 +648,12 @@ img {
 .mission-card-title::before {
   display: block;
   font-family: 'Inter', sans-serif;
-  font-size: 0.45em;
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--blue);
-  margin-bottom: 0.35em;
+  margin-bottom: 0.5rem;
 }
 
 .mission-card:nth-child(1) .mission-card-title::before { content: 'SECT. 01 — REF JTO-01'; }
@@ -661,6 +664,8 @@ img {
 .mission-card:nth-child(6) .mission-card-title::before { content: 'SECT. 06 — REF JTO-06'; }
 .mission-card:nth-child(7) .mission-card-title::before { content: 'SECT. 07 — REF JTO-07'; }
 .mission-card:nth-child(8) .mission-card-title::before { content: 'SECT. 08 — REF JTO-08'; }
+.mission-card:nth-child(9) .mission-card-title::before { content: 'SECT. 09 — REF JTO-09'; }
+.mission-card:nth-child(10) .mission-card-title::before { content: 'SECT. 10 — REF JTO-10'; }
 
 .mb-dossier-body {
   width: 100%;
@@ -685,9 +690,8 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-left: 3px solid var(--pink);
   border-radius: 0 8px 8px 0;
-  padding: 1.5rem;
-  align-self: stretch;
-  min-height: 100%;
+  padding: 1rem;
+  align-self: start;
   display: flex;
   flex-direction: column;
 }
@@ -721,11 +725,9 @@ img {
   margin: 0;
   position: relative;
   padding-left: 1.5rem;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100%;
+  gap: 0.75rem;
 }
 
 .mission-timeline-list::before {
@@ -741,10 +743,10 @@ img {
 .mission-timeline-list li {
   position: relative;
   display: grid;
-  grid-template-columns: 1.5rem 1fr;
-  gap: 0.75rem;
+  grid-template-columns: 1.25rem 1fr;
+  gap: 0.6rem;
   align-items: start;
-  padding-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
   font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
   font-weight: 400;
@@ -760,9 +762,9 @@ img {
   content: '';
   position: absolute;
   left: -1.15rem;
-  top: 0.45rem;
-  width: 6px;
-  height: 6px;
+  top: 0.4rem;
+  width: 5px;
+  height: 5px;
   background: var(--blue);
   border-radius: 50%;
   box-shadow: 0 0 0 3px var(--black);
@@ -771,7 +773,7 @@ img {
 .mission-timeline-list li:not(:last-child)::after {
   content: '↓';
   display: block;
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
   color: rgba(255, 255, 255, 0.35);
   font-size: 0.75rem;
   line-height: 1;
@@ -781,7 +783,15 @@ img {
   width: 1.25rem;
   height: 1.25rem;
   object-fit: contain;
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
+}
+
+.mission-timeline-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .mission-timeline-item {
