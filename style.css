@@ -400,7 +400,7 @@ top: 24px;
 .mission-brief {
 background-color: var(--black);
 width: 100%;
-padding: 8rem 5%;
+padding: 6rem 5%;
 display: flex;
 justify-content: center;
 }
@@ -431,7 +431,7 @@ font-size: clamp(2.5rem, 6vw, 4rem);
 font-weight: 400;
 letter-spacing: 0.05em;
 color: var(--white);
-margin: 0 0 4rem 0;
+margin: 0 0 2.5rem 0;
 line-height: 1;
 }
 
@@ -440,7 +440,7 @@ line-height: 1;
 width: 40px;
 height: 1px;
 background-color: var(--pink);
-margin: 0 0 5rem 0;
+margin: 0 0 3rem 0;
 }
 
 .have-it-your-way .accent-line {
@@ -449,7 +449,7 @@ background-color: var(--blue);
 
 /* Body Text */
 .mission-body {
-margin-bottom: 4rem;
+margin-bottom: 2.5rem;
 }
 
 .mission-body p {
@@ -511,7 +511,7 @@ opacity: 0.8;
 .continue-arrow {
 display: flex;
 justify-content: center;
-padding: 2rem 0;
+padding: 1rem 0;
 }
 
 .arrow-icon {
@@ -857,7 +857,7 @@ margin: 1.5rem auto 0 auto;
 }
 
 .mission-brief {
-padding: 6rem 5%;
+padding: 5rem 5%;
 }
 
 .mission-brief-container {
@@ -919,7 +919,7 @@ gap: 0.5rem;
 .have-it-your-way {
 background-color: var(--black);
 width: 100%;
-padding: 8rem 5%;
+padding: 6rem 5%;
 display: flex;
 justify-content: center;
 border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1233,7 +1233,7 @@ line-height: 1.4;
 .wall-heroes {
 background-color: var(--black);
 width: 100%;
-padding: 8rem 5%;
+padding: 6rem 5%;
 display: flex;
 justify-content: center;
 }
@@ -1270,13 +1270,13 @@ font-family: 'Inter', sans-serif;
 font-size: clamp(1.125rem, 2vw, 1.375rem);
 font-weight: 300;
 color: var(--white);
-margin: 0 0 4rem 0;
+margin: 0 0 2.5rem 0;
 letter-spacing: 0.01em;
 opacity: 0.8;
 }
 
 .wall-body {
-margin-bottom: 4rem;
+margin-bottom: 2.5rem;
 }
 
 .wall-body p {
@@ -1361,7 +1361,7 @@ opacity: 0.8;
 .time-table {
 background-color: var(--black);
 width: 100%;
-padding: 8rem 5%;
+padding: 6rem 5%;
 display: flex;
 justify-content: center;
 border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1380,12 +1380,12 @@ font-size: clamp(2.5rem, 6vw, 4rem);
 font-weight: 400;
 letter-spacing: 0.05em;
 color: var(--white);
-margin: 0 0 4rem 0;
+margin: 0 0 2.5rem 0;
 line-height: 1;
 }
 
 .time-body {
-margin-bottom: 4rem;
+margin-bottom: 2.5rem;
 }
 
 .time-body p {
@@ -1460,7 +1460,7 @@ text-align: center;
 .participation-fees {
 background-color: var(--black);
 width: 100%;
-padding: 8rem 5%;
+padding: 6rem 5%;
 display: flex;
 justify-content: center;
 border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1479,7 +1479,7 @@ font-size: clamp(2.5rem, 6vw, 4rem);
 font-weight: 400;
 letter-spacing: 0.05em;
 color: var(--white);
-margin: 0 0 4rem 0;
+margin: 0 0 2.5rem 0;
 line-height: 1;
 }
 
@@ -1567,7 +1567,7 @@ font-weight: 600;
 .mission-accomplished {
 background-color: var(--black);
 width: 100%;
-padding: 6rem 5%;
+padding: 5rem 5%;
 display: flex;
 justify-content: center;
 border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1595,14 +1595,14 @@ font-family: 'Inter', sans-serif;
 font-size: clamp(1.125rem, 2vw, 1.375rem);
 font-weight: 300;
 color: var(--white);
-margin: 0 0 4rem 0;
+margin: 0 0 2.5rem 0;
 letter-spacing: 0.01em;
 opacity: 0.8;
 font-style: italic;
 }
 
 .accomplished-body {
-margin-bottom: 4rem;
+margin-bottom: 2.5rem;
 max-width: 700px;
 }
 
@@ -1685,7 +1685,7 @@ opacity: 0.9;
 .final-cta {
 background-color: var(--black);
 width: 100%;
-padding: 6rem 5%;
+padding: 5rem 5%;
 display: flex;
 justify-content: center;
 border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1751,11 +1751,11 @@ padding: 0 1rem;
 }
 
 .mission-brief {
-padding: 4rem 5%;
+padding: 3rem 5%;
 }
 
 .have-it-your-way {
-padding: 4rem 5%;
+padding: 3rem 5%;
 }
 
 .accordion {
@@ -1802,7 +1802,7 @@ font-size: 0.9375rem;
 }
 
 .wall-heroes {
-padding: 4rem 5%;
+padding: 3rem 5%;
 }
 
 .wall-heading {
@@ -1814,7 +1814,7 @@ margin-bottom: 2rem;
 }
 
 .time-table {
-padding: 4rem 5%;
+padding: 3rem 5%;
 }
 
 .time-heading {
@@ -1853,7 +1853,7 @@ margin: -1.25rem -1rem 0.5rem -1rem;
 }
 
 .participation-fees {
-padding: 4rem 5%;
+padding: 3rem 5%;
 }
 
 .fees-heading {
@@ -2209,7 +2209,7 @@ opacity: 1;
 .twelve-experience {
 background-color: var(--black);
 width: 100%;
-padding: 5rem 5%;
+padding: 4rem 5%;
 display: flex;
 justify-content: center;
 border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -2446,7 +2446,7 @@ margin: 0;
 
 @media (min-width: 769px) {
 .twelve-experience {
-padding: 8rem 5%;
+padding: 6rem 5%;
 }
 
 .twelve-timeline {
@@ -2487,7 +2487,7 @@ font-size: 0.7rem;
 .story-so-far {
 background-color: var(--black);
 width: 100%;
-padding: 8rem 5%;
+padding: 6rem 5%;
 display: flex;
 justify-content: center;
 border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -2668,7 +2668,7 @@ right: 1rem;
 
 @media (max-width: 767px) {
 .story-so-far {
-padding: 4rem 5%;
+padding: 3rem 5%;
 }
 
 .story-timeline {
@@ -2712,7 +2712,7 @@ width: 100%;
 
 .operation-header {
 text-align: center;
-margin-bottom: 4rem;
+margin-bottom: 2.5rem;
 }
 
 .operation-heading {
