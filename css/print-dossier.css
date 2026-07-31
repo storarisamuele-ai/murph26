@@ -146,30 +146,59 @@ img {
   padding: 0.35rem;
 }
 
-.mission-card-header {
+/* Section headers */
+.section-header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   margin-bottom: 0.15rem;
 }
 
-.mission-card-icon {
+.section-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 24px;
+}
+
+.section-icon img,
+.section-icon svg {
   width: 22px;
   height: 22px;
-  flex-shrink: 0;
   display: block;
+}
+
+.section-icon img {
+  filter: brightness(0);
+}
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.section-ref {
+  font-family: 'Inter', sans-serif;
+  font-size: 7pt;
+  line-height: 1;
+  color: #000;
+}
+
+.section-heading h3 {
+  margin: 0;
+  line-height: 1;
 }
 
 .mission-card-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 10pt;
-  line-height: 1;
   color: #000;
   margin: 0;
-}
-
-.mission-card-title::before {
-  display: none;
+  line-height: 1;
 }
 
 .mission-card-body {
@@ -351,7 +380,8 @@ img {
     color: #000 !important;
   }
 
-  .section-card {
+  .section-card,
+  .mission-card {
     border-color: #999 !important;
   }
 
@@ -361,16 +391,32 @@ img {
     color: #000 !important;
   }
 
-  svg,
-  svg *,
-  .section-icon svg,
-  .lucide {
+  .section-header svg,
+  .section-header svg *,
+  .section-card svg,
+  .section-card svg *,
+  .mission-card svg,
+  .mission-card svg *,
+  .lucide,
+  .lucide * {
     stroke: #000 !important;
     fill: none !important;
+    color: #000 !important;
   }
 
-  svg *,
-  .lucide * {
+  .section-header svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .section-icon svg[fill]:not([fill="none"]),
+  .section-icon svg *[fill]:not([fill="none"]),
+  .section-card svg[fill]:not([fill="none"]),
+  .section-card svg *[fill]:not([fill="none"]),
+  .mission-card svg[fill]:not([fill="none"]),
+  .mission-card svg *[fill]:not([fill="none"]),
+  .lucide[fill]:not([fill="none"]),
+  .lucide *[fill]:not([fill="none"]) {
     fill: #000 !important;
   }
 

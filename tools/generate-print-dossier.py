@@ -182,12 +182,49 @@ def allocate_cards(
     return pages
 
 
+def _rebuild_section_header(card_html: str, index: int) -> str:
+    title_match = re.search(
+        r"<h2[^>]*class=['\"]mission-card-title['\"][^>]*>(.*?)</h2>",
+        card_html,
+        re.DOTALL | re.IGNORECASE,
+    )
+    title = title_match.group(1).strip() if title_match else ""
+    icon_match = re.search(
+        r"<img[^>]*class=['\"]mission-card-icon['\"][^>]*>",
+        card_html,
+        re.IGNORECASE,
+    )
+    icon = icon_match.group(0) if icon_match else ""
+    ref = f"SECT. {index:02d} — REF JTO-{index:02d}"
+    return f'''<div class="section-header">
+  <div class="section-icon">
+    {icon}
+  </div>
+  <div class="section-heading">
+    <div class="section-ref">{ref}</div>
+    <h3 class="mission-card-title">{title}</h3>
+  </div>
+</div>'''
+
+
 def build_page(
     header: str,
     footer: str,
     cards: list[tuple[str, str]],
+    start_index: int = 1,
 ) -> str:
-    cards_html = "\n".join(card for _, card in cards)
+    rebuilt_cards = []
+    for i, (_, card) in enumerate(cards):
+        new_header = _rebuild_section_header(card, start_index + i)
+        new_card = re.sub(
+            r"<header[^>]*class=['\"]mission-card-header['\"][^>]*>.*?</header>",
+            new_header,
+            card,
+            count=1,
+            flags=re.DOTALL | re.IGNORECASE,
+        )
+        rebuilt_cards.append(new_card)
+    cards_html = "\n".join(rebuilt_cards)
     return f"""<section class="print-page">
 {header}
   <main class="print-content">
@@ -214,7 +251,11 @@ def generate_print_html(source_path: Path, output_path: Path) -> None:
     footer = build_footer(meta, total_pages)
     header_block = build_header(header)
 
-    page_blocks = [build_page(header_block, footer, page) for page in pages]
+    card_index = 1
+    page_blocks = []
+    for page in pages:
+        page_blocks.append(build_page(header_block, footer, page, card_index))
+        card_index += len(page)
     document = "\n".join(page_blocks)
 
     result = f"""<!DOCTYPE html>
