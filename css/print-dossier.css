@@ -27,8 +27,22 @@ img {
   max-width: 100%;
 }
 
+/* Hide the original web layout when this stylesheet is used for printing */
+.mb-header,
+.mb-dossier,
+.mb-dossier-footer,
+.mb-back-link,
+.dossier-sidebar,
+.dossier-nav,
+.print-cta,
+.military-divider,
+.mb-document-table,
+.mb-document-meta {
+  display: none !important;
+}
+
 .print-document {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   align-items: center;
   counter-reset: print-page;

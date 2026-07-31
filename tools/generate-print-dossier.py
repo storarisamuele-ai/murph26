@@ -238,6 +238,43 @@ def generate_print_html(source_path: Path, output_path: Path) -> None:
 
     output_path.write_text(result, encoding="utf-8")
     print(f"Generated {output_path}")
+    return document
+
+
+def indent_html(html: str, spaces: int) -> str:
+    prefix = " " * spaces
+    return "\n".join(
+        prefix + line if line.strip() else line for line in html.splitlines()
+    )
+
+
+def inject_into_source(source_path: Path, document_html: str) -> None:
+    html = source_path.read_text(encoding="utf-8")
+
+    # Add dedicated print stylesheet if missing
+    if "print-dossier.css" not in html:
+        html = html.replace(
+            "</head>",
+            '  <link rel="stylesheet" href="../css/print-dossier.css" media="print">\n</head>',
+        )
+
+    # Remove any previous print-document injected by this script
+    html = re.sub(
+        r'<div class="print-document"[^>]*>.*?</div>\s*</body>',
+        "</body>",
+        html,
+        flags=re.DOTALL,
+    )
+
+    # Inject the page-based print document before </body>
+    indented = indent_html(document_html, 4)
+    html = html.replace(
+        "</body>",
+        f'  <div class="print-document" aria-hidden="true">\n{indented}\n  </div>\n</body>',
+    )
+
+    source_path.write_text(html, encoding="utf-8")
+    print(f"Updated {source_path}")
 
 
 def main() -> None:
@@ -248,7 +285,13 @@ def main() -> None:
     parser.add_argument(
         "--output",
         "-o",
-        help="Output file (defaults to <mission>-print.html)",
+        help="Output file for the dedicated print page (defaults to <mission>-print.html)",
+    )
+    parser.add_argument(
+        "--inline",
+        "-i",
+        action="store_true",
+        help="Also embed the printable pages in the source HTML for Ctrl+P",
     )
     args = parser.parse_args()
 
@@ -262,7 +305,10 @@ def main() -> None:
         else source.with_stem(f"{source.stem}-print")
     )
 
-    generate_print_html(source, output)
+    document = generate_print_html(source, output)
+
+    if args.inline:
+        inject_into_source(source, document)
 
 
 if __name__ == "__main__":
