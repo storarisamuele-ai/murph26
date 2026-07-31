@@ -784,16 +784,11 @@ flex-direction: row;
 .find-layout {
 display: grid;
 grid-template-columns: 0.3fr 0.7fr;
-grid-template-rows: auto 1fr;
-grid-template-areas:
-". content"
-"concept content";
 gap: 3rem;
-align-items: start;
+align-items: center;
 }
 
 .concept-side {
-grid-area: concept;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -806,7 +801,6 @@ margin: 0;
 }
 
 .content-side {
-grid-area: content;
 align-items: flex-start;
 text-align: left;
 }
