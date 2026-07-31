@@ -104,11 +104,11 @@ img {
 
 .print-header__stamp {
   position: absolute;
-  top: -0.5rem;
+  top: -0.75rem;
   left: 50%;
-  width: 6.5rem;
+  width: 10rem;
   transform: translateX(-45%) rotate(-12deg);
-  opacity: 0.12;
+  opacity: 0.18;
   filter: grayscale(1);
   pointer-events: none;
   z-index: 1;
