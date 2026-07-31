@@ -1206,22 +1206,179 @@ img {
 
 /* Print */
 @media print {
-  /*
-  TODO
-  Future print version will reuse the web layout.
-
-  Target:
-  - Header
-  - Two-column content
-  - Footer
-
-  Only adapt spacing, page breaks and typography for A4.
-
-  Do NOT create a separate printable template.
-  */
+  :root {
+    --pink: #0694B9;
+  }
 
   @page {
     size: A4 portrait;
     margin: 20mm;
+  }
+
+  body.mission-brief {
+    background: #fff;
+    color: #000;
+    font-size: 10pt;
+    line-height: 1.45;
+  }
+
+  body.mission-brief,
+  body.mission-brief * {
+    color: #000;
+  }
+
+  /* Labels / accents in cyan */
+  .document-meta-item b,
+  .mb-document-table dt,
+  .mission-intel dt,
+  .mission-list li::before,
+  .mission-card-title::before {
+    color: var(--blue);
+  }
+
+  /* Hide web navigation and chrome */
+  .mb-header,
+  .mb-back-link,
+  .dossier-sidebar,
+  .dossier-nav,
+  .print-cta {
+    display: none !important;
+  }
+
+  /* Header */
+  .mb-dossier-header {
+    page-break-after: avoid;
+  }
+
+  .mb-document-header,
+  .mb-document-meta,
+  .military-divider,
+  .mb-dossier-body,
+  .mb-dossier-footer,
+  .mb-dossier-footer__inner {
+    max-width: none;
+  }
+
+  .mb-document-header {
+    padding: 0.75rem 0;
+    border-bottom: 1pt solid #000;
+    background: transparent;
+  }
+
+  .mb-document-header__inner {
+    padding: 0;
+    grid-template-columns: 1.1fr 1.6fr 1.1fr;
+    gap: 1rem;
+  }
+
+  .mb-stamp {
+    width: 7rem;
+    opacity: 0.12;
+    filter: grayscale(1);
+  }
+
+  .mb-document-title h1 {
+    font-size: 26pt;
+    color: #000;
+  }
+
+  .mb-document-subtitle {
+    font-size: 13pt;
+    color: #000;
+  }
+
+  .mb-document-table dt {
+    color: var(--blue);
+  }
+
+  .mb-document-meta {
+    padding: 0.4rem 0;
+    border-bottom: 0.5pt solid #ccc;
+    color: #000;
+    page-break-after: avoid;
+  }
+
+  .military-divider {
+    padding: 0.4rem 0;
+    color: #000;
+  }
+
+  .military-divider::before,
+  .military-divider::after {
+    background: #000;
+  }
+
+  /* Main body */
+  .mb-dossier-body {
+    display: block;
+    padding: 0.75rem 0 0;
+  }
+
+  .mission-content {
+    display: block;
+    column-count: 2;
+    column-gap: 1.5rem;
+    column-fill: balance;
+  }
+
+  .mission-card {
+    display: block;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    background: transparent;
+    border: 0.5pt solid #ccc;
+    border-left: 2.5pt solid var(--blue);
+    border-radius: 0 4pt 4pt 0;
+    padding: 0.6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .mission-card:last-child {
+    margin-bottom: 0;
+  }
+
+  .mission-card-title {
+    font-size: 11pt;
+    color: #000;
+  }
+
+  .mission-card-title::before {
+    display: block;
+    color: var(--blue);
+    font-size: 0.6em;
+  }
+
+  .mission-card-body {
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+
+  .mission-list li,
+  .mission-checklist li,
+  .equipment-checklist__item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .redacted-block,
+  .redacted-block--label {
+    background: transparent;
+  }
+
+  .equipment-check__box {
+    border-color: #000;
+    background: transparent;
+  }
+
+  /* Footer */
+  .mb-dossier-footer {
+    border-top: 1pt solid #000;
+    margin-top: 1rem;
+    padding: 0.75rem 0;
+    color: #000;
+  }
+
+  .mb-dossier-footer__placeholder {
+    color: #000;
   }
 }
