@@ -202,7 +202,7 @@ def _rebuild_section_header(card_html: str, index: int) -> str:
   </div>
   <div class="section-heading">
     <div class="section-ref">{ref}</div>
-    <h3 class="mission-card-title">{title}</h3>
+    <h3>{title}</h3>
   </div>
 </div>'''
 
@@ -236,6 +236,14 @@ def build_page(
 
 def generate_print_html(source_path: Path, output_path: Path) -> None:
     html = source_path.read_text(encoding="utf-8")
+
+    # Remove any previously injected print document so it is not re-extracted
+    html = re.sub(
+        r'<div class="print-document"[^>]*>.*?</div>\s*</body>',
+        "</body>",
+        html,
+        flags=re.DOTALL,
+    )
 
     header = extract_header(html)
     meta = extract_meta(html)
