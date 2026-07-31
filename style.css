@@ -233,8 +233,8 @@ padding: 0 5%;
 }
 
 .hero-text {
-margin-bottom: 2rem;
-max-width: 520px;
+margin: 0;
+width: 100%;
 }
 
 .hero-title {
@@ -3369,17 +3369,31 @@ line-height: 1.6;
 letter-spacing: 0.02em;
 }
 
-/* Hero Status Overlay */
-.hero-status {
-align-self: center;
-width: 100%;
-max-width: 900px;
+/* Hero Panel */
+.hero-panel {
+width: fit-content;
+max-width: min(90vw, 1040px);
+background: rgba(0, 0, 0, 0.45);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+border: 1px solid rgba(255, 255, 255, 0.12);
+border-radius: 8px;
+padding: 3rem;
 display: flex;
 flex-direction: column;
-align-items: center;
-text-align: center;
-gap: 1.5rem;
-margin-top: 2.5rem;
+align-items: flex-start;
+gap: 2rem;
+align-self: flex-start;
+}
+
+/* Hero Status Overlay */
+.hero-status {
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+text-align: left;
+gap: 1rem;
 color: var(--white);
 }
 
@@ -3408,13 +3422,13 @@ display: grid;
 grid-template-columns: repeat(4, 1fr);
 gap: 2rem;
 width: 100%;
-max-width: 640px;
+max-width: 560px;
 }
 
 .hero-status-unit {
 display: flex;
 flex-direction: column;
-align-items: center;
+align-items: flex-start;
 gap: 0.5rem;
 }
 
@@ -3437,7 +3451,7 @@ color: var(--blue);
 .hero-status-start {
 display: flex;
 flex-direction: column;
-align-items: center;
+align-items: flex-start;
 gap: 0.25rem;
 }
 
@@ -3452,9 +3466,9 @@ margin: 0;
 }
 
 @media (max-width: 640px) {
-.hero-status {
-margin-top: 1.5rem;
-gap: 1rem;
+.hero-panel {
+padding: 2rem 1.5rem;
+gap: 1.5rem;
 }
 
 .hero-status-countdown {
