@@ -3368,3 +3368,129 @@ margin: 0;
 line-height: 1.6;
 letter-spacing: 0.02em;
 }
+
+/* Mission Status */
+.mission-status {
+background: var(--black);
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+padding: 4rem 0;
+position: relative;
+}
+
+.mission-status::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 3px;
+height: 100%;
+background: var(--pink);
+}
+
+.mission-status-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 1.5rem;
+}
+
+.mission-status-label {
+font-family: 'Bebas Neue', sans-serif;
+font-size: 0.9rem;
+letter-spacing: 0.2em;
+color: var(--pink);
+margin: 0;
+}
+
+.mission-status-state {
+font-family: 'Bebas Neue', sans-serif;
+font-size: clamp(2.5rem, 6vw, 4.5rem);
+letter-spacing: 0.08em;
+color: var(--white);
+line-height: 1;
+margin: 0;
+}
+
+.mission-status-state[data-status="live"] {
+color: var(--pink);
+}
+
+.mission-status-countdown {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1.5rem;
+width: 100%;
+max-width: 720px;
+}
+
+.mission-status-unit {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+padding: 1.5rem 1rem;
+background: rgba(255, 255, 255, 0.03);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 4px;
+}
+
+.mission-status-value {
+font-family: 'Bebas Neue', sans-serif;
+font-size: clamp(2.5rem, 8vw, 5rem);
+line-height: 1;
+color: var(--white);
+}
+
+.mission-status-unit-label {
+font-family: 'Inter', sans-serif;
+font-size: 0.7rem;
+font-weight: 500;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: rgba(255, 255, 255, 0.6);
+}
+
+.mission-status-start {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.25rem;
+}
+
+.mission-status-start-label {
+font-family: 'Bebas Neue', sans-serif;
+font-size: 0.9rem;
+letter-spacing: 0.2em;
+color: var(--pink);
+margin: 0;
+}
+
+.mission-status-start-date,
+.mission-status-start-time {
+font-family: 'Inter', sans-serif;
+font-size: 1rem;
+font-weight: 500;
+letter-spacing: 0.05em;
+color: var(--white);
+margin: 0;
+}
+
+@media (max-width: 640px) {
+.mission-status-countdown {
+gap: 0.75rem;
+}
+
+.mission-status-unit {
+padding: 1rem 0.5rem;
+}
+
+.mission-status-value {
+font-size: clamp(1.75rem, 10vw, 3rem);
+}
+
+.mission-status-unit-label {
+font-size: 0.6rem;
+}
+}

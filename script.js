@@ -95,3 +95,48 @@ header.setAttribute('aria-expanded', 'true');
 });
 }
 });
+
+// Mission Status Countdown
+(function () {
+  const targetDate = new Date('2026-08-07T08:00:00+02:00').getTime();
+  const elements = {
+    days: document.getElementById('ms-days'),
+    hours: document.getElementById('ms-hours'),
+    minutes: document.getElementById('ms-minutes'),
+    seconds: document.getElementById('ms-seconds'),
+    state: document.querySelector('.mission-status-state')
+  };
+
+  if (!elements.days || !elements.state) return;
+
+  const pad = (n) => String(n).padStart(2, '0');
+
+  function update() {
+    const now = Date.now();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      elements.days.textContent = '00';
+      elements.hours.textContent = '00';
+      elements.minutes.textContent = '00';
+      elements.seconds.textContent = '00';
+      elements.state.textContent = 'MISSION LIVE';
+      elements.state.setAttribute('data-status', 'live');
+      clearInterval(timer);
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    elements.days.textContent = pad(days);
+    elements.hours.textContent = pad(hours);
+    elements.minutes.textContent = pad(minutes);
+    elements.seconds.textContent = pad(seconds);
+  }
+
+  update();
+  const timer = setInterval(update, 1000);
+})();
