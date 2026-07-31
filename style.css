@@ -781,35 +781,34 @@ grid-template-columns: repeat(2, 1fr);
 flex-direction: row;
 }
 
-.find-your-murph-grid {
+.find-layout {
 display: grid;
 grid-template-columns: 0.3fr 0.7fr;
 grid-template-rows: auto 1fr;
 grid-template-areas:
 ". content"
-"logo content";
+"concept content";
 gap: 3rem;
 align-items: start;
 }
 
-.logo-column {
-grid-area: logo;
+.concept-side {
+grid-area: concept;
 display: flex;
 flex-direction: column;
 align-items: center;
 width: 100%;
 }
 
-.content-column {
+.concept-side .have-it-your-way-image {
+max-width: 100%;
+margin: 0;
+}
+
+.content-side {
 grid-area: content;
 align-items: flex-start;
 text-align: left;
-}
-
-.have-it-your-way-image {
-width: 100%;
-max-width: 100%;
-margin: 0;
 }
 }
 
@@ -987,11 +986,12 @@ background-color: var(--black);
 width: 100%;
 padding: 6rem 5%;
 display: flex;
-justify-content: center;
+flex-direction: column;
+align-items: center;
 border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.find-your-murph-grid {
+.find-layout {
 max-width: 1400px;
 width: 100%;
 display: flex;
@@ -1000,29 +1000,42 @@ align-items: center;
 gap: 1.5rem;
 }
 
-/* Have It Your Way Image */
-.have-it-your-way-image {
+.concept-side {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+}
+
+.concept-side .have-it-your-way-image {
 width: 100%;
 max-width: 220px;
 margin: 0 auto 1rem;
 text-align: center;
-order: -1;
 }
 
-.have-it-your-way-image img {
+.concept-side .have-it-your-way-image img {
 max-width: 100%;
 height: auto;
 display: block;
 margin: 0 auto;
 }
 
-.have-it-your-way-tagline {
+.concept-side .have-it-your-way-tagline {
 font-family: 'Inter', sans-serif;
 font-size: 0.875rem;
 font-style: italic;
 text-align: center;
 margin: 0.75rem 0 0 0;
 opacity: 0.85;
+}
+
+.content-side {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+width: 100%;
 }
 
 /* Desktop Scaling Tables */
