@@ -96,23 +96,24 @@ img {
   color: #333;
 }
 
-.print-header__title-block {
+.print-title-wrapper {
   position: relative;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   grid-column: 2 / 3;
 }
 
-.print-header__stamp {
+.print-watermark {
   position: absolute;
-  top: 50%;
   left: 50%;
-  width: 150mm;
-  max-width: none;
+  top: 48%;
   transform: translate(-50%, -50%) rotate(-12deg);
-  opacity: 0.15;
-  filter: grayscale(1);
-  pointer-events: none;
+  width: 180px;
+  opacity: .14;
   z-index: 0;
+  pointer-events: none;
 }
 
 .print-header__title,
@@ -160,20 +161,22 @@ img {
 .mission-card-header {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 12px;
   margin-bottom: 0.15rem;
 }
 
 .mission-card-icon {
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: block;
   filter: grayscale(1);
 }
 
 .mission-card-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 10pt;
-  line-height: 1.2;
+  line-height: 1;
   color: #000;
   margin: 0;
 }
