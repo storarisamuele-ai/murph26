@@ -1205,10 +1205,19 @@ img {
 }
 
 /* Print */
+/*
+Browser-generated headers (URL, date, page number) are added by the
+browser/OS print dialog and cannot be removed or hidden via CSS alone.
+*/
 @media print {
   :root {
     --pink: #0694B9;
   }
+
+  /*
+  TODO: A future dedicated PDF export step could bypass the browser print
+  dialog and avoid browser-generated headers and margins completely.
+  */
 
   @page {
     size: A4 portrait;
@@ -1218,8 +1227,8 @@ img {
   body.mission-brief {
     background: #fff;
     color: #000;
-    font-size: 10pt;
-    line-height: 1.45;
+    font-size: 9pt;
+    line-height: 1.4;
   }
 
   body.mission-brief,
@@ -1260,31 +1269,50 @@ img {
   }
 
   .mb-document-header {
-    padding: 0.75rem 0;
-    border-bottom: 1pt solid #000;
+    padding: 0.35rem 0;
+    border-bottom: 0.75pt solid #000;
     background: transparent;
   }
 
   .mb-document-header__inner {
     padding: 0;
     grid-template-columns: 1.1fr 1.6fr 1.1fr;
-    gap: 1rem;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .mb-document-logo-wordmark {
+    font-size: 8pt;
   }
 
   .mb-stamp {
-    width: 7rem;
-    opacity: 0.12;
+    width: 5rem;
+    top: -0.25rem;
+    left: 50%;
+    opacity: 0.1;
     filter: grayscale(1);
+    z-index: 1;
+  }
+
+  .mb-document-title h1,
+  .mb-document-subtitle {
+    position: relative;
+    z-index: 2;
   }
 
   .mb-document-title h1 {
-    font-size: 26pt;
+    font-size: 20pt;
+    line-height: 1;
     color: #000;
   }
 
   .mb-document-subtitle {
-    font-size: 13pt;
+    font-size: 10pt;
     color: #000;
+  }
+
+  .mb-document-table {
+    font-size: 7.5pt;
   }
 
   .mb-document-table dt {
@@ -1292,15 +1320,21 @@ img {
   }
 
   .mb-document-meta {
-    padding: 0.4rem 0;
+    padding: 0.2rem 0;
     border-bottom: 0.5pt solid #ccc;
     color: #000;
+    font-size: 7.5pt;
     page-break-after: avoid;
   }
 
+  .document-meta-item b {
+    font-weight: 600;
+  }
+
   .military-divider {
-    padding: 0.4rem 0;
+    padding: 0.2rem 0;
     color: #000;
+    font-size: 7.5pt;
   }
 
   .military-divider::before,
@@ -1311,13 +1345,13 @@ img {
   /* Main body */
   .mb-dossier-body {
     display: block;
-    padding: 0.75rem 0 0;
+    padding: 0.4rem 0 0;
   }
 
   .mission-content {
     display: block;
     column-count: 2;
-    column-gap: 1.5rem;
+    column-gap: 1rem;
     column-fill: balance;
   }
 
@@ -1327,10 +1361,10 @@ img {
     page-break-inside: avoid;
     background: transparent;
     border: 0.5pt solid #ccc;
-    border-left: 2.5pt solid var(--blue);
-    border-radius: 0 4pt 4pt 0;
-    padding: 0.6rem;
-    margin-bottom: 0.75rem;
+    border-left: 2pt solid var(--blue);
+    border-radius: 0 3pt 3pt 0;
+    padding: 0.4rem;
+    margin-bottom: 0.5rem;
   }
 
   .mission-card:last-child {
@@ -1338,19 +1372,25 @@ img {
   }
 
   .mission-card-title {
-    font-size: 11pt;
+    font-size: 10pt;
+    line-height: 1.2;
     color: #000;
+    margin-bottom: 0.2rem;
   }
 
   .mission-card-title::before {
     display: block;
     color: var(--blue);
-    font-size: 0.6em;
+    font-size: 0.55em;
   }
 
   .mission-card-body {
-    font-size: 9pt;
-    line-height: 1.4;
+    font-size: 8.5pt;
+    line-height: 1.35;
+  }
+
+  .mission-card-body p {
+    margin-bottom: 0.35rem;
   }
 
   .mission-list li,
@@ -1372,13 +1412,18 @@ img {
 
   /* Footer */
   .mb-dossier-footer {
-    border-top: 1pt solid #000;
-    margin-top: 1rem;
-    padding: 0.75rem 0;
+    border-top: 0.75pt solid #000;
+    margin-top: 0.5rem;
+    padding: 0.4rem 0;
     color: #000;
+    break-before: avoid;
+    page-break-before: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   .mb-dossier-footer__placeholder {
     color: #000;
+    font-size: 7.5pt;
   }
 }
