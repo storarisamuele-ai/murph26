@@ -321,3 +321,67 @@ img {
 .print-footer__page::before {
   content: "Page " counter(print-page) " / " attr(data-total);
 }
+
+/* Monochrome print override */
+@media print {
+  :root {
+    --accent: #000;
+    --primary: #000;
+    --secondary: #000;
+    --highlight: #000;
+    --brand: #000;
+    --blue: #000;
+    --cyan: #000;
+    --pink: #000;
+    --magenta: #000;
+  }
+
+  body,
+  p,
+  span,
+  li,
+  strong,
+  small,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000 !important;
+  }
+
+  .section-card {
+    border-color: #999 !important;
+  }
+
+  .section-ref,
+  .section-title,
+  .section-body {
+    color: #000 !important;
+  }
+
+  svg,
+  svg *,
+  .section-icon svg,
+  .lucide {
+    stroke: #000 !important;
+    fill: none !important;
+  }
+
+  svg *,
+  .lucide * {
+    fill: #000 !important;
+  }
+
+  ol li::marker,
+  ul li::marker {
+    color: #000 !important;
+  }
+
+  a,
+  a:visited {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+}
