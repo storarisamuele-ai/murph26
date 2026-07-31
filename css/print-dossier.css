@@ -1,0 +1,318 @@
+/* Page-based printable dossier styles */
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #000;
+  background: #fff;
+  font-size: 9pt;
+  line-height: 1.35;
+}
+
+img {
+  max-width: 100%;
+}
+
+.print-document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  counter-reset: print-page;
+}
+
+.print-page {
+  width: 210mm;
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+  padding: 15mm;
+  background: #fff;
+  page-break-after: always;
+  break-after: page;
+  position: relative;
+  counter-increment: print-page;
+}
+
+.print-page:last-child {
+  page-break-after: auto;
+  break-after: auto;
+}
+
+/* Header */
+.print-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 0 0.25rem;
+  border-bottom: 0.5pt solid #000;
+  margin-bottom: 0.5rem;
+}
+
+.print-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  justify-self: start;
+}
+
+.print-header__logo-mark {
+  height: 1.2rem;
+  filter: grayscale(1);
+}
+
+.print-header__logo-wordmark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 8pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.print-header__title-block {
+  position: relative;
+  text-align: center;
+  grid-column: 2 / 3;
+}
+
+.print-header__stamp {
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  width: 6.5rem;
+  transform: translateX(-45%) rotate(-12deg);
+  opacity: 0.12;
+  filter: grayscale(1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.print-header__title,
+.print-header__subtitle {
+  position: relative;
+  z-index: 2;
+}
+
+.print-header__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20pt;
+  line-height: 1;
+  margin: 0;
+  color: #000;
+}
+
+.print-header__subtitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 10pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0.1rem 0 0;
+  color: #333;
+}
+
+/* Main content */
+.print-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.35rem;
+}
+
+/* Cards */
+.mission-card {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  background: transparent;
+  border: 0.5pt solid #ccc;
+  border-left: 2pt solid #333;
+  border-radius: 0 3pt 3pt 0;
+  padding: 0.35rem;
+}
+
+.mission-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.15rem;
+}
+
+.mission-card-icon {
+  width: 0.9rem;
+  height: 0.9rem;
+  filter: grayscale(1);
+}
+
+.mission-card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 10pt;
+  line-height: 1.2;
+  color: #000;
+  margin: 0;
+}
+
+.mission-card-title::before {
+  display: none;
+}
+
+.mission-card-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 8.5pt;
+  line-height: 1.35;
+  color: #000;
+}
+
+.mission-card-body p,
+.mission-card-body li,
+.mission-card-body dd {
+  color: #000;
+}
+
+.mission-card-body p {
+  margin: 0 0 0.3rem;
+}
+
+.mission-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+.mission-card-body strong,
+.mission-card-body b,
+.mission-intel dt {
+  color: #333;
+}
+
+.mission-list,
+.mission-checklist,
+.equipment-checklist {
+  margin: 0 0 0.3rem;
+  padding-left: 1rem;
+}
+
+.mission-list:last-child,
+.mission-checklist:last-child,
+.equipment-checklist:last-child {
+  margin-bottom: 0;
+}
+
+.mission-list li,
+.mission-checklist li,
+.equipment-checklist li {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 0.15rem;
+}
+
+.mission-checklist,
+.equipment-checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.mission-checklist li,
+.equipment-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.mission-check-icon {
+  width: 0.5rem;
+  height: 0.5rem;
+  filter: grayscale(1);
+}
+
+.equipment-check__box {
+  display: inline-block;
+  width: 0.35rem;
+  height: 0.35rem;
+  border: 0.5pt solid #333;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.mission-intel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+}
+
+.mission-intel div {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.mission-intel dt {
+  font-weight: 600;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.mission-intel dd {
+  margin: 0;
+}
+
+.mission-note {
+  color: #333;
+  font-style: italic;
+  font-size: 0.95em;
+}
+
+.redacted-block {
+  color: #000;
+  background: transparent;
+  font-weight: 600;
+}
+
+.redacted-block--label {
+  color: #333;
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+}
+
+/* Footer */
+.print-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 0.5pt solid #000;
+  padding-top: 0.25rem;
+  margin-top: auto;
+  font-size: 7pt;
+  color: #333;
+}
+
+.print-footer__meta {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.print-footer__meta li {
+  margin: 0;
+}
+
+.print-footer__page {
+  font-weight: 600;
+  color: #000;
+}
+
+.print-footer__page::before {
+  content: "Page " counter(print-page) " / " attr(data-total);
+}
