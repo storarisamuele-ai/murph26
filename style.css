@@ -3533,3 +3533,23 @@ align-items: center;
 align-items: center;
 }
 }
+
+/* Section Spacing System */
+section:not(.hero):not(.last-night-white) {
+padding-top: 4rem !important;
+padding-bottom: 4rem !important;
+}
+
+@media (max-width: 1023px) {
+section:not(.hero):not(.last-night-white) {
+padding-top: 3.5rem !important;
+padding-bottom: 3.5rem !important;
+}
+}
+
+@media (max-width: 767px) {
+section:not(.hero):not(.last-night-white) {
+padding-top: 3rem !important;
+padding-bottom: 3rem !important;
+}
+}
