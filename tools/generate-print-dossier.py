@@ -119,15 +119,19 @@ def extract_cards(html: str) -> list[tuple[str, str]]:
 
 def build_header(header: dict) -> str:
     return f"""<header class="print-header">
-  <div class="print-header__logo">
+  <div class="print-header-left">
     <img src="{header['logo_src']}" alt="Murph26" class="print-header__logo-mark">
     <span class="print-header__logo-wordmark">{header['wordmark']}</span>
   </div>
-  <div class="print-title-wrapper">
-    <h1 class="print-header__title">{header['title']}</h1>
-    <h2 class="print-header__subtitle">{header['subtitle']}</h2>
+  <div class="print-header-center">
+    <div class="print-title-wrapper">
+      <h1 class="print-header__title">{header['title']}</h1>
+      <h2 class="print-header__subtitle">{header['subtitle']}</h2>
+    </div>
   </div>
-  <img src="../assets/declassified-print-document.png" class="print-declassified" alt="" aria-hidden="true">
+  <div class="print-header-right">
+    <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
+  </div>
 </header>"""
 
 
