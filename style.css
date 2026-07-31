@@ -775,13 +775,14 @@ flex-direction: row;
 
 .have-it-your-way-container {
 display: grid;
-grid-template-columns: 0.75fr 1.25fr;
+grid-template-columns: 0.4fr 0.6fr;
 gap: 3rem;
 align-items: center;
 }
 
 .have-it-your-way-image {
-max-width: 240px;
+width: 100%;
+max-width: 100%;
 margin: 0;
 order: 0;
 }
@@ -979,7 +980,7 @@ flex-direction: column;
 /* Have It Your Way Image */
 .have-it-your-way-image {
 width: 100%;
-max-width: 160px;
+max-width: 200px;
 margin: 0 auto 1rem;
 text-align: center;
 order: -1;
