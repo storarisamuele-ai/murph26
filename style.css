@@ -282,7 +282,7 @@ font-family: 'Inter', sans-serif;
 font-size: clamp(0.75rem, 1.5vw, 0.875rem);
 font-weight: 400;
 color: var(--pink);
-margin: 0.25rem 0 1.5rem 0;
+margin: 0.25rem 0 0.5rem 0;
 letter-spacing: 0.05em;
 opacity: 0.8;
 }
@@ -3382,7 +3382,15 @@ padding: 3rem;
 display: flex;
 flex-direction: column;
 align-items: flex-start;
-gap: 2rem;
+gap: 1rem;
+align-self: flex-start;
+}
+
+.hero-divider {
+width: 75%;
+height: 1px;
+background: rgba(255, 255, 255, 0.15);
+margin: 0.5rem 0;
 align-self: flex-start;
 }
 
@@ -3393,7 +3401,7 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 text-align: left;
-gap: 1rem;
+gap: 1.25rem;
 color: var(--white);
 }
 
@@ -3488,5 +3496,36 @@ letter-spacing: 0.1em;
 .hero-status-label,
 .hero-status-start-label {
 font-size: 0.65rem;
+}
+
+.hero-panel {
+align-self: center;
+align-items: center;
+text-align: center;
+}
+
+.hero-text {
+text-align: center;
+}
+
+.hero-divider {
+align-self: center;
+}
+
+.hero-status {
+align-items: center;
+text-align: center;
+}
+
+.hero-status-unit {
+align-items: center;
+}
+
+.hero-status-start {
+align-items: center;
+}
+
+.hero-actions {
+align-items: center;
 }
 }
