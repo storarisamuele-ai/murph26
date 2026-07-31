@@ -783,12 +783,17 @@ flex-direction: row;
 
 .find-your-murph-grid {
 display: grid;
-grid-template-columns: 0.35fr 0.65fr;
+grid-template-columns: 0.3fr 0.7fr;
+grid-template-rows: auto 1fr;
+grid-template-areas:
+". content"
+"logo content";
 gap: 3rem;
-align-items: center;
+align-items: start;
 }
 
 .logo-column {
+grid-area: logo;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -796,6 +801,7 @@ width: 100%;
 }
 
 .content-column {
+grid-area: content;
 align-items: flex-start;
 text-align: left;
 }
