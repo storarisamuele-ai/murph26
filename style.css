@@ -447,6 +447,29 @@ margin: 0 0 3rem 0;
 background-color: var(--blue);
 }
 
+.have-it-your-way-text {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+width: 100%;
+}
+
+.have-it-your-way .mission-label {
+margin-bottom: 1rem;
+}
+
+.have-it-your-way .mission-heading {
+margin-bottom: 1rem;
+}
+
+.have-it-your-way .accent-line {
+margin-bottom: 1rem;
+}
+
+.have-it-your-way .mission-closing {
+margin-bottom: 0.5rem;
+}
+
 /* Body Text */
 .mission-body {
 margin-bottom: 2.5rem;
@@ -749,6 +772,23 @@ grid-template-columns: repeat(2, 1fr);
 .choose-cta {
 flex-direction: row;
 }
+
+.have-it-your-way-container {
+display: grid;
+grid-template-columns: 0.75fr 1.25fr;
+gap: 3rem;
+align-items: center;
+}
+
+.have-it-your-way-image {
+max-width: 240px;
+margin: 0;
+order: 0;
+}
+
+.have-it-your-way-text {
+text-align: left;
+}
 }
 
 @media (max-width: 1100px) {
@@ -939,9 +979,10 @@ flex-direction: column;
 /* Have It Your Way Image */
 .have-it-your-way-image {
 width: 100%;
-max-width: 600px;
-margin: 3rem auto;
+max-width: 160px;
+margin: 0 auto 1rem;
 text-align: center;
+order: -1;
 }
 
 .have-it-your-way-image img {
@@ -2001,11 +2042,8 @@ display: none;
 
 /* Mobile Scaling Redesign (max-width: 768px) */
 @media (max-width: 768px) {
-.have-it-your-way .mission-label,
-.have-it-your-way .mission-heading,
-.have-it-your-way-image,
-.have-it-your-way .mission-body,
-.have-it-your-way .mission-closing {
+.have-it-your-way-text,
+.scaling-desktop {
 display: none;
 }
 
@@ -2036,7 +2074,7 @@ opacity: 0.85;
 text-align: center;
 line-height: 1.5;
 max-width: 600px;
-margin: 0 0 2rem 0;
+margin: 0 0 1rem 0;
 padding: 0 1rem;
 }
 
@@ -2045,7 +2083,7 @@ width: 100%;
 max-width: 700px;
 height: 1px;
 background-color: rgba(255, 255, 255, 0.15);
-margin: 1.5rem 0;
+margin: 1rem 0;
 }
 
 .scaling-category-heading {
@@ -2056,7 +2094,7 @@ letter-spacing: 0.05em;
 color: var(--white);
 text-align: center;
 line-height: 1;
-margin: 0 0 1rem 0;
+margin: 0 0 0.5rem 0;
 scroll-margin-top: calc(6rem + env(safe-area-inset-top));
 }
 
@@ -2065,8 +2103,8 @@ width: 100%;
 max-width: 700px;
 display: flex;
 flex-direction: column;
-gap: 0.75rem;
-margin: 1rem auto;
+gap: 0.5rem;
+margin: 0.5rem auto;
 }
 
 .scaling-accordion .accordion-header {
