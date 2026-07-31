@@ -870,6 +870,7 @@ img {
 }
 
 .dossier-sidebar-section {
+  display: none;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0 8px 8px 0;
@@ -900,7 +901,7 @@ img {
     gap: 2rem;
   }
 
-  .dossier-sidebar {
+  .mission-archive {
     position: sticky;
     top: 1.5rem;
   }
@@ -1177,6 +1178,26 @@ img {
   line-height: 1;
 }
 
+.mb-document-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.print-cta--tool {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.65rem;
+  border-left-width: 1px;
+  border-color: rgba(255, 255, 255, 0.25);
+  background: transparent;
+}
+
+.print-cta--tool:hover,
+.print-cta--tool:focus {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
 /* Print */
 @media print {
   @page {
@@ -1195,6 +1216,10 @@ img {
   .dossier-nav,
   .print-cta {
     display: none;
+  }
+
+  .dossier-sidebar-section {
+    display: block;
   }
 
   .mb-document-header,
