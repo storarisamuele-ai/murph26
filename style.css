@@ -775,7 +775,7 @@ flex-direction: row;
 
 .have-it-your-way-container {
 display: grid;
-grid-template-columns: 0.4fr 0.6fr;
+grid-template-columns: 0.35fr 0.65fr;
 gap: 3rem;
 align-items: center;
 }
@@ -980,7 +980,7 @@ flex-direction: column;
 /* Have It Your Way Image */
 .have-it-your-way-image {
 width: 100%;
-max-width: 200px;
+max-width: 220px;
 margin: 0 auto 1rem;
 text-align: center;
 order: -1;
@@ -991,6 +991,15 @@ max-width: 100%;
 height: auto;
 display: block;
 margin: 0 auto;
+}
+
+.have-it-your-way-tagline {
+font-family: 'Inter', sans-serif;
+font-size: 0.875rem;
+font-style: italic;
+text-align: center;
+margin: 0.75rem 0 0 0;
+opacity: 0.85;
 }
 
 /* Desktop Scaling Tables */
