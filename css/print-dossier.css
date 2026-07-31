@@ -104,14 +104,15 @@ img {
 
 .print-header__stamp {
   position: absolute;
-  top: -0.75rem;
+  top: 50%;
   left: 50%;
-  width: 10rem;
-  transform: translateX(-45%) rotate(-12deg);
-  opacity: 0.18;
+  width: 150mm;
+  max-width: none;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  opacity: 0.15;
   filter: grayscale(1);
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 .print-header__title,
