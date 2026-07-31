@@ -104,7 +104,7 @@ header.setAttribute('aria-expanded', 'true');
     hours: document.getElementById('ms-hours'),
     minutes: document.getElementById('ms-minutes'),
     seconds: document.getElementById('ms-seconds'),
-    state: document.querySelector('.mission-status-state')
+    state: document.querySelector('.hero-status-state')
   };
 
   if (!elements.days || !elements.state) return;
