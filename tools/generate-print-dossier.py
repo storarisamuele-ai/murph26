@@ -124,10 +124,10 @@ def build_header(header: dict) -> str:
     <span class="print-header__logo-wordmark">{header['wordmark']}</span>
   </div>
   <div class="print-title-wrapper">
-    <img class="print-watermark" src="../assets/declassified-print-document.png" alt="" aria-hidden="true">
     <h1 class="print-header__title">{header['title']}</h1>
     <h2 class="print-header__subtitle">{header['subtitle']}</h2>
   </div>
+  <img src="../assets/declassified-print-document.png" class="print-declassified" alt="" aria-hidden="true">
 </header>"""
 
 

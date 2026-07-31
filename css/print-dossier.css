@@ -69,11 +69,10 @@ img {
 /* Header */
 .print-header {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr auto 180px;
   align-items: center;
-  padding: 0 0 0.25rem;
-  border-bottom: 0.5pt solid #000;
-  margin-bottom: 0.5rem;
+  column-gap: 40px;
+  margin-bottom: 28px;
 }
 
 .print-header__logo {
@@ -97,29 +96,18 @@ img {
 }
 
 .print-title-wrapper {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   grid-column: 2 / 3;
 }
 
-.print-watermark {
-  position: absolute;
-  left: 50%;
-  top: 48%;
-  transform: translate(-50%, -50%) rotate(-12deg);
-  width: 180px;
-  opacity: .14;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.print-header__title,
-.print-header__subtitle {
-  position: relative;
-  z-index: 2;
+.print-declassified {
+  display: block;
+  width: 150px;
+  justify-self: end;
 }
 
 .print-header__title {
@@ -166,11 +154,10 @@ img {
 }
 
 .mission-card-icon {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
   display: block;
-  filter: grayscale(1);
 }
 
 .mission-card-title {
