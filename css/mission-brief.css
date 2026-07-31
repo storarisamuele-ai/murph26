@@ -1206,179 +1206,22 @@ img {
 
 /* Print */
 @media print {
+  /*
+  TODO
+  Future print version will reuse the web layout.
+
+  Target:
+  - Header
+  - Two-column content
+  - Footer
+
+  Only adapt spacing, page breaks and typography for A4.
+
+  Do NOT create a separate printable template.
+  */
+
   @page {
     size: A4 portrait;
     margin: 20mm;
-  }
-
-  body {
-    background: #fff;
-    color: #000;
-  }
-
-  .mb-header,
-  .mb-back-link,
-  .mission-archive,
-  .dossier-nav,
-  .print-cta {
-    display: none;
-  }
-
-  .dossier-sidebar-section {
-    display: block;
-  }
-
-  .mb-document-header,
-  .mb-document-meta,
-  .mb-dossier-body,
-  .mission-content,
-  .mission-archive,
-  .mb-dossier-footer {
-    page-break-inside: avoid;
-  }
-
-  .mb-document-header {
-    border-bottom: 1.5pt solid #000;
-    padding: 0.5rem 0 1rem;
-  }
-
-  .mb-document-logo-mark {
-    filter: invert(1);
-    max-width: 120px;
-  }
-
-  .mb-document-logo-wordmark,
-  .mb-document-title h1,
-  .mb-document-table dt,
-  .mb-document-table dd,
-  .mission-card,
-  .mission-card-title,
-  .mission-card-body,
-  .mission-list li::before,
-  .mission-intel dt,
-  .mission-quote,
-  .mission-archive-list li,
-  .mission-archive-title,
-  .mb-dossier-footer,
-  .mb-dossier-footer__placeholder,
-  .document-meta-item,
-  .military-divider span {
-    color: #000;
-  }
-
-  .mb-document-subtitle {
-    color: #000;
-  }
-
-  .mission-card,
-  .mission-archive {
-    border: 0.75pt solid #ccc;
-    border-left: 3pt solid var(--blue);
-    background: #fff;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  .mission-card--classified {
-    border: 0.75pt solid #ccc;
-    border-left: 3pt solid var(--pink);
-    background: #fff;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  .mission-card-icon,
-  .mission-check-icon,
-  .mission-archive-icon,
-  .mission-archive-mission-icon,
-  .mb-stamp,
-  .status-badge img {
-    filter: invert(1);
-  }
-
-  .mb-stamp {
-    opacity: 0.35;
-  }
-
-  .military-divider,
-  .archive-label,
-  .operational-badge,
-  .document-meta-item,
-  .redacted-block,
-  .redacted-block--label,
-  .redacted-block--cross,
-  .redacted-block--alt {
-    color: #000;
-    border-color: #999;
-  }
-
-  .military-divider::before,
-  .military-divider::after,
-  .mission-archive-list::before {
-    background: #999;
-  }
-
-  .mission-archive-list li::before {
-    background: #000;
-    box-shadow: 0 0 0 3px #fff;
-  }
-
-  .mb-dossier-body {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding-bottom: 0;
-    align-items: stretch;
-  }
-
-  .mission-content {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .mb-dossier-footer {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    border-top: 1.5pt solid #000;
-    margin-top: 1rem;
-  }
-
-  .mb-dossier-footer__label {
-    color: #666;
-  }
-
-  .mission-archive-link,
-  .mission-archive-link:hover,
-  .mission-archive-link:focus,
-  .mission-archive-subtitle,
-  .mission-archive-code,
-  .dossier-nav a {
-    color: #000;
-  }
-
-  .mission-archive-link--active::before,
-  .mission-archive-list li::before {
-    background: #000;
-    box-shadow: 0 0 0 3px #fff;
-  }
-
-  .dossier-nav a {
-    border-color: #999;
-    background: #fff;
-  }
-
-  .dossier-nav__archive {
-    background: #f4f4f4;
-    color: #000;
-  }
-
-  .dossier-nav a[aria-disabled='true'],
-  .dossier-nav__link--disabled {
-    color: #999;
-    border-color: #ccc;
-  }
-
-  a[href]::after {
-    content: ' (' attr(href) ')';
-    font-size: 0.75em;
-    color: #666;
   }
 }
