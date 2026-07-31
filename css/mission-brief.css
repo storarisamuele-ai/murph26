@@ -393,6 +393,10 @@ img {
 
 /* Mission Dossier Design System */
 
+.mb-dossier-header {
+  width: 100%;
+}
+
 .mb-document-header {
   position: relative;
   width: 100%;
@@ -909,12 +913,7 @@ img {
 
 .mb-dossier-footer {
   width: 100%;
-  max-width: var(--max-wide);
-  margin: 0 auto;
   padding: 1.25rem 5%;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-family: 'Inter', sans-serif;
   font-size: 0.6rem;
@@ -922,6 +921,18 @@ img {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.55);
+}
+
+.mb-dossier-footer__inner {
+  width: 100%;
+  max-width: var(--max-wide);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mb-dossier-footer__placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.08em;
 }
 
 .mb-dossier-footer__col {
@@ -950,11 +961,6 @@ img {
   letter-spacing: 0.06em;
 }
 
-@media (min-width: 768px) {
-  .mb-dossier-footer {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
 
 .mission-card--classified {
   border-left: 3px solid var(--pink);
@@ -1254,6 +1260,7 @@ img {
   .mission-archive-list li,
   .mission-archive-title,
   .mb-dossier-footer,
+  .mb-dossier-footer__placeholder,
   .document-meta-item,
   .military-divider span {
     color: #000;
