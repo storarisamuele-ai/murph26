@@ -47,6 +47,11 @@
       </div>
     </section>
 
+    <button type='button' class='print-cta print-cta--compact' onclick='window.print()' aria-label='Stampa il dossier della missione'>
+      <span class='print-cta__icon' aria-hidden='true'>🖨️</span>
+      <span class='print-cta__text'>STAMPA IL DOSSIER</span>
+    </button>
+
     <section class='mb-document-meta'>
       <span class='document-meta-item'><b>Status</b> <span class='status-badge'><img src='assets/status-active.svg' alt='' aria-hidden='true'> ACTIVE</span></span>
       <span class='document-meta-item'><b>Classification</b> DECLASSIFIED</span>
@@ -95,7 +100,14 @@
             <h2 class='mission-card-title'>Honor Code</h2>
           </header>
           <div class='mission-card-body'>
-            <p>Murph26 è una missione collettiva costruita su <strong>fiducia</strong>, <strong>onestà</strong>, <strong>rispetto</strong> e <strong>spirito di collaborazione</strong>. Ogni atleta si confronta con la propria fatica in modo onesto, rispetta il significato della missione e il ritmo degli altri, chiede aiuto quando serve e sostiene chi condivide la sfida. Senza fiducia non esiste squadra. Senza collaborazione non esiste missione.</p>
+            <p>Murph26 è una missione collettiva. Si fonda su quattro pilastri:</p>
+            <ul class='mission-list'>
+              <li><strong>Fiducia</strong> — nei compagni di squadra e nel percorso.</li>
+              <li><strong>Onestà</strong> — nel riconoscere i propri limiti.</li>
+              <li><strong>Rispetto</strong> — per il significato del Murph e per il ritmo di ogni atleta.</li>
+              <li><strong>Spirito di collaborazione</strong> — perché nessuno affronta la Missione da solo.</li>
+            </ul>
+            <p class='mission-note'>Senza fiducia non esiste squadra. Senza collaborazione non esiste missione.</p>
           </div>
         </article>
 
@@ -129,10 +141,11 @@
         <article class='mission-card'>
           <header class='mission-card-header'>
             <img class='mission-card-icon' src='assets/clipboard.svg' alt='' aria-hidden='true'>
-            <h2 class='mission-card-title'>Authorized Standard</h2>
+            <h2 class='mission-card-title'>AUTHORIZED STANDARD</h2>
           </header>
           <div class='mission-card-body'>
-            <p>Ogni Team è libero di scegliere lo standard per ciascuna Missione. Lo standard può cambiare da una Missione all'altra in base alla strategia del momento.</p>
+            <p>Ogni Team può scegliere liberamente lo standard di ogni Missione. Lo standard può cambiare da una Missione all'altra.</p>
+            <p class='mission-note'><strong>Esempio:</strong></p>
             <dl class='mission-intel'>
               <div>
                 <dt>Alpha</dt>
@@ -151,7 +164,7 @@
                 <dd>Performance</dd>
               </div>
             </dl>
-            <p class='mission-note'><strong>Nota operativa:</strong> la strategia appartiene al Team.</p>
+            <p class='mission-note'><strong>La strategia appartiene al Team.</strong> Scegliete insieme il livello più adatto ai vostri obiettivi.</p>
           </div>
         </article>
 
@@ -162,6 +175,24 @@
           </header>
           <div class='mission-card-body'>
             <p>Coaches e volontari sono presenti per tutta la durata dell'evento. Il Safety Team assiste ogni partecipante prima, durante e dopo ogni Missione: monitora i segnali di fatica, interviene su richiesta e garantisce che ogni operatore possa concludere la propria Missione in sicurezza. Nessuno resta indietro.</p>
+          </div>
+        </article>
+
+        <article class='mission-card'>
+          <header class='mission-card-header'>
+            <img class='mission-card-icon' src='assets/gear.svg' alt='' aria-hidden='true'>
+            <h2 class='mission-card-title'>Equipment Check</h2>
+          </header>
+          <div class='mission-card-body'>
+            <ul class='equipment-checklist'>
+              <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Scarpe da allenamento</li>
+              <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Borraccia</li>
+              <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Magnesite</li>
+              <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Asciugamano</li>
+              <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Cambio completo</li>
+              <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Costume e telo (Last Night in White)</li>
+              <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Documento della Missione stampato</li>
+            </ul>
           </div>
         </article>
 
@@ -220,33 +251,17 @@
           <h2 class='mission-archive-title'>Mission Archive</h2>
         </header>
         <ol class='mission-archive-list'>
-          <li><a class='mission-archive-link mission-archive-link--active' href='mission-00.html' aria-current='page'><span class='mission-archive-code'>MISSION BRIEF #00</span><span class='mission-archive-subtitle'>La Missione</span></a></li>
-          <li><a class='mission-archive-link' href='mission-01.html'><span class='mission-archive-code'>MISSION BRIEF #01</span><span class='mission-archive-subtitle'>Il Workout</span></a></li>
-          <li><a class='mission-archive-link' href='mission-02.html'><span class='mission-archive-code'>MISSION BRIEF #02</span><span class='mission-archive-subtitle'>Find Your Murph</span></a></li>
-          <li><a class='mission-archive-link' href='mission-03.html'><span class='mission-archive-code'>MISSION BRIEF #03</span><span class='mission-archive-subtitle'>4 Missions to Murph</span></a></li>
-          <li><a class='mission-archive-link' href='mission-04.html'><span class='mission-archive-code'>MISSION BRIEF #04</span><span class='mission-archive-subtitle'>Wall of Heroes</span></a></li>
-          <li><a class='mission-archive-link' href='mission-05.html'><span class='mission-archive-code'>MISSION BRIEF #05</span><span class='mission-archive-subtitle'>Last Night in White</span></a></li>
-          <li><a class='mission-archive-link' href='mission-06.html'><span class='mission-archive-code'>MISSION BRIEF #06</span><span class='mission-archive-subtitle'>Mission Ready</span></a></li>
+          <li><a class='mission-archive-link mission-archive-link--active' href='mission-00.html' aria-current='page'><img class='mission-archive-mission-icon' src='assets/mission-seal.svg' alt='' aria-hidden='true'><span class='mission-archive-body'><span class='mission-archive-code'>MISSION BRIEF #00</span><span class='mission-archive-subtitle'>La Missione <em class='mission-archive-status'>(ACTIVE)</em></span></span></a></li>
+          <li><a class='mission-archive-link' href='mission-01.html'><img class='mission-archive-mission-icon' src='assets/mission-alpha.svg' alt='' aria-hidden='true'><span class='mission-archive-body'><span class='mission-archive-code'>MISSION BRIEF #01</span><span class='mission-archive-subtitle'>Il Workout Murph</span></span></a></li>
+          <li><a class='mission-archive-link' href='mission-02.html'><img class='mission-archive-mission-icon' src='assets/mission-bravo.svg' alt='' aria-hidden='true'><span class='mission-archive-body'><span class='mission-archive-code'>MISSION BRIEF #02</span><span class='mission-archive-subtitle'>Find Your Murph</span></span></a></li>
+          <li><a class='mission-archive-link' href='mission-03.html'><img class='mission-archive-mission-icon' src='assets/mission-charlie.svg' alt='' aria-hidden='true'><span class='mission-archive-body'><span class='mission-archive-code'>MISSION BRIEF #03</span><span class='mission-archive-subtitle'>4 Missions to Murph</span></span></a></li>
+          <li><a class='mission-archive-link' href='mission-04.html'><img class='mission-archive-mission-icon' src='assets/mission-delta.svg' alt='' aria-hidden='true'><span class='mission-archive-body'><span class='mission-archive-code'>MISSION BRIEF #04</span><span class='mission-archive-subtitle'>Wall of Heroes</span></span></a></li>
+          <li><a class='mission-archive-link' href='mission-05.html'><img class='mission-archive-mission-icon' src='assets/mission-white.svg' alt='' aria-hidden='true'><span class='mission-archive-body'><span class='mission-archive-code'>MISSION BRIEF #05</span><span class='mission-archive-subtitle'>Last Night in White</span></span></a></li>
+          <li><a class='mission-archive-link' href='mission-06.html'><img class='mission-archive-mission-icon' src='assets/mission-final.svg' alt='' aria-hidden='true'><span class='mission-archive-body'><span class='mission-archive-code'>MISSION BRIEF #06</span><span class='mission-archive-subtitle'>Mission Ready</span></span></a></li>
         </ol>
       </aside>
 
     </div>
-
-    <section class='equipment-check'>
-      <header class='equipment-check__header'>
-        <h2 class='equipment-check__title'>Equipment Check</h2>
-        <span class='equipment-check__ref'>REF JTO-EQ</span>
-      </header>
-      <ul class='equipment-checklist'>
-        <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Scarpe da allenamento</li>
-        <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Borraccia</li>
-        <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Magnesite</li>
-        <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Asciugamano</li>
-        <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Cambio completo</li>
-        <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Costume e telo (Last Night in White)</li>
-        <li class='equipment-checklist__item'><span class='equipment-check__box' aria-hidden='true'></span> Voglia di metterti in gioco</li>
-      </ul>
-    </section>
 
     <nav class='dossier-nav' aria-label='Mission Brief navigation'>
       <a class='dossier-nav__prev' href='#' aria-disabled='true'><span class='dossier-nav__arrow' aria-hidden='true'>&larr;</span> Previous Mission Brief</a>
@@ -254,18 +269,27 @@
       <a class='dossier-nav__next' href='mission-01.html'>Next Mission Brief <span class='dossier-nav__arrow' aria-hidden='true'>&rarr;</span></a>
     </nav>
 
+    <button type='button' class='print-cta print-cta--large' onclick='window.print()' aria-label='Stampa il dossier della missione'>
+      <span class='print-cta__icon' aria-hidden='true'>🖨️</span>
+      <span class='print-cta__text'>STAMPA IL DOSSIER DELLA MISSIONE</span>
+    </button>
+
     <footer class='mb-dossier-footer'>
       <div class='mb-dossier-footer__col'>
         <span class='mb-dossier-footer__label'>Property of</span>
         <span class='mb-dossier-footer__value'>MURPH26 JOINT TRAINING OPERATIONS</span>
       </div>
       <div class='mb-dossier-footer__col mb-dossier-footer__col--center'>
-        <span class='mb-dossier-footer__label'>Document</span>
+        <span class='mb-dossier-footer__label'>Document ID</span>
         <span class='mb-dossier-footer__value'>M26-JTO-00</span>
       </div>
-      <div class='mb-dossier-footer__col mb-dossier-footer__col--right'>
+      <div class='mb-dossier-footer__col mb-dossier-footer__col--center'>
         <span class='mb-dossier-footer__label'>Page</span>
         <span class='mb-dossier-footer__value'>01 / 07</span>
+      </div>
+      <div class='mb-dossier-footer__col mb-dossier-footer__col--right'>
+        <span class='mb-dossier-footer__label'>Reference</span>
+        <span class='mb-dossier-footer__value'>M26-JTO-00-R01</span>
       </div>
     </footer>
   </main>
