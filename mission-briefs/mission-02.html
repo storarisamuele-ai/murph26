@@ -199,103 +199,78 @@
           <div class='mission-card-body'>
             <p class='mission-objective-copy'>Ogni Team riceve 4 Cargo Items. La distribuzione tra gli atleti è completamente libera. Non c'è distinzione uomo/donna. Se lo Standard scelto non è adatto al Team, utilizzare lo Standard inferiore.</p>
 
-            <div class='scaling-desktop'>
-              <table class='scaling-table js-scaling-table'>
+            <div class='scaling-desktop' style='width: 100%; max-width: 100%;'>
+              <table class='scaling-table js-scaling-table' style='width: 100%;'>
                 <thead>
                   <tr>
-                    <th class='scaling-exercise'>Item</th>
-                    <th>Performance 1</th>
-                    <th>Performance 2</th>
-                    <th>Fitness</th>
-                    <th>CrossFit</th>
+                    <th style='white-space: nowrap;'>Perf. 1</th>
+                    <th style='white-space: nowrap;'>Perf. 2</th>
+                    <th style='white-space: nowrap;'>Fitness</th>
+                    <th style='white-space: nowrap;'>CrossFit</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td class='scaling-exercise'>Item 1</td>
                     <td>1 × 32 kg KB</td>
                     <td>1 × 30 kg DB</td>
                     <td>1 × 17,5 kg DB</td>
                     <td>2 × 15 kg DB</td>
                   </tr>
                   <tr>
-                    <td class='scaling-exercise'>Item 2</td>
                     <td>1 × 24 kg KB</td>
                     <td>1 × 25 kg DB</td>
                     <td>2 × 16 kg KB</td>
                     <td>2 × 12 kg KB</td>
                   </tr>
                   <tr>
-                    <td class='scaling-exercise'>Item 3</td>
-                    <td>1 × 22,5 kg DB</td>
+                    <td>2 × 22,5 kg DB</td>
                     <td>1 × 24 kg KB</td>
                     <td>1 × 15 kg DB</td>
-                    <td>—</td>
+                    <td></td>
                   </tr>
                   <tr>
-                    <td class='scaling-exercise'>Item 4</td>
+                    <td></td>
                     <td>1 × 22,5 kg DB</td>
-                    <td>1 × 22,5 kg DB</td>
-                    <td>—</td>
-                    <td>—</td>
+                    <td></td>
+                    <td></td>
                   </tr>
                 </tbody>
               </table>
+            </div>
 
-              <div style='display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin: 1rem 0 0;'>
-                <div class='mission-example' style='margin-bottom: 0;'>
-                  <p class='mission-example-label'>Performance 1</p>
+            <div class='scaling-mobile'>
+              <details>
+                <summary class='mission-rule-title' style='font-family: "Bebas Neue", sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 400; letter-spacing: 0.05em; color: var(--white); text-align: left; line-height: 1; margin: 0 0 0.5rem; cursor: pointer; list-style: none;'>Perf. 1</summary>
+                <div class='mission-example' style='margin-bottom: 1rem;'>
                   <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 32 kg KB</p>
                   <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 24 kg KB</p>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 22,5 kg DB</p>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 22,5 kg DB</p>
+                  <p class='mission-objective-copy' style='margin-bottom: 0;'>2 × 22,5 kg DB</p>
                   <p class='mission-wod-note' style='margin-bottom: 0; margin-top: 0.5rem;'>Alternativa equivalente disponibile in base all'attrezzatura.</p>
                 </div>
-                <div class='mission-example' style='margin-bottom: 0;'>
-                  <p class='mission-example-label'>Performance 2</p>
+              </details>
+              <details>
+                <summary class='mission-rule-title' style='font-family: "Bebas Neue", sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 400; letter-spacing: 0.05em; color: var(--white); text-align: left; line-height: 1; margin: 0 0 0.5rem; cursor: pointer; list-style: none;'>Perf. 2</summary>
+                <div class='mission-example' style='margin-bottom: 1rem;'>
                   <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 30 kg DB</p>
                   <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 25 kg DB</p>
                   <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 24 kg KB</p>
                   <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 22,5 kg DB</p>
                   <p class='mission-wod-note' style='margin-bottom: 0; margin-top: 0.5rem;'>Alternativa equivalente disponibile in base all'attrezzatura.</p>
                 </div>
-              </div>
-            </div>
-
-            <div class='scaling-mobile'>
-              <details>
-                <summary class='mission-rule-title' style='font-family: "Bebas Neue", sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 400; letter-spacing: 0.05em; color: var(--white); text-align: left; line-height: 1; margin: 0 0 0.5rem; cursor: pointer; list-style: none;'>Performance 1</summary>
-                <div class='mission-example' style='margin-bottom: 1rem;'>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 1: 1 × 32 kg KB</p>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 2: 1 × 24 kg KB</p>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 3: 1 × 22,5 kg DB</p>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 4: 1 × 22,5 kg DB</p>
-                  <p class='mission-wod-note' style='margin-bottom: 0; margin-top: 0.5rem;'>Alternativa equivalente disponibile in base all'attrezzatura.</p>
-                </div>
-              </details>
-              <details>
-                <summary class='mission-rule-title' style='font-family: "Bebas Neue", sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 400; letter-spacing: 0.05em; color: var(--white); text-align: left; line-height: 1; margin: 0 0 0.5rem; cursor: pointer; list-style: none;'>Performance 2</summary>
-                <div class='mission-example' style='margin-bottom: 1rem;'>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 1: 1 × 30 kg DB</p>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 2: 1 × 25 kg DB</p>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 3: 1 × 24 kg KB</p>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 4: 1 × 22,5 kg DB</p>
-                  <p class='mission-wod-note' style='margin-bottom: 0; margin-top: 0.5rem;'>Alternativa equivalente disponibile in base all'attrezzatura.</p>
-                </div>
               </details>
               <details>
                 <summary class='mission-rule-title' style='font-family: "Bebas Neue", sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 400; letter-spacing: 0.05em; color: var(--white); text-align: left; line-height: 1; margin: 0 0 0.5rem; cursor: pointer; list-style: none;'>Fitness</summary>
                 <div class='mission-example' style='margin-bottom: 1rem;'>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 1: 1 × 17,5 kg DB</p>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 2: 2 × 16 kg KB</p>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 3: 1 × 15 kg DB</p>
+                  <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 17,5 kg DB</p>
+                  <p class='mission-objective-copy' style='margin-bottom: 0;'>2 × 16 kg KB</p>
+                  <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 15 kg DB</p>
                 </div>
               </details>
               <details>
                 <summary class='mission-rule-title' style='font-family: "Bebas Neue", sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 400; letter-spacing: 0.05em; color: var(--white); text-align: left; line-height: 1; margin: 0 0 0.5rem; cursor: pointer; list-style: none;'>CrossFit</summary>
                 <div class='mission-example' style='margin-bottom: 1rem;'>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 1: 2 × 15 kg DB</p>
-                  <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 2: 2 × 12 kg KB</p>
+                  <p class='mission-objective-copy' style='margin-bottom: 0;'>2 × 15 kg DB</p>
+                  <p class='mission-objective-copy' style='margin-bottom: 0;'>2 × 12 kg KB</p>
                 </div>
               </details>
             </div>
@@ -341,30 +316,30 @@
           <div class='mission-card-body'>
             <p class='mission-objective-copy'>Un atleta che non corre resta alla Base ed esegue una Missione Alternativa fino al ritorno del Team. La modifica è indipendente dallo Standard del Carico. La macchina può essere scelta in base all'atleta.</p>
 
-            <div class='mission-wod-headline' style='margin: 0.5rem 0 1rem; align-items: baseline;'>
-              <span class='wod-number'>4</span>
-              <span class='wod-label'>Deadlift</span>
-              <span class='wod-time' style='font-size: clamp(1.5rem, 3vw, 2.25rem); align-self: auto;'>+</span>
-              <span class='wod-label'>Assault Bike / SkiErg</span>
+            <div class='mission-wod-headline' style='margin: 0.5rem 0 1rem; align-items: baseline; width: 100%; max-width: 100%; min-width: 0;'>
+              <span class='wod-number' style='color: var(--cyan); min-width: 0; max-width: 100%;'>4</span>
+              <span class='wod-label' style='color: var(--cyan); min-width: 0; max-width: 100%;'>Deadlift</span>
+              <span class='wod-time' style='font-size: clamp(1.5rem, 3vw, 2.25rem); color: var(--cyan); align-self: baseline; line-height: 1; min-width: 0; max-width: 100%;'>+</span>
+              <span class='wod-label' style='min-width: 0; max-width: 100%;'>Assault Bike / SkiErg</span>
             </div>
 
             <p class='mission-wod-note'>Ogni 3:00, compreso lo 0:00. Continuare fino al ritorno del Team.</p>
 
             <p class='mission-rule-title' style='text-align: left; margin: 1rem 0 0.5rem;'>Carico Deadlift</p>
 
-            <div class='scaling-desktop'>
-              <table class='scaling-table js-scaling-table'>
+            <div class='scaling-desktop' style='width: 100%; max-width: 100%; min-width: 0;'>
+              <table class='scaling-table js-scaling-table' style='width: 100%; min-width: 0;'>
                 <thead>
                   <tr>
-                    <th class='scaling-exercise'></th>
-                    <th>Performance</th>
-                    <th>Fitness</th>
-                    <th>CrossFit</th>
+                    <th class='scaling-exercise' style='min-width: 0; width: 30%;'></th>
+                    <th style='white-space: nowrap;'>Performance</th>
+                    <th style='white-space: nowrap;'>Fitness</th>
+                    <th style='white-space: nowrap;'>CrossFit</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td class='scaling-exercise'>Deadlift Load</td>
+                    <td class='scaling-exercise' style='min-width: 0; width: 30%; white-space: normal;'>Deadlift Load</td>
                     <td>75 / 120 kg</td>
                     <td>55 / 90 kg</td>
                     <td>35 / 60 kg</td>
@@ -528,7 +503,7 @@
   </main>
 
   <script src='../js/mission-brief.js'></script>
-  <div class="print-document" aria-hidden="true">
+    <div class="print-document" aria-hidden="true">
     <section class="print-page">
     <header class="print-header">
       <div class="print-header-left">
@@ -707,103 +682,78 @@
               <div class='mission-card-body'>
                 <p class='mission-objective-copy'>Ogni Team riceve 4 Cargo Items. La distribuzione tra gli atleti è completamente libera. Non c'è distinzione uomo/donna. Se lo Standard scelto non è adatto al Team, utilizzare lo Standard inferiore.</p>
 
-                <div class='scaling-desktop'>
-                  <table class='scaling-table js-scaling-table'>
+                <div class='scaling-desktop' style='width: 100%; max-width: 100%;'>
+                  <table class='scaling-table js-scaling-table' style='width: 100%;'>
                     <thead>
                       <tr>
-                        <th class='scaling-exercise'>Item</th>
-                        <th>Performance 1</th>
-                        <th>Performance 2</th>
-                        <th>Fitness</th>
-                        <th>CrossFit</th>
+                        <th style='white-space: nowrap;'>Perf. 1</th>
+                        <th style='white-space: nowrap;'>Perf. 2</th>
+                        <th style='white-space: nowrap;'>Fitness</th>
+                        <th style='white-space: nowrap;'>CrossFit</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td class='scaling-exercise'>Item 1</td>
                         <td>1 × 32 kg KB</td>
                         <td>1 × 30 kg DB</td>
                         <td>1 × 17,5 kg DB</td>
                         <td>2 × 15 kg DB</td>
                       </tr>
                       <tr>
-                        <td class='scaling-exercise'>Item 2</td>
                         <td>1 × 24 kg KB</td>
                         <td>1 × 25 kg DB</td>
                         <td>2 × 16 kg KB</td>
                         <td>2 × 12 kg KB</td>
                       </tr>
                       <tr>
-                        <td class='scaling-exercise'>Item 3</td>
-                        <td>1 × 22,5 kg DB</td>
+                        <td>2 × 22,5 kg DB</td>
                         <td>1 × 24 kg KB</td>
                         <td>1 × 15 kg DB</td>
-                        <td>—</td>
+                        <td></td>
                       </tr>
                       <tr>
-                        <td class='scaling-exercise'>Item 4</td>
+                        <td></td>
                         <td>1 × 22,5 kg DB</td>
-                        <td>1 × 22,5 kg DB</td>
-                        <td>—</td>
-                        <td>—</td>
+                        <td></td>
+                        <td></td>
                       </tr>
                     </tbody>
                   </table>
+                </div>
 
-                  <div style='display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin: 1rem 0 0;'>
-                    <div class='mission-example' style='margin-bottom: 0;'>
-                      <p class='mission-example-label'>Performance 1</p>
+                <div class='scaling-mobile'>
+                  <details>
+                    <summary class='mission-rule-title' style='font-family: "Bebas Neue", sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 400; letter-spacing: 0.05em; color: var(--white); text-align: left; line-height: 1; margin: 0 0 0.5rem; cursor: pointer; list-style: none;'>Perf. 1</summary>
+                    <div class='mission-example' style='margin-bottom: 1rem;'>
                       <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 32 kg KB</p>
                       <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 24 kg KB</p>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 22,5 kg DB</p>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 22,5 kg DB</p>
+                      <p class='mission-objective-copy' style='margin-bottom: 0;'>2 × 22,5 kg DB</p>
                       <p class='mission-wod-note' style='margin-bottom: 0; margin-top: 0.5rem;'>Alternativa equivalente disponibile in base all'attrezzatura.</p>
                     </div>
-                    <div class='mission-example' style='margin-bottom: 0;'>
-                      <p class='mission-example-label'>Performance 2</p>
+                  </details>
+                  <details>
+                    <summary class='mission-rule-title' style='font-family: "Bebas Neue", sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 400; letter-spacing: 0.05em; color: var(--white); text-align: left; line-height: 1; margin: 0 0 0.5rem; cursor: pointer; list-style: none;'>Perf. 2</summary>
+                    <div class='mission-example' style='margin-bottom: 1rem;'>
                       <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 30 kg DB</p>
                       <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 25 kg DB</p>
                       <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 24 kg KB</p>
                       <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 22,5 kg DB</p>
                       <p class='mission-wod-note' style='margin-bottom: 0; margin-top: 0.5rem;'>Alternativa equivalente disponibile in base all'attrezzatura.</p>
                     </div>
-                  </div>
-                </div>
-
-                <div class='scaling-mobile'>
-                  <details>
-                    <summary class='mission-rule-title' style='font-family: "Bebas Neue", sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 400; letter-spacing: 0.05em; color: var(--white); text-align: left; line-height: 1; margin: 0 0 0.5rem; cursor: pointer; list-style: none;'>Performance 1</summary>
-                    <div class='mission-example' style='margin-bottom: 1rem;'>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 1: 1 × 32 kg KB</p>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 2: 1 × 24 kg KB</p>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 3: 1 × 22,5 kg DB</p>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 4: 1 × 22,5 kg DB</p>
-                      <p class='mission-wod-note' style='margin-bottom: 0; margin-top: 0.5rem;'>Alternativa equivalente disponibile in base all'attrezzatura.</p>
-                    </div>
-                  </details>
-                  <details>
-                    <summary class='mission-rule-title' style='font-family: "Bebas Neue", sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 400; letter-spacing: 0.05em; color: var(--white); text-align: left; line-height: 1; margin: 0 0 0.5rem; cursor: pointer; list-style: none;'>Performance 2</summary>
-                    <div class='mission-example' style='margin-bottom: 1rem;'>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 1: 1 × 30 kg DB</p>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 2: 1 × 25 kg DB</p>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 3: 1 × 24 kg KB</p>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 4: 1 × 22,5 kg DB</p>
-                      <p class='mission-wod-note' style='margin-bottom: 0; margin-top: 0.5rem;'>Alternativa equivalente disponibile in base all'attrezzatura.</p>
-                    </div>
                   </details>
                   <details>
                     <summary class='mission-rule-title' style='font-family: "Bebas Neue", sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 400; letter-spacing: 0.05em; color: var(--white); text-align: left; line-height: 1; margin: 0 0 0.5rem; cursor: pointer; list-style: none;'>Fitness</summary>
                     <div class='mission-example' style='margin-bottom: 1rem;'>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 1: 1 × 17,5 kg DB</p>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 2: 2 × 16 kg KB</p>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 3: 1 × 15 kg DB</p>
+                      <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 17,5 kg DB</p>
+                      <p class='mission-objective-copy' style='margin-bottom: 0;'>2 × 16 kg KB</p>
+                      <p class='mission-objective-copy' style='margin-bottom: 0;'>1 × 15 kg DB</p>
                     </div>
                   </details>
                   <details>
                     <summary class='mission-rule-title' style='font-family: "Bebas Neue", sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 400; letter-spacing: 0.05em; color: var(--white); text-align: left; line-height: 1; margin: 0 0 0.5rem; cursor: pointer; list-style: none;'>CrossFit</summary>
                     <div class='mission-example' style='margin-bottom: 1rem;'>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 1: 2 × 15 kg DB</p>
-                      <p class='mission-objective-copy' style='margin-bottom: 0;'>Item 2: 2 × 12 kg KB</p>
+                      <p class='mission-objective-copy' style='margin-bottom: 0;'>2 × 15 kg DB</p>
+                      <p class='mission-objective-copy' style='margin-bottom: 0;'>2 × 12 kg KB</p>
                     </div>
                   </details>
                 </div>
@@ -911,30 +861,30 @@
               <div class='mission-card-body'>
                 <p class='mission-objective-copy'>Un atleta che non corre resta alla Base ed esegue una Missione Alternativa fino al ritorno del Team. La modifica è indipendente dallo Standard del Carico. La macchina può essere scelta in base all'atleta.</p>
 
-                <div class='mission-wod-headline' style='margin: 0.5rem 0 1rem; align-items: baseline;'>
-                  <span class='wod-number'>4</span>
-                  <span class='wod-label'>Deadlift</span>
-                  <span class='wod-time' style='font-size: clamp(1.5rem, 3vw, 2.25rem); align-self: auto;'>+</span>
-                  <span class='wod-label'>Assault Bike / SkiErg</span>
+                <div class='mission-wod-headline' style='margin: 0.5rem 0 1rem; align-items: baseline; width: 100%; max-width: 100%; min-width: 0;'>
+                  <span class='wod-number' style='color: var(--cyan); min-width: 0; max-width: 100%;'>4</span>
+                  <span class='wod-label' style='color: var(--cyan); min-width: 0; max-width: 100%;'>Deadlift</span>
+                  <span class='wod-time' style='font-size: clamp(1.5rem, 3vw, 2.25rem); color: var(--cyan); align-self: baseline; line-height: 1; min-width: 0; max-width: 100%;'>+</span>
+                  <span class='wod-label' style='min-width: 0; max-width: 100%;'>Assault Bike / SkiErg</span>
                 </div>
 
                 <p class='mission-wod-note'>Ogni 3:00, compreso lo 0:00. Continuare fino al ritorno del Team.</p>
 
                 <p class='mission-rule-title' style='text-align: left; margin: 1rem 0 0.5rem;'>Carico Deadlift</p>
 
-                <div class='scaling-desktop'>
-                  <table class='scaling-table js-scaling-table'>
+                <div class='scaling-desktop' style='width: 100%; max-width: 100%; min-width: 0;'>
+                  <table class='scaling-table js-scaling-table' style='width: 100%; min-width: 0;'>
                     <thead>
                       <tr>
-                        <th class='scaling-exercise'></th>
-                        <th>Performance</th>
-                        <th>Fitness</th>
-                        <th>CrossFit</th>
+                        <th class='scaling-exercise' style='min-width: 0; width: 30%;'></th>
+                        <th style='white-space: nowrap;'>Performance</th>
+                        <th style='white-space: nowrap;'>Fitness</th>
+                        <th style='white-space: nowrap;'>CrossFit</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td class='scaling-exercise'>Deadlift Load</td>
+                        <td class='scaling-exercise' style='min-width: 0; width: 30%; white-space: normal;'>Deadlift Load</td>
                         <td>75 / 120 kg</td>
                         <td>55 / 90 kg</td>
                         <td>35 / 60 kg</td>
