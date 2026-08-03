@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang='it'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Mission 01 — Alpha Assemble | Field Scorecard</title>
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
+  <style>
+    :root {
+      --black: #000000;
+      --white: #ffffff;
+      --grey: #f0f0f0;
+      --line: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1a1a1a;
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .scorecard-page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 15mm;
+      background-color: var(--white);
+      box-shadow: 0 0 0 1px #ccc;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    @media print {
+      body {
+        background-color: var(--white);
+      }
+
+      .scorecard-page {
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+      }
+    }
+
+    .sc-header {
+      border-bottom: 1.5pt solid var(--line);
+      padding-bottom: 0.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .sc-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.08em;
+      line-height: 1;
+    }
+
+    .sc-unit {
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #333;
+      margin-bottom: 0.4rem;
+    }
+
+    .sc-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .sc-mission {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .sc-doc-id,
+    .sc-reference {
+      font-family: 'Courier New', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #222;
+    }
+
+    .sc-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      margin-top: 0.2rem;
+      line-height: 1;
+    }
+
+    .sc-presc {
+      border: 1pt solid var(--line);
+      padding: 0.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+
+    .sc-presc-main {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.03em;
+      line-height: 1;
+    }
+
+    .sc-presc-sub {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .sc-presc-flow {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem;
+      line-height: 1;
+    }
+
+    .sc-presc-note {
+      grid-column: 1 / -1;
+      font-size: 0.65rem;
+      line-height: 1.4;
+      color: #222;
+    }
+
+    .sc-grid {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 0.7rem;
+      margin: 0.4rem 0;
+    }
+
+    .sc-grid thead th {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: left;
+      border-bottom: 1.5pt solid var(--line);
+      border-top: 1pt solid var(--line);
+      padding: 0.3rem 0.25rem;
+      background-color: var(--white);
+      height: 1cm;
+      vertical-align: middle;
+    }
+
+    .sc-grid tbody tr {
+      border-bottom: 1pt solid #aaa;
+    }
+
+    .sc-grid tbody tr:nth-child(even) td {
+      background-color: var(--grey);
+    }
+
+    .sc-grid td {
+      height: 1.2cm;
+      padding: 0.2rem 0.25rem;
+      vertical-align: middle;
+      border-right: 0.5pt solid #ddd;
+    }
+
+    .sc-grid td:last-child,
+    .sc-grid th:last-child {
+      border-right: none;
+    }
+
+    .sc-grid .col-block { width: 9%; }
+    .sc-grid .col-athlete { width: 18%; }
+    .sc-grid .col-declared { width: 13%; }
+    .sc-grid .col-burpees { width: 12%; }
+    .sc-grid .col-row { width: 20%; }
+    .sc-grid .col-total { width: 28%; }
+
+    .sc-total-row {
+      font-weight: 700;
+      border-top: 1.5pt solid var(--line);
+      border-bottom: 1.5pt solid var(--line);
+    }
+
+    .sc-total-row td {
+      background-color: #e0e0e0;
+      height: 1cm;
+    }
+
+    .sc-result-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.5rem;
+      border: 1pt solid var(--line);
+      padding: 0.5rem;
+      margin: 0.2rem 0;
+    }
+
+    .sc-result-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .sc-result-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .sc-result-value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.03em;
+    }
+
+    .sc-result-line {
+      border-bottom: 1pt solid var(--line);
+      min-height: 1rem;
+      margin-top: 0.1rem;
+    }
+
+    .sc-team {
+      border: 1pt solid var(--line);
+      padding: 0.5rem;
+    }
+
+    .sc-team-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #333;
+      margin-bottom: 0.2rem;
+    }
+
+    .sc-team-line {
+      border-bottom: 1pt solid var(--line);
+      min-height: 1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .sc-operators {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .sc-operator {
+      display: flex;
+      gap: 0.25rem;
+      align-items: baseline;
+      font-size: 0.75rem;
+    }
+
+    .sc-operator-num {
+      font-weight: 600;
+      min-width: 1rem;
+    }
+
+    .sc-honor {
+      border: 1pt solid var(--line);
+      padding: 0.5rem;
+    }
+
+    .sc-honor-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .sc-honor-text {
+      font-size: 0.65rem;
+      line-height: 1.4;
+      color: #222;
+      margin-bottom: 0.4rem;
+    }
+
+    .sc-honor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .sc-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1pt solid var(--line);
+      padding-top: 0.3rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .sc-footer-left {
+      max-width: 60%;
+    }
+  </style>
+</head>
+<body>
+  <main class='scorecard-page'>
+    <header class='sc-header'>
+      <div class='sc-unit'>Joint Training Operations</div>
+      <div class='sc-brand'>MURPH26</div>
+      <div class='sc-meta-row'>
+        <div>
+          <div class='sc-mission'>MISSION 01 — ALPHA / ASSEMBLE</div>
+          <div class='sc-title'>FIELD SCORECARD</div>
+        </div>
+        <div>
+          <div class='sc-doc-id'>Document ID: M26-JTO-01-SC</div>
+          <div class='sc-reference'>Reference: M26-JTO-01-R01</div>
+        </div>
+      </div>
+    </header>
+
+    <section class='sc-presc'>
+      <div>
+        <div class='sc-presc-main'>10.000 M ROW</div>
+        <div class='sc-presc-sub'>For Time · Team Total</div>
+      </div>
+      <div class='sc-presc-flow'>
+        <span>DECLARE</span>
+        <span>→</span>
+        <span>BURPEES</span>
+        <span>→</span>
+        <span>ROW</span>
+        <span>→</span>
+        <span>CHANGE</span>
+      </div>
+      <div class='sc-presc-note'>
+        1 Burpee Over the Rower every 100 m declared. Blocks must be multiples of 100 m. Declaration happens before Burpees.
+      </div>
+    </section>
+
+    <table class='sc-grid'>
+      <thead>
+        <tr>
+          <th class='col-block'>BLOCK</th>
+          <th class='col-athlete'>ATHLETE</th>
+          <th class='col-declared'>DECLARED</th>
+          <th class='col-burpees'>BURPEES</th>
+          <th class='col-row'>ROW COMPLETED</th>
+          <th class='col-total'>CUMULATIVE TOTAL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>01</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>02</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>03</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>04</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>05</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>06</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>07</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>08</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>09</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>10</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>11</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>12</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr class='sc-total-row'>
+          <td colspan='5'>TOTAL ROW</td>
+          <td>10.000 M</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section class='sc-result-row'>
+      <div class='sc-result-item'>
+        <div class='sc-result-label'>Completion Time</div>
+        <div class='sc-result-line'></div>
+      </div>
+      <div class='sc-result-item'>
+        <div class='sc-result-label'>Number of Blocks</div>
+        <div class='sc-result-line'></div>
+      </div>
+      <div class='sc-result-item'>
+        <div class='sc-result-label'>Team Total</div>
+        <div class='sc-result-value'>10.000 M</div>
+      </div>
+    </section>
+
+    <section class='sc-team'>
+      <div class='sc-team-label'>TEAM NAME</div>
+      <div class='sc-team-line'></div>
+      <div class='sc-team-label'>OPERATORS</div>
+      <div class='sc-operators'>
+        <div class='sc-operator'><span class='sc-operator-num'>1.</span><span class='sc-team-line' style='flex:1; margin:0;'></span></div>
+        <div class='sc-operator'><span class='sc-operator-num'>2.</span><span class='sc-team-line' style='flex:1; margin:0;'></span></div>
+        <div class='sc-operator'><span class='sc-operator-num'>3.</span><span class='sc-team-line' style='flex:1; margin:0;'></span></div>
+        <div class='sc-operator'><span class='sc-operator-num'>4.</span><span class='sc-team-line' style='flex:1; margin:0;'></span></div>
+      </div>
+    </section>
+
+    <section class='sc-honor'>
+      <div class='sc-honor-title'>HONOR CODE</div>
+      <div class='sc-honor-text'>
+        The Team confirms that all declared distances, Burpees and completed Row meters have been recorded according to the Mission protocol. No judge is required.
+      </div>
+      <div class='sc-honor-grid'>
+        <div>
+          <div class='sc-team-label'>TEAM REPRESENTATIVE</div>
+          <div class='sc-team-line'></div>
+        </div>
+        <div>
+          <div class='sc-team-label'>SIGNATURE</div>
+          <div class='sc-team-line'></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class='sc-footer'>
+      <div class='sc-footer-left'>M26-JTO-01-SC · MISSION ALPHA · FIELD SCORECARD</div>
+      <div>Page 1 / 1</div>
+    </footer>
+  </main>
+</body>
+</html>

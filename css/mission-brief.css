@@ -209,18 +209,28 @@ img {
 
 /* Semantic section classes — reusable across MB01-MB04 */
 .mission-card--info {
-  border-left-color: var(--blue);
+  --section-accent: var(--blue);
+  border-left-color: var(--section-accent);
   background: rgba(6, 148, 185, 0.05);
 }
 
 .mission-card--critical {
-  border-left-color: var(--pink);
+  --section-accent: var(--pink);
+  border-left-color: var(--section-accent);
   background: rgba(231, 41, 112, 0.05);
 }
 
 .mission-card--info .mission-card-title,
 .mission-card--critical .mission-card-title {
   color: var(--white);
+}
+
+.mission-card--info .mission-card-icon {
+  color: var(--section-accent);
+}
+
+.mission-card--critical .mission-card-icon {
+  filter: sepia(1) saturate(5) hue-rotate(270deg) brightness(0.78) contrast(1.15);
 }
 
 .mission-card--full {
@@ -1381,11 +1391,14 @@ img {
   gap: 0.5rem;
   margin: 0 0 1rem;
   text-align: center;
+  max-width: 100%;
+  min-width: 0;
 }
 
 @media (min-width: 600px) {
   .mission-flow {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: left;
   }
@@ -1400,7 +1413,10 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   padding: 0.6rem 1rem;
-  min-width: 100px;
+  min-width: 0;
+  max-width: 100%;
+  flex: 1 1 0;
+  word-break: break-word;
 }
 
 .flow-step--sm {
@@ -1416,6 +1432,11 @@ img {
   font-size: 1.25rem;
   line-height: 1;
   color: var(--blue);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 0;
 }
 
 .flow-arrow--desktop {
@@ -1424,12 +1445,57 @@ img {
 
 @media (min-width: 600px) {
   .flow-arrow--desktop {
-    display: inline;
+    display: inline-flex;
   }
 
   .flow-arrow--mobile {
     display: none;
   }
+}
+
+.mission-example {
+  container-type: inline-size;
+  container-name: example;
+}
+
+@container example (max-width: 249px) {
+  .mission-example .mission-flow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mission-example .flow-arrow--desktop {
+    display: none;
+  }
+
+  .mission-example .flow-arrow--mobile {
+    display: inline-flex;
+  }
+}
+
+@container example (min-width: 250px) {
+  .mission-example .mission-flow {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .mission-example .flow-arrow--desktop {
+    display: inline-flex;
+  }
+
+  .mission-example .flow-arrow--mobile {
+    display: none;
+  }
+}
+
+.mission-wod-headline,
+.mission-wod-note,
+.mission-important,
+.mission-example,
+.mission-rule-box,
+.mission-example-label {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .mission-workout-grid {
@@ -1522,7 +1588,27 @@ img {
 .scorecard-web {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.9);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.scorecard-link {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.scorecard-link:hover {
+  background-color: var(--blue);
+  color: var(--black);
 }
 
 .print-scorecard {
