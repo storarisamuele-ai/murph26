@@ -53,6 +53,24 @@ PAGE_ALLOCATIONS = {
             "MISSION COMPLETION",
         ],
     ],
+    "mission-03": [
+        [
+            "MISSION IDENTIFICATION",
+            "MISSION OBJECTIVE",
+            "MISSION WORKOUT",
+            "AUTHORIZED STANDARDS",
+        ],
+        [
+            "MISSION EXECUTION",
+            "TEAM FLOW",
+        ],
+        [
+            "MISSION HAZARDS",
+            "MISSION INTEL",
+            "SCORECARD",
+            "MISSION COMPLETION",
+        ],
+    ],
 }
 
 
@@ -187,7 +205,7 @@ def allocate_cards(
 ) -> list[list[tuple[str, str]]]:
     plan = PAGE_ALLOCATIONS.get(mission_name)
     # Cards that should never appear in the printable dossier
-    skip = {"scorecard", "authorized standards"}
+    skip = set()
     cards = [(t, h) for t, h in cards if t.strip().casefold() not in skip]
     if not plan:
         # Fallback: one card per page in order
