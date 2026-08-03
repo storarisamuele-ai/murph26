@@ -791,3 +791,99 @@ body[data-mission="mission-02"] .mission-card .scaling-table th {
 body[data-mission="mission-02"] .print-footer {
   font-size: 6.5pt;
 }
+
+/* MB03 — QA print overrides */
+body[data-mission="mission-03"] .mission-card--scorecard {
+  display: block;
+}
+
+body[data-mission="mission-03"] .scorecard-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+
+body[data-mission="mission-03"] .scorecard-list--atlas {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+body[data-mission="mission-03"] .scorecard-list--burpee {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+body[data-mission="mission-03"] .scorecard-item {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.1rem 0.2rem;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 7.5pt;
+}
+
+body[data-mission="mission-03"] .scorecard-box {
+  color: #000;
+  font-size: 9pt;
+}
+
+body[data-mission="mission-03"] .scorecard-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 9pt;
+}
+
+body[data-mission="mission-03"] .mission-flow--vertical,
+body[data-mission="mission-03"] .mission-flow--completion {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+body[data-mission="mission-03"] .mission-flow--vertical .flow-step,
+body[data-mission="mission-03"] .mission-flow--completion .flow-step {
+  flex: 0 0 auto;
+  width: 240px;
+  max-width: 100%;
+  padding: 0.4rem 0.6rem;
+  min-height: 2rem;
+}
+
+body[data-mission="mission-03"] .flow-operator {
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 12pt;
+  color: #000;
+  background: transparent;
+  border: none;
+}
+
+body[data-mission="mission-03"] .team-flow-row {
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0;
+}
+
+body[data-mission="mission-03"] .team-flow-athlete,
+body[data-mission="mission-03"] .team-flow-action {
+  padding: 0.25rem 0.5rem;
+  min-width: 2.5rem;
+  font-size: 9pt;
+}
+
+body[data-mission="mission-03"] .team-flow-action--movement {
+  color: #000;
+  border-color: #000;
+  background: transparent;
+}
+
+body[data-mission="mission-03"] .team-flow-rep {
+  color: #000;
+  margin: 0 0 0.25rem;
+}
+
+body[data-mission="mission-03"] .team-flow-arrow {
+  color: #000;
+  font-size: 10pt;
+}
