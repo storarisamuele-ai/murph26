@@ -1791,6 +1791,13 @@ img {
   .mission-card .scaling-mobile {
     display: flex;
   }
+
+  .mission-archive {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    align-self: stretch;
+  }
 }
 
 /* Classified overlay */
