@@ -68,13 +68,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   initMissionScaling();
+  initMissionSectionHeaders();
+  initMissionArchiveLink();
 });
+
+function initMissionSectionHeaders() {
+  const isPrint = document.body.classList.contains('print-document') || document.querySelector('.print-document') !== null;
+  if (isPrint) return;
+
+  const content = document.querySelector('.mission-content') || document.querySelector('.mission-brief-body');
+  if (!content) return;
+
+  const cards = Array.from(content.querySelectorAll('.mission-card')).filter((card) => {
+    if (card.classList.contains('mission-card--scorecard')) return false;
+    if (card.closest('.print-document')) return false;
+    return true;
+  });
+
+  cards.forEach((card, index) => {
+    const title = card.querySelector('.mission-card-title');
+    if (!title) return;
+    const num = String(index + 1).padStart(2, '0');
+    const ref = document.createElement('span');
+    ref.className = 'mission-section-ref';
+    ref.textContent = `SECT. ${num} — REF JTO-${num}`;
+    title.insertBefore(ref, title.firstChild);
+  });
+}
+
+function initMissionArchiveLink() {
+  const archiveLink = document.querySelector('.dossier-nav__archive');
+  if (!archiveLink) return;
+
+  const pathMatch = window.location.pathname.match(/mission-(\d{2})\.html$/);
+  const current = pathMatch ? parseInt(pathMatch[1], 10) : null;
+
+  if (current === 0) {
+    archiveLink.style.display = 'none';
+    archiveLink.setAttribute('aria-hidden', 'true');
+  } else {
+    archiveLink.setAttribute('href', 'mission-00.html');
+  }
+}
 
 function initMissionScaling() {
   const tables = document.querySelectorAll('.js-scaling-table');
   if (!tables.length) return;
 
   tables.forEach((table) => {
+    if (table.classList.contains('mb03-scaling-table')) return;
     const desktop = table.closest('.scaling-desktop');
     const existing = desktop ? desktop.nextElementSibling : table.nextElementSibling;
     if (existing && existing.classList.contains('scaling-mobile')) return;

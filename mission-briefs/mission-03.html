@@ -171,13 +171,20 @@
             <p class='mission-rule-title' style='color: var(--blue); text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0.5rem 0 0.25rem;'>Part B — Burpee Broad Jump</p>
             <p class='mission-objective-copy' style='margin: 0 0 0.5rem;'>Burpee Broad Jump a staffetta. Percorso organizzato in blocchi da 12 m.</p>
 
-            <p class='mission-rule-title' style='color: var(--blue); text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0.75rem 0 0.25rem;'>Mission Flow</p>
-            <div class='mission-flow mission-flow--mb03 mission-flow--vertical'>
-              <div class='flow-step'>DUAL BOX OVER</div>
-              <span class='flow-arrow' aria-hidden='true'>↓</span>
-              <div class='flow-step'>BURPEE BROAD JUMP</div>
-              <span class='flow-arrow' aria-hidden='true'>↓</span>
-              <div class='flow-step'>MISSION COMPLETE</div>
+            <div class='mission-workout-flow'>
+              <div class='workout-part'>
+                <span class='workout-part-label'>Part A</span>
+                <span class='workout-part-action'>DUAL BOX OVER</span>
+              </div>
+              <span class='workout-arrow' aria-hidden='true'>→</span>
+              <div class='workout-part'>
+                <span class='workout-part-label'>Part B</span>
+                <span class='workout-part-action'>BURPEE BROAD JUMP</span>
+              </div>
+              <span class='workout-arrow' aria-hidden='true'>→</span>
+              <div class='workout-part workout-part--final'>
+                <span class='workout-part-action'>MISSION COMPLETE</span>
+              </div>
             </div>
 
             <p class='mission-rule-title' style='margin-top: 1rem;'>Mission Rule</p>
@@ -195,81 +202,43 @@
             <p class='mission-objective-copy' style='margin-bottom: 1rem;'>Le seguenti prescrizioni dipendono dallo Standard scelto dal Team. Atlante, reps, altezza Box e distanza Burpee sono tutti definiti nella tabella.</p>
 
             <div class='scaling-desktop' style='width: 100%; max-width: 100%;'>
-              <table class='scaling-table js-scaling-table' style='width: 100%;'>
+              <table class='scaling-table mb03-scaling-table js-scaling-table' style='width: 100%;'>
                 <thead>
                   <tr>
-                    <th style='white-space: nowrap;'>Standard</th>
-                    <th style='white-space: nowrap;'>Atlas</th>
-                    <th style='white-space: nowrap;'>Dual Box Over</th>
-                    <th style='white-space: nowrap;'>Box Height</th>
-                    <th style='white-space: nowrap;'>Burpee Broad Jump</th>
+                    <th style='width: 25%;'></th>
+                    <th style='width: 25%;'>Performance</th>
+                    <th style='width: 25%;'>Fitness</th>
+                    <th style='width: 25%;'>CrossFit</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Performance</td>
+                    <td><span class='table-icon' aria-hidden='true'>🪨</span> Atlas</td>
                     <td>30 kg</td>
-                    <td>240 reps</td>
-                    <td>50 cm</td>
-                    <td>120 m</td>
-                  </tr>
-                  <tr>
-                    <td>Fitness</td>
                     <td>20 kg</td>
-                    <td>240 reps</td>
-                    <td>50 cm</td>
-                    <td>120 m</td>
+                    <td>15 kg</td>
                   </tr>
                   <tr>
-                    <td>CrossFit</td>
-                    <td>15 kg</td>
+                    <td><span class='table-icon' aria-hidden='true'>📦</span> Dual Box Over</td>
                     <td>240 reps</td>
+                    <td>240 reps</td>
+                    <td>240 reps</td>
+                  </tr>
+                  <tr>
+                    <td><span class='table-icon' aria-hidden='true'>📏</span> Box Height</td>
                     <td>50 cm</td>
+                    <td>50 cm</td>
+                    <td>50 cm</td>
+                  </tr>
+                  <tr>
+                    <td><span class='table-icon' aria-hidden='true'>🐸</span> BBJ</td>
+                    <td>120 m</td>
+                    <td>120 m</td>
                     <td>120 m</td>
                   </tr>
                 </tbody>
               </table>
-            </div>
-
-            <div class='scaling-mobile'>
-              <div class='accordion'>
-                <details class='accordion-item'>
-                  <summary class='accordion-header'>
-                    <span class='accordion-title'>Performance</span>
-                    <span class='accordion-toggle' aria-hidden='true'></span>
-                  </summary>
-                  <div class='accordion-content'>
-                    <p class='mission-objective-copy' style='margin-bottom: 0;'>Atlas: 30 kg</p>
-                    <p class='mission-objective-copy' style='margin-bottom: 0;'>Dual Box Over: 240 reps</p>
-                    <p class='mission-objective-copy' style='margin-bottom: 0;'>Box Height: 50 cm</p>
-                    <p class='mission-objective-copy' style='margin-bottom: 0;'>Burpee: 120 m</p>
-                  </div>
-                </details>
-                <details class='accordion-item'>
-                  <summary class='accordion-header'>
-                    <span class='accordion-title'>Fitness</span>
-                    <span class='accordion-toggle' aria-hidden='true'></span>
-                  </summary>
-                  <div class='accordion-content'>
-                    <p class='mission-objective-copy' style='margin-bottom: 0;'>Atlas: 20 kg</p>
-                    <p class='mission-objective-copy' style='margin-bottom: 0;'>Dual Box Over: 240 reps</p>
-                    <p class='mission-objective-copy' style='margin-bottom: 0;'>Box Height: 50 cm</p>
-                    <p class='mission-objective-copy' style='margin-bottom: 0;'>Burpee: 120 m</p>
-                  </div>
-                </details>
-                <details class='accordion-item'>
-                  <summary class='accordion-header'>
-                    <span class='accordion-title'>CrossFit</span>
-                    <span class='accordion-toggle' aria-hidden='true'></span>
-                  </summary>
-                  <div class='accordion-content'>
-                    <p class='mission-objective-copy' style='margin-bottom: 0;'>Atlas: 15 kg</p>
-                    <p class='mission-objective-copy' style='margin-bottom: 0;'>Dual Box Over: 240 reps</p>
-                    <p class='mission-objective-copy' style='margin-bottom: 0;'>Box Height: 50 cm</p>
-                    <p class='mission-objective-copy' style='margin-bottom: 0;'>Burpee: 120 m</p>
-                  </div>
-                </details>
-              </div>
+              <p class='mission-legend' style='margin: 0.5rem 0 0; font-size: 0.75rem; color: rgba(255,255,255,0.55);'>BBJ = Burpee Broad Jump</p>
             </div>
 
             <div class='mission-example' style='margin-top: 1rem; margin-bottom: 0;'>
@@ -319,30 +288,48 @@
             <h2 class='mission-card-title'>TEAM FLOW</h2>
           </header>
           <div class='mission-card-body'>
-            <div class='team-flow'>
+            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Rep Definition</p>
+            <div class='team-flow team-flow--rep'>
               <div class='team-flow-row'>
                 <div class='team-flow-athlete'>P1</div>
                 <span class='team-flow-arrow' aria-hidden='true'>→</span>
                 <span class='team-flow-action team-flow-action--movement'>DUAL BOX OVER</span>
                 <span class='team-flow-arrow' aria-hidden='true'>→</span>
                 <div class='team-flow-athlete'>P2</div>
-              </div>
-              <p class='team-flow-rep'>+1 REP</p>
-
-              <div class='team-flow-row'>
-                <div class='team-flow-athlete'>P2</div>
-                <span class='team-flow-arrow' aria-hidden='true'>→</span>
-                <span class='team-flow-action team-flow-action--movement'>DUAL BOX OVER</span>
-                <span class='team-flow-arrow' aria-hidden='true'>→</span>
-                <div class='team-flow-athlete'>P1</div>
               </div>
               <p class='team-flow-rep'>+1 REP</p>
             </div>
+            <p class='mission-objective-copy' style='margin: 0.75rem 0 1.25rem;'>Ogni attraversamento completo dei due Box vale 1 rep.</p>
 
-            <p class='mission-objective-copy' style='margin: 1rem 0;'>Ogni atleta attraversa entrambi i Box completamente. Il passaggio continua secondo la strategia del Team.</p>
-
-            <p class='mission-rule-title' style='text-align: left; margin: 0 0 0.5rem;'>Critical Rule</p>
-            <p class='mission-important' style='margin-bottom: 0;'><strong>OGNI DUAL BOX OVER COMPLETO = 1 REP.</strong> Attraversare entrambi i Box e scendere completamente dal lato opposto completa una ripetizione. Se l'Atlas attraversa nuovamente entrambi i Box nella direzione opposta, viene completata una nuova rep.</p>
+            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Suggested Flow</p>
+            <div class='rotation-flow'>
+              <div class='rotation-card'>
+                <span class='rotation-label'>CARD 01</span>
+                <div class='rotation-teams'>P1 <span class='rotation-arrow' aria-hidden='true'>→</span> P2</div>
+                <div class='rotation-move'>DUAL BOX OVER</div>
+                <p class='rotation-rep'>+1 REP</p>
+              </div>
+              <div class='rotation-card'>
+                <span class='rotation-label'>CARD 02</span>
+                <div class='rotation-teams'>P2 <span class='rotation-arrow' aria-hidden='true'>→</span> P3</div>
+                <div class='rotation-move'>DUAL BOX OVER</div>
+                <p class='rotation-rep'>+1 REP</p>
+              </div>
+              <div class='rotation-card'>
+                <span class='rotation-label'>CARD 03</span>
+                <div class='rotation-teams'>P3 <span class='rotation-arrow' aria-hidden='true'>→</span> P4</div>
+                <div class='rotation-move'>DUAL BOX OVER</div>
+                <p class='rotation-rep'>+1 REP</p>
+              </div>
+              <div class='rotation-card'>
+                <span class='rotation-label'>CARD 04</span>
+                <div class='rotation-teams'>P4 <span class='rotation-arrow' aria-hidden='true'>→</span> P1</div>
+                <div class='rotation-move'>DUAL BOX OVER</div>
+                <p class='rotation-rep'>+1 REP</p>
+              </div>
+            </div>
+            <p class='rotation-summary'>1 FULL ROTATION = +4 REPS <span class='rotation-loop' aria-hidden='true'>REPEAT →</span></p>
+            <p class='mission-objective-copy' style='margin: 0.75rem 0 0;'>Ciclo operativo consigliato. Il Team può organizzare i passaggi in base alla strategia.</p>
           </div>
         </article>
 
@@ -353,38 +340,68 @@
             <h2 class='mission-card-title'>MISSION HAZARDS</h2>
           </header>
           <div class='mission-card-body'>
-            <ul class='mission-hazard-list'>
-              <li>
-                <span class='hazard-icon' aria-hidden='true'>!</span>
-                <strong class='hazard-title'>Heat</strong>
-                <span class='hazard-description'>— CHARLIE parte alle 14:30, nel momento più caldo. Il workout è costruito per evitare la corsa e il sole diretto. HYDRATE BEFORE DEPLOYMENT.</span>
-              </li>
-              <li>
-                <span class='hazard-icon' aria-hidden='true'>!</span>
-                <strong class='hazard-title'>Box Footwork</strong>
-                <span class='hazard-description'>— Con la fatica aumenta il rischio di perdere precisione nella salita e nella discesa. CONTROL &gt; SPEED. Niente salti inutili dalle strutture.</span>
-              </li>
-              <li>
-                <span class='hazard-icon' aria-hidden='true'>!</span>
-                <strong class='hazard-title'>Atlas Control</strong>
-                <span class='hazard-description'>— L'Atlas deve essere sempre sotto controllo. La consegna tra compagni deve essere deliberata. Non lanciare o lasciare cadere la Stone.</span>
-              </li>
-              <li>
-                <span class='hazard-icon' aria-hidden='true'>!</span>
-                <strong class='hazard-title'>Lower Back Fatigue</strong>
-                <span class='hazard-description'>— 240 reps significano molte esposizioni all'Atlas. Distribuire il lavoro prima che la qualità del movimento inizi a deteriorarsi.</span>
-              </li>
-              <li>
-                <span class='hazard-icon' aria-hidden='true'>!</span>
-                <strong class='hazard-title'>Burpee Broad Jump Pacing</strong>
-                <span class='hazard-description'>— 120 metri sembrano pochi sulla carta. Non lo saranno dopo i Dual Box Over. Evitare partenze aggressive sui primi blocchi.</span>
-              </li>
-              <li>
-                <span class='hazard-icon' aria-hidden='true'>!</span>
-                <strong class='hazard-title'>Team Traffic</strong>
-                <span class='hazard-description'>— Con più Team e due Box per lane, ciascun Team deve rispettare la propria area operativa. Lasciare libera la traiettoria dell'atleta successivo.</span>
-              </li>
-            </ul>
+            <div class='hazard-accordion'>
+              <details class='hazard-accordion-item'>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>Heat</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>CHARLIE parte alle 14:30, nel momento più caldo. Il workout è costruito per evitare la corsa e il sole diretto. HYDRATE BEFORE DEPLOYMENT.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item'>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>Box Footwork</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>Con la fatica aumenta il rischio di perdere precisione nella salita e nella discesa. CONTROL &gt; SPEED. Niente salti inutili dalle strutture.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item'>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>Atlas Control</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>L'Atlas deve essere sempre sotto controllo. La consegna tra compagni deve essere deliberata. Non lanciare o lasciare cadere la Stone.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item'>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>Lower Back Fatigue</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>240 reps significano molte esposizioni all'Atlas. Distribuire il lavoro prima che la qualità del movimento inizi a deteriorarsi.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item'>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>Burpee Broad Jump Pacing</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>120 metri sembrano pochi sulla carta. Non lo saranno dopo i Dual Box Over. Evitare partenze aggressive sui primi blocchi.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item'>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>Team Traffic</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>Con più Team e due Box per lanes, ciascun Team deve rispettare la propria area operativa. Lasciare libera la traiettoria dell'atleta successivo.</p>
+                </div>
+              </details>
+            </div>
           </div>
         </article>
 
@@ -466,11 +483,7 @@
             <div class='mission-flow mission-flow--mb03 mission-flow--completion'>
               <div class='flow-step'>DUAL BOX OVER</div>
               <span class='flow-arrow' aria-hidden='true'>↓</span>
-              <div class='flow-operator' aria-hidden='true'>+</div>
-              <span class='flow-arrow' aria-hidden='true'>↓</span>
               <div class='flow-step'>BURPEE BROAD JUMP</div>
-              <span class='flow-arrow' aria-hidden='true'>↓</span>
-              <div class='flow-operator' aria-hidden='true'>=</div>
               <span class='flow-arrow' aria-hidden='true'>↓</span>
               <div class='flow-step'>MISSION COMPLETE</div>
             </div>
@@ -516,7 +529,7 @@
   </main>
 
   <script src='../js/mission-brief.js'></script>
-      <div class="print-document" aria-hidden="true">
+            <div class="print-document" aria-hidden="true">
     <section class="print-page">
     <header class="print-header">
       <div class="print-header-left">
@@ -608,13 +621,20 @@
                 <p class='mission-rule-title' style='color: var(--blue); text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0.5rem 0 0.25rem;'>Part B — Burpee Broad Jump</p>
                 <p class='mission-objective-copy' style='margin: 0 0 0.5rem;'>Burpee Broad Jump a staffetta. Percorso organizzato in blocchi da 12 m.</p>
 
-                <p class='mission-rule-title' style='color: var(--blue); text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0.75rem 0 0.25rem;'>Mission Flow</p>
-                <div class='mission-flow mission-flow--mb03 mission-flow--vertical'>
-                  <div class='flow-step'>DUAL BOX OVER</div>
-                  <span class='flow-arrow' aria-hidden='true'>↓</span>
-                  <div class='flow-step'>BURPEE BROAD JUMP</div>
-                  <span class='flow-arrow' aria-hidden='true'>↓</span>
-                  <div class='flow-step'>MISSION COMPLETE</div>
+                <div class='mission-workout-flow'>
+                  <div class='workout-part'>
+                    <span class='workout-part-label'>Part A</span>
+                    <span class='workout-part-action'>DUAL BOX OVER</span>
+                  </div>
+                  <span class='workout-arrow' aria-hidden='true'>→</span>
+                  <div class='workout-part'>
+                    <span class='workout-part-label'>Part B</span>
+                    <span class='workout-part-action'>BURPEE BROAD JUMP</span>
+                  </div>
+                  <span class='workout-arrow' aria-hidden='true'>→</span>
+                  <div class='workout-part workout-part--final'>
+                    <span class='workout-part-action'>MISSION COMPLETE</span>
+                  </div>
                 </div>
 
                 <p class='mission-rule-title' style='margin-top: 1rem;'>Mission Rule</p>
@@ -635,81 +655,43 @@
                 <p class='mission-objective-copy' style='margin-bottom: 1rem;'>Le seguenti prescrizioni dipendono dallo Standard scelto dal Team. Atlante, reps, altezza Box e distanza Burpee sono tutti definiti nella tabella.</p>
 
                 <div class='scaling-desktop' style='width: 100%; max-width: 100%;'>
-                  <table class='scaling-table js-scaling-table' style='width: 100%;'>
+                  <table class='scaling-table mb03-scaling-table js-scaling-table' style='width: 100%;'>
                     <thead>
                       <tr>
-                        <th style='white-space: nowrap;'>Standard</th>
-                        <th style='white-space: nowrap;'>Atlas</th>
-                        <th style='white-space: nowrap;'>Dual Box Over</th>
-                        <th style='white-space: nowrap;'>Box Height</th>
-                        <th style='white-space: nowrap;'>Burpee Broad Jump</th>
+                        <th style='width: 25%;'></th>
+                        <th style='width: 25%;'>Performance</th>
+                        <th style='width: 25%;'>Fitness</th>
+                        <th style='width: 25%;'>CrossFit</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Performance</td>
+                        <td><span class='table-icon' aria-hidden='true'>🪨</span> Atlas</td>
                         <td>30 kg</td>
-                        <td>240 reps</td>
-                        <td>50 cm</td>
-                        <td>120 m</td>
-                      </tr>
-                      <tr>
-                        <td>Fitness</td>
                         <td>20 kg</td>
-                        <td>240 reps</td>
-                        <td>50 cm</td>
-                        <td>120 m</td>
+                        <td>15 kg</td>
                       </tr>
                       <tr>
-                        <td>CrossFit</td>
-                        <td>15 kg</td>
+                        <td><span class='table-icon' aria-hidden='true'>📦</span> Dual Box Over</td>
                         <td>240 reps</td>
+                        <td>240 reps</td>
+                        <td>240 reps</td>
+                      </tr>
+                      <tr>
+                        <td><span class='table-icon' aria-hidden='true'>📏</span> Box Height</td>
                         <td>50 cm</td>
+                        <td>50 cm</td>
+                        <td>50 cm</td>
+                      </tr>
+                      <tr>
+                        <td><span class='table-icon' aria-hidden='true'>🐸</span> BBJ</td>
+                        <td>120 m</td>
+                        <td>120 m</td>
                         <td>120 m</td>
                       </tr>
                     </tbody>
                   </table>
-                </div>
-
-                <div class='scaling-mobile'>
-                  <div class='accordion'>
-                    <details class='accordion-item'>
-                      <summary class='accordion-header'>
-                        <span class='accordion-title'>Performance</span>
-                        <span class='accordion-toggle' aria-hidden='true'></span>
-                      </summary>
-                      <div class='accordion-content'>
-                        <p class='mission-objective-copy' style='margin-bottom: 0;'>Atlas: 30 kg</p>
-                        <p class='mission-objective-copy' style='margin-bottom: 0;'>Dual Box Over: 240 reps</p>
-                        <p class='mission-objective-copy' style='margin-bottom: 0;'>Box Height: 50 cm</p>
-                        <p class='mission-objective-copy' style='margin-bottom: 0;'>Burpee: 120 m</p>
-                      </div>
-                    </details>
-                    <details class='accordion-item'>
-                      <summary class='accordion-header'>
-                        <span class='accordion-title'>Fitness</span>
-                        <span class='accordion-toggle' aria-hidden='true'></span>
-                      </summary>
-                      <div class='accordion-content'>
-                        <p class='mission-objective-copy' style='margin-bottom: 0;'>Atlas: 20 kg</p>
-                        <p class='mission-objective-copy' style='margin-bottom: 0;'>Dual Box Over: 240 reps</p>
-                        <p class='mission-objective-copy' style='margin-bottom: 0;'>Box Height: 50 cm</p>
-                        <p class='mission-objective-copy' style='margin-bottom: 0;'>Burpee: 120 m</p>
-                      </div>
-                    </details>
-                    <details class='accordion-item'>
-                      <summary class='accordion-header'>
-                        <span class='accordion-title'>CrossFit</span>
-                        <span class='accordion-toggle' aria-hidden='true'></span>
-                      </summary>
-                      <div class='accordion-content'>
-                        <p class='mission-objective-copy' style='margin-bottom: 0;'>Atlas: 15 kg</p>
-                        <p class='mission-objective-copy' style='margin-bottom: 0;'>Dual Box Over: 240 reps</p>
-                        <p class='mission-objective-copy' style='margin-bottom: 0;'>Box Height: 50 cm</p>
-                        <p class='mission-objective-copy' style='margin-bottom: 0;'>Burpee: 120 m</p>
-                      </div>
-                    </details>
-                  </div>
+                  <p class='mission-legend' style='margin: 0.5rem 0 0; font-size: 0.75rem; color: rgba(255,255,255,0.55);'>BBJ = Burpee Broad Jump</p>
                 </div>
 
                 <div class='mission-example' style='margin-top: 1rem; margin-bottom: 0;'>
@@ -793,30 +775,48 @@
       </div>
     </div>
               <div class='mission-card-body'>
-                <div class='team-flow'>
+                <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Rep Definition</p>
+                <div class='team-flow team-flow--rep'>
                   <div class='team-flow-row'>
                     <div class='team-flow-athlete'>P1</div>
                     <span class='team-flow-arrow' aria-hidden='true'>→</span>
                     <span class='team-flow-action team-flow-action--movement'>DUAL BOX OVER</span>
                     <span class='team-flow-arrow' aria-hidden='true'>→</span>
                     <div class='team-flow-athlete'>P2</div>
-                  </div>
-                  <p class='team-flow-rep'>+1 REP</p>
-
-                  <div class='team-flow-row'>
-                    <div class='team-flow-athlete'>P2</div>
-                    <span class='team-flow-arrow' aria-hidden='true'>→</span>
-                    <span class='team-flow-action team-flow-action--movement'>DUAL BOX OVER</span>
-                    <span class='team-flow-arrow' aria-hidden='true'>→</span>
-                    <div class='team-flow-athlete'>P1</div>
                   </div>
                   <p class='team-flow-rep'>+1 REP</p>
                 </div>
+                <p class='mission-objective-copy' style='margin: 0.75rem 0 1.25rem;'>Ogni attraversamento completo dei due Box vale 1 rep.</p>
 
-                <p class='mission-objective-copy' style='margin: 1rem 0;'>Ogni atleta attraversa entrambi i Box completamente. Il passaggio continua secondo la strategia del Team.</p>
-
-                <p class='mission-rule-title' style='text-align: left; margin: 0 0 0.5rem;'>Critical Rule</p>
-                <p class='mission-important' style='margin-bottom: 0;'><strong>OGNI DUAL BOX OVER COMPLETO = 1 REP.</strong> Attraversare entrambi i Box e scendere completamente dal lato opposto completa una ripetizione. Se l'Atlas attraversa nuovamente entrambi i Box nella direzione opposta, viene completata una nuova rep.</p>
+                <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Suggested Flow</p>
+                <div class='rotation-flow'>
+                  <div class='rotation-card'>
+                    <span class='rotation-label'>CARD 01</span>
+                    <div class='rotation-teams'>P1 <span class='rotation-arrow' aria-hidden='true'>→</span> P2</div>
+                    <div class='rotation-move'>DUAL BOX OVER</div>
+                    <p class='rotation-rep'>+1 REP</p>
+                  </div>
+                  <div class='rotation-card'>
+                    <span class='rotation-label'>CARD 02</span>
+                    <div class='rotation-teams'>P2 <span class='rotation-arrow' aria-hidden='true'>→</span> P3</div>
+                    <div class='rotation-move'>DUAL BOX OVER</div>
+                    <p class='rotation-rep'>+1 REP</p>
+                  </div>
+                  <div class='rotation-card'>
+                    <span class='rotation-label'>CARD 03</span>
+                    <div class='rotation-teams'>P3 <span class='rotation-arrow' aria-hidden='true'>→</span> P4</div>
+                    <div class='rotation-move'>DUAL BOX OVER</div>
+                    <p class='rotation-rep'>+1 REP</p>
+                  </div>
+                  <div class='rotation-card'>
+                    <span class='rotation-label'>CARD 04</span>
+                    <div class='rotation-teams'>P4 <span class='rotation-arrow' aria-hidden='true'>→</span> P1</div>
+                    <div class='rotation-move'>DUAL BOX OVER</div>
+                    <p class='rotation-rep'>+1 REP</p>
+                  </div>
+                </div>
+                <p class='rotation-summary'>1 FULL ROTATION = +4 REPS <span class='rotation-loop' aria-hidden='true'>REPEAT →</span></p>
+                <p class='mission-objective-copy' style='margin: 0.75rem 0 0;'>Ciclo operativo consigliato. Il Team può organizzare i passaggi in base alla strategia.</p>
               </div>
             </article>
       </main>
@@ -858,38 +858,68 @@
       </div>
     </div>
               <div class='mission-card-body'>
-                <ul class='mission-hazard-list'>
-                  <li>
-                    <span class='hazard-icon' aria-hidden='true'>!</span>
-                    <strong class='hazard-title'>Heat</strong>
-                    <span class='hazard-description'>— CHARLIE parte alle 14:30, nel momento più caldo. Il workout è costruito per evitare la corsa e il sole diretto. HYDRATE BEFORE DEPLOYMENT.</span>
-                  </li>
-                  <li>
-                    <span class='hazard-icon' aria-hidden='true'>!</span>
-                    <strong class='hazard-title'>Box Footwork</strong>
-                    <span class='hazard-description'>— Con la fatica aumenta il rischio di perdere precisione nella salita e nella discesa. CONTROL &gt; SPEED. Niente salti inutili dalle strutture.</span>
-                  </li>
-                  <li>
-                    <span class='hazard-icon' aria-hidden='true'>!</span>
-                    <strong class='hazard-title'>Atlas Control</strong>
-                    <span class='hazard-description'>— L'Atlas deve essere sempre sotto controllo. La consegna tra compagni deve essere deliberata. Non lanciare o lasciare cadere la Stone.</span>
-                  </li>
-                  <li>
-                    <span class='hazard-icon' aria-hidden='true'>!</span>
-                    <strong class='hazard-title'>Lower Back Fatigue</strong>
-                    <span class='hazard-description'>— 240 reps significano molte esposizioni all'Atlas. Distribuire il lavoro prima che la qualità del movimento inizi a deteriorarsi.</span>
-                  </li>
-                  <li>
-                    <span class='hazard-icon' aria-hidden='true'>!</span>
-                    <strong class='hazard-title'>Burpee Broad Jump Pacing</strong>
-                    <span class='hazard-description'>— 120 metri sembrano pochi sulla carta. Non lo saranno dopo i Dual Box Over. Evitare partenze aggressive sui primi blocchi.</span>
-                  </li>
-                  <li>
-                    <span class='hazard-icon' aria-hidden='true'>!</span>
-                    <strong class='hazard-title'>Team Traffic</strong>
-                    <span class='hazard-description'>— Con più Team e due Box per lane, ciascun Team deve rispettare la propria area operativa. Lasciare libera la traiettoria dell'atleta successivo.</span>
-                  </li>
-                </ul>
+                <div class='hazard-accordion'>
+                  <details class='hazard-accordion-item'>
+                    <summary class='hazard-accordion-header'>
+                      <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                      <span class='hazard-accordion-title'>Heat</span>
+                      <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                    </summary>
+                    <div class='hazard-accordion-content'>
+                      <p>CHARLIE parte alle 14:30, nel momento più caldo. Il workout è costruito per evitare la corsa e il sole diretto. HYDRATE BEFORE DEPLOYMENT.</p>
+                    </div>
+                  </details>
+                  <details class='hazard-accordion-item'>
+                    <summary class='hazard-accordion-header'>
+                      <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                      <span class='hazard-accordion-title'>Box Footwork</span>
+                      <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                    </summary>
+                    <div class='hazard-accordion-content'>
+                      <p>Con la fatica aumenta il rischio di perdere precisione nella salita e nella discesa. CONTROL &gt; SPEED. Niente salti inutili dalle strutture.</p>
+                    </div>
+                  </details>
+                  <details class='hazard-accordion-item'>
+                    <summary class='hazard-accordion-header'>
+                      <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                      <span class='hazard-accordion-title'>Atlas Control</span>
+                      <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                    </summary>
+                    <div class='hazard-accordion-content'>
+                      <p>L'Atlas deve essere sempre sotto controllo. La consegna tra compagni deve essere deliberata. Non lanciare o lasciare cadere la Stone.</p>
+                    </div>
+                  </details>
+                  <details class='hazard-accordion-item'>
+                    <summary class='hazard-accordion-header'>
+                      <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                      <span class='hazard-accordion-title'>Lower Back Fatigue</span>
+                      <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                    </summary>
+                    <div class='hazard-accordion-content'>
+                      <p>240 reps significano molte esposizioni all'Atlas. Distribuire il lavoro prima che la qualità del movimento inizi a deteriorarsi.</p>
+                    </div>
+                  </details>
+                  <details class='hazard-accordion-item'>
+                    <summary class='hazard-accordion-header'>
+                      <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                      <span class='hazard-accordion-title'>Burpee Broad Jump Pacing</span>
+                      <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                    </summary>
+                    <div class='hazard-accordion-content'>
+                      <p>120 metri sembrano pochi sulla carta. Non lo saranno dopo i Dual Box Over. Evitare partenze aggressive sui primi blocchi.</p>
+                    </div>
+                  </details>
+                  <details class='hazard-accordion-item'>
+                    <summary class='hazard-accordion-header'>
+                      <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                      <span class='hazard-accordion-title'>Team Traffic</span>
+                      <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                    </summary>
+                    <div class='hazard-accordion-content'>
+                      <p>Con più Team e due Box per lanes, ciascun Team deve rispettare la propria area operativa. Lasciare libera la traiettoria dell'atleta successivo.</p>
+                    </div>
+                  </details>
+                </div>
               </div>
             </article>
     <article class='mission-card mission-card--info'>
@@ -929,7 +959,7 @@
         <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5M6 12l-5 5'/></svg>
       </div>
       <div class="section-heading">
-        <div class="section-ref">SECT. 09 — REF JTO-09</div>
+    
         <h3>SCORECARD</h3>
       </div>
     </div>
@@ -971,7 +1001,7 @@
         <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5M6 12l-5 5'/></svg>
       </div>
       <div class="section-heading">
-        <div class="section-ref">SECT. 10 — REF JTO-10</div>
+        <div class="section-ref">SECT. 09 — REF JTO-09</div>
         <h3>MISSION COMPLETION</h3>
       </div>
     </div>
@@ -980,11 +1010,7 @@
                 <div class='mission-flow mission-flow--mb03 mission-flow--completion'>
                   <div class='flow-step'>DUAL BOX OVER</div>
                   <span class='flow-arrow' aria-hidden='true'>↓</span>
-                  <div class='flow-operator' aria-hidden='true'>+</div>
-                  <span class='flow-arrow' aria-hidden='true'>↓</span>
                   <div class='flow-step'>BURPEE BROAD JUMP</div>
-                  <span class='flow-arrow' aria-hidden='true'>↓</span>
-                  <div class='flow-operator' aria-hidden='true'>=</div>
                   <span class='flow-arrow' aria-hidden='true'>↓</span>
                   <div class='flow-step'>MISSION COMPLETE</div>
                 </div>

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Generate a page-based printable dossier from an existing Mission Brief."""
 
+from __future__ import annotations
+
 import argparse
 import re
 import sys
@@ -237,7 +239,12 @@ def allocate_cards(
     return pages
 
 
-def _rebuild_section_header(card_html: str, index: int) -> str:
+UNNUMBERED_CARDS = {
+    "mission-03": {"SCORECARD"},
+}
+
+
+def _rebuild_section_header(card_html: str, index: int, numbered: bool = True) -> str:
     title_match = re.search(
         r"<h2[^>]*class=['\"]mission-card-title['\"][^>]*>(.*?)</h2>",
         card_html,
@@ -262,13 +269,13 @@ def _rebuild_section_header(card_html: str, index: int) -> str:
             re.IGNORECASE | re.DOTALL,
         )
     icon = icon_match.group(0) if icon_match else ""
-    ref = f"SECT. {index:02d} — REF JTO-{index:02d}"
+    ref_html = f'<div class="section-ref">SECT. {index:02d} — REF JTO-{index:02d}</div>' if numbered else ""
     return f'''<div class="section-header">
   <div class="section-icon">
     {icon}
   </div>
   <div class="section-heading">
-    <div class="section-ref">{ref}</div>
+    {ref_html}
     <h3>{title}</h3>
   </div>
 </div>'''
@@ -279,10 +286,20 @@ def build_page(
     footer: str,
     cards: list[tuple[str, str]],
     start_index: int = 1,
+    unnumbered: set[str] | None = None,
 ) -> str:
+    unnumbered = unnumbered or set()
+    section_index = start_index
     rebuilt_cards = []
-    for i, (_, card) in enumerate(cards):
-        new_header = _rebuild_section_header(card, start_index + i)
+    for _, card in cards:
+        title_match = re.search(
+            r"<h2[^>]*class=['\"]mission-card-title['\"][^>]*>(.*?)</h2>",
+            card,
+            re.DOTALL | re.IGNORECASE,
+        )
+        title = title_match.group(1).strip() if title_match else ""
+        numbered = title not in unnumbered
+        new_header = _rebuild_section_header(card, section_index, numbered=numbered)
         new_card = re.sub(
             r"<header[^>]*class=['\"]mission-card-header['\"][^>]*>.*?</header>",
             new_header,
@@ -291,6 +308,8 @@ def build_page(
             flags=re.DOTALL | re.IGNORECASE,
         )
         rebuilt_cards.append(new_card)
+        if numbered:
+            section_index += 1
     cards_html = "\n".join(rebuilt_cards)
     return f"""<section class="print-page">
 {header}
@@ -326,10 +345,11 @@ def generate_print_html(source_path: Path, output_path: Path) -> None:
     footer = build_footer(meta, total_pages)
 
     card_index = 1
+    unnumbered = UNNUMBERED_CARDS.get(mission_name, set())
     page_blocks = []
     for i, page in enumerate(pages):
         header_block = build_header(header, compact=(i > 0))
-        page_blocks.append(build_page(header_block, footer, page, card_index))
+        page_blocks.append(build_page(header_block, footer, page, card_index, unnumbered=unnumbered))
         card_index += len(page)
     document = "\n".join(page_blocks)
 

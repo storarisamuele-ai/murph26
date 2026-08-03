@@ -98,22 +98,29 @@
             <p class='mission-objective-copy' style='margin: 0 0 0.5rem;'>200m Cargo Carry &middot; Corsa del Montecucco &middot; 200m Cargo Carry</p>
 
             <p class='mission-rule-title' style='color: var(--blue); text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0.5rem 0 0.25rem;'>Performance &amp; Fitness</p>
-            <div class='mission-flow mission-flow--mb02'>
-              <div class='flow-step'>Cargo Carry</div>
-              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
-              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
-              <div class='flow-step'>Team Run</div>
-              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
-              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
-              <div class='flow-step'>Cargo Carry</div>
+            <div class='mission-workout-flow'>
+              <div class='workout-part'>
+                <span class='workout-part-action'>CARGO CARRY</span>
+              </div>
+              <span class='workout-arrow' aria-hidden='true'>→</span>
+              <div class='workout-part'>
+                <span class='workout-part-action'>TEAM RUN</span>
+              </div>
+              <span class='workout-arrow' aria-hidden='true'>→</span>
+              <div class='workout-part'>
+                <span class='workout-part-action'>CARGO CARRY</span>
+              </div>
             </div>
 
             <p class='mission-rule-title' style='color: var(--blue); text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0.5rem 0 0.25rem;'>CrossFit</p>
-            <div class='mission-flow mission-flow--mb02'>
-              <div class='flow-step'>Cargo Carry</div>
-              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
-              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
-              <div class='flow-step'>Team Run</div>
+            <div class='mission-workout-flow'>
+              <div class='workout-part'>
+                <span class='workout-part-action'>CARGO CARRY</span>
+              </div>
+              <span class='workout-arrow' aria-hidden='true'>→</span>
+              <div class='workout-part'>
+                <span class='workout-part-action'>TEAM RUN</span>
+              </div>
             </div>
             <p class='mission-objective-copy' style='margin-bottom: 0;'>Per CrossFit la Missione termina al termine della Team Run.</p>
 
@@ -382,38 +389,68 @@
   </div>
 </div>
           <div class='mission-card-body'>
-            <ul class='mission-hazard-list'>
-              <li>
-                <span class='hazard-icon' aria-hidden='true'>!</span>
-                <strong class='hazard-title'>Ritmo</strong>
-                <span class='hazard-description'>— Bravo arriva quando è ancora facile spingere troppo. Non trasformare la Team Run in un time trial.</span>
-              </li>
-              <li>
-                <span class='hazard-icon' aria-hidden='true'>!</span>
-                <strong class='hazard-title'>Separazione del Team</strong>
-                <span class='hazard-description'>— Nessuno resta indietro. Il Team deve muoversi come un'unità unica.</span>
-              </li>
-              <li>
-                <span class='hazard-icon' aria-hidden='true'>!</span>
-                <strong class='hazard-title'>Fatica del grip</strong>
-                <span class='hazard-description'>— Non aspettare il cedimento del grip. Cambi frequenti preservano grip e avambracci.</span>
-              </li>
-              <li>
-                <span class='hazard-icon' aria-hidden='true'>!</span>
-                <strong class='hazard-title'>Terreno irregolare</strong>
-                <span class='hazard-description'>— Parte della corsa si svolge sui sentieri del Parco Montecucco. Attenzione al terreno, alle curve e agli altri utenti. Sicurezza &gt; ritmo.</span>
-              </li>
-              <li>
-                <span class='hazard-icon' aria-hidden='true'>!</span>
-                <strong class='hazard-title'>Caldo e idratazione</strong>
-                <span class='hazard-description'>— Presentarsi già idratati. Iniziare il recupero subito dopo la Missione.</span>
-              </li>
-              <li>
-                <span class='hazard-icon' aria-hidden='true'>!</span>
-                <strong class='hazard-title'>Intensità Missione Alternativa</strong>
-                <span class='hazard-description'>— Assault Bike e SkiErg non sono una stazione di recupero. RPE 6–7. I Deadlift non devono diventare lavoro di forza massimale.</span>
-              </li>
-            </ul>
+            <div class='hazard-accordion'>
+              <details class='hazard-accordion-item'>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>Ritmo</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>Bravo arriva quando è ancora facile spingere troppo. Non trasformare la Team Run in un time trial.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item'>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>Separazione del Team</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>Nessuno resta indietro. Il Team deve muoversi come un'unità unica.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item'>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>Fatica del grip</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>Non aspettare il cedimento del grip. Cambi frequenti preservano grip e avambracci.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item'>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>Terreno irregolare</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>Parte della corsa si svolge sui sentieri del Parco Montecucco. Attenzione al terreno, alle curve e agli altri utenti. Sicurezza &gt; ritmo.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item'>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>Caldo e idratazione</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>Presentarsi già idratati. Iniziare il recupero subito dopo la Missione.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item'>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>Intensità Missione Alternativa</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>Assault Bike e SkiErg non sono una stazione di recupero. RPE 6–7. I Deadlift non devono diventare lavoro di forza massimale.</p>
+                </div>
+              </details>
+            </div>
           </div>
         </article>
 <article class='mission-card mission-card--info'>
