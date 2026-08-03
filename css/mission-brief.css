@@ -211,26 +211,16 @@ img {
 .mission-card--info {
   --section-accent: var(--blue);
   border-left-color: var(--section-accent);
-  background: rgba(6, 148, 185, 0.05);
 }
 
 .mission-card--critical {
   --section-accent: var(--pink);
   border-left-color: var(--section-accent);
-  background: rgba(231, 41, 112, 0.05);
 }
 
 .mission-card--info .mission-card-title,
 .mission-card--critical .mission-card-title {
   color: var(--white);
-}
-
-.mission-card--info .mission-card-icon {
-  color: var(--section-accent);
-}
-
-.mission-card--critical .mission-card-icon {
-  filter: sepia(1) saturate(5) hue-rotate(270deg) brightness(0.78) contrast(1.15);
 }
 
 .mission-card--full {
@@ -1317,13 +1307,8 @@ img {
   margin: 0 0 1rem;
 }
 
-.mission-rule-box {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 3px solid var(--blue);
-  border-radius: 0 6px 6px 0;
-  padding: 1rem 1.25rem;
-  margin: 0 0 1rem;
+.mission-how-it-works {
+  margin: 1rem 0;
 }
 
 .mission-rule-title {
@@ -1356,7 +1341,7 @@ img {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--pink);
+  color: var(--white);
   margin: 0;
 }
 
@@ -1371,7 +1356,7 @@ img {
 .mission-example-label {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.25rem;
-  color: var(--pink);
+  color: var(--white);
   letter-spacing: 0.05em;
   margin: 0 0 0.75rem;
   line-height: 1;
@@ -1453,69 +1438,14 @@ img {
   }
 }
 
-.mission-example {
-  container-type: inline-size;
-  container-name: example;
-}
-
-@container example (max-width: 249px) {
-  .mission-example .mission-flow {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mission-example .flow-arrow--desktop {
-    display: none;
-  }
-
-  .mission-example .flow-arrow--mobile {
-    display: inline-flex;
-  }
-}
-
-@container example (min-width: 250px) {
-  .mission-example .mission-flow {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .mission-example .flow-arrow--desktop {
-    display: inline-flex;
-  }
-
-  .mission-example .flow-arrow--mobile {
-    display: none;
-  }
-}
-
 .mission-wod-headline,
 .mission-wod-note,
 .mission-important,
 .mission-example,
-.mission-rule-box,
+.mission-how-it-works,
 .mission-example-label {
   min-width: 0;
   max-width: 100%;
-}
-
-.mission-workout-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-  margin: 1rem 0;
-  align-items: start;
-}
-
-@media (min-width: 600px) {
-  .mission-workout-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.mission-workout-grid .mission-rule-box,
-.mission-workout-grid .mission-example {
-  margin: 0;
-  height: 100%;
 }
 
 .table-icon {
@@ -1545,16 +1475,17 @@ img {
 }
 
 .mission-hazard-list li {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: auto 1fr;
   gap: 0.75rem;
-  font-size: 0.85rem;
+  align-items: start;
+  font-size: 0.9rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.9);
 }
 
 .hazard-icon {
-  flex: 0 0 auto;
+  align-self: start;
   display: flex;
   align-items: center;
   justify-content: center;
