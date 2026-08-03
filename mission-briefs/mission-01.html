@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/mission-brief.css">
   <link rel="stylesheet" href="../css/print-dossier.css" media="print">
+  <script src="../js/classified-countdown.js" defer></script>
   <link rel="icon" href="../favicon.ico" sizes="any" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
@@ -18,6 +19,32 @@
   <meta name="theme-color" content="#0694B9">
 </head>
 <body class="mission-brief">
+
+  <div class="classified-overlay" data-countdown data-deadline="" data-mission-number="01" data-mission-name="MISSION ALPHA" data-mission-color="cyan" aria-hidden="true">
+    <div class="classified-overlay__content">
+      <p class="classified-overlay__eyebrow">CLASSIFIED</p>
+      <h1 class="classified-overlay__title">MISSION BRIEF <span class="classified-overlay__number">#01</span></h1>
+      <p class="classified-overlay__mission">MISSION ALPHA</p>
+      <p class="classified-overlay__label">DECLASSIFICATION IN</p>
+      <div class="countdown" aria-live="polite">
+        <div class="countdown__unit">
+          <span class="countdown__number">00</span>
+          <span class="countdown__label">HRS</span>
+        </div>
+        <span class="countdown__sep">:</span>
+        <div class="countdown__unit">
+          <span class="countdown__number">00</span>
+          <span class="countdown__label">MIN</span>
+        </div>
+        <span class="countdown__sep">:</span>
+        <div class="countdown__unit">
+          <span class="countdown__number">00</span>
+          <span class="countdown__label">SEC</span>
+        </div>
+      </div>
+      <p class="classified-overlay__footer">AUTHORIZED PERSONNEL ONLY</p>
+    </div>
+  </div>
 
   <header class="mb-header">
     <div class="mb-container">
@@ -215,7 +242,7 @@
                     <td>—</td>
                   </tr>
                   <tr>
-                    <td class='scaling-exercise'><img class='table-icon' src='assets/document-grid.svg' alt='' aria-hidden='true'> DISTRIBUZIONE</td>
+                    <td class='scaling-exercise'><img class='table-icon' src='assets/document-grid.svg' alt='' aria-hidden='true'> PARTITION</td>
                     <td>Split as needed</td>
                     <td>—</td>
                     <td>—</td>
@@ -246,7 +273,7 @@
               </div>
               <div>
                 <dt>BURPEE OVER THE ROWER</dt>
-                <dd>Standard approvato del progetto.</dd>
+                <dd>L’atleta porta il petto a terra, si rialza e supera il Row con salto o step-over. La rep è valida quando entrambi i piedi raggiungono il lato opposto. Il passaggio è obbligatorio anche sull’ultima rep.</dd>
               </div>
             </dl>
           </div>
@@ -292,7 +319,7 @@
           </header>
           <div class='mission-card-body'>
             <p class='mission-intel-statement'>ALPHA NON SERVE A DIMOSTRARE QUANTO SIETE VELOCI.<br>SERVE A CAPIRE QUANTO SIETE BRAVI A LAVORARE INSIEME.</p>
-            <p class='mission-intel-secondary'>THINK LONG TERM. THE FINAL MISSION IS STILL CLASSIFIED.</p>
+            <p class='mission-intel-secondary'>QUESTA È SOLO LA PRIMA MISSIONE. CONSERVATE RISORSE PER QUELLO CHE VERRÀ.</p>
           </div>
         </article>
 
@@ -304,7 +331,7 @@
           </header>
           <div class='mission-card-body'>
             <p class='scorecard-web'>Registra ogni blocco della Missione: atleta, distanza dichiarata, Burpees e metri completati.</p>
-            <a class='scorecard-link' href='mission-01-scorecard.html' target='_blank' rel='noopener'>Open Field Scorecard</a>
+            <a class='scorecard-link' href='mission-01-scorecard.html' target='_blank' rel='noopener'>STAMPA LA SCORECARD</a>
             <p class='print-scorecard'>Apri la Field Scorecard dedicata per registrare i dati sul campo.</p>
           </div>
         </article>
@@ -346,7 +373,7 @@
   </main>
 
   <script src="../js/mission-brief.js"></script>
-                          <div class="print-document" aria-hidden="true">
+                              <div class="print-document" aria-hidden="true">
     <section class="print-page">
     <header class="print-header">
       <div class="print-header-left">
@@ -503,67 +530,10 @@
     <article class='mission-card mission-card--full mission-card--info'>
               <div class="section-header">
       <div class="section-icon">
-        <svg class="mission-card-icon" aria-hidden="true" viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke="currentColor" stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/></svg>
-      </div>
-      <div class="section-heading">
-        <div class="section-ref">SECT. 04 — REF JTO-04</div>
-        <h3>AUTHORIZED STANDARDS</h3>
-      </div>
-    </div>
-              <div class='mission-card-body'>
-                <div class='scaling-desktop'>
-                  <table class='scaling-table js-scaling-table'>
-                    <thead>
-                      <tr>
-                        <th class='scaling-exercise'>PARAMETRO</th>
-                        <th>PERFORMANCE</th>
-                        <th>FITNESS</th>
-                        <th>CROSSFIT</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class='scaling-exercise'><img class='table-icon' src='assets/target.svg' alt='' aria-hidden='true'> DISTANZA</td>
-                        <td>10.000 m Row — Team Total</td>
-                        <td>8.000 m Row — Team Total</td>
-                        <td>6.000 m Row — Team Total</td>
-                      </tr>
-                      <tr>
-                        <td class='scaling-exercise'><img class='table-icon' src='assets/star.svg' alt='' aria-hidden='true'> BURPEES</td>
-                        <td>1 Burpee Over the Rower / 100 m dichiarati</td>
-                        <td>—</td>
-                        <td>—</td>
-                      </tr>
-                      <tr>
-                        <td class='scaling-exercise'><img class='table-icon' src='assets/gear.svg' alt='' aria-hidden='true'> BLOCCO</td>
-                        <td>Multipli di 100 m</td>
-                        <td>—</td>
-                        <td>—</td>
-                      </tr>
-                      <tr>
-                        <td class='scaling-exercise'><img class='table-icon' src='assets/document-grid.svg' alt='' aria-hidden='true'> DISTRIBUZIONE</td>
-                        <td>Split as needed</td>
-                        <td>—</td>
-                        <td>—</td>
-                      </tr>
-                      <tr>
-                        <td class='scaling-exercise'><img class='table-icon' src='assets/check.svg' alt='' aria-hidden='true'> STANDARD</td>
-                        <td>Burpee Over the Rower</td>
-                        <td>—</td>
-                        <td>—</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </article>
-    <article class='mission-card mission-card--full mission-card--info'>
-              <div class="section-header">
-      <div class="section-icon">
         <svg class="mission-card-icon" aria-hidden="true" viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke="currentColor" stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M12 7v10M7 12h10'/></svg>
       </div>
       <div class="section-heading">
-        <div class="section-ref">SECT. 05 — REF JTO-05</div>
+        <div class="section-ref">SECT. 04 — REF JTO-04</div>
         <h3>MOVEMENT STANDARDS</h3>
       </div>
     </div>
@@ -575,7 +545,7 @@
                   </div>
                   <div>
                     <dt>BURPEE OVER THE ROWER</dt>
-                    <dd>Standard approvato del progetto.</dd>
+                    <dd>L’atleta porta il petto a terra, si rialza e supera il Row con salto o step-over. La rep è valida quando entrambi i piedi raggiungono il lato opposto. Il passaggio è obbligatorio anche sull’ultima rep.</dd>
                   </div>
                 </dl>
               </div>
@@ -586,7 +556,7 @@
         <svg class="mission-card-icon" aria-hidden="true" viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke="currentColor" stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='11' width='12' height='10' rx='2'/><path d='M9 11V7a3 3 0 0 1 6 0v4'/></svg>
       </div>
       <div class="section-heading">
-        <div class="section-ref">SECT. 06 — REF JTO-06</div>
+        <div class="section-ref">SECT. 05 — REF JTO-05</div>
         <h3>MISSION HAZARDS</h3>
       </div>
     </div>
@@ -621,13 +591,13 @@
         <svg class="mission-card-icon" aria-hidden="true" viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke="currentColor" stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='8' y='4' width='8' height='14' rx='2'/><line x1='12' y1='4' x2='12' y2='1'/><line x1='10' y1='8' x2='14' y2='8'/><circle cx='12' cy='14' r='1.5'/></svg>
       </div>
       <div class="section-heading">
-        <div class="section-ref">SECT. 07 — REF JTO-07</div>
+        <div class="section-ref">SECT. 06 — REF JTO-06</div>
         <h3>MISSION INTEL</h3>
       </div>
     </div>
               <div class='mission-card-body'>
                 <p class='mission-intel-statement'>ALPHA NON SERVE A DIMOSTRARE QUANTO SIETE VELOCI.<br>SERVE A CAPIRE QUANTO SIETE BRAVI A LAVORARE INSIEME.</p>
-                <p class='mission-intel-secondary'>THINK LONG TERM. THE FINAL MISSION IS STILL CLASSIFIED.</p>
+                <p class='mission-intel-secondary'>QUESTA È SOLO LA PRIMA MISSIONE. CONSERVATE RISORSE PER QUELLO CHE VERRÀ.</p>
               </div>
             </article>
       </main>

@@ -1535,16 +1535,17 @@ img {
 
 .mission-intel-statement {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-  line-height: 1.2;
+  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.25;
   color: var(--white);
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.5rem;
 }
 
 .mission-intel-secondary {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--blue);
   margin: 0;
@@ -1790,4 +1791,125 @@ img {
   .mission-card .scaling-mobile {
     display: flex;
   }
+}
+
+/* Classified overlay */
+
+.classified-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(250, 250, 250, 0.96);
+  color: #000;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+body.is-classified .classified-overlay {
+  display: flex;
+}
+
+body.is-classified {
+  overflow: hidden;
+}
+
+.classified-overlay__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 90vw;
+}
+
+.classified-overlay__eyebrow,
+.classified-overlay__title,
+.classified-overlay__mission,
+.classified-overlay__label,
+.classified-overlay__footer {
+  margin: 0;
+}
+
+.classified-overlay__eyebrow {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  letter-spacing: 0.1em;
+}
+
+.classified-overlay__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.25rem, 3.5vw, 2rem);
+  letter-spacing: 0.05em;
+}
+
+.classified-overlay__number {
+  color: var(--mission-color, var(--cyan));
+}
+
+.classified-overlay__mission {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--mission-color, var(--cyan));
+  letter-spacing: 0.08em;
+}
+
+.classified-overlay__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 0.5rem;
+}
+
+.classified-overlay__footer {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 0.5rem;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4rem;
+}
+
+.countdown__number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 1;
+}
+
+.countdown__sep {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1;
+  margin-top: -0.5rem;
+}
+
+.countdown__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.classified-overlay[data-mission-color="cyan"] {
+  --mission-color: var(--cyan);
+}
+
+.classified-overlay[data-mission-color="magenta"] {
+  --mission-color: var(--magenta);
 }

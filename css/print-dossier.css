@@ -39,7 +39,9 @@ img {
 .mb-document-table,
 .mb-document-meta,
 .scaling-mobile,
-.scorecard {
+.scorecard,
+.classified-overlay,
+.countdown {
   display: none !important;
 }
 
@@ -249,6 +251,19 @@ img {
 .mission-hazard-list .hazard-description {
   font-size: 8.5pt;
   line-height: 1.35;
+}
+
+.mission-intel-statement {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.mission-intel-secondary {
+  font-size: 0.85em;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
 }
 
 .mission-card-body p,
