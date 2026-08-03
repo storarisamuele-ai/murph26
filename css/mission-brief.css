@@ -1302,6 +1302,10 @@ img {
   line-height: 1;
 }
 
+.wod-join {
+  color: var(--pink);
+}
+
 .wod-time {
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
@@ -2620,4 +2624,15 @@ body.is-classified {
 .rotation-loop {
   color: var(--blue);
   margin-left: 0.5rem;
+}
+
+/* Scorecard is for print only */
+.mission-card--scorecard {
+  display: none;
+}
+
+@media print {
+  .mission-card--scorecard {
+    display: block;
+  }
 }
