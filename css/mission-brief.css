@@ -1488,6 +1488,26 @@ img {
   }
 }
 
+@media (max-width: 599px) {
+  .mission-flow--mb02 {
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .mission-flow--mb02 .flow-step {
+    width: min(100%, 300px);
+    max-width: 300px;
+    min-width: 0;
+    flex: 0 0 auto;
+    padding: 0.85rem 1rem;
+    min-height: 2.8rem;
+  }
+
+  .mission-flow--mb02 + .mission-rule-title {
+    margin-top: 2.25rem !important;
+  }
+}
+
 .mission-wod-headline,
 .mission-wod-note,
 .mission-important,

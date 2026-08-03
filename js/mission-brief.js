@@ -75,6 +75,10 @@ function initMissionScaling() {
   if (!tables.length) return;
 
   tables.forEach((table) => {
+    const desktop = table.closest('.scaling-desktop');
+    const existing = desktop ? desktop.nextElementSibling : table.nextElementSibling;
+    if (existing && existing.classList.contains('scaling-mobile')) return;
+
     const rows = Array.from(table.querySelectorAll('tbody tr'));
     const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
     if (!headers.length) return;
