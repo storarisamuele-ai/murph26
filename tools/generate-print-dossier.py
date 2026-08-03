@@ -40,23 +40,15 @@ PAGE_ALLOCATIONS = {
         [
             "MISSION IDENTIFICATION",
             "MISSION OBJECTIVE",
-        ],
-        [
             "MISSION WORKOUT",
-        ],
-        [
             "AUTHORIZED CARGO LOADOUTS",
         ],
         [
             "MISSION EXECUTION",
-        ],
-        [
             "ALTERNATE MISSION",
         ],
         [
             "MISSION HAZARDS",
-        ],
-        [
             "MISSION INTEL",
             "MISSION COMPLETION",
         ],
@@ -154,8 +146,9 @@ def extract_cards(html: str) -> list[tuple[str, str]]:
     return cards
 
 
-def build_header(header: dict) -> str:
-    return f"""<header class="print-header">
+def build_header(header: dict, compact: bool = False) -> str:
+    cls = "print-header print-header--compact" if compact else "print-header"
+    return f"""<header class="{cls}">
   <div class="print-header-left">
     <img src="{header['logo_src']}" alt="Murph26" class="print-header__logo-mark">
     <span class="print-header__logo-wordmark">{header['wordmark']}</span>
@@ -313,11 +306,11 @@ def generate_print_html(source_path: Path, output_path: Path) -> None:
     total_pages = len(pages)
 
     footer = build_footer(meta, total_pages)
-    header_block = build_header(header)
 
     card_index = 1
     page_blocks = []
-    for page in pages:
+    for i, page in enumerate(pages):
+        header_block = build_header(header, compact=(i > 0))
         page_blocks.append(build_page(header_block, footer, page, card_index))
         card_index += len(page)
     document = "\n".join(page_blocks)
@@ -333,7 +326,7 @@ def generate_print_html(source_path: Path, output_path: Path) -> None:
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/print-dossier.css">
 </head>
-<body class="print-dossier">
+<body class="print-dossier" data-mission="{mission_name}">
   <div class="print-document">
 {document}
   </div>

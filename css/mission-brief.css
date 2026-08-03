@@ -1447,6 +1447,27 @@ img {
   .flow-arrow--mobile {
     display: none;
   }
+
+  .mission-flow--mb02 {
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .mission-flow--mb02 .flow-step {
+    flex: 0 0 28%;
+    max-width: 28%;
+    min-width: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 3rem;
+  }
+
+  .mission-flow--mb02 .flow-arrow--desktop {
+    color: var(--blue);
+  }
 }
 
 .mission-wod-headline,
