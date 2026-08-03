@@ -1,6 +1,13 @@
 (function () {
+  const FORCE_DECLASSIFIED = true; // Set to false to enable real classified countdown
+
   const overlay = document.querySelector('.classified-overlay');
   if (!overlay) return;
+
+  if (FORCE_DECLASSIFIED) {
+    overlay.remove();
+    return;
+  }
 
   const raw = overlay.dataset.deadline;
   const deadline = raw ? new Date(raw) : null;

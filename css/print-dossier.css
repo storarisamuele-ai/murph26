@@ -41,7 +41,8 @@ img {
 .scaling-mobile,
 .scorecard,
 .classified-overlay,
-.countdown {
+.countdown,
+.back-to-top {
   display: none !important;
 }
 

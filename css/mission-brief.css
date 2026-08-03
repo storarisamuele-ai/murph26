@@ -1920,3 +1920,62 @@ body.is-classified {
 .classified-overlay[data-mission-color="magenta"] {
   --mission-color: var(--magenta);
 }
+
+/* Back to top */
+
+.back-to-top {
+  position: fixed;
+  right: calc(1rem + env(safe-area-inset-right));
+  bottom: calc(1rem + env(safe-area-inset-bottom));
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--blue);
+  color: var(--black);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  transform: translateY(0.5rem);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+  opacity: 0.9;
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+.back-to-top svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .back-to-top {
+    right: calc(1.5rem + env(safe-area-inset-right));
+    bottom: calc(1.5rem + env(safe-area-inset-bottom));
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .back-to-top svg {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+}
