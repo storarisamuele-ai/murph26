@@ -139,9 +139,10 @@ img {
 
 /* Mission Card */
 .mission-card {
+  --section-accent: var(--blue);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 3px solid var(--blue);
+  border-left: 3px solid var(--section-accent);
   border-radius: 0 8px 8px 0;
   padding: 1.5rem;
   display: flex;
@@ -160,7 +161,16 @@ img {
   width: 1.5rem;
   height: 1.5rem;
   flex-shrink: 0;
-  object-fit: contain;
+  display: inline-block;
+  background-color: var(--section-accent);
+  -webkit-mask-image: var(--icon-url);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: var(--icon-url);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
 
 .mission-card-title {
@@ -199,7 +209,8 @@ img {
 }
 
 .mission-card--note {
-  border-left-color: var(--pink);
+  --section-accent: var(--pink);
+  border-left-color: var(--section-accent);
 }
 
 .mission-card--quote {
@@ -223,9 +234,6 @@ img {
   color: var(--white);
 }
 
-.mission-card--critical .mission-card-icon {
-  filter: hue-rotate(150deg) brightness(1.4) saturate(0.85);
-}
 
 .mission-card--full {
   grid-column: 1 / -1;
@@ -993,7 +1001,8 @@ img {
 
 
 .mission-card--classified {
-  border-left: 3px solid var(--pink);
+  --section-accent: var(--pink);
+  border-left: 3px solid var(--section-accent);
   background: rgba(0, 0, 0, 0.22);
 }
 
