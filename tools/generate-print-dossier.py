@@ -36,6 +36,31 @@ PAGE_ALLOCATIONS = {
             "MISSION INTEL",
         ],
     ],
+    "mission-02": [
+        [
+            "MISSION IDENTIFICATION",
+            "MISSION OBJECTIVE",
+        ],
+        [
+            "MISSION WORKOUT",
+        ],
+        [
+            "AUTHORIZED CARGO LOADOUTS",
+        ],
+        [
+            "MISSION EXECUTION",
+        ],
+        [
+            "ALTERNATE MISSION",
+        ],
+        [
+            "MISSION HAZARDS",
+        ],
+        [
+            "MISSION INTEL",
+            "MISSION COMPLETION",
+        ],
+    ],
 }
 
 
