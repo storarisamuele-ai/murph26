@@ -77,11 +77,25 @@ function initMissionScaling() {
 
       rows.forEach((row) => {
         const cells = Array.from(row.querySelectorAll('td'));
-        const label = cells[0]?.textContent.trim() || '';
+        const labelCell = cells[0];
+        const iconEl = labelCell?.querySelector('.table-icon');
+        const icon = iconEl ? iconEl.textContent.trim() : '';
+        let label = labelCell?.textContent.trim() || '';
+        if (icon) {
+          label = label.replace(icon, '').trim();
+        }
         const value = cells[colIndex]?.textContent.trim() || '';
 
         const step = document.createElement('div');
         step.className = 'workout-step';
+
+        if (icon) {
+          const stepIcon = document.createElement('span');
+          stepIcon.className = 'workout-step-icon';
+          stepIcon.setAttribute('aria-hidden', 'true');
+          stepIcon.textContent = icon;
+          step.appendChild(stepIcon);
+        }
 
         const stepContent = document.createElement('div');
         stepContent.className = 'workout-step-content';

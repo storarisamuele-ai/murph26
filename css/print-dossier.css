@@ -453,4 +453,80 @@ img {
     break-inside: avoid;
     page-break-inside: avoid;
   }
+
+  .mission-card.scorecard {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .scorecard-web {
+    display: none !important;
+  }
+
+  .print-scorecard {
+    display: block !important;
+  }
+
+  .scorecard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 0.5pt solid #000 !important;
+  }
+
+  .scorecard-table th,
+  .scorecard-table td {
+    border: 0.5pt solid #000 !important;
+    padding: 0.5rem 0.35rem;
+    text-align: left;
+    color: #000 !important;
+    background-color: #fff !important;
+    min-width: 0;
+    height: 1.6rem;
+    vertical-align: middle;
+  }
+
+  .scorecard-table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 7.5pt;
+  }
+
+  .scorecard-total td {
+    font-weight: 700;
+    background-color: #e5e5e5 !important;
+  }
+
+  .scorecard-table {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  img.mission-card-icon {
+    filter: brightness(0) !important;
+  }
+
+  .table-icon,
+  .workout-step-icon {
+    filter: brightness(0) !important;
+    color: #000 !important;
+  }
+
+  .hazard-icon {
+    color: #000 !important;
+    border-color: #000 !important;
+  }
+
+  .flow-step,
+  .mission-example,
+  .mission-rule-box {
+    background-color: #fff !important;
+    border-color: #000 !important;
+    color: #000 !important;
+  }
+
+  .flow-arrow {
+    color: #000 !important;
+  }
 }

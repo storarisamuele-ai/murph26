@@ -696,6 +696,16 @@ img {
   align-content: start;
 }
 
+@media (min-width: 900px) {
+  .mission-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.mission-card--full {
+  grid-column: 1 / -1;
+}
+
 .mission-archive {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1209,6 +1219,276 @@ img {
   .print-document {
     display: none;
   }
+}
+
+/* Alpha Assemble components */
+.mission-codename {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--blue);
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5rem;
+  line-height: 1;
+}
+
+.mission-narrative {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+
+.mission-intended-stimulus {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin: 0.75rem 0 0;
+}
+
+.mission-wod-headline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 0 0 0.5rem;
+}
+
+.wod-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  color: var(--pink);
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+.wod-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--white);
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.wod-time {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  align-self: flex-end;
+}
+
+.mission-wod-note {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 1rem;
+}
+
+.mission-rule-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 6px 6px 0;
+  padding: 1rem 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.mission-rule-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--white);
+  margin: 0 0 0.75rem;
+}
+
+.mission-rule-list {
+  list-style: decimal;
+  padding-left: 1.25rem;
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.mission-rule-list li {
+  margin: 0 0 0.4rem;
+  padding-left: 0.25rem;
+}
+
+.mission-rule-list li::marker {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.mission-rule-note {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--pink);
+  margin: 0;
+}
+
+.mission-example {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 0 0 1rem;
+}
+
+.mission-example-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.25rem;
+  color: var(--pink);
+  letter-spacing: 0.05em;
+  margin: 0 0 0.75rem;
+  line-height: 1;
+}
+
+.mission-important {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--white);
+  margin: 0;
+}
+
+.mission-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .mission-flow {
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+  }
+}
+
+.flow-step {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  letter-spacing: 0.04em;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  min-width: 100px;
+}
+
+.flow-step--sm {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+}
+
+.flow-arrow {
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--blue);
+}
+
+.flow-arrow--desktop {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .flow-arrow--desktop {
+    display: inline;
+  }
+
+  .flow-arrow--mobile {
+    display: none;
+  }
+}
+
+.table-icon {
+  display: inline-block;
+  width: 1.5em;
+  text-align: center;
+  margin-right: 0.35rem;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.mission-hazard-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.mission-hazard-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hazard-icon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--pink);
+  border-radius: 50%;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--pink);
+}
+
+.mission-intel-statement {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  line-height: 1.2;
+  color: var(--white);
+  margin: 0 0 0.75rem;
+}
+
+.mission-intel-secondary {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin: 0;
+}
+
+.scorecard-web {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 0.5rem;
+}
+
+.print-scorecard {
+  display: none;
+}
+
+.mission-card .workout-step-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  flex: 0 0 auto;
 }
 
 /* Scaling component — mirrors Find Your Murph */
