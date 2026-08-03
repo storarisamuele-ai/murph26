@@ -223,6 +223,10 @@ img {
   color: var(--white);
 }
 
+.mission-card--critical .mission-card-icon {
+  filter: hue-rotate(150deg) brightness(1.4) saturate(0.85);
+}
+
 .mission-card--full {
   grid-column: 1 / -1;
 }
@@ -1258,13 +1262,19 @@ img {
   line-height: 1.5;
 }
 
+.mission-objective-copy {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  line-height: 1.55;
+  margin: 0 0 0.4rem;
+}
+
 .mission-intended-stimulus {
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--pink);
-  margin: 0.75rem 0 0;
+  margin: 0.25rem 0 0;
 }
 
 .mission-wod-headline {
@@ -1476,7 +1486,7 @@ img {
 
 .mission-hazard-list li {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto minmax(220px, 300px) minmax(0, 1fr);
   gap: 0.75rem;
   align-items: start;
   font-size: 0.9rem;
@@ -1497,6 +1507,29 @@ img {
   font-size: 0.875rem;
   font-weight: 700;
   color: var(--pink);
+}
+
+.hazard-title {
+  font-weight: 600;
+  color: var(--white);
+}
+
+.hazard-description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 700px) {
+  .mission-hazard-list li {
+    grid-template-columns: auto 1fr;
+  }
+
+  .hazard-title {
+    grid-column: 2;
+  }
+
+  .hazard-description {
+    grid-column: 2;
+  }
 }
 
 .mission-intel-statement {

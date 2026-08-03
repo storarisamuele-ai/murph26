@@ -1,6 +1,29 @@
 // mission-brief.js
 // Template-specific scripts for the Mission Brief pages.
 
+function injectFavicon() {
+  if (document.querySelector('link[rel*="icon"], link[rel="manifest"]')) return;
+  const head = document.head;
+  const links = [
+    { rel: 'icon', href: '../favicon.ico', sizes: 'any', type: 'image/x-icon' },
+    { rel: 'icon', type: 'image/png', sizes: '16x16', href: '../favicon-16x16.png' },
+    { rel: 'icon', type: 'image/png', sizes: '32x32', href: '../favicon-32x32.png' },
+    { rel: 'apple-touch-icon', sizes: '180x180', href: '../apple-touch-icon.png' },
+    { rel: 'manifest', href: '../manifest.json' },
+  ];
+  links.forEach((attrs) => {
+    const link = document.createElement('link');
+    Object.entries(attrs).forEach(([key, value]) => link.setAttribute(key, value));
+    head.appendChild(link);
+  });
+  const meta = document.createElement('meta');
+  meta.name = 'theme-color';
+  meta.content = '#0694B9';
+  head.appendChild(meta);
+}
+
+injectFavicon();
+
 document.addEventListener('DOMContentLoaded', () => {
   const pathMatch = window.location.pathname.match(/mission-(\d{2})\.html$/);
   if (!pathMatch) return;
