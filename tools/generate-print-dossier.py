@@ -27,9 +27,8 @@ PAGE_ALLOCATIONS = {
     "mission-01": [
         [
             "MISSION IDENTIFICATION",
-            "MISSION OBJECTIVE / INTENDED STIMULUS",
+            "MISSION OBJECTIVE",
             "MISSION WORKOUT",
-            "FLOW",
             "AUTHORIZED STANDARDS",
         ],
         [

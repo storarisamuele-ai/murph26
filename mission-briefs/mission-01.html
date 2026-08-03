@@ -73,7 +73,7 @@
 
       <section class='mission-content'>
 
-        <article class='mission-card mission-card--accent'>
+        <article class='mission-card mission-card--info'>
           <header class='mission-card-header'>
             <img class='mission-card-icon' src='assets/target.svg' alt='' aria-hidden='true'>
             <h2 class='mission-card-title'>MISSION IDENTIFICATION</h2>
@@ -102,10 +102,10 @@
           </div>
         </article>
 
-        <article class='mission-card'>
+        <article class='mission-card mission-card--info'>
           <header class='mission-card-header'>
             <img class='mission-card-icon' src='assets/star.svg' alt='' aria-hidden='true'>
-            <h2 class='mission-card-title'>MISSION OBJECTIVE / INTENDED STIMULUS</h2>
+            <h2 class='mission-card-title'>MISSION OBJECTIVE</h2>
           </header>
           <div class='mission-card-body'>
             <p>Completare la distanza assegnata al Row come Team, gestendo strategia, cambi e ritmo senza accumulare fatica inutile nelle prime ore della 12H Experience.</p>
@@ -113,7 +113,7 @@
           </div>
         </article>
 
-        <article class='mission-card mission-card--note'>
+        <article class='mission-card mission-card--full mission-card--critical'>
           <header class='mission-card-header'>
             <img class='mission-card-icon' src='assets/shield.svg' alt='' aria-hidden='true'>
             <h2 class='mission-card-title'>MISSION WORKOUT</h2>
@@ -125,59 +125,51 @@
               <span class='wod-time'>FOR TIME</span>
             </div>
             <p class='mission-wod-note'>Distanza totale del Team. Split as needed.</p>
-            <div class='mission-rule-box'>
-              <p class='mission-rule-title'>Prima di ogni ingresso al Row, l'atleta deve:</p>
-              <ol class='mission-rule-list'>
-                <li>DICHIARARE quanti metri intende completare.</li>
-                <li>Eseguire 1 Burpee Over the Rower ogni 100 m dichiarati.</li>
-                <li>Salire sul Row.</li>
-                <li>Completare esattamente la distanza dichiarata.</li>
-              </ol>
-              <p class='mission-rule-note'>Sono ammessi esclusivamente blocchi in multipli di 100 m.</p>
+
+            <div class='mission-flow'>
+              <div class='flow-step'>DECLARE</div>
+              <span class='flow-arrow flow-arrow--desktop'>→</span>
+              <span class='flow-arrow flow-arrow--mobile'>↓</span>
+              <div class='flow-step'>BURPEES</div>
+              <span class='flow-arrow flow-arrow--desktop'>→</span>
+              <span class='flow-arrow flow-arrow--mobile'>↓</span>
+              <div class='flow-step'>ROW</div>
+              <span class='flow-arrow flow-arrow--desktop'>→</span>
+              <span class='flow-arrow flow-arrow--mobile'>↓</span>
+              <div class='flow-step'>CHANGE</div>
             </div>
-            <div class='mission-example'>
-              <div class='mission-example-label'>ESEMPIO</div>
-              <div class='mission-flow mission-flow--example'>
-                <div class='flow-step flow-step--sm'>500 M DICHIARATI</div>
-                <div class='flow-arrow'>↓</div>
-                <div class='flow-step flow-step--sm'>5 BURPEES OVER THE ROWER</div>
-                <div class='flow-arrow'>↓</div>
-                <div class='flow-step flow-step--sm'>500 M ROW</div>
+
+            <div class='mission-workout-grid'>
+              <div class='mission-rule-box'>
+                <p class='mission-rule-title'>HOW IT WORKS</p>
+                <ol class='mission-rule-list'>
+                  <li>Dichiarare la distanza.</li>
+                  <li>Eseguire 1 Burpee Over the Rower ogni 100 m dichiarati.</li>
+                  <li>Salire sul Row.</li>
+                  <li>Completare esattamente la distanza dichiarata.</li>
+                </ol>
+                <p class='mission-rule-note'>Sono ammessi esclusivamente blocchi in multipli di 100 m.</p>
+              </div>
+
+              <div class='mission-example'>
+                <div class='mission-example-label'>ESEMPIO</div>
+                <div class='mission-flow mission-flow--example'>
+                  <div class='flow-step flow-step--sm'>500 M DICHIARATI</div>
+                  <div class='flow-arrow'>↓</div>
+                  <div class='flow-step flow-step--sm'>5 BURPEES OVER THE ROWER</div>
+                  <div class='flow-arrow'>↓</div>
+                  <div class='flow-step flow-step--sm'>500 M ROW</div>
+                </div>
               </div>
             </div>
+
             <p class='mission-important'>La dichiarazione avviene PRIMA dei Burpees. Una volta dichiarata, quella è la distanza da completare.</p>
+
+            <p class='mission-wod-note'><strong>IL TEAM DECIDE:</strong> ordine atleti · numero cambi · lunghezza frazioni · distribuzione volume</p>
           </div>
         </article>
 
-        <article class='mission-card'>
-          <header class='mission-card-header'>
-            <img class='mission-card-icon' src='assets/clipboard.svg' alt='' aria-hidden='true'>
-            <h2 class='mission-card-title'>FLOW</h2>
-          </header>
-          <div class='mission-card-body'>
-            <div class='mission-flow'>
-              <div class='flow-step flow-step--declare'>DECLARE</div>
-              <span class='flow-arrow flow-arrow--desktop'>→</span>
-              <span class='flow-arrow flow-arrow--mobile'>↓</span>
-              <div class='flow-step flow-step--burpees'>BURPEES</div>
-              <span class='flow-arrow flow-arrow--desktop'>→</span>
-              <span class='flow-arrow flow-arrow--mobile'>↓</span>
-              <div class='flow-step flow-step--row'>ROW</div>
-              <span class='flow-arrow flow-arrow--desktop'>→</span>
-              <span class='flow-arrow flow-arrow--mobile'>↓</span>
-              <div class='flow-step flow-step--change'>CHANGE</div>
-            </div>
-            <p class='mission-wod-note'>IL TEAM DECIDE:</p>
-            <ul class='mission-list'>
-              <li>ordine degli atleti</li>
-              <li>numero di cambi</li>
-              <li>lunghezza delle frazioni</li>
-              <li>distribuzione del volume</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class='mission-card mission-card--note mission-card--full'>
+        <article class='mission-card mission-card--full mission-card--critical'>
           <header class='mission-card-header'>
             <img class='mission-card-icon' src='assets/gear.svg' alt='' aria-hidden='true'>
             <h2 class='mission-card-title'>AUTHORIZED STANDARDS</h2>
@@ -195,31 +187,31 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class='scaling-exercise'><span class='table-icon'>🚣</span> DISTANZA</td>
+                    <td class='scaling-exercise'><img class='table-icon' src='assets/target.svg' alt='' aria-hidden='true'> DISTANZA</td>
                     <td>10.000 m Row — Team Total</td>
                     <td>—</td>
                     <td>—</td>
                   </tr>
                   <tr>
-                    <td class='scaling-exercise'><span class='table-icon'>🤸</span> BURPEES</td>
+                    <td class='scaling-exercise'><img class='table-icon' src='assets/star.svg' alt='' aria-hidden='true'> BURPEES</td>
                     <td>1 Burpee Over the Rower / 100 m dichiarati</td>
                     <td>—</td>
                     <td>—</td>
                   </tr>
                   <tr>
-                    <td class='scaling-exercise'><span class='table-icon'>🔢</span> BLOCCO</td>
+                    <td class='scaling-exercise'><img class='table-icon' src='assets/gear.svg' alt='' aria-hidden='true'> BLOCCO</td>
                     <td>Multipli di 100 m</td>
                     <td>—</td>
                     <td>—</td>
                   </tr>
                   <tr>
-                    <td class='scaling-exercise'><span class='table-icon'>🔄</span> DISTRIBUZIONE</td>
+                    <td class='scaling-exercise'><img class='table-icon' src='assets/document-grid.svg' alt='' aria-hidden='true'> DISTRIBUZIONE</td>
                     <td>Split as needed</td>
                     <td>—</td>
                     <td>—</td>
                   </tr>
                   <tr>
-                    <td class='scaling-exercise'><span class='table-icon'>✅</span> STANDARD</td>
+                    <td class='scaling-exercise'><img class='table-icon' src='assets/check.svg' alt='' aria-hidden='true'> STANDARD</td>
                     <td>Burpee Over the Rower</td>
                     <td>—</td>
                     <td>—</td>
@@ -230,7 +222,7 @@
           </div>
         </article>
 
-        <article class='mission-card'>
+        <article class='mission-card mission-card--info'>
           <header class='mission-card-header'>
             <img class='mission-card-icon' src='assets/medical.svg' alt='' aria-hidden='true'>
             <h2 class='mission-card-title'>MOVEMENT STANDARDS</h2>
@@ -249,7 +241,7 @@
           </div>
         </article>
 
-        <article class='mission-card mission-card--note'>
+        <article class='mission-card mission-card--critical'>
           <header class='mission-card-header'>
             <img class='mission-card-icon' src='assets/lock.svg' alt='' aria-hidden='true'>
             <h2 class='mission-card-title'>MISSION HAZARDS</h2>
@@ -264,7 +256,7 @@
           </div>
         </article>
 
-        <article class='mission-card mission-card--accent'>
+        <article class='mission-card mission-card--info'>
           <header class='mission-card-header'>
             <img class='mission-card-icon' src='assets/radio.svg' alt='' aria-hidden='true'>
             <h2 class='mission-card-title'>MISSION INTEL</h2>
@@ -275,7 +267,7 @@
           </div>
         </article>
 
-        <article class='mission-card scorecard'>
+        <article class='mission-card scorecard mission-card--info'>
           <header class='mission-card-header'>
             <img class='mission-card-icon' src='assets/document.svg' alt='' aria-hidden='true'>
             <h2 class='mission-card-title'>SCORECARD</h2>
@@ -349,7 +341,7 @@
   </main>
 
   <script src="../js/mission-brief.js"></script>
-        <div class="print-document" aria-hidden="true">
+          <div class="print-document" aria-hidden="true">
     <section class="print-page">
     <header class="print-header">
       <div class="print-header-left">
@@ -367,7 +359,7 @@
       </div>
     </header>
       <main class="print-content">
-    <article class='mission-card mission-card--accent'>
+    <article class='mission-card mission-card--info'>
               <div class="section-header">
       <div class="section-icon">
         <img class='mission-card-icon' src='assets/target.svg' alt='' aria-hidden='true'>
@@ -400,14 +392,14 @@
                 </dl>
               </div>
             </article>
-    <article class='mission-card'>
+    <article class='mission-card mission-card--info'>
               <div class="section-header">
       <div class="section-icon">
         <img class='mission-card-icon' src='assets/star.svg' alt='' aria-hidden='true'>
       </div>
       <div class="section-heading">
         <div class="section-ref">SECT. 02 — REF JTO-02</div>
-        <h3>MISSION OBJECTIVE / INTENDED STIMULUS</h3>
+        <h3>MISSION OBJECTIVE</h3>
       </div>
     </div>
               <div class='mission-card-body'>
@@ -415,7 +407,7 @@
                 <p class='mission-intended-stimulus'><strong>INTENDED STIMULUS</strong> AEROBIC / TEAM STRATEGY / SUSTAINABLE</p>
               </div>
             </article>
-    <article class='mission-card mission-card--note'>
+    <article class='mission-card mission-card--full mission-card--critical'>
               <div class="section-header">
       <div class="section-icon">
         <img class='mission-card-icon' src='assets/shield.svg' alt='' aria-hidden='true'>
@@ -432,68 +424,56 @@
                   <span class='wod-time'>FOR TIME</span>
                 </div>
                 <p class='mission-wod-note'>Distanza totale del Team. Split as needed.</p>
-                <div class='mission-rule-box'>
-                  <p class='mission-rule-title'>Prima di ogni ingresso al Row, l'atleta deve:</p>
-                  <ol class='mission-rule-list'>
-                    <li>DICHIARARE quanti metri intende completare.</li>
-                    <li>Eseguire 1 Burpee Over the Rower ogni 100 m dichiarati.</li>
-                    <li>Salire sul Row.</li>
-                    <li>Completare esattamente la distanza dichiarata.</li>
-                  </ol>
-                  <p class='mission-rule-note'>Sono ammessi esclusivamente blocchi in multipli di 100 m.</p>
+
+                <div class='mission-flow'>
+                  <div class='flow-step'>DECLARE</div>
+                  <span class='flow-arrow flow-arrow--desktop'>→</span>
+                  <span class='flow-arrow flow-arrow--mobile'>↓</span>
+                  <div class='flow-step'>BURPEES</div>
+                  <span class='flow-arrow flow-arrow--desktop'>→</span>
+                  <span class='flow-arrow flow-arrow--mobile'>↓</span>
+                  <div class='flow-step'>ROW</div>
+                  <span class='flow-arrow flow-arrow--desktop'>→</span>
+                  <span class='flow-arrow flow-arrow--mobile'>↓</span>
+                  <div class='flow-step'>CHANGE</div>
                 </div>
-                <div class='mission-example'>
-                  <div class='mission-example-label'>ESEMPIO</div>
-                  <div class='mission-flow mission-flow--example'>
-                    <div class='flow-step flow-step--sm'>500 M DICHIARATI</div>
-                    <div class='flow-arrow'>↓</div>
-                    <div class='flow-step flow-step--sm'>5 BURPEES OVER THE ROWER</div>
-                    <div class='flow-arrow'>↓</div>
-                    <div class='flow-step flow-step--sm'>500 M ROW</div>
+
+                <div class='mission-workout-grid'>
+                  <div class='mission-rule-box'>
+                    <p class='mission-rule-title'>HOW IT WORKS</p>
+                    <ol class='mission-rule-list'>
+                      <li>Dichiarare la distanza.</li>
+                      <li>Eseguire 1 Burpee Over the Rower ogni 100 m dichiarati.</li>
+                      <li>Salire sul Row.</li>
+                      <li>Completare esattamente la distanza dichiarata.</li>
+                    </ol>
+                    <p class='mission-rule-note'>Sono ammessi esclusivamente blocchi in multipli di 100 m.</p>
+                  </div>
+
+                  <div class='mission-example'>
+                    <div class='mission-example-label'>ESEMPIO</div>
+                    <div class='mission-flow mission-flow--example'>
+                      <div class='flow-step flow-step--sm'>500 M DICHIARATI</div>
+                      <div class='flow-arrow'>↓</div>
+                      <div class='flow-step flow-step--sm'>5 BURPEES OVER THE ROWER</div>
+                      <div class='flow-arrow'>↓</div>
+                      <div class='flow-step flow-step--sm'>500 M ROW</div>
+                    </div>
                   </div>
                 </div>
+
                 <p class='mission-important'>La dichiarazione avviene PRIMA dei Burpees. Una volta dichiarata, quella è la distanza da completare.</p>
+
+                <p class='mission-wod-note'><strong>IL TEAM DECIDE:</strong> ordine atleti · numero cambi · lunghezza frazioni · distribuzione volume</p>
               </div>
             </article>
-    <article class='mission-card'>
-              <div class="section-header">
-      <div class="section-icon">
-        <img class='mission-card-icon' src='assets/clipboard.svg' alt='' aria-hidden='true'>
-      </div>
-      <div class="section-heading">
-        <div class="section-ref">SECT. 04 — REF JTO-04</div>
-        <h3>FLOW</h3>
-      </div>
-    </div>
-              <div class='mission-card-body'>
-                <div class='mission-flow'>
-                  <div class='flow-step flow-step--declare'>DECLARE</div>
-                  <span class='flow-arrow flow-arrow--desktop'>→</span>
-                  <span class='flow-arrow flow-arrow--mobile'>↓</span>
-                  <div class='flow-step flow-step--burpees'>BURPEES</div>
-                  <span class='flow-arrow flow-arrow--desktop'>→</span>
-                  <span class='flow-arrow flow-arrow--mobile'>↓</span>
-                  <div class='flow-step flow-step--row'>ROW</div>
-                  <span class='flow-arrow flow-arrow--desktop'>→</span>
-                  <span class='flow-arrow flow-arrow--mobile'>↓</span>
-                  <div class='flow-step flow-step--change'>CHANGE</div>
-                </div>
-                <p class='mission-wod-note'>IL TEAM DECIDE:</p>
-                <ul class='mission-list'>
-                  <li>ordine degli atleti</li>
-                  <li>numero di cambi</li>
-                  <li>lunghezza delle frazioni</li>
-                  <li>distribuzione del volume</li>
-                </ul>
-              </div>
-            </article>
-    <article class='mission-card mission-card--note mission-card--full'>
+    <article class='mission-card mission-card--full mission-card--critical'>
               <div class="section-header">
       <div class="section-icon">
         <img class='mission-card-icon' src='assets/gear.svg' alt='' aria-hidden='true'>
       </div>
       <div class="section-heading">
-        <div class="section-ref">SECT. 05 — REF JTO-05</div>
+        <div class="section-ref">SECT. 04 — REF JTO-04</div>
         <h3>AUTHORIZED STANDARDS</h3>
       </div>
     </div>
@@ -510,31 +490,31 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td class='scaling-exercise'><span class='table-icon'>🚣</span> DISTANZA</td>
+                        <td class='scaling-exercise'><img class='table-icon' src='assets/target.svg' alt='' aria-hidden='true'> DISTANZA</td>
                         <td>10.000 m Row — Team Total</td>
                         <td>—</td>
                         <td>—</td>
                       </tr>
                       <tr>
-                        <td class='scaling-exercise'><span class='table-icon'>🤸</span> BURPEES</td>
+                        <td class='scaling-exercise'><img class='table-icon' src='assets/star.svg' alt='' aria-hidden='true'> BURPEES</td>
                         <td>1 Burpee Over the Rower / 100 m dichiarati</td>
                         <td>—</td>
                         <td>—</td>
                       </tr>
                       <tr>
-                        <td class='scaling-exercise'><span class='table-icon'>🔢</span> BLOCCO</td>
+                        <td class='scaling-exercise'><img class='table-icon' src='assets/gear.svg' alt='' aria-hidden='true'> BLOCCO</td>
                         <td>Multipli di 100 m</td>
                         <td>—</td>
                         <td>—</td>
                       </tr>
                       <tr>
-                        <td class='scaling-exercise'><span class='table-icon'>🔄</span> DISTRIBUZIONE</td>
+                        <td class='scaling-exercise'><img class='table-icon' src='assets/document-grid.svg' alt='' aria-hidden='true'> DISTRIBUZIONE</td>
                         <td>Split as needed</td>
                         <td>—</td>
                         <td>—</td>
                       </tr>
                       <tr>
-                        <td class='scaling-exercise'><span class='table-icon'>✅</span> STANDARD</td>
+                        <td class='scaling-exercise'><img class='table-icon' src='assets/check.svg' alt='' aria-hidden='true'> STANDARD</td>
                         <td>Burpee Over the Rower</td>
                         <td>—</td>
                         <td>—</td>
@@ -572,13 +552,13 @@
       </div>
     </header>
       <main class="print-content">
-    <article class='mission-card'>
+    <article class='mission-card mission-card--info'>
               <div class="section-header">
       <div class="section-icon">
         <img class='mission-card-icon' src='assets/medical.svg' alt='' aria-hidden='true'>
       </div>
       <div class="section-heading">
-        <div class="section-ref">SECT. 06 — REF JTO-06</div>
+        <div class="section-ref">SECT. 05 — REF JTO-05</div>
         <h3>MOVEMENT STANDARDS</h3>
       </div>
     </div>
@@ -595,13 +575,13 @@
                 </dl>
               </div>
             </article>
-    <article class='mission-card mission-card--note'>
+    <article class='mission-card mission-card--critical'>
               <div class="section-header">
       <div class="section-icon">
         <img class='mission-card-icon' src='assets/lock.svg' alt='' aria-hidden='true'>
       </div>
       <div class="section-heading">
-        <div class="section-ref">SECT. 07 — REF JTO-07</div>
+        <div class="section-ref">SECT. 06 — REF JTO-06</div>
         <h3>MISSION HAZARDS</h3>
       </div>
     </div>
@@ -614,13 +594,13 @@
                 </ul>
               </div>
             </article>
-    <article class='mission-card mission-card--accent'>
+    <article class='mission-card mission-card--info'>
               <div class="section-header">
       <div class="section-icon">
         <img class='mission-card-icon' src='assets/radio.svg' alt='' aria-hidden='true'>
       </div>
       <div class="section-heading">
-        <div class="section-ref">SECT. 08 — REF JTO-08</div>
+        <div class="section-ref">SECT. 07 — REF JTO-07</div>
         <h3>MISSION INTEL</h3>
       </div>
     </div>
@@ -629,13 +609,13 @@
                 <p class='mission-intel-secondary'>THINK LONG TERM. THE FINAL MISSION IS STILL CLASSIFIED.</p>
               </div>
             </article>
-    <article class='mission-card scorecard'>
+    <article class='mission-card scorecard mission-card--info'>
               <div class="section-header">
       <div class="section-icon">
         <img class='mission-card-icon' src='assets/document.svg' alt='' aria-hidden='true'>
       </div>
       <div class="section-heading">
-        <div class="section-ref">SECT. 09 — REF JTO-09</div>
+        <div class="section-ref">SECT. 08 — REF JTO-08</div>
         <h3>SCORECARD</h3>
       </div>
     </div>

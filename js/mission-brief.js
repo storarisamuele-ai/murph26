@@ -79,21 +79,20 @@ function initMissionScaling() {
         const cells = Array.from(row.querySelectorAll('td'));
         const labelCell = cells[0];
         const iconEl = labelCell?.querySelector('.table-icon');
-        const icon = iconEl ? iconEl.textContent.trim() : '';
+        const iconText = iconEl ? iconEl.textContent.trim() : '';
         let label = labelCell?.textContent.trim() || '';
-        if (icon) {
-          label = label.replace(icon, '').trim();
+        if (iconText) {
+          label = label.replace(iconText, '').trim();
         }
         const value = cells[colIndex]?.textContent.trim() || '';
 
         const step = document.createElement('div');
         step.className = 'workout-step';
 
-        if (icon) {
-          const stepIcon = document.createElement('span');
+        if (iconEl) {
+          const stepIcon = iconEl.cloneNode(true);
           stepIcon.className = 'workout-step-icon';
           stepIcon.setAttribute('aria-hidden', 'true');
-          stepIcon.textContent = icon;
           step.appendChild(stepIcon);
         }
 
