@@ -56,7 +56,7 @@ img {
   max-height: 297mm;
   display: flex;
   flex-direction: column;
-  padding: 12mm;
+  padding: 10mm;
   background: #fff;
   position: relative;
   counter-increment: print-page;
@@ -151,7 +151,7 @@ img {
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 0.2rem;
+  gap: 0.15rem;
 }
 
 /* Cards */
@@ -162,7 +162,10 @@ img {
   border: 0.5pt solid #ccc;
   border-left: 2pt solid #333;
   border-radius: 0 3pt 3pt 0;
-  padding: 0.3rem;
+  padding: 0.25rem;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
 }
 
 /* Section headers */
@@ -193,15 +196,7 @@ img {
   width: 100%;
   height: 100%;
   display: inline-block;
-  background-color: #000;
-  -webkit-mask-image: var(--icon-url);
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-image: var(--icon-url);
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  color: #000;
 }
 
 .section-heading {
@@ -244,7 +239,7 @@ img {
 }
 
 .mission-card-body p {
-  margin: 0 0 0.2rem;
+  margin: 0 0 0.15rem;
 }
 
 .mission-card-body p:last-child {
@@ -275,7 +270,7 @@ img {
 .equipment-checklist li {
   break-inside: avoid;
   page-break-inside: avoid;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.08rem;
 }
 
 .mission-checklist,
@@ -379,7 +374,7 @@ img {
 }
 
 .print-footer__page::before {
-  content: "Page " counter(print-page) " / " attr(data-total);
+  content: "PAGE " counter(print-page);
 }
 
 /* Monochrome print override */

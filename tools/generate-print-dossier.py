@@ -208,10 +208,16 @@ def _rebuild_section_header(card_html: str, index: int) -> str:
     )
     title = title_match.group(1).strip() if title_match else ""
     icon_match = re.search(
-        r"<img[^>]*class=['\"]mission-card-icon['\"][^>]*(?:/?>|>)",
+        r"<svg[^>]*class=['\"]mission-card-icon['\"][^>]*>.*?</svg>",
         card_html,
-        re.IGNORECASE,
+        re.IGNORECASE | re.DOTALL,
     )
+    if not icon_match:
+        icon_match = re.search(
+            r"<img[^>]*class=['\"]mission-card-icon['\"][^>]*(?:/?>|>)",
+            card_html,
+            re.IGNORECASE,
+        )
     if not icon_match:
         icon_match = re.search(
             r"<span[^>]*class=['\"]mission-card-icon['\"][^>]*>.*?</span>",
