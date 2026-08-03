@@ -695,7 +695,7 @@ body[data-mission="mission-02"] .mission-flow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   text-align: left;
   gap: 0.25rem;
@@ -728,6 +728,11 @@ body[data-mission="mission-02"] .flow-arrow {
   color: #000;
   flex: 0 0 auto;
   align-self: center;
+}
+
+body[data-mission="mission-02"] .mission-wod-headline .wod-time {
+  font-size: 12pt !important;
+  align-self: center !important;
 }
 
 body[data-mission="mission-02"] .flow-arrow--desktop {

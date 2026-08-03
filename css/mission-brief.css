@@ -1431,12 +1431,30 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  align-self: center;
   flex: 0 0 auto;
   min-width: 0;
 }
 
 .flow-arrow--desktop {
   display: none;
+}
+
+.mission-flow--mb02 {
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.35rem;
+  margin: 0 0 0.5rem;
+}
+
+.mission-flow--mb02 .flow-step {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  min-height: 3rem;
 }
 
 @media (min-width: 600px) {
@@ -1449,7 +1467,7 @@ img {
   }
 
   .mission-flow--mb02 {
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     text-align: left;
   }
