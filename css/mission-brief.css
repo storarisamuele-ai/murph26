@@ -1211,139 +1211,201 @@ img {
   }
 }
 
-/* Mission scaling component — desktop table / mobile accordion */
-.mission-scaling-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1.25rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.9);
+/* Scaling component — mirrors Find Your Murph */
+.mission-card .scaling-desktop {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
 }
 
-.mission-scaling-table th,
-.mission-scaling-table td {
-  padding: 0.75rem 1rem;
+.mission-card .scaling-table {
+  width: 100%;
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.8125rem, 1.1vw, 0.9375rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.5;
+}
+
+.mission-card .scaling-table th,
+.mission-card .scaling-table td {
+  padding: 1rem 1.25rem;
   text-align: left;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   vertical-align: top;
 }
 
-.mission-scaling-table th {
+.mission-card .scaling-table th {
   font-family: 'Inter', sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pink);
+  background-color: rgba(231, 41, 112, 0.05);
+}
+
+.mission-card .scaling-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.mission-card .scaling-exercise {
+  width: 30%;
+  min-width: 180px;
+}
+
+.mission-card .scaling-table th:not(.scaling-exercise),
+.mission-card .scaling-table td:not(.scaling-exercise) {
+  width: 23.33%;
+}
+
+.mission-card .scaling-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.mission-card .accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.mission-card .accordion-item {
+  background-color: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.mission-card .accordion-item:hover {
+  border-color: var(--blue);
+}
+
+.mission-card .accordion-header {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.9375rem, 2.6vw, 1.1rem);
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mission-card .accordion-header::-webkit-details-marker {
+  display: none;
+}
+
+.mission-card .accordion-title {
+  flex: 1;
+}
+
+.mission-card .accordion-toggle {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.mission-card .accordion-toggle::before,
+.mission-card .accordion-toggle::after {
+  content: '';
+  position: absolute;
+  background-color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.mission-card .accordion-toggle::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+.mission-card .accordion-toggle::after {
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.mission-card .accordion-item[open] .accordion-toggle::after {
+  opacity: 0;
+}
+
+.mission-card .accordion-item[open] .accordion-toggle {
+  opacity: 1;
+}
+
+.mission-card .accordion-content {
+  padding: 0 1rem 1.25rem 1rem;
+  overflow: visible;
+}
+
+.mission-card .workout-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mission-card .workout-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 56px;
+}
+
+.mission-card .workout-step:last-child {
+  border-bottom: none;
+}
+
+.mission-card .workout-step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.mission-card .workout-step-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--blue);
 }
 
-.mission-scaling-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-.mission-scaling-table .scaling-row-label {
-  width: 32%;
-  min-width: 180px;
+.mission-card .workout-step-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
   color: var(--white);
-  font-weight: 500;
-}
-
-.scaling-mobile-accordion {
-  display: none;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
-}
-
-.scaling-accordion-item {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 3px solid var(--blue);
-  border-radius: 0 6px 6px 0;
-  overflow: hidden;
-}
-
-.scaling-accordion-header {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--white);
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.scaling-accordion-header::-webkit-details-marker {
-  display: none;
-}
-
-.scaling-accordion-header::after {
-  content: '+';
-  font-size: 1.25rem;
-  color: var(--blue);
-  line-height: 1;
-}
-
-.scaling-accordion-item[open] .scaling-accordion-header::after {
-  content: '−';
-}
-
-.scaling-accordion-content {
-  padding: 0 1.25rem 1.25rem;
-}
-
-.scaling-accordion-dl {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.scaling-accordion-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.scaling-accordion-row:last-child {
-  border-bottom: none;
-}
-
-.scaling-accordion-row dt {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--blue);
-  flex: 0 0 auto;
-}
-
-.scaling-accordion-row dd {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.9);
-  text-align: right;
-  flex: 1 1 auto;
   line-height: 1.4;
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 767px) {
-  .mission-scaling-table {
+  .mission-card .scaling-desktop {
     display: none;
   }
 
-  .scaling-mobile-accordion {
+  .mission-card .scaling-mobile {
     display: flex;
   }
 }

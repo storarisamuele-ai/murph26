@@ -24,6 +24,20 @@ PAGE_ALLOCATIONS = {
             "Classified Notes",
         ],
     ],
+    "mission-01": [
+        [
+            "MISSION IDENTIFICATION",
+            "MISSION OBJECTIVE",
+            "MISSION WORKOUT",
+        ],
+        [
+            "EXECUTION PROTOCOL",
+            "AUTHORIZED STANDARDS",
+            "MOVEMENT STANDARDS",
+            "MISSION NOTES",
+            "PRINT DOSSIER",
+        ],
+    ],
 }
 
 

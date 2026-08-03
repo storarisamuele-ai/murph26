@@ -37,7 +37,8 @@ img {
 .print-cta,
 .military-divider,
 .mb-document-table,
-.mb-document-meta {
+.mb-document-meta,
+.scaling-mobile {
   display: none !important;
 }
 
@@ -55,14 +56,11 @@ img {
   flex-direction: column;
   padding: 15mm;
   background: #fff;
-  page-break-after: always;
-  break-after: page;
   position: relative;
   counter-increment: print-page;
 }
 
 .print-page:last-child {
-  page-break-after: auto;
   break-after: auto;
 }
 
@@ -441,5 +439,18 @@ img {
   a:visited {
     color: #000 !important;
     text-decoration: none !important;
+  }
+
+  .mission-card .scaling-table,
+  .mission-card .scaling-table th,
+  .mission-card .scaling-table td {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 0.5pt solid #000 !important;
+  }
+
+  .mission-card .scaling-table {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }

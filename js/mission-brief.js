@@ -57,50 +57,65 @@ function initMissionScaling() {
     if (!headers.length) return;
 
     const accordion = document.createElement('div');
-    accordion.className = 'scaling-mobile-accordion js-scaling-accordion';
-    accordion.setAttribute('aria-label', 'Mobile scaling comparison');
+    accordion.className = 'accordion scaling-accordion';
 
     headers.forEach((level, colIndex) => {
       if (colIndex === 0) return;
 
       const details = document.createElement('details');
-      details.className = 'scaling-accordion-item';
+      details.className = 'accordion-item';
 
       const summary = document.createElement('summary');
-      summary.className = 'scaling-accordion-header';
-      summary.textContent = level;
+      summary.className = 'accordion-header';
+      summary.innerHTML = `<span class="accordion-title">${level}</span><span class="accordion-toggle"></span>`;
 
       const content = document.createElement('div');
-      content.className = 'scaling-accordion-content';
+      content.className = 'accordion-content';
 
-      const dl = document.createElement('dl');
-      dl.className = 'scaling-accordion-dl';
+      const steps = document.createElement('div');
+      steps.className = 'workout-steps';
 
       rows.forEach((row) => {
         const cells = Array.from(row.querySelectorAll('td'));
         const label = cells[0]?.textContent.trim() || '';
         const value = cells[colIndex]?.textContent.trim() || '';
 
-        const div = document.createElement('div');
-        div.className = 'scaling-accordion-row';
+        const step = document.createElement('div');
+        step.className = 'workout-step';
 
-        const dt = document.createElement('dt');
-        dt.textContent = label;
+        const stepContent = document.createElement('div');
+        stepContent.className = 'workout-step-content';
 
-        const dd = document.createElement('dd');
-        dd.textContent = value;
+        const labelEl = document.createElement('span');
+        labelEl.className = 'workout-step-label';
+        labelEl.textContent = label;
 
-        div.appendChild(dt);
-        div.appendChild(dd);
-        dl.appendChild(div);
+        const valueEl = document.createElement('span');
+        valueEl.className = 'workout-step-value';
+        valueEl.textContent = value;
+
+        stepContent.appendChild(labelEl);
+        stepContent.appendChild(valueEl);
+        step.appendChild(stepContent);
+        steps.appendChild(step);
       });
 
-      content.appendChild(dl);
+      content.appendChild(steps);
       details.appendChild(summary);
       details.appendChild(content);
       accordion.appendChild(details);
     });
 
-    table.parentNode.insertBefore(accordion, table.nextSibling);
+    const mobile = document.createElement('div');
+    mobile.className = 'scaling-mobile';
+    mobile.setAttribute('aria-label', 'Confronto scale mobile');
+    mobile.appendChild(accordion);
+
+    const desktop = table.closest('.scaling-desktop');
+    if (desktop && desktop.parentNode) {
+      desktop.parentNode.insertBefore(mobile, desktop.nextSibling);
+    } else if (table.parentNode) {
+      table.parentNode.insertBefore(mobile, table.nextSibling);
+    }
   });
 }
