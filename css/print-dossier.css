@@ -38,7 +38,8 @@ img {
 .military-divider,
 .mb-document-table,
 .mb-document-meta,
-.scaling-mobile {
+.scaling-mobile,
+.scorecard {
   display: none !important;
 }
 
@@ -206,7 +207,7 @@ img {
 }
 
 .section-ref {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Fira Code', 'Courier New', monospace;
   font-size: 11px;
   font-weight: 500;
   line-height: 1;
@@ -230,6 +231,24 @@ img {
   font-size: 8.5pt;
   line-height: 1.35;
   color: #000;
+}
+
+.mission-wod-headline,
+.mission-intel-statement,
+.mission-example-label {
+  font-family: 'Bebas Neue', sans-serif;
+  line-height: 1.1;
+}
+
+.mission-example {
+  padding: 0.4rem;
+}
+
+.mission-hazard-list,
+.mission-hazard-list .hazard-title,
+.mission-hazard-list .hazard-description {
+  font-size: 8.5pt;
+  line-height: 1.35;
 }
 
 .mission-card-body p,
@@ -362,10 +381,16 @@ img {
   padding: 0;
   display: flex;
   gap: 0.6rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
 }
 
 .print-footer__meta li {
   margin: 0;
+}
+
+.print-header-right dt,
+.print-header-right dd {
+  font-family: 'Fira Code', 'Courier New', monospace;
 }
 
 .print-footer__page {
