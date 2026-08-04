@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMissionScaling();
   initMissionSectionHeaders();
   initMissionArchiveLink();
+  initPrintButtons();
 });
 
 function initMissionSectionHeaders() {
@@ -109,6 +110,41 @@ function initMissionArchiveLink() {
   } else {
     archiveLink.setAttribute('href', 'mission-00.html');
   }
+}
+
+function initPrintButtons() {
+  const printCtas = document.querySelectorAll('.print-cta');
+  if (!printCtas.length) return;
+
+  // Map current mission page to its printable dossier, e.g. mission-03.html -> mission-03-print.html
+  const pathMatch = window.location.pathname.match(/mission-(\d{2})\.html$/);
+  const defaultPrintUrl = pathMatch ? `mission-${pathMatch[1]}-print.html` : null;
+
+  printCtas.forEach((btn) => {
+    // remove any legacy inline print handler
+    btn.removeAttribute('onclick');
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const printUrl = btn.dataset.printUrl || defaultPrintUrl;
+      openPrintFrame(printUrl);
+    });
+  });
+}
+
+function openPrintFrame(url) {
+  if (!url) return;
+
+  const existing = document.getElementById('mb-print-iframe');
+  if (existing) existing.remove();
+
+  const iframe = document.createElement('iframe');
+  iframe.id = 'mb-print-iframe';
+  iframe.setAttribute('aria-hidden', 'true');
+  iframe.setAttribute('title', 'Printable mission dossier');
+  iframe.style.cssText = 'position:fixed;left:-10000px;top:-10000px;width:1px;height:1px;border:0;visibility:hidden;pointer-events:none;';
+  iframe.src = url;
+  document.body.appendChild(iframe);
 }
 
 function initMissionScaling() {

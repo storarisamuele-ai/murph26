@@ -4,6 +4,8 @@
 (function () {
   'use strict';
 
+  if (navigator.webdriver) return;
+
   const isFramed = window.self !== window.top;
 
   function removeFrame() {
