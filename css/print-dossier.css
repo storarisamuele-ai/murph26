@@ -927,7 +927,9 @@ body[data-mission="mission-03"] .mission-legend {
 }
 
 /* Mission Hazards — print always expanded */
-body[data-mission] .hazard-accordion {
+body[data-mission] .hazard-accordion,
+body[data-mission] .hazard-accordion details,
+body[data-mission] .hazard-accordion details[open] {
   display: block;
 }
 
@@ -943,8 +945,10 @@ body[data-mission] .hazard-accordion-header {
   list-style: none;
 }
 
-body[data-mission] .hazard-accordion-toggle {
-  display: none;
+body[data-mission] .hazard-accordion-toggle,
+body[data-mission] .hazard-accordion-toggle::before {
+  display: none !important;
+  content: none !important;
 }
 
 body[data-mission] .hazard-accordion-content {
