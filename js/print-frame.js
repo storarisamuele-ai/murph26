@@ -4,8 +4,6 @@
 (function () {
   'use strict';
 
-  if (navigator.webdriver) return;
-
   const isFramed = window.self !== window.top;
 
   function removeFrame() {
@@ -29,6 +27,13 @@
     }
   }
 
+  // Inside the hidden iframe, the parent (mission-brief.js) triggers print().
+  // We only own the cleanup here.
+  if (isFramed) {
+    window.addEventListener('afterprint', removeFrame, { once: true });
+    return;
+  }
+
   function triggerPrint() {
     const hasFontLoading = typeof document !== 'undefined' && document.fonts && typeof document.fonts.ready !== 'undefined';
 
@@ -48,6 +53,8 @@
   }
 
   window.addEventListener('afterprint', closeOrRemove, { once: true });
+
+  if (navigator.webdriver) return;
 
   if (document.readyState === 'complete') {
     triggerPrint();
