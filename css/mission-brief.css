@@ -1292,31 +1292,26 @@ img {
   min-width: 0;
 }
 
-.wod-number {
+.wod-number,
+.wod-label,
+.wod-join {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2.25rem, 5vw, 3.5rem);
-  color: var(--pink);
-  letter-spacing: 0.03em;
   line-height: 1;
+  letter-spacing: 0.03em;
   white-space: nowrap;
+}
+
+.wod-number {
+  color: var(--pink);
 }
 
 .wod-label {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
   color: var(--white);
-  letter-spacing: 0.05em;
-  line-height: 1;
-  white-space: nowrap;
 }
 
 .wod-join {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
   color: var(--pink);
-  letter-spacing: 0.05em;
-  line-height: 1;
-  white-space: nowrap;
 }
 
 .wod-icon {
