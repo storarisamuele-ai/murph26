@@ -8,41 +8,391 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/print-dossier.css">
+  <style>
+    /* MB03 — explicit 3-page A4 artboards */
+    body[data-mission="mission-03"] {
+      margin: 0;
+      padding: 0;
+      background: #e5e5e5;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body[data-mission="mission-03"] .print-document {
+      display: block !important;
+      width: 100%;
+    }
+
+    body[data-mission="mission-03"] .print-page {
+      width: 210mm !important;
+      height: 297mm !important;
+      min-height: 297mm !important;
+      max-height: 297mm !important;
+      padding: 0 !important;
+      margin: 0 auto 10mm;
+      position: relative;
+      overflow: hidden !important;
+      break-after: page !important;
+      page-break-after: always !important;
+      break-inside: auto !important;
+      page-break-inside: auto !important;
+      background: #fff;
+      box-sizing: border-box;
+    }
+
+    body[data-mission="mission-03"] .print-page:last-child {
+      break-after: auto !important;
+      page-break-after: auto !important;
+      margin-bottom: 0;
+    }
+
+    body[data-mission="mission-03"] .print-header {
+      position: absolute;
+      top: 8mm;
+      left: 10mm;
+      right: 10mm;
+      height: 25mm;
+      margin: 0 !important;
+      box-sizing: border-box;
+      break-inside: avoid;
+    }
+
+    body[data-mission="mission-03"] .print-declassified-stamp {
+      height: 18mm;
+      width: auto;
+      max-width: 40mm;
+      object-fit: contain;
+    }
+
+    body[data-mission="mission-03"] .print-content {
+      position: absolute;
+      top: 37mm;
+      left: 10mm;
+      right: 10mm;
+      bottom: 22mm;
+      overflow: hidden;
+      display: block !important;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body[data-mission="mission-03"] .mission-card {
+      margin-bottom: 2mm !important;
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+      padding: 2mm !important;
+    }
+
+    body[data-mission="mission-03"] .mission-card:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    body[data-mission="mission-03"] .section-heading h3 {
+      font-size: 15px !important;
+      line-height: 1.05 !important;
+      margin: 0;
+    }
+
+    body[data-mission="mission-03"] .section-ref {
+      font-size: 8px !important;
+      margin-bottom: 1px !important;
+    }
+
+    body[data-mission="mission-03"] .mission-card-body {
+      font-size: 7pt !important;
+      line-height: 1.25 !important;
+    }
+
+    body[data-mission="mission-03"] .mission-card-body p,
+    body[data-mission="mission-03"] .mission-card-body li {
+      margin-bottom: 0.08rem !important;
+    }
+
+    body[data-mission="mission-03"] .mission-rule-list,
+    body[data-mission="mission-03"] .hazard-list,
+    body[data-mission="mission-03"] .mission-intel {
+      padding-left: 0.75rem !important;
+      margin: 0.1rem 0 0 !important;
+    }
+
+    body[data-mission="mission-03"] .mission-rule-list li,
+    body[data-mission="mission-03"] .hazard-list li,
+    body[data-mission="mission-03"] .mission-intel div {
+      margin-bottom: 0.05rem;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body[data-mission="mission-03"] .mission-codename {
+      font-size: 11pt !important;
+      margin-bottom: 0.1rem !important;
+    }
+
+    body[data-mission="mission-03"] .mission-narrative {
+      font-size: 7.5pt !important;
+      margin-bottom: 0.2rem !important;
+    }
+
+    body[data-mission="mission-03"] .mission-wod-headline {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      margin: 0.1rem 0 0.2rem !important;
+    }
+
+    body[data-mission="mission-03"] .mission-wod-description {
+      margin-bottom: 0.15rem !important;
+    }
+
+    body[data-mission="mission-03"] .mission-flow {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      margin: 0.1rem 0 !important;
+    }
+
+    body[data-mission="mission-03"] .flow-step {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 8pt;
+      padding: 0.15rem 0.35rem;
+      border: 0.5pt solid #000;
+      border-radius: 2pt;
+      line-height: 1;
+    }
+
+    body[data-mission="mission-03"] .flow-arrow--mobile {
+      display: none !important;
+    }
+
+    body[data-mission="mission-03"] .flow-arrow--desktop {
+      display: inline;
+    }
+
+    body[data-mission="mission-03"] .scaling-table {
+      font-size: 7pt !important;
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.1rem 0 0.15rem;
+    }
+
+    body[data-mission="mission-03"] .scaling-table th,
+    body[data-mission="mission-03"] .scaling-table td {
+      padding: 0.1rem 0.2rem !important;
+      border: 0.5pt solid #ccc;
+    }
+
+    body[data-mission="mission-03"] .mission-example {
+      margin: 0.2rem 0 0 !important;
+      padding: 0.2rem !important;
+    }
+
+    body[data-mission="mission-03"] .mission-legend {
+      margin: 0.1rem 0 0 !important;
+      font-size: 6.5pt !important;
+    }
+
+    body[data-mission="mission-03"] .hazard-list {
+      list-style: none;
+      padding: 0 !important;
+      margin: 0.1rem 0 0 !important;
+    }
+
+    body[data-mission="mission-03"] .hazard-entry {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin-bottom: 0.15rem;
+      padding-left: 0;
+    }
+
+    body[data-mission="mission-03"] .hazard-title {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      font-weight: 700;
+      font-size: 7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.05rem;
+    }
+
+    body[data-mission="mission-03"] .hazard-icon {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 8pt;
+      color: #000;
+    }
+
+    body[data-mission="mission-03"] .hazard-text {
+      font-size: 7pt;
+      line-height: 1.25;
+      color: #000;
+      margin: 0 0 0 0.9rem;
+    }
+
+    body[data-mission="mission-03"] .mission-intel-statement {
+      font-size: 12pt !important;
+      line-height: 1.1 !important;
+      margin-bottom: 0.1rem !important;
+    }
+
+    body[data-mission="mission-03"] .mission-intel-secondary {
+      font-size: 7pt !important;
+      margin-bottom: 0.2rem !important;
+    }
+
+    body[data-mission="mission-03"] .mission-important {
+      font-size: 7pt !important;
+      font-weight: 600;
+      margin-bottom: 0 !important;
+    }
+
+    body[data-mission="mission-03"] .team-flow-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.15rem 0;
+    }
+
+    body[data-mission="mission-03"] .team-flow-athlete,
+    body[data-mission="mission-03"] .team-flow-action,
+    body[data-mission="mission-03"] .team-flow-rep {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 8pt;
+      line-height: 1;
+    }
+
+    body[data-mission="mission-03"] .team-flow-action {
+      border: 0.5pt solid #000;
+      border-radius: 2pt;
+      padding: 0.15rem 0.35rem;
+    }
+
+    body[data-mission="mission-03"] .team-flow-rep {
+      text-align: center;
+      margin: 0.05rem 0 0.1rem;
+    }
+
+    body[data-mission="mission-03"] .rotation-flow {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.25rem;
+      margin: 0.1rem 0 0.15rem;
+    }
+
+    body[data-mission="mission-03"] .rotation-card {
+      border: 0.5pt solid #ccc;
+      border-radius: 2pt;
+      padding: 0.15rem 0.3rem;
+      text-align: center;
+      min-width: 28mm;
+    }
+
+    body[data-mission="mission-03"] .rotation-label,
+    body[data-mission="mission-03"] .rotation-teams,
+    body[data-mission="mission-03"] .rotation-move,
+    body[data-mission="mission-03"] .rotation-rep,
+    body[data-mission="mission-03"] .rotation-summary {
+      font-size: 7pt;
+      line-height: 1.1;
+    }
+
+    body[data-mission="mission-03"] .rotation-move {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 8pt;
+    }
+
+    body[data-mission="mission-03"] .rotation-summary {
+      text-align: center;
+      margin: 0.1rem 0;
+    }
+
+    body[data-mission="mission-03"] .mission-flow--completion {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.15rem;
+      margin: 0.2rem 0 !important;
+    }
+
+    body[data-mission="mission-03"] .print-footer {
+      position: absolute;
+      bottom: 8mm;
+      left: 10mm;
+      right: 10mm;
+      height: 12mm;
+      margin: 0 !important;
+      box-sizing: border-box;
+      font-size: 7pt;
+    }
+
+    body[data-mission="mission-03"] .print-footer__page {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 9pt;
+      color: #000;
+    }
+
+    body[data-mission="mission-03"] .print-footer__page::before {
+      content: none !important;
+    }
+
+    @media print {
+      body[data-mission="mission-03"] {
+        background: #fff;
+      }
+
+      body[data-mission="mission-03"] .print-page {
+        margin-bottom: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
 </head>
 <body class="print-dossier" data-mission="mission-03">
   <div class="print-document">
-<section class="print-page">
-<header class="print-header">
-  <div class="print-header-left">
-    <img src="../assets/muprh-logo-font.svg" alt="Murph26" class="print-header__logo-mark">
-    <span class="print-header__logo-wordmark">JOINT TRAINING OPERATIONS</span>
-  </div>
-  <div class="print-header-center">
-    <div class="print-title-wrapper">
-      <h1 class="print-header__title">MISSION BRIEF #03</h1>
-      <h2 class="print-header__subtitle">MISSION CHARLIE</h2>
-    </div>
-  </div>
-  <div class="print-header-right">
-    <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
-  </div>
-</header>
-  <main class="print-content">
-<article class='mission-card mission-card--info'>
+
+    <section class="print-page" data-page="1">
+      <header class="print-header">
+        <div class="print-header-left">
+          <img src="../assets/muprh-logo-font.svg" alt="Murph26" class="print-header__logo-mark">
+          <span class="print-header__logo-wordmark">JOINT TRAINING OPERATIONS</span>
+        </div>
+        <div class="print-header-center">
+          <div class="print-title-wrapper">
+            <h1 class="print-header__title">MISSION BRIEF #03</h1>
+            <h2 class="print-header__subtitle">MISSION CHARLIE</h2>
+          </div>
+        </div>
+        <div class="print-header-right">
+          <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
+        </div>
+      </header>
+
+      <div class="print-content">
+        <article class='mission-card mission-card--info'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><circle cx='12' cy='12' r='4'/><line x1='12' y1='3' x2='12' y2='21'/><line x1='3' y1='12' x2='21' y2='12'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 01 — REF JTO-01</div>
-    <h3>MISSION IDENTIFICATION</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><circle cx='12' cy='12' r='4'/><line x1='12' y1='3' x2='12' y2='21'/><line x1='3' y1='12' x2='21' y2='12'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 01 — REF JTO-01</div>
+              <h3>MISSION IDENTIFICATION</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
             <p class='mission-codename'>CHARLIE — ENDURE</p>
             <p class='mission-narrative'>IL CALDO SALE. LA FATICA COMINCIA A FARSI SENTIRE. IL TEAM CONTINUA AD AVANZARE.</p>
-            <p class='mission-wod-note'>Missione 03 // Muscular Endurance // Team Relay</p>
-            <dl class='mission-intel'>
+            <p class='mission-wod-note' style="font-size: 6.5pt; font-style: italic; margin: 0.1rem 0 0.15rem;">Missione 03 // Muscular Endurance // Team Relay</p>
+            <dl class='mission-intel' style="padding-left: 0 !important; margin: 0.1rem 0 0 !important;">
               <div>
                 <dt>Designazione</dt>
                 <dd>CHARLIE — ENDURE</dd>
@@ -66,33 +416,35 @@
             </dl>
           </div>
         </article>
-<article class='mission-card mission-card--info'>
+
+        <article class='mission-card mission-card--info'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2l3 8 9 1-7 5 2 9-8-5-8 5 2-9-7-5 9-1Z'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 02 — REF JTO-02</div>
-    <h3>MISSION OBJECTIVE</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2l3 8 9 1-7 5 2 9-8-5-8 5 2-9-7-5 9-1Z'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 02 — REF JTO-02</div>
+              <h3>MISSION OBJECTIVE</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
             <p class='mission-objective-copy'>Resistere sotto fatica mantenendo movimento continuo, transizioni organizzate e qualità di esecuzione.</p>
-            <p class='mission-intended-stimulus'><strong>INTENDED STIMULUS</strong> MUSCULAR ENDURANCE / TEAM RELAY / SUSTAINABLE GRIND</p>
-            <p class='mission-rule-title' style='white-space: nowrap;'>Intensità target — RPE 8 / 10</p>
-            <p class='mission-objective-copy' style='margin-bottom: 0;'>CHARLIE non deve essere uno sprint. La sensazione deve essere continua → continua → continua.</p>
+            <p class='mission-intended-stimulus' style="font-size: 6.5pt; font-weight: 600; letter-spacing: 0.03em; margin: 0.15rem 0;"><strong>INTENDED STIMULUS</strong> MUSCULAR ENDURANCE / TEAM RELAY / SUSTAINABLE GRIND</p>
+            <p class='mission-rule-title' style="white-space: nowrap; margin-bottom: 0.05rem;">Intensità target — RPE 8 / 10</p>
+            <p class='mission-objective-copy' style="margin-bottom: 0;">CHARLIE non deve essere uno sprint. La sensazione deve essere continua → continua → continua.</p>
           </div>
         </article>
-<article class='mission-card mission-card--full mission-card--critical'>
+
+        <article class='mission-card mission-card--full mission-card--critical'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 03 — REF JTO-03</div>
-    <h3>MISSION WORKOUT</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 03 — REF JTO-03</div>
+              <h3>MISSION WORKOUT</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
             <div class='mission-wod-headline'>
               <span class='wod-icon' aria-hidden='true' data-wod-icon='box-over'></span><span class='wod-icon wod-icon--secondary' aria-hidden='true' data-wod-icon='broad-jump'></span>
@@ -104,7 +456,7 @@
 
             <p class='mission-wod-description'>240 Atlas Dual Box Over @30 kg + 36 m BBJ per atleta (144 m Team da 4).<br>Box @50 cm.</p>
 
-            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Mission Flow</p>
+            <p class='mission-rule-title' style="text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.1rem;">Mission Flow</p>
             <div class='mission-flow mission-flow--mb03'>
               <div class='flow-step'>DUAL BOX OVER</div>
               <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
@@ -112,7 +464,7 @@
               <div class='flow-step'>BURPEE BROAD JUMP</div>
             </div>
 
-            <p class='mission-rule-title' style='margin-top: 1rem;'>Mission Rules</p>
+            <p class='mission-rule-title' style="margin: 0.15rem 0 0.1rem;">Mission Rules</p>
             <ol class='mission-rule-list'>
               <li>Ogni attraversamento completo dei due Box vale 1 rep.</li>
               <li>Il partner successivo riparte dal lato opposto.</li>
@@ -120,21 +472,22 @@
             </ol>
           </div>
         </article>
-<article class='mission-card mission-card--full mission-card--info'>
-          <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 04 — REF JTO-04</div>
-    <h3>AUTHORIZED STANDARDS</h3>
-  </div>
-</div>
-          <div class='mission-card-body'>
-            <p class='mission-objective-copy' style='margin-bottom: 1rem;'>Le seguenti prescrizioni dipendono dallo Standard scelto dal Team. Atlante, reps, altezza Box e distanza Burpee sono tutti definiti nella tabella.</p>
 
-            <div class='scaling-desktop' style='width: 100%; max-width: 100%;'>
-              <table class='scaling-table mb03-scaling-table js-scaling-table' style='width: 100%;'>
+        <article class='mission-card mission-card--full mission-card--info'>
+          <div class="section-header">
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 04 — REF JTO-04</div>
+              <h3>AUTHORIZED STANDARDS</h3>
+            </div>
+          </div>
+          <div class='mission-card-body'>
+            <p class='mission-objective-copy' style="margin-bottom: 0.2rem;">Le seguenti prescrizioni dipendono dallo Standard scelto dal Team. Atlante, reps, altezza Box e distanza Burpee sono tutti definiti nella tabella.</p>
+
+            <div class='scaling-desktop' style="width: 100%; max-width: 100%;">
+              <table class='scaling-table mb03-scaling-table js-scaling-table' style="width: 100%;">
                 <thead>
                   <tr>
                     <th style='width: 25%;'></th>
@@ -176,55 +529,58 @@
                   </tr>
                 </tbody>
               </table>
-              <p class='mission-legend' style='margin: 0.5rem 0 0; font-size: 0.75rem; color: rgba(255,255,255,0.55);'>BBJ = Burpee Broad Jump</p>
+              <p class='mission-legend'>BBJ = Burpee Broad Jump</p>
             </div>
 
-            <div class='mission-example' style='margin-top: 1rem; margin-bottom: 0;'>
-              <p class='mission-example-label'>Adaptation</p>
-              <p class='mission-objective-copy' style='margin-bottom: 0;'>10 kg Atlas disponibile come adattamento individuale su necessità.</p>
+            <div class='mission-example' style="margin-top: 0.2rem; margin-bottom: 0;">
+              <p class='mission-example-label' style="font-weight: 600; font-size: 7pt; margin-bottom: 0.05rem;">Adaptation</p>
+              <p class='mission-objective-copy' style="margin-bottom: 0;">10 kg Atlas disponibile come adattamento individuale su necessità.</p>
             </div>
           </div>
         </article>
-  </main>
-<footer class="print-footer" data-total="3">
-  <ul class="print-footer__meta">
-    <li>Ref: M26-JTO-03-R01</li>
-    <li>Archive: M26-JTO-03</li>
-    <li>Rev: 01</li>
-    <li>DECLASSIFIED</li>
-  </ul>
-  <span class="print-footer__page"></span>
-</footer>
-</section>
-<section class="print-page">
-<header class="print-header print-header--compact">
-  <div class="print-header-left">
-    <img src="../assets/muprh-logo-font.svg" alt="Murph26" class="print-header__logo-mark">
-    <span class="print-header__logo-wordmark">JOINT TRAINING OPERATIONS</span>
-  </div>
-  <div class="print-header-center">
-    <div class="print-title-wrapper">
-      <h1 class="print-header__title">MISSION BRIEF #03</h1>
-      <h2 class="print-header__subtitle">MISSION CHARLIE</h2>
-    </div>
-  </div>
-  <div class="print-header-right">
-    <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
-  </div>
-</header>
-  <main class="print-content">
-<article class='mission-card mission-card--full mission-card--critical'>
+      </div>
+
+      <footer class="print-footer" data-total="3">
+        <ul class="print-footer__meta">
+          <li>Ref: M26-JTO-03-R01</li>
+          <li>Archive: M26-JTO-03</li>
+          <li>Rev: 01</li>
+          <li>DECLASSIFIED</li>
+        </ul>
+        <span class="print-footer__page">PAGE 1 / 3</span>
+      </footer>
+    </section>
+
+    <section class="print-page" data-page="2">
+      <header class="print-header">
+        <div class="print-header-left">
+          <img src="../assets/muprh-logo-font.svg" alt="Murph26" class="print-header__logo-mark">
+          <span class="print-header__logo-wordmark">JOINT TRAINING OPERATIONS</span>
+        </div>
+        <div class="print-header-center">
+          <div class="print-title-wrapper">
+            <h1 class="print-header__title">MISSION BRIEF #03</h1>
+            <h2 class="print-header__subtitle">MISSION CHARLIE</h2>
+          </div>
+        </div>
+        <div class="print-header-right">
+          <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
+        </div>
+      </header>
+
+      <div class="print-content">
+        <article class='mission-card mission-card--full mission-card--critical'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M12 7v10M7 12h10'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 05 — REF JTO-05</div>
-    <h3>MISSION EXECUTION</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M12 7v10M7 12h10'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 05 — REF JTO-05</div>
+              <h3>MISSION EXECUTION</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
-            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Part A — Atlas Dual Box Over</p>
+            <p class='mission-rule-title' style="text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.1rem;">Part A — Atlas Dual Box Over</p>
             <ul class='mission-rule-list'>
               <li>Un Dual Box Over completo = 1 rep.</li>
               <li>BOX 1 → CENTRAL SPACE → BOX 2 → uscita completa sul lato opposto.</li>
@@ -235,7 +591,7 @@
               <li>La qualità del movimento deve restare controllata.</li>
             </ul>
 
-            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 1rem 0 0.5rem;'>Part B — Burpee Broad Jump</p>
+            <p class='mission-rule-title' style="text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0.2rem 0 0.1rem;">Part B — Burpee Broad Jump</p>
             <ul class='mission-rule-list'>
               <li>Inizia immediatamente al completamento dei Dual Box Over previsti dallo Standard.</li>
               <li>La distanza totale è definita dallo Standard scelto dal Team.</li>
@@ -244,22 +600,23 @@
               <li>Il successivo atleta continua dalla posizione raggiunta.</li>
             </ul>
 
-            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 1rem 0 0.5rem;'>Adattamento Individuale</p>
-            <p class='mission-objective-copy' style='margin-bottom: 0;'>Se un atleta non può eseguire il Burpee Broad Jump, il Coach assegna un adattamento individuale. Il volume ufficiale di ciascun elemento dipende dallo Standard scelto dal Team.</p>
+            <p class='mission-rule-title' style="text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0.2rem 0 0.1rem;">Adattamento Individuale</p>
+            <p class='mission-objective-copy' style="margin-bottom: 0;">Se un atleta non può eseguire il Burpee Broad Jump, il Coach assegna un adattamento individuale. Il volume ufficiale di ciascun elemento dipende dallo Standard scelto dal Team.</p>
           </div>
         </article>
-<article class='mission-card mission-card--full mission-card--critical'>
+
+        <article class='mission-card mission-card--full mission-card--critical'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4.8 4.8h14.4v14.4H4.8z'/><path d='M9.6 4.8v14.4M4.8 9.6h14.4M4.8 14.4h14.4'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 06 — REF JTO-06</div>
-    <h3>TEAM FLOW</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4.8 4.8h14.4v14.4H4.8z'/><path d='M9.6 4.8v14.4M4.8 9.6h14.4M4.8 14.4h14.4'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 06 — REF JTO-06</div>
+              <h3>TEAM FLOW</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
-            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Rep Definition</p>
+            <p class='mission-rule-title' style="text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.1rem;">Rep Definition</p>
             <div class='team-flow team-flow--rep'>
               <div class='team-flow-row'>
                 <div class='team-flow-athlete'>P1</div>
@@ -270,9 +627,9 @@
               </div>
               <p class='team-flow-rep'>+1 REP</p>
             </div>
-            <p class='mission-objective-copy' style='margin: 0.75rem 0 1.25rem;'>Un attraversamento completo di ENTRAMBI i Box = 1 REP. L'atleta parte da un lato, attraversa entrambi i Box e raggiunge il lato opposto. Se un altro atleta attraversa entrambi i Box nella direzione opposta, vale un'altra REP.</p>
+            <p class='mission-objective-copy' style="margin: 0.1rem 0 0.2rem;">Un attraversamento completo di ENTRAMBI i Box = 1 REP. L'atleta parte da un lato, attraversa entrambi i Box e raggiunge il lato opposto. Se un altro atleta attraversa entrambi i Box nella direzione opposta, vale un'altra REP.</p>
 
-            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Suggested Flow</p>
+            <p class='mission-rule-title' style="text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.1rem;">Suggested Flow</p>
             <div class='rotation-flow'>
               <div class='rotation-card'>
                 <span class='rotation-label'>01</span>
@@ -300,127 +657,95 @@
               </div>
             </div>
             <p class='rotation-summary'>1 FULL ROTATION = +4 REPS <span class='rotation-loop' aria-hidden='true'>REPEAT →</span></p>
-            <p class='mission-objective-copy' style='margin: 0.75rem 0 0;'>Ciclo operativo consigliato. Il Team può organizzare i passaggi in base alla strategia.</p>
+            <p class='mission-objective-copy' style="margin: 0.1rem 0 0;">Ciclo operativo consigliato. Il Team può organizzare i passaggi in base alla strategia.</p>
           </div>
         </article>
-  </main>
-<footer class="print-footer" data-total="3">
-  <ul class="print-footer__meta">
-    <li>Ref: M26-JTO-03-R01</li>
-    <li>Archive: M26-JTO-03</li>
-    <li>Rev: 01</li>
-    <li>DECLASSIFIED</li>
-  </ul>
-  <span class="print-footer__page"></span>
-</footer>
-</section>
-<section class="print-page">
-<header class="print-header print-header--compact">
-  <div class="print-header-left">
-    <img src="../assets/muprh-logo-font.svg" alt="Murph26" class="print-header__logo-mark">
-    <span class="print-header__logo-wordmark">JOINT TRAINING OPERATIONS</span>
-  </div>
-  <div class="print-header-center">
-    <div class="print-title-wrapper">
-      <h1 class="print-header__title">MISSION BRIEF #03</h1>
-      <h2 class="print-header__subtitle">MISSION CHARLIE</h2>
-    </div>
-  </div>
-  <div class="print-header-right">
-    <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
-  </div>
-</header>
-  <main class="print-content">
-<article class='mission-card mission-card--full mission-card--critical'>
+      </div>
+
+      <footer class="print-footer" data-total="3">
+        <ul class="print-footer__meta">
+          <li>Ref: M26-JTO-03-R01</li>
+          <li>Archive: M26-JTO-03</li>
+          <li>Rev: 01</li>
+          <li>DECLASSIFIED</li>
+        </ul>
+        <span class="print-footer__page">PAGE 2 / 3</span>
+      </footer>
+    </section>
+
+    <section class="print-page" data-page="3">
+      <header class="print-header">
+        <div class="print-header-left">
+          <img src="../assets/muprh-logo-font.svg" alt="Murph26" class="print-header__logo-mark">
+          <span class="print-header__logo-wordmark">JOINT TRAINING OPERATIONS</span>
+        </div>
+        <div class="print-header-center">
+          <div class="print-title-wrapper">
+            <h1 class="print-header__title">MISSION BRIEF #03</h1>
+            <h2 class="print-header__subtitle">MISSION CHARLIE</h2>
+          </div>
+        </div>
+        <div class="print-header-right">
+          <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
+        </div>
+      </header>
+
+      <div class="print-content">
+        <article class='mission-card mission-card--full mission-card--critical'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='11' width='12' height='10' rx='2'/><path d='M9 11V7a3 3 0 0 1 6 0v4'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 07 — REF JTO-07</div>
-    <h3>MISSION HAZARDS</h3>
-  </div>
-</div>
-          <div class='mission-card-body'>
-            <div class='hazard-accordion'>
-              <details class='hazard-accordion-item'>
-                <summary class='hazard-accordion-header'>
-                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
-                  <span class='hazard-accordion-title'>Heat</span>
-                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
-                </summary>
-                <div class='hazard-accordion-content'>
-                  <p>CHARLIE parte alle 14:30, nel momento più caldo. Il workout è costruito per evitare la corsa e il sole diretto. HYDRATE BEFORE DEPLOYMENT.</p>
-                </div>
-              </details>
-              <details class='hazard-accordion-item'>
-                <summary class='hazard-accordion-header'>
-                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
-                  <span class='hazard-accordion-title'>Box Footwork</span>
-                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
-                </summary>
-                <div class='hazard-accordion-content'>
-                  <p>Con la fatica aumenta il rischio di perdere precisione nella salita e nella discesa. CONTROL &gt; SPEED. Niente salti inutili dalle strutture.</p>
-                </div>
-              </details>
-              <details class='hazard-accordion-item'>
-                <summary class='hazard-accordion-header'>
-                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
-                  <span class='hazard-accordion-title'>Atlas Control</span>
-                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
-                </summary>
-                <div class='hazard-accordion-content'>
-                  <p>L'Atlas deve essere sempre sotto controllo. La consegna tra compagni deve essere deliberata. Non lanciare o lasciare cadere la Stone.</p>
-                </div>
-              </details>
-              <details class='hazard-accordion-item'>
-                <summary class='hazard-accordion-header'>
-                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
-                  <span class='hazard-accordion-title'>Lower Back Fatigue</span>
-                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
-                </summary>
-                <div class='hazard-accordion-content'>
-                  <p>Le reps degli Atlas variano in base allo Standard. Distribuire il lavoro prima che la qualità del movimento inizi a deteriorarsi.</p>
-                </div>
-              </details>
-              <details class='hazard-accordion-item'>
-                <summary class='hazard-accordion-header'>
-                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
-                  <span class='hazard-accordion-title'>Burpee Broad Jump Pacing</span>
-                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
-                </summary>
-                <div class='hazard-accordion-content'>
-                  <p>I metri di Burpee Broad Jump variano in base allo Standard. Non lo saranno dopo i Dual Box Over. Evitare partenze aggressive sui primi blocchi.</p>
-                </div>
-              </details>
-              <details class='hazard-accordion-item'>
-                <summary class='hazard-accordion-header'>
-                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
-                  <span class='hazard-accordion-title'>Team Traffic</span>
-                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
-                </summary>
-                <div class='hazard-accordion-content'>
-                  <p>Con più Team e due Box per lanes, ciascun Team deve rispettare la propria area operativa. Lasciare libera la traiettoria dell'atleta successivo.</p>
-                </div>
-              </details>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='11' width='12' height='10' rx='2'/><path d='M9 11V7a3 3 0 0 1 6 0v4'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 07 — REF JTO-07</div>
+              <h3>MISSION HAZARDS</h3>
             </div>
           </div>
+          <div class='mission-card-body'>
+            <ul class='hazard-list'>
+              <li class='hazard-entry'>
+                <div class='hazard-title'><span class='hazard-icon'>!</span> Heat</div>
+                <p class='hazard-text'>CHARLIE parte alle 14:30, nel momento più caldo. Il workout è costruito per evitare la corsa e il sole diretto. HYDRATE BEFORE DEPLOYMENT.</p>
+              </li>
+              <li class='hazard-entry'>
+                <div class='hazard-title'><span class='hazard-icon'>!</span> Box Footwork</div>
+                <p class='hazard-text'>Con la fatica aumenta il rischio di perdere precisione nella salita e nella discesa. CONTROL &gt; SPEED. Niente salti inutili dalle strutture.</p>
+              </li>
+              <li class='hazard-entry'>
+                <div class='hazard-title'><span class='hazard-icon'>!</span> Atlas Control</div>
+                <p class='hazard-text'>L'Atlas deve essere sempre sotto controllo. La consegna tra compagni deve essere deliberata. Non lanciare o lasciare cadere la Stone.</p>
+              </li>
+              <li class='hazard-entry'>
+                <div class='hazard-title'><span class='hazard-icon'>!</span> Lower Back Fatigue</div>
+                <p class='hazard-text'>Le reps degli Atlas variano in base allo Standard. Distribuire il lavoro prima che la qualità del movimento inizi a deteriorarsi.</p>
+              </li>
+              <li class='hazard-entry'>
+                <div class='hazard-title'><span class='hazard-icon'>!</span> Burpee Broad Jump Pacing</div>
+                <p class='hazard-text'>I metri di Burpee Broad Jump variano in base allo Standard. Non lo saranno dopo i Dual Box Over. Evitare partenze aggressive sui primi blocchi.</p>
+              </li>
+              <li class='hazard-entry'>
+                <div class='hazard-title'><span class='hazard-icon'>!</span> Team Traffic</div>
+                <p class='hazard-text'>Con più Team e due Box per lanes, ciascun Team deve rispettare la propria area operativa. Lasciare libera la traiettoria dell'atleta successivo.</p>
+              </li>
+            </ul>
+          </div>
         </article>
-<article class='mission-card mission-card--info'>
+
+        <article class='mission-card mission-card--info'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='8' y='4' width='8' height='14' rx='2'/><line x1='12' y1='4' x2='12' y2='1'/><line x1='10' y1='8' x2='14' y2='8'/><circle cx='12' cy='14' r='1.5'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 08 — REF JTO-08</div>
-    <h3>MISSION INTEL</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='8' y='4' width='8' height='14' rx='2'/><line x1='12' y1='4' x2='12' y2='1'/><line x1='10' y1='8' x2='14' y2='8'/><circle cx='12' cy='14' r='1.5'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 08 — REF JTO-08</div>
+              <h3>MISSION INTEL</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
             <p class='mission-intel-statement'>ENDURE DOESN'T MEAN SUFFER.<br>IT MEANS KEEP MOVING.</p>
             <p class='mission-intel-secondary'>CHARLIE NON PREMIA CHI PARTE PIÙ FORTE. PREMIA IL TEAM CHE NON DEVE FERMASI.</p>
 
-            <p class='mission-rule-title' style='text-align: left; margin: 0 0 0.5rem;'>Intelligence Strategica</p>
+            <p class='mission-rule-title' style="text-align: left; margin: 0.15rem 0 0.1rem;">Intelligence Strategica</p>
             <dl class='mission-intel'>
               <div>
                 <dt>Atlas</dt>
@@ -437,18 +762,19 @@
             </dl>
           </div>
         </article>
-<article class='mission-card mission-card--info'>
+
+        <article class='mission-card mission-card--info'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5M6 12l-5 5'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 09 — REF JTO-09</div>
-    <h3>MISSION COMPLETION</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5M6 12l-5 5'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 09 — REF JTO-09</div>
+              <h3>MISSION COMPLETION</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
-            <p class='mission-rule-title' style='text-align: left; margin: 0 0 0.5rem;'>Tempo di completamento</p>
+            <p class='mission-rule-title' style="text-align: left; margin: 0 0 0.1rem;">Tempo di completamento</p>
             <div class='mission-flow mission-flow--mb03 mission-flow--completion'>
               <div class='flow-step'>DUAL BOX OVER</div>
               <span class='flow-arrow' aria-hidden='true'>↓</span>
@@ -456,28 +782,41 @@
               <span class='flow-arrow' aria-hidden='true'>↓</span>
               <div class='flow-step'>MISSION COMPLETE</div>
             </div>
-            <p class='mission-objective-copy' style='margin-bottom: 0.75rem;'>Tempo registrabile come memoria della Missione.</p>
+            <p class='mission-objective-copy' style="margin-bottom: 0.1rem;">Tempo registrabile come memoria della Missione.</p>
 
-            <p class='mission-important' style='margin-bottom: 0;'>Nessuna classifica. Nessuna graduatoria. Nessun Team vincitore.</p>
+            <p class='mission-important'>Nessuna classifica. Nessuna graduatoria. Nessun Team vincitore.</p>
           </div>
         </article>
-  </main>
-<footer class="print-footer" data-total="3">
-  <ul class="print-footer__meta">
-    <li>Ref: M26-JTO-03-R01</li>
-    <li>Archive: M26-JTO-03</li>
-    <li>Rev: 01</li>
-    <li>DECLASSIFIED</li>
-  </ul>
-  <span class="print-footer__page"></span>
-</footer>
-</section>
+      </div>
+
+      <footer class="print-footer" data-total="3">
+        <ul class="print-footer__meta">
+          <li>Ref: M26-JTO-03-R01</li>
+          <li>Archive: M26-JTO-03</li>
+          <li>Rev: 01</li>
+          <li>DECLASSIFIED</li>
+        </ul>
+        <span class="print-footer__page">PAGE 3 / 3</span>
+      </footer>
+    </section>
   </div>
 
   <script>
-    window.addEventListener('load', () => {
-      setTimeout(() => window.print(), 1000);
-    });
+    function printWhenReady() {
+      document.fonts.ready.then(function() {
+        setTimeout(function() { window.print(); }, 700);
+      });
+    }
+
+    if (document.readyState === 'complete') {
+      printWhenReady();
+    } else {
+      window.addEventListener('load', printWhenReady, { once: true });
+    }
+
+    window.addEventListener('afterprint', function() {
+      window.close();
+    }, { once: true });
   </script>
 </body>
 </html>
