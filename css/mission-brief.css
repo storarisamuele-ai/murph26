@@ -1635,6 +1635,21 @@ img {
     min-width: 0;
     padding: 0.85rem 1rem;
   }
+
+  .mission-flow--mb03.mission-flow--completion {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+  }
+
+  .mission-flow--mb03.mission-flow--completion .flow-step {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    white-space: normal;
+    word-break: normal;
+  }
 }
 
 .mission-wod-headline,
@@ -2297,11 +2312,13 @@ body.is-classified {
 .mission-flow--vertical .flow-step,
 .mission-flow--completion .flow-step {
   flex: 0 0 auto;
-  width: min(100%, 300px);
-  max-width: 300px;
+  width: 100%;
+  max-width: 100%;
   min-width: 0;
   padding: 0.85rem 1rem;
   min-height: 2.8rem;
+  white-space: normal;
+  word-break: normal;
 }
 
 .flow-operator {
