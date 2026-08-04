@@ -1281,9 +1281,15 @@ img {
 .mission-wod-headline {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   gap: 0.75rem;
   margin: 0 0 0.5rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.mission-wod-headline > * {
+  min-width: 0;
 }
 
 .wod-number {
@@ -1312,8 +1318,8 @@ img {
 
 .wod-icon {
   display: inline-block;
-  width: clamp(1.5rem, 3.5vw, 2.5rem);
-  height: clamp(1.5rem, 3.5vw, 2.5rem);
+  width: clamp(1.75rem, 4vw, 2.75rem);
+  height: clamp(1.75rem, 4vw, 2.75rem);
   background-color: var(--cyan);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
@@ -1324,6 +1330,10 @@ img {
   vertical-align: middle;
   align-self: center;
   flex-shrink: 0;
+}
+
+.wod-icon + .wod-icon {
+  margin-left: 0.35rem;
 }
 
 .wod-icon--secondary {
@@ -1370,8 +1380,8 @@ img {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--blue);
-  align-self: flex-end;
+  color: var(--cyan);
+  align-self: center;
 }
 
 .mission-wod-note {
@@ -1384,6 +1394,10 @@ img {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.9);
   margin: 0 0 1rem;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .mission-how-it-works {
@@ -1462,8 +1476,9 @@ img {
 @media (min-width: 600px) {
   .mission-flow {
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
+    align-items: center;
     text-align: left;
   }
 }
@@ -1495,7 +1510,7 @@ img {
 .flow-arrow {
   font-size: 1.25rem;
   line-height: 1;
-  color: var(--blue);
+  color: var(--cyan);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1516,13 +1531,14 @@ img {
 }
 
 .mission-flow--mb02 .flow-step {
-  flex: 0 0 auto;
+  flex: 1 1 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
   min-height: 3rem;
+  min-width: 0;
 }
 
 @media (min-width: 600px) {
@@ -1552,7 +1568,7 @@ img {
   }
 
   .mission-flow--mb02 .flow-arrow--desktop {
-    color: var(--blue);
+    color: var(--cyan);
   }
 }
 
@@ -1594,7 +1610,7 @@ img {
 }
 
 .mission-flow--mb03 .flow-arrow {
-  color: var(--blue);
+  color: var(--cyan);
 }
 
 @media (max-width: 599px) {
@@ -1608,9 +1624,16 @@ img {
 }
 
 @media (min-width: 600px) {
+  .mission-flow--mb03 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    justify-items: stretch;
+    gap: 0.5rem;
+  }
+
   .mission-flow--mb03 .flow-step {
-    flex: 0 0 300px;
-    max-width: 300px;
+    width: 100%;
     min-width: 0;
     padding: 0.85rem 1rem;
   }
