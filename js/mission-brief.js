@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMissionSectionHeaders();
   initMissionArchiveLink();
   initPrintButtons();
+  initMobileHeader();
 });
 
 function initMissionSectionHeaders() {
@@ -160,6 +161,70 @@ function openPrintFrame(url) {
 
   iframe.src = url;
   document.body.appendChild(iframe);
+}
+
+function initMobileHeader() {
+  const header = document.querySelector('.mb-header');
+  const container = document.querySelector('.mb-header .mb-container');
+  if (!header || !container) return;
+
+  const backLink = container.querySelector('.mb-back-link');
+  if (backLink) backLink.innerHTML = '&larr; Back to Murph26';
+
+  const panel = document.createElement('nav');
+  panel.className = 'mb-nav-panel';
+  panel.id = 'mb-nav-panel';
+  panel.setAttribute('aria-hidden', 'true');
+  panel.innerHTML = [
+    { text: 'Home', href: '../index.html' },
+    { text: 'Mission Archive', href: '../index.html#mission' },
+    { text: 'MB00 — La Missione', href: 'mission-00.html' },
+    { text: 'MB01 — Mission Alpha', href: 'mission-01.html' },
+    { text: 'MB02 — Mission Bravo', href: 'mission-02.html' },
+    { text: 'MB03 — Mission Charlie', href: 'mission-03.html' },
+    { text: 'MB04 — Mission Delta', href: 'mission-04.html' },
+    { text: 'MB05 — Final Mission', href: 'mission-05.html' },
+    { text: 'Find Your Murph', href: '../index.html#find-your-murph' },
+    { text: 'Register', href: 'https://forms.gle/pqou8mowuot3qHyX7', external: true },
+  ]
+    .map((link) => {
+      const target = link.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+      return `<a href="${link.href}" class="mb-nav-link"${target}>${link.text}</a>`;
+    })
+    .join('');
+
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'mb-nav-toggle';
+  toggle.setAttribute('aria-label', 'Open navigation');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', 'mb-nav-panel');
+  toggle.innerHTML = '<span></span><span></span><span></span>';
+
+  container.appendChild(toggle);
+  container.appendChild(panel);
+
+  const shrink = () => {
+    header.classList.toggle('mb-header--scrolled', window.scrollY > 10);
+  };
+
+  window.addEventListener('scroll', shrink, { passive: true });
+  shrink();
+
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    panel.setAttribute('aria-hidden', String(open));
+    header.classList.toggle('mb-nav-panel-open', !open);
+  });
+
+  panel.addEventListener('click', (e) => {
+    if (e.target.classList.contains('mb-nav-link')) {
+      toggle.setAttribute('aria-expanded', 'false');
+      panel.setAttribute('aria-hidden', 'true');
+      header.classList.remove('mb-nav-panel-open');
+    }
+  });
 }
 
 function initMissionScaling() {
