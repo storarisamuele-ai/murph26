@@ -73,6 +73,24 @@ PAGE_ALLOCATIONS = {
             "MISSION COMPLETION",
         ],
     ],
+    "mission-04": [
+        [
+            "MISSION IDENTIFICATION",
+            "MISSION OBJECTIVE",
+            "MISSION WORKOUT",
+            "AUTHORIZED STANDARDS",
+        ],
+        [
+            "MISSION EXECUTION",
+            "TEAM FLOW",
+        ],
+        [
+            "MISSION HAZARDS",
+            "MISSION INTEL",
+            "SCORECARD",
+            "MISSION COMPLETION",
+        ],
+    ],
 }
 
 
@@ -241,6 +259,7 @@ def allocate_cards(
 
 UNNUMBERED_CARDS = {
     "mission-03": {"SCORECARD"},
+    "mission-04": {"SCORECARD"},
 }
 
 
