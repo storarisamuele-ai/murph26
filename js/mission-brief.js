@@ -147,27 +147,18 @@ function openPrintFrame(url) {
   iframe.setAttribute('title', 'Printable mission dossier');
   iframe.setAttribute('data-print-frame', url);
   iframe.style.cssText = 'position:fixed;left:-10000px;top:-10000px;width:1px;height:1px;border:0;visibility:hidden;pointer-events:none;';
-  iframe.src = url;
 
-  // The iframe document owns the content and the afterprint cleanup;
-  // the parent triggers the browser print dialog once content is ready.
+  // Attach listener before setting src/appending to avoid missing cached loads,
+  // then call print() as soon as the document is ready.
   iframe.addEventListener('load', () => {
     const cw = iframe.contentWindow;
     if (!cw) return;
-
-    const tryPrint = () => {
-      try {
-        cw.print();
-      } catch (_) {}
-    };
-
-    if (cw.document && cw.document.fonts && cw.document.fonts.ready) {
-      cw.document.fonts.ready.then(tryPrint, tryPrint);
-    } else {
-      setTimeout(tryPrint, 100);
-    }
+    try {
+      cw.print();
+    } catch (_) {}
   });
 
+  iframe.src = url;
   document.body.appendChild(iframe);
 }
 
