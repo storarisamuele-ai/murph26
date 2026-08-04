@@ -1311,7 +1311,57 @@ img {
 }
 
 .wod-icon {
-  display: none;
+  display: inline-block;
+  width: clamp(1.5rem, 3.5vw, 2.5rem);
+  height: clamp(1.5rem, 3.5vw, 2.5rem);
+  background-color: var(--cyan);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  vertical-align: middle;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.wod-icon--secondary {
+  background-color: var(--pink);
+}
+
+.wod-icon-separator {
+  display: inline-block;
+  align-self: center;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: var(--cyan);
+  line-height: 1;
+  margin: 0 0.25rem;
+}
+
+.wod-icon[data-wod-icon='row'] {
+  -webkit-mask-image: url('../assets/icons/movements/row.svg');
+  mask-image: url('../assets/icons/movements/row.svg');
+}
+
+.wod-icon[data-wod-icon='farmer-carry'] {
+  -webkit-mask-image: url('../assets/icons/movements/farmer-carry.svg');
+  mask-image: url('../assets/icons/movements/farmer-carry.svg');
+}
+
+.wod-icon[data-wod-icon='box-over'] {
+  -webkit-mask-image: url('../assets/icons/movements/box-over.svg');
+  mask-image: url('../assets/icons/movements/box-over.svg');
+}
+
+.wod-icon[data-wod-icon='broad-jump'] {
+  -webkit-mask-image: url('../assets/icons/movements/broad-jump.svg');
+  mask-image: url('../assets/icons/movements/broad-jump.svg');
+}
+
+.wod-icon[data-wod-icon='jump-rope'] {
+  -webkit-mask-image: url('../assets/icons/movements/jump-rope.svg');
+  mask-image: url('../assets/icons/movements/jump-rope.svg');
 }
 
 .wod-time {
