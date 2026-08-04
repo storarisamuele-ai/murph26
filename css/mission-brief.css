@@ -2384,13 +2384,11 @@ body.is-classified {
 
 /* MB03 second pass */
 .mission-section-ref {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  color: var(--pink);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin: 0 0 0.5rem;
+  display: none;
+}
+
+.mission-card-title .mission-section-ref {
+  display: none;
 }
 
 .mission-card .mb03-scaling-table th,
@@ -2753,6 +2751,12 @@ body.is-classified {
   .mission-card--scorecard {
     display: block;
   }
+}
+
+/* Mobile header injection */
+.mb-nav-toggle,
+.mb-nav-panel {
+  display: none;
 }
 
 /* Mobile UX (max-width: 768px) */
