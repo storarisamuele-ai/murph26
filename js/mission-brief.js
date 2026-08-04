@@ -116,18 +116,20 @@ function initPrintButtons() {
   const printCtas = document.querySelectorAll('.print-cta');
   if (!printCtas.length) return;
 
-  // Map current mission page to its printable dossier, e.g. mission-03.html -> mission-03-print.html
+  // Fallback only if an older brief lacks the explicit data attribute
   const pathMatch = window.location.pathname.match(/mission-(\d{2})\.html$/);
   const defaultPrintUrl = pathMatch ? `mission-${pathMatch[1]}-print.html` : null;
 
   printCtas.forEach((btn) => {
+    const printUrl = btn.dataset.printDocument || defaultPrintUrl;
+    if (!printUrl) return;
+
     // remove any legacy inline print handler
     btn.removeAttribute('onclick');
     btn.onclick = null;
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      const printUrl = btn.dataset.printUrl || defaultPrintUrl;
       openPrintFrame(printUrl);
     });
   });
@@ -143,8 +145,29 @@ function openPrintFrame(url) {
   iframe.id = 'mb-print-iframe';
   iframe.setAttribute('aria-hidden', 'true');
   iframe.setAttribute('title', 'Printable mission dossier');
+  iframe.setAttribute('data-print-frame', url);
   iframe.style.cssText = 'position:fixed;left:-10000px;top:-10000px;width:1px;height:1px;border:0;visibility:hidden;pointer-events:none;';
   iframe.src = url;
+
+  // The iframe document owns the content and the afterprint cleanup;
+  // the parent triggers the browser print dialog once content is ready.
+  iframe.addEventListener('load', () => {
+    const cw = iframe.contentWindow;
+    if (!cw) return;
+
+    const tryPrint = () => {
+      try {
+        cw.print();
+      } catch (_) {}
+    };
+
+    if (cw.document && cw.document.fonts && cw.document.fonts.ready) {
+      cw.document.fonts.ready.then(tryPrint, tryPrint);
+    } else {
+      setTimeout(tryPrint, 100);
+    }
+  });
+
   document.body.appendChild(iframe);
 }
 
