@@ -123,6 +123,7 @@ function initPrintButtons() {
   printCtas.forEach((btn) => {
     // remove any legacy inline print handler
     btn.removeAttribute('onclick');
+    btn.onclick = null;
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();

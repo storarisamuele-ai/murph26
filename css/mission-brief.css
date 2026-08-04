@@ -726,8 +726,9 @@ img {
   grid-column: 1 / -1;
 }
 
+/* Scorecard participates in the regular two-column mission grid */
 .mission-content .mission-card.scorecard {
-  grid-column: 1 / -1;
+  grid-column: auto;
 }
 
 .mission-content .mission-flow--completion {
