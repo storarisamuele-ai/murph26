@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang='it'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Mission 03 — Charlie Endure | Field Scorecard</title>
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
+  <style>
+    :root {
+      --black: #000000;
+      --white: #ffffff;
+      --grey: #f0f0f0;
+      --line: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1a1a1a;
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .scorecard-page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 10mm;
+      background-color: var(--white);
+      box-shadow: 0 0 0 1px #ccc;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    @media print {
+      body {
+        background-color: var(--white);
+      }
+
+      .scorecard-page {
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+      }
+    }
+
+    .sc-header {
+      border-bottom: 1.5pt solid var(--line);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .sc-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.08em;
+      line-height: 1;
+    }
+
+    .sc-unit {
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #333;
+      margin-bottom: 0.25rem;
+    }
+
+    .sc-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .sc-mission {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .sc-doc-id,
+    .sc-reference {
+      font-family: 'Courier New', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #222;
+    }
+
+    .sc-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      margin-top: 0.1rem;
+      line-height: 1;
+    }
+
+    .sc-presc {
+      border: 1pt solid var(--line);
+      padding: 0.4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+      align-items: start;
+    }
+
+    .sc-presc-main {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.03em;
+      line-height: 1;
+    }
+
+    .sc-presc-sub {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .sc-presc-flow {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem;
+      line-height: 1;
+    }
+
+    .sc-presc-note {
+      grid-column: 1 / -1;
+      font-size: 0.65rem;
+      line-height: 1.4;
+      color: #222;
+    }
+
+    .sc-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.4rem;
+      border: 1pt solid var(--line);
+      padding: 0.4rem;
+    }
+
+    .sc-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .sc-meta-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .sc-meta-line {
+      border-bottom: 1pt solid var(--line);
+      min-height: 0.9rem;
+    }
+
+    .sc-checkbox {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 0.7rem;
+      height: 0.7rem;
+      border: 1pt solid var(--line);
+      flex-shrink: 0;
+      font-size: 0.55rem;
+    }
+
+    .sc-standard-options {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-top: 0.15rem;
+    }
+
+    .sc-standard-option {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .sc-section {
+      border: 1pt solid var(--line);
+      padding: 0.4rem;
+    }
+
+    .sc-section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+      line-height: 1;
+    }
+
+    .sc-section-sub {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333;
+      margin-bottom: 0.2rem;
+    }
+
+    .sc-targets {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.2rem;
+      margin: 0.2rem 0;
+    }
+
+    .sc-target {
+      display: flex;
+      flex-direction: column;
+      gap: 0.05rem;
+      padding: 0.1rem 0.2rem;
+      background: var(--grey);
+      border: 0.5pt solid #ddd;
+    }
+
+    .sc-target-label {
+      font-size: 0.55rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #333;
+    }
+
+    .sc-target-value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1;
+    }
+
+    .sc-checklist {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.25rem;
+      margin-top: 0.25rem;
+    }
+
+    .sc-checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      border: 0.5pt solid #bbb;
+      padding: 0.2rem 0.25rem;
+      font-size: 0.75rem;
+      min-height: 1.6rem;
+    }
+
+    .sc-checklist-box {
+      width: 0.65rem;
+      height: 0.65rem;
+      border: 1pt solid var(--line);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.55rem;
+    }
+
+    .sc-checklist-value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.85rem;
+      line-height: 1;
+    }
+
+    .sc-result-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+      margin-top: 0.25rem;
+    }
+
+    .sc-result-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      border: 1pt solid var(--line);
+      padding: 0.25rem;
+    }
+
+    .sc-result-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .sc-result-line {
+      border-bottom: 1pt solid var(--line);
+      min-height: 0.9rem;
+      margin-top: 0.1rem;
+    }
+
+    .sc-note {
+      font-size: 0.6rem;
+      color: #222;
+      line-height: 1.3;
+      margin-top: 0.25rem;
+    }
+
+    .sc-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1pt solid var(--line);
+      padding-top: 0.3rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .sc-footer-left {
+      max-width: 70%;
+    }
+  </style>
+  <link rel='icon' href='../favicon.ico' sizes='any' type='image/x-icon'>
+  <link rel='icon' type='image/png' sizes='16x16' href='../favicon-16x16.png'>
+  <link rel='icon' type='image/png' sizes='32x32' href='../favicon-32x32.png'>
+  <link rel='apple-touch-icon' sizes='180x180' href='../apple-touch-icon.png'>
+  <link rel='manifest' href='../manifest.json'>
+</head>
+<body>
+  <main class='scorecard-page'>
+    <header class='sc-header'>
+      <div class='sc-unit'>Joint Training Operations</div>
+      <div class='sc-brand'>MURPH26</div>
+      <div class='sc-meta-row'>
+        <div>
+          <div class='sc-mission'>MISSION 03 — CHARLIE / ENDURE</div>
+          <div class='sc-title'>FIELD SCORECARD</div>
+        </div>
+        <div>
+          <div class='sc-doc-id'>Document ID: M26-JTO-03-SC</div>
+          <div class='sc-reference'>Reference: M26-JTO-03-R01</div>
+        </div>
+      </div>
+    </header>
+
+    <section class='sc-presc'>
+      <div>
+        <div class='sc-presc-main'>DUAL BOX OVER + BURPEE BROAD JUMP</div>
+        <div class='sc-presc-sub'>For Time · Team Relay</div>
+      </div>
+      <div class='sc-presc-flow'>
+        <span>DUAL BOX OVER</span>
+        <span>→</span>
+        <span>BURPEE BROAD JUMP</span>
+        <span>→</span>
+        <span>MISSION COMPLETE</span>
+      </div>
+      <div class='sc-presc-note'>
+        Complete Atlas Dual Box Over reps for the selected Standard, then each athlete covers the matching Burpee Broad Jump distance in 12 m blocks.
+      </div>
+    </section>
+
+    <section class='sc-meta-grid'>
+      <div class='sc-meta-item'>
+        <div class='sc-meta-label'>TEAM</div>
+        <div class='sc-meta-line'></div>
+      </div>
+      <div class='sc-meta-item'>
+        <div class='sc-meta-label'>STANDARD</div>
+        <div class='sc-standard-options'>
+          <span class='sc-standard-option'><span class='sc-checkbox'></span> PERFORMANCE</span>
+          <span class='sc-standard-option'><span class='sc-checkbox'></span> FITNESS</span>
+          <span class='sc-standard-option'><span class='sc-checkbox'></span> CROSSFIT</span>
+        </div>
+      </div>
+      <div class='sc-meta-item'>
+        <div class='sc-meta-label'>TIME</div>
+        <div class='sc-meta-line'></div>
+      </div>
+    </section>
+
+    <section class='sc-section'>
+      <div class='sc-section-title'>ATLAS DUAL BOX OVER</div>
+      <div class='sc-section-sub'>Target</div>
+      <div class='sc-targets'>
+        <div class='sc-target'><span class='sc-target-label'>Performance</span><span class='sc-target-value'>240 reps</span></div>
+        <div class='sc-target'><span class='sc-target-label'>Fitness</span><span class='sc-target-value'>180 reps</span></div>
+        <div class='sc-target'><span class='sc-target-label'>CrossFit</span><span class='sc-target-value'>120 reps</span></div>
+      </div>
+      <div class='sc-section-sub'>Track every 20 reps</div>
+      <ul class='sc-checklist'>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>20</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>40</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>60</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>80</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>100</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>120</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>140</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>160</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>180</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>200</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>220</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>240</span></li>
+      </ul>
+    </section>
+
+    <section class='sc-section'>
+      <div class='sc-section-title'>BURPEE BROAD JUMP</div>
+      <div class='sc-section-sub'>Target</div>
+      <div class='sc-targets'>
+        <div class='sc-target'><span class='sc-target-label'>Performance</span><span class='sc-target-value'>144 m</span></div>
+        <div class='sc-target'><span class='sc-target-label'>Fitness</span><span class='sc-target-value'>96 m</span></div>
+        <div class='sc-target'><span class='sc-target-label'>CrossFit</span><span class='sc-target-value'>48 m</span></div>
+      </div>
+      <div class='sc-section-sub'>Track every 12 m</div>
+      <ul class='sc-checklist'>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>12 m</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>24 m</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>36 m</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>48 m</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>60 m</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>72 m</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>84 m</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>96 m</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>108 m</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>120 m</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>132 m</span></li>
+        <li class='sc-checklist-item'><span class='sc-checklist-box'></span><span class='sc-checklist-value'>144 m</span></li>
+      </ul>
+    </section>
+
+    <section class='sc-result-row'>
+      <div class='sc-result-item'>
+        <div class='sc-result-label'>Completion Time</div>
+        <div class='sc-result-line'></div>
+      </div>
+      <div class='sc-result-item'>
+        <div class='sc-result-label'>Notes / Team Protocol</div>
+        <div class='sc-result-line' style='min-height: 1.4rem;'></div>
+      </div>
+    </section>
+
+    <p class='sc-note'>
+      Nessuna classifica. Nessuna graduatoria. Nessun Team vincitore. This scorecard is for tracking only.
+    </p>
+
+    <footer class='sc-footer'>
+      <div class='sc-footer-left'>M26-JTO-03-SC · MISSION CHARLIE · FIELD SCORECARD</div>
+      <div>Page 1 / 1</div>
+    </footer>
+  </main>
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => window.print(), 1000);
+    });
+  </script>
+</body>
+</html>

@@ -726,25 +726,12 @@ img {
   grid-column: 1 / -1;
 }
 
-.mission-closing-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  width: 100%;
-  min-width: 0;
-  grid-column: 1;
+.mission-content .mission-card.scorecard {
+  grid-column: 1 / -1;
 }
 
-.mission-closing-stack .mission-card {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  height: auto;
-}
-
-.mission-closing-stack .mission-flow--completion {
-  max-width: 720px;
+.mission-content .mission-flow--completion {
+  max-width: 420px;
   margin: 0 auto;
   width: 100%;
 }

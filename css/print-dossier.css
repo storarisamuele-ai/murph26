@@ -793,44 +793,19 @@ body[data-mission="mission-02"] .print-footer {
 }
 
 /* MB03 — QA print overrides */
-body[data-mission="mission-03"] .mission-card--scorecard {
-  display: block;
+body[data-mission="mission-03"] .print-page {
+  height: auto;
+  min-height: 297mm;
+  max-height: none;
+  break-after: auto;
+  page-break-after: auto;
+  break-inside: auto;
+  page-break-inside: auto;
 }
 
-body[data-mission="mission-03"] .scorecard-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0.25rem;
-}
-
-body[data-mission="mission-03"] .scorecard-list--atlas {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-body[data-mission="mission-03"] .scorecard-list--burpee {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-body[data-mission="mission-03"] .scorecard-item {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-  padding: 0.1rem 0.2rem;
-  border: 1px solid #000;
-  border-radius: 2px;
-  font-size: 7.5pt;
-}
-
-body[data-mission="mission-03"] .scorecard-box {
-  color: #000;
-  font-size: 9pt;
-}
-
-body[data-mission="mission-03"] .scorecard-value {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 9pt;
+body[data-mission="mission-03"] .mission-card {
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 
 body[data-mission="mission-03"] .mission-flow--vertical,
