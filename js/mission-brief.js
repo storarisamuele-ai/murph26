@@ -244,7 +244,6 @@ function initMissionScaling() {
     mobile.setAttribute('aria-label', 'Confronto scale mobile');
     mobile.appendChild(accordion);
 
-    const desktop = table.closest('.scaling-desktop');
     if (desktop && desktop.parentNode) {
       desktop.parentNode.insertBefore(mobile, desktop.nextSibling);
     } else if (table.parentNode) {
