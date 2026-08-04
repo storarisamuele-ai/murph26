@@ -801,22 +801,6 @@
     </section>
   </div>
 
-  <script>
-    function printWhenReady() {
-      document.fonts.ready.then(function() {
-        setTimeout(function() { window.print(); }, 700);
-      });
-    }
-
-    if (document.readyState === 'complete') {
-      printWhenReady();
-    } else {
-      window.addEventListener('load', printWhenReady, { once: true });
-    }
-
-    window.addEventListener('afterprint', function() {
-      window.close();
-    }, { once: true });
-  </script>
+  <script src="../js/print-frame.js"></script>
 </body>
 </html>
