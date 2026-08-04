@@ -1298,6 +1298,7 @@ img {
   color: var(--pink);
   letter-spacing: 0.03em;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .wod-label {
@@ -1306,6 +1307,7 @@ img {
   color: var(--white);
   letter-spacing: 0.05em;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .wod-join {
@@ -1314,6 +1316,7 @@ img {
   color: var(--pink);
   letter-spacing: 0.05em;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .wod-icon {
