@@ -1350,28 +1350,28 @@ img {
 }
 
 .wod-icon[data-wod-icon='row'] {
-  -webkit-mask-image: url('../assets/icons/row.svg');
-  mask-image: url('../assets/icons/row.svg');
+  -webkit-mask-image: url('../assets/icons/movements/row.svg');
+  mask-image: url('../assets/icons/movements/row.svg');
 }
 
 .wod-icon[data-wod-icon='farmer-carry'] {
-  -webkit-mask-image: url('../assets/icons/farmer-carry.svg');
-  mask-image: url('../assets/icons/farmer-carry.svg');
+  -webkit-mask-image: url('../assets/icons/movements/farmer-carry.svg');
+  mask-image: url('../assets/icons/movements/farmer-carry.svg');
 }
 
 .wod-icon[data-wod-icon='box-over'] {
-  -webkit-mask-image: url('../assets/icons/box-over.svg');
-  mask-image: url('../assets/icons/box-over.svg');
+  -webkit-mask-image: url('../assets/icons/movements/box-over.svg');
+  mask-image: url('../assets/icons/movements/box-over.svg');
 }
 
 .wod-icon[data-wod-icon='broad-jump'] {
-  -webkit-mask-image: url('../assets/icons/broad-jump.svg');
-  mask-image: url('../assets/icons/broad-jump.svg');
+  -webkit-mask-image: url('../assets/icons/movements/broad-jump.svg');
+  mask-image: url('../assets/icons/movements/broad-jump.svg');
 }
 
 .wod-icon[data-wod-icon='jump-rope'] {
-  -webkit-mask-image: url('../assets/icons/jump-rope.svg');
-  mask-image: url('../assets/icons/jump-rope.svg');
+  -webkit-mask-image: url('../assets/icons/movements/jump-rope.svg');
+  mask-image: url('../assets/icons/movements/jump-rope.svg');
 }
 
 .wod-time {
