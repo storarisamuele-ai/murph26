@@ -60,6 +60,45 @@
   .mb04-return-mobile { display: none; }
   .mb04-remaining { grid-area: remaining; }
   .mb04-remaining .rotation-label { color: var(--blue); }
+
+  .mb04-execution .mission-rule-title { margin: 0 0 0.5rem !important; }
+  .mb04-execution .mb04-section-label:not(:first-child) { margin-top: 2rem !important; }
+  .mb04-execution .mb04-example-label { margin: 1.25rem 0 0.75rem !important; }
+  .mb04-execution .mb04-flow { margin: 0.75rem 0 1.5rem !important; align-items: stretch; }
+  .mb04-execution .mb04-flow--du { align-items: center; }
+  .mb04-execution .suggested-flow { margin: 0.75rem 0 0.5rem !important; }
+  .mb04-execution .rotation-summary { margin: 0.5rem 0 0.75rem !important; }
+  .mb04-execution .mission-objective-copy { margin: 0 0 0.75rem !important; }
+  .mb04-execution .mission-objective-copy:last-child { margin-bottom: 0 !important; }
+
+  .mb04-completion .mission-flow--completion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0 1rem;
+  }
+  .mb04-completion .mission-flow--completion .flow-step {
+    flex: 1 1 0;
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 3rem;
+    padding: 0.85rem 1rem;
+    white-space: normal;
+    word-break: normal;
+  }
+
+  @media (max-width: 599px) {
+    .mb04-completion .mission-flow--completion {
+      flex-direction: column;
+    }
+    .mb04-completion .mission-flow--completion .flow-step {
+      width: 100%;
+      min-height: 2.8rem;
+    }
+  }
+
   .mb04-example {
     display: flex;
     flex-wrap: wrap;
@@ -113,6 +152,8 @@
     }
     .mb04-return-desktop { display: none; }
     .mb04-return-mobile { display: inline; }
+    .mb04-execution .mb04-section-label:not(:first-child) { margin-top: 1.5rem !important; }
+    .mb04-execution .mb04-example-label { margin-top: 1rem !important; }
   }
 </style>
 </head>
@@ -369,8 +410,8 @@
 
             <h2 class='mission-card-title'>MISSION EXECUTION</h2>
           </header>
-          <div class='mission-card-body'>
-            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Mission Flow</p>
+          <div class='mission-card-body mb04-execution'>
+            <p class='mission-rule-title mb04-section-label' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Mission Flow</p>
             <div class='mb04-flow'>
               <div class='rotation-card'>
                 <span class='rotation-label'>01</span>
@@ -396,7 +437,7 @@
             <p class='mission-objective-copy' style='margin: 0.5rem 0 0.75rem;'>Il Team deve completare tutti i Double Unders del blocco prima di iniziare i Sit-up.</p>
             <p class='mission-objective-copy' style='margin: 0 0 1rem;'>Solo dopo aver completato tutti i Sit-up si passa al blocco successivo.</p>
 
-            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Double Under Flow</p>
+            <p class='mission-rule-title mb04-section-label' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Double Under Flow</p>
             <div class='mb04-flow mb04-flow--du'>
               <div class='rotation-card mb04-declare'>
                 <span class='rotation-label'>01</span>
@@ -427,7 +468,7 @@
             <p class='mission-objective-copy' style='margin: 0 0 0.75rem;'>In caso di errore, le ripetizioni già completate restano valide: l’atleta esegue la penalty prevista e riparte dalla ripetizione successiva fino a raggiungere il numero dichiarato.</p>
             <p class='mission-objective-copy' style='margin: 0 0 0.75rem;'>Ogni nuovo errore comporta una nuova penalty.</p>
 
-            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Example — Declared: 20 Reps</p>
+            <p class='mission-rule-title mb04-example-label' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Example — Declared: 20 Reps</p>
             <div class='mb04-example' aria-hidden='true'>
               <span class='mb04-example-step'>0–13</span>
               <span class='mb04-example-arrow'>→</span>
@@ -440,7 +481,7 @@
               <span class='mb04-example-step mb04-example-ok'>18–20 ✓</span>
             </div>
 
-            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Suggested Sit-up Strategy</p>
+            <p class='mission-rule-title mb04-section-label' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Suggested Sit-up Strategy</p>
             <div class='suggested-flow'>
               <div class='suggested-flow-track'>
                 <div class='suggested-flow-step'>P1</div>
@@ -549,15 +590,18 @@
 
             <h2 class='mission-card-title'>MISSION COMPLETION</h2>
           </header>
-          <div class='mission-card-body'>
+          <div class='mission-card-body mb04-completion'>
             <p class='mission-rule-title' style='text-align: left; margin: 0 0 0.5rem;'>Tempo di completamento</p>
             <div class='mission-flow mission-flow--completion'>
               <div class='flow-step'>DECLARE</div>
-              <span class='flow-arrow' aria-hidden='true'>↓</span>
+              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
+              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
               <div class='flow-step'>DOUBLE UNDERS</div>
-              <span class='flow-arrow' aria-hidden='true'>↓</span>
+              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
+              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
               <div class='flow-step'>SIT-UPS</div>
-              <span class='flow-arrow' aria-hidden='true'>↓</span>
+              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
+              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
               <div class='flow-step'>MISSION COMPLETE</div>
             </div>
             <p class='mission-objective-copy' style='margin-bottom: 0.75rem;'>Il completamento si ottiene quando il Team termina tutti i round previsti. Registra il tempo solo come memoria della Missione. L'obiettivo è la prontezza per la Missione Finale.</p>
