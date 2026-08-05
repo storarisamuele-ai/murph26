@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../css/print-dossier.css">
   <style>
     body[data-mission="mission-04"] .print-page {
-      padding: 8mm 10mm;
+      padding: 6mm 8mm;
     }
 
     body[data-mission="mission-04"] .print-header {
@@ -48,10 +48,9 @@
     body[data-mission="mission-04"] .mission-flow,
     body[data-mission="mission-04"] .mb04-print-du-fail,
     body[data-mission="mission-04"] .mb04-print-example,
-    body[data-mission="mission-04"] .mb04-scorecard,
     body[data-mission="mission-04"] .mission-rule-list {
-      break-inside: avoid;
-      page-break-inside: avoid;
+      break-inside: auto;
+      page-break-inside: auto;
     }
 
     body[data-mission="mission-04"] .section-icon,
@@ -72,7 +71,7 @@
 
     body[data-mission="mission-04"] .mission-card-body {
       font-size: 7.5pt;
-      line-height: 1.3;
+      line-height: 1.2;
     }
 
     body[data-mission="mission-04"] .mission-codename {
@@ -248,14 +247,17 @@
     }
 
     body[data-mission="mission-04"] .hazard-accordion {
-      display: block;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.05rem 0.2rem;
     }
 
     body[data-mission="mission-04"] .hazard-accordion-item {
       border: none;
       background: transparent;
-      margin: 0 0 0.15rem;
-      break-inside: avoid;
+      margin: 0;
+      break-inside: auto;
+      page-break-inside: auto;
     }
 
     body[data-mission="mission-04"] .hazard-accordion-header {
@@ -353,6 +355,498 @@
       border-bottom: 0.5pt solid #000;
       min-width: 12rem;
       margin-left: 0.2rem;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mission-flow,
+    body[data-mission="mission-04"] .mb04-execution .mb04-print-du-fail,
+    body[data-mission="mission-04"] .mb04-execution .mb04-print-example {
+      margin: 0.05rem 0 0.1rem;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .flow-step {
+      min-height: 1.1rem;
+      padding: 0.1rem 0.25rem;
+      font-size: 7.5pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mb04-print-example {
+      font-size: 8pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mission-rule-title,
+    body[data-mission="mission-04"] .mb04-execution .mission-objective-copy {
+      margin: 0.03rem 0;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mission-card-body {
+      font-size: 7pt;
+      line-height: 1.1;
+    }
+
+    body[data-mission="mission-04"] .mission-intel-statement {
+      font-size: 9pt;
+    }
+
+    body[data-mission="mission-04"] .mission-intel-secondary {
+      margin: 0.02rem 0;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-content p {
+      font-size: 6.5pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-completion-line {
+      min-width: 8rem;
+    }
+
+    body[data-mission="mission-04"] .print-page:nth-of-type(2) .mission-card {
+      padding: 0.05rem;
+      margin-bottom: 1px;
+    }
+
+    body[data-mission="mission-04"] .print-page:nth-of-type(2) .section-header {
+      margin-bottom: 1px;
+    }
+
+    body[data-mission="mission-04"] .print-page {
+      padding: 5mm 8mm;
+    }
+
+    body[data-mission="mission-04"] .print-header {
+      margin-bottom: 1px;
+    }
+
+    body[data-mission="mission-04"] .print-content {
+      gap: 0.05rem;
+      margin-bottom: 4mm;
+    }
+
+    body[data-mission="mission-04"] .print-footer {
+      padding: 1mm 0 0;
+    }
+
+    body[data-mission="mission-04"] .mission-card {
+      padding: 0.05rem;
+      margin-bottom: 1px;
+    }
+
+    body[data-mission="mission-04"] .section-header {
+      margin-bottom: 1px;
+    }
+
+    body[data-mission="mission-04"] .section-heading h3 {
+      font-size: 14px;
+    }
+
+    body[data-mission="mission-04"] .mission-codename {
+      margin: 0 0 0.05rem;
+    }
+
+    body[data-mission="mission-04"] .mission-narrative {
+      margin: 0 0 0.1rem;
+    }
+
+    body[data-mission="mission-04"] .mission-wod-headline {
+      margin: 0.05rem 0 0.1rem;
+      gap: 0.2rem;
+    }
+
+    body[data-mission="mission-04"] .mission-wod-description {
+      margin: 0 0 0.1rem;
+    }
+
+    body[data-mission="mission-04"] .mission-rule-title {
+      margin: 0.1rem 0 0.05rem;
+    }
+
+    body[data-mission="mission-04"] .mission-rule-list {
+      margin: 0 0 0.05rem;
+      padding-left: 0.5rem;
+    }
+
+    body[data-mission="mission-04"] .mission-rule-list li {
+      margin-bottom: 0.02rem;
+    }
+
+    body[data-mission="mission-04"] .mission-flow {
+      margin: 0.05rem 0 0.1rem;
+    }
+
+    body[data-mission="mission-04"] .flow-step {
+      font-size: 8pt;
+      min-height: 1.2rem;
+      padding: 0.15rem 0.3rem;
+    }
+
+    body[data-mission="mission-04"] .mission-card-body {
+      font-size: 7pt;
+      line-height: 1.15;
+    }
+
+    body[data-mission="mission-04"] .mission-card .scaling-table {
+      font-size: 6.5pt;
+    }
+
+    body[data-mission="mission-04"] .mission-card .scaling-table th,
+    body[data-mission="mission-04"] .mission-card .scaling-table td {
+      padding: 0.03rem 0.1rem;
+    }
+
+    body[data-mission="mission-04"] .mission-legend {
+      margin: 0.05rem 0 0;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mission-card-body {
+      font-size: 6.5pt;
+      line-height: 1.05;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .flow-step {
+      min-height: 1rem;
+      padding: 0.05rem 0.2rem;
+      font-size: 7pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mb04-print-example {
+      font-size: 7.5pt;
+      margin: 0.02rem 0 0.05rem;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mb04-print-du-fail {
+      margin: 0.02rem 0 0.05rem;
+    }
+
+    body[data-mission="mission-04"] .mb04-print-fail-label {
+      font-size: 7pt;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-item {
+      margin: 0 0 0.02rem;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-content {
+      padding-left: 0.4rem;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-content p {
+      font-size: 6pt;
+    }
+
+    body[data-mission="mission-04"] .mission-intel-statement {
+      font-size: 8pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-completion-line {
+      min-width: 6rem;
+    }
+
+    body[data-mission="mission-04"] .mission-card-body {
+      font-size: 6.5pt;
+      line-height: 1.1;
+    }
+
+    body[data-mission="mission-04"] .mission-rule-title {
+      font-size: 6.5pt;
+      margin: 0.05rem 0 0.02rem;
+    }
+
+    body[data-mission="mission-04"] .mission-rule-list {
+      font-size: 6.5pt;
+    }
+
+    body[data-mission="mission-04"] .mission-intended-stimulus {
+      font-size: 6.5pt;
+      margin: 0.05rem 0;
+    }
+
+    body[data-mission="mission-04"] .mission-wod-note {
+      font-size: 7pt;
+      margin: 0.05rem 0 0;
+    }
+
+    body[data-mission="mission-04"] .wod-label,
+    body[data-mission="mission-04"] .wod-join {
+      font-size: 12pt;
+    }
+
+    body[data-mission="mission-04"] .wod-time {
+      font-size: 10pt;
+    }
+
+    body[data-mission="mission-04"] .mission-codename {
+      font-size: 13pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mission-card-body {
+      font-size: 5pt;
+      line-height: 1.05;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mission-rule-title {
+      font-size: 5pt;
+      margin: 0.005rem 0;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mission-objective-copy {
+      font-size: 5pt;
+      margin: 0.005rem 0;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mission-flow {
+      margin: 0.01rem 0 0.03rem;
+      gap: 0.03rem;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .flow-arrow {
+      font-size: 7pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .flow-step {
+      min-height: 0.5rem;
+      padding: 0.01rem 0.05rem;
+      font-size: 5pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mb04-print-du-fail {
+      margin: 0.005rem 0;
+      gap: 0.01rem;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mb04-print-example {
+      font-size: 5pt;
+      padding: 0.01rem 0.05rem;
+      gap: 0.03rem;
+      margin: 0.005rem 0 0.02rem;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mb04-print-fail-label {
+      font-size: 5pt;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion {
+      gap: 0.02rem 0.1rem;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-content {
+      padding-left: 0.2rem;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-title {
+      font-size: 5.5pt;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-content p {
+      font-size: 4.5pt;
+    }
+
+    body[data-mission="mission-04"] .mission-intel-statement {
+      font-size: 6pt;
+      margin: 0 0 0.02rem;
+    }
+
+    body[data-mission="mission-04"] .mission-intel-secondary {
+      font-size: 5.5pt;
+      margin: 0.01rem 0;
+    }
+
+    body[data-mission="mission-04"] .mission-objective-copy {
+      font-size: 6pt;
+      margin: 0.02rem 0;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-icon {
+      font-size: 5.5pt;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-header {
+      gap: 0.02rem;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-content p {
+      font-size: 4pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mission-card-body {
+      line-height: 1;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mission-rule-title,
+    body[data-mission="mission-04"] .mb04-execution .mission-objective-copy {
+      margin: 0;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mission-flow {
+      margin: 0.005rem 0 0.02rem;
+      gap: 0.02rem;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .flow-arrow {
+      font-size: 6pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .flow-step {
+      min-height: 0.45rem;
+      padding: 0.005rem 0.03rem;
+      font-size: 5pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mb04-print-du-fail,
+    body[data-mission="mission-04"] .mb04-execution .mb04-print-example {
+      margin: 0;
+    }
+
+    body[data-mission="mission-04"] .mb04-execution .mb04-print-example {
+      padding: 0.005rem 0.03rem;
+      gap: 0.02rem;
+    }
+
+    body[data-mission="mission-04"] .mission-intel-statement {
+      font-size: 5.5pt;
+      margin: 0;
+    }
+
+    body[data-mission="mission-04"] .mission-intel-secondary {
+      font-size: 5pt;
+      margin: 0;
+    }
+
+    body[data-mission="mission-04"] .mission-card {
+      padding: 0.02rem;
+      margin-bottom: 0;
+    }
+
+    body[data-mission="mission-04"] .section-header {
+      margin-bottom: 0;
+    }
+
+    body[data-mission="mission-04"] .print-content {
+      margin-bottom: 3mm;
+    }
+
+    body[data-mission="mission-04"] .print-footer {
+      padding: 0.5mm 0 0;
+    }
+
+    body[data-mission="mission-04"] .print-page {
+      padding: 3.5mm 8mm;
+    }
+
+    body[data-mission="mission-04"] .print-header {
+      margin-bottom: 0;
+    }
+
+    body[data-mission="mission-04"] .print-content {
+      margin-bottom: 0.5mm;
+    }
+
+    body[data-mission="mission-04"] .mission-card {
+      padding: 0.01rem;
+    }
+
+    body[data-mission="mission-04"] .mission-card--info .mission-card-body,
+    body[data-mission="mission-04"] .mission-card--critical .mission-card-body {
+      font-size: 5pt;
+    }
+
+    body[data-mission="mission-04"] .mission-rule-title {
+      font-size: 4.5pt;
+      margin: 0;
+    }
+
+    body[data-mission="mission-04"] .mission-rule-list {
+      padding-left: 0.15rem;
+      line-height: 1.0;
+    }
+
+    body[data-mission="mission-04"] .mission-rule-list li {
+      margin-bottom: 0;
+    }
+
+    body[data-mission="mission-04"] .mission-narrative {
+      margin: 0 0 0.03rem;
+    }
+
+    body[data-mission="mission-04"] .mission-wod-headline {
+      margin: 0.02rem 0 0.03rem;
+      gap: 0.05rem;
+    }
+
+    body[data-mission="mission-04"] .mission-wod-description {
+      margin: 0 0 0.03rem;
+    }
+
+    body[data-mission="mission-04"] .mission-flow {
+      margin: 0.02rem 0 0.03rem;
+    }
+
+    body[data-mission="mission-04"] .flow-step {
+      font-size: 7pt;
+      min-height: 1rem;
+      padding: 0.05rem 0.15rem;
+    }
+
+    body[data-mission="mission-04"] .wod-label,
+    body[data-mission="mission-04"] .wod-join {
+      font-size: 11pt;
+    }
+
+    body[data-mission="mission-04"] .wod-time {
+      font-size: 9pt;
+    }
+
+    body[data-mission="mission-04"] .mission-codename {
+      font-size: 12pt;
+    }
+
+    body[data-mission="mission-04"] .mission-objective-copy {
+      margin: 0.003rem 0;
+    }
+
+    body[data-mission="mission-04"] .mission-card .scaling-table th,
+    body[data-mission="mission-04"] .mission-card .scaling-table td {
+      padding: 0.01rem 0.03rem;
+    }
+
+    body[data-mission="mission-04"] .mb04-completion .mission-card-body {
+      font-size: 4pt;
+      line-height: 1;
+    }
+
+    body[data-mission="mission-04"] .mb04-completion p,
+    body[data-mission="mission-04"] .mb04-completion .mission-rule-title,
+    body[data-mission="mission-04"] .mb04-completion .mission-objective-copy {
+      margin: 0 !important;
+    }
+
+    body[data-mission="mission-04"] .mb04-completion .mission-card {
+      padding: 0;
+    }
+
+    body[data-mission="mission-04"] .mb04-completion .section-icon,
+    body[data-mission="mission-04"] .mb04-completion .section-icon svg {
+      width: 14px;
+      height: 14px;
+      flex-basis: 14px;
+    }
+
+    body[data-mission="mission-04"] .mb04-completion .section-heading h3 {
+      font-size: 11px;
+    }
+
+    body[data-mission="mission-04"] .print-content {
+      margin-bottom: 1mm;
+    }
+
+    body[data-mission="mission-04"] .print-page {
+      padding: 4mm 8mm;
+    }
+
+    body[data-mission="mission-04"] .print-footer {
+      padding: 0;
+    }
+
+    body[data-mission="mission-04"] .print-footer__meta {
+      margin: 0;
     }
   </style>
 </head>
@@ -557,7 +1051,38 @@
           </div>
         </article>
 
-        <article class='mission-card mission-card--full mission-card--critical'>
+
+      </main>
+      <footer class="print-footer">
+        <ul class="print-footer__meta">
+          <li>Ref: M26-JTO-04-R01</li>
+          <li>Archive: M26-JTO-04</li>
+          <li>Rev: 01</li>
+          <li>DECLASSIFIED</li>
+        </ul>
+        <span class="print-footer__page" data-total="2"></span>
+      </footer>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="print-page">
+      <header class="print-header print-header--compact">
+        <div class="print-header-left">
+          <img src="../assets/muprh-logo-font.svg" alt="Murph26" class="print-header__logo-mark">
+          <span class="print-header__logo-wordmark">JOINT TRAINING OPERATIONS</span>
+        </div>
+        <div class="print-header-center">
+          <div class="print-title-wrapper">
+            <h1 class="print-header__title">MISSION BRIEF #04</h1>
+            <h2 class="print-header__subtitle">MISSION DELTA</h2>
+          </div>
+        </div>
+        <div class="print-header-right">
+          <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
+        </div>
+      </header>
+      <main class="print-content">
+        <article class='mission-card mission-card--full mission-card--critical mb04-execution'>
           <div class="section-header">
             <div class="section-icon">
               <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M12 7v10M7 12h10'/></svg>
@@ -629,37 +1154,6 @@
             <p class='mission-objective-copy' style='margin-bottom: 0;'>Un Sit-up per atleta a rotazione. Questa soluzione crea un rapporto lavoro/recupero di circa 1:3 mantenendo alta la qualità del movimento.</p>
           </div>
         </article>
-
-      </main>
-      <footer class="print-footer">
-        <ul class="print-footer__meta">
-          <li>Ref: M26-JTO-04-R01</li>
-          <li>Archive: M26-JTO-04</li>
-          <li>Rev: 01</li>
-          <li>DECLASSIFIED</li>
-        </ul>
-        <span class="print-footer__page" data-total="4"></span>
-      </footer>
-    </section>
-
-    <!-- PAGE 2 -->
-    <section class="print-page">
-      <header class="print-header print-header--compact">
-        <div class="print-header-left">
-          <img src="../assets/muprh-logo-font.svg" alt="Murph26" class="print-header__logo-mark">
-          <span class="print-header__logo-wordmark">JOINT TRAINING OPERATIONS</span>
-        </div>
-        <div class="print-header-center">
-          <div class="print-title-wrapper">
-            <h1 class="print-header__title">MISSION BRIEF #04</h1>
-            <h2 class="print-header__subtitle">MISSION DELTA</h2>
-          </div>
-        </div>
-        <div class="print-header-right">
-          <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
-        </div>
-      </header>
-      <main class="print-content">
 
         <article class='mission-card mission-card--full mission-card--critical'>
           <div class="section-header">
@@ -741,103 +1235,26 @@
             <p class='mission-intel-statement'>READY IS NOT ABOUT SPEED.<br>READY IS ABOUT TRUSTING THE PLAN.</p>
             <p class='mission-intel-secondary'>IL TEAM HA GIÀ COMPLETATO IL LAVORO PIÙ DIFFICILE. NON AFFRETTARE L'ULTIMA PREPARAZIONE.</p>
 
-            <p class='mission-rule-title' style='text-align: left; margin: 0.15rem 0 0.1rem;'>Intelligence Strategica</p>
+            <p class='mission-rule-title' style='text-align: left; margin: 0.01rem 0;'>Intelligence Strategica</p>
             <p class='mission-objective-copy' style='margin-bottom: 0;'>Resta calmo. Comunica. Esegui. Concludi questa Missione pronto per la Missione Finale.</p>
           </div>
         </article>
 
-        <article class='mission-card mission-card--full mission-card--info'>
-          <div class="section-header">
-            <div class="section-icon">
-              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/><polyline points='14 2 14 8 20 8'/><line x1='9' y1='13' x2='15' y2='13'/><line x1='9' y1='17' x2='15' y2='17'/></svg>
-            </div>
-            <div class="section-heading">
-              <div class="section-ref">SECT. 09 — REF JTO-09</div>
-              <h3>SCORECARD</h3>
-            </div>
-          </div>
-          <div class='mission-card-body'>
-            <p class='mission-intel-statement' style='font-size: 11pt; margin: 0 0 0.1rem;'>MISSION DELTA — TEAM ANNIE</p>
 
-            <div class='mb04-scorecard-meta'>
-              <div>TEAM NAME <span class='mb04-scorecard-line'>&nbsp;</span></div>
-              <div>CATEGORY <span class='mb04-scorecard-line' style='min-width: 6rem;'>&nbsp;PERFORMANCE &nbsp; FITNESS &nbsp; CROSSFIT</span></div>
-              <div>JUDGE <span class='mb04-scorecard-line'>&nbsp;</span></div>
-              <div>START TIME: 17:00</div>
-            </div>
-
-            <table class='mb04-scorecard'>
-              <thead>
-                <tr>
-                  <th>ROUND / TARGET</th>
-                  <th>DU DECLARATIONS / PROGRESS</th>
-                  <th>PENALTIES</th>
-                  <th>SIT-UPS</th>
-                  <th style='text-align: center;'>ROUND COMPLETE</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>ROUND 1 — 200</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td style='text-align: center;'><span class='mb04-scorecard-check'>&nbsp;</span></td>
-                </tr>
-                <tr>
-                  <td>ROUND 2 — 160</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td style='text-align: center;'><span class='mb04-scorecard-check'>&nbsp;</span></td>
-                </tr>
-                <tr>
-                  <td>ROUND 3 — 120</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td style='text-align: center;'><span class='mb04-scorecard-check'>&nbsp;</span></td>
-                </tr>
-                <tr>
-                  <td>ROUND 4 — 80</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td style='text-align: center;'><span class='mb04-scorecard-check'>&nbsp;</span></td>
-                </tr>
-                <tr>
-                  <td>ROUND 5 — 40</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td style='text-align: center;'><span class='mb04-scorecard-check'>&nbsp;</span></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class='mb04-scorecard-meta' style='margin-top: 0.2rem;'>
-              <div>FINAL TIME <span class='mb04-scorecard-line'>&nbsp;</span></div>
-              <div>TOTAL PENALTIES <span class='mb04-scorecard-line'>&nbsp;</span></div>
-              <div>JUDGE SIGNATURE <span class='mb04-scorecard-line' style='min-width: 6rem;'>&nbsp;</span></div>
-              <div>TEAM CAPTAIN <span class='mb04-scorecard-line' style='min-width: 6rem;'>&nbsp;</span></div>
-            </div>
-          </div>
-        </article>
-
-        <article class='mission-card mission-card--info'>
+        <article class='mission-card mission-card--info mb04-completion'>
           <div class="section-header">
             <div class="section-icon">
               <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5M6 12l-5 5'/></svg>
             </div>
             <div class="section-heading">
-              <div class="section-ref">SECT. 10 — REF JTO-10</div>
+              <div class="section-ref">SECT. 09 — REF JTO-09</div>
               <h3>MISSION COMPLETION</h3>
             </div>
           </div>
           <div class='mission-card-body'>
-            <p class='mission-rule-title' style='text-align: left; margin: 0 0 0.1rem;'>Tempo di completamento</p>
-            <p class='mission-objective-copy' style='margin-bottom: 0.15rem;'>Il completamento si ottiene quando il Team termina tutti i round previsti. Registra il tempo solo come memoria della Missione.</p>
-            <p style='margin: 0 0 0.2rem;'>TEMPO DI COMPLETAMENTO <span class='mb04-completion-line'>&nbsp;</span></p>
+            <p class='mission-rule-title' style='text-align: left; margin: 0 0 0.03rem;'>Tempo di completamento</p>
+            <p class='mission-objective-copy' style='margin-bottom: 0.03rem;'>Il completamento si ottiene quando il Team termina tutti i round previsti. Registra il tempo solo come memoria della Missione.</p>
+            <p style='margin: 0 0 0.05rem;'>TEMPO DI COMPLETAMENTO <span class='mb04-completion-line' style='min-width: 4rem;'>&nbsp;</span></p>
             <p class='mission-objective-copy' style='margin-bottom: 0;'>Nessuna classifica. Nessuna graduatoria. Nessun Team vincitore.</p>
           </div>
         </article>
@@ -850,7 +1267,7 @@
           <li>Rev: 01</li>
           <li>DECLASSIFIED</li>
         </ul>
-        <span class="print-footer__page" data-total="4"></span>
+        <span class="print-footer__page" data-total="2"></span>
       </footer>
     </section>
 
