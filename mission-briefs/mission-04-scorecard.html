@@ -432,9 +432,11 @@
     </footer>
   </main>
   <script>
-    window.addEventListener('load', () => {
-      setTimeout(() => window.print(), 1000);
-    });
+    if (new URLSearchParams(location.search).get('print') === '1') {
+      window.addEventListener('load', () => {
+        setTimeout(() => window.print(), 800);
+      });
+    }
   </script>
 </body>
 </html>
