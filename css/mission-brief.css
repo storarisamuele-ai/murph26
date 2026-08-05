@@ -2062,6 +2062,7 @@ body.is-classified {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2rem, 6vw, 3.5rem);
   letter-spacing: 0.1em;
+  color: var(--pink);
 }
 
 .classified-overlay__title {
@@ -2087,6 +2088,7 @@ body.is-classified {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-top: 0.5rem;
+  color: var(--cyan);
 }
 
 .classified-overlay__footer {
