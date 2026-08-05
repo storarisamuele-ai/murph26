@@ -8,40 +8,362 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/print-dossier.css">
+  <style>
+    body[data-mission="mission-04"] .print-page {
+      padding: 8mm 10mm;
+    }
+
+    body[data-mission="mission-04"] .print-header {
+      margin-bottom: 2px;
+    }
+
+    body[data-mission="mission-04"] .print-content {
+      gap: 0.1rem;
+    }
+
+    body[data-mission="mission-04"] .mission-card {
+      padding: 0.15rem;
+      margin-bottom: 2px;
+    }
+
+    body[data-mission="mission-04"] .section-header {
+      margin-bottom: 3px;
+    }
+
+    body[data-mission="mission-04"] .section-icon,
+    body[data-mission="mission-04"] .section-icon svg {
+      width: 18px;
+      height: 18px;
+      flex-basis: 18px;
+    }
+
+    body[data-mission="mission-04"] .section-heading h3 {
+      font-size: 15px;
+    }
+
+    body[data-mission="mission-04"] .section-ref {
+      font-size: 9px;
+      margin-bottom: 2px;
+    }
+
+    body[data-mission="mission-04"] .mission-card-body {
+      font-size: 7.5pt;
+      line-height: 1.3;
+    }
+
+    body[data-mission="mission-04"] .mission-codename {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14pt;
+      letter-spacing: 0.04em;
+      margin: 0 0 0.1rem;
+    }
+
+    body[data-mission="mission-04"] .mission-narrative {
+      font-weight: 600;
+      margin: 0 0 0.2rem;
+    }
+
+    body[data-mission="mission-04"] .mission-wod-headline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.35rem;
+      margin: 0.1rem 0 0.2rem;
+    }
+
+    body[data-mission="mission-04"] .wod-label,
+    body[data-mission="mission-04"] .wod-join,
+    body[data-mission="mission-04"] .wod-time {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13pt;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    body[data-mission="mission-04"] .wod-time {
+      font-family: 'Inter', sans-serif;
+      font-size: 11pt;
+      font-weight: 600;
+    }
+
+    body[data-mission="mission-04"] .mission-wod-description {
+      margin: 0 0 0.25rem;
+    }
+
+    body[data-mission="mission-04"] .mission-rule-title {
+      margin: 0.15rem 0 0.05rem;
+      font-weight: 600;
+    }
+
+    body[data-mission="mission-04"] .mission-rule-list {
+      margin: 0 0 0.15rem;
+      padding-left: 0.75rem;
+    }
+
+    body[data-mission="mission-04"] .mission-rule-list li {
+      margin-bottom: 0.05rem;
+    }
+
+    body[data-mission="mission-04"] .mission-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.25rem;
+      margin: 0.15rem 0 0.25rem;
+    }
+
+    body[data-mission="mission-04"] .flow-step {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 8.5pt;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #000;
+      background: #fff;
+      border: 0.5pt solid #000;
+      border-radius: 2pt;
+      padding: 0.25rem 0.4rem;
+      text-align: center;
+      min-height: 1.8rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body[data-mission="mission-04"] .flow-arrow {
+      font-size: 10pt;
+      color: #000;
+      line-height: 1;
+    }
+
+    body[data-mission="mission-04"] .flow-arrow--mobile {
+      display: none;
+    }
+
+    body[data-mission="mission-04"] .mb04-print-du-fail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.1rem;
+      margin: 0.1rem 0 0.15rem;
+    }
+
+    body[data-mission="mission-04"] .mb04-print-fail-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 8pt;
+      letter-spacing: 0.05em;
+      color: #000;
+    }
+
+    body[data-mission="mission-04"] .mb04-print-example {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.25rem;
+      margin: 0.15rem 0 0.25rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 9pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-print-example-step {
+      padding: 0.15rem 0.35rem;
+      border: 0.5pt solid #000;
+      border-radius: 2pt;
+      background: #fff;
+    }
+
+    body[data-mission="mission-04"] .mb04-print-example-penalty {
+      border-color: #000;
+      color: #000;
+    }
+
+    body[data-mission="mission-04"] .mb04-print-example-ok {
+      color: #000;
+      font-weight: 700;
+    }
+
+    body[data-mission="mission-04"] .mission-card .scaling-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7pt;
+      margin: 0.1rem 0;
+    }
+
+    body[data-mission="mission-04"] .mission-card .scaling-table th,
+    body[data-mission="mission-04"] .mission-card .scaling-table td {
+      border: 0.5pt solid #000;
+      padding: 0.1rem 0.2rem;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    body[data-mission="mission-04"] .mission-card .scaling-table th {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    body[data-mission="mission-04"] .table-icon {
+      font-size: 7pt;
+      margin-right: 0.1rem;
+    }
+
+    body[data-mission="mission-04"] .mission-legend {
+      font-size: 7pt;
+      color: #000;
+      margin: 0.1rem 0 0;
+    }
+
+    body[data-mission="mission-04"] .mission-intel-statement {
+      font-size: 12pt;
+      margin: 0 0 0.1rem;
+    }
+
+    body[data-mission="mission-04"] .mission-intel-secondary {
+      margin: 0 0 0.2rem;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion {
+      display: block;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-item {
+      border: none;
+      background: transparent;
+      margin: 0 0 0.15rem;
+      break-inside: avoid;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-header {
+      padding: 0;
+      cursor: default;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.2rem;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-icon {
+      font-weight: 700;
+      color: #000;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-title {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 7.5pt;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-toggle,
+    body[data-mission="mission-04"] .hazard-accordion-content p {
+      display: none;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-content {
+      display: block;
+      padding-left: 0.6rem;
+      margin: 0;
+    }
+
+    body[data-mission="mission-04"] .hazard-accordion-content p {
+      display: block;
+      margin: 0;
+      font-size: 7.5pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-scorecard {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7pt;
+      margin: 0.2rem 0 0.1rem;
+    }
+
+    body[data-mission="mission-04"] .mb04-scorecard th,
+    body[data-mission="mission-04"] .mb04-scorecard td {
+      border: 0.5pt solid #000;
+      padding: 0.2rem;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    body[data-mission="mission-04"] .mb04-scorecard th {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      background: #f0f0f0;
+    }
+
+    body[data-mission="mission-04"] .mb04-scorecard td {
+      height: 1.6rem;
+    }
+
+    body[data-mission="mission-04"] .mb04-scorecard-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem 0.5rem;
+      margin: 0.2rem 0;
+      font-size: 7.5pt;
+    }
+
+    body[data-mission="mission-04"] .mb04-scorecard-line {
+      display: inline-block;
+      border-bottom: 0.5pt solid #000;
+      min-width: 5rem;
+      flex: 1;
+      margin-left: 0.2rem;
+    }
+
+    body[data-mission="mission-04"] .mb04-scorecard-check {
+      display: inline-block;
+      width: 0.5rem;
+      height: 0.5rem;
+      border: 0.5pt solid #000;
+    }
+
+    body[data-mission="mission-04"] .mb04-completion-line {
+      display: inline-block;
+      border-bottom: 0.5pt solid #000;
+      min-width: 12rem;
+      margin-left: 0.2rem;
+    }
+  </style>
 </head>
 <body class="print-dossier" data-mission="mission-04">
   <div class="print-document">
-<section class="print-page">
-<header class="print-header">
-  <div class="print-header-left">
-    <img src="../assets/muprh-logo-font.svg" alt="Murph26" class="print-header__logo-mark">
-    <span class="print-header__logo-wordmark">JOINT TRAINING OPERATIONS</span>
-  </div>
-  <div class="print-header-center">
-    <div class="print-title-wrapper">
-      <h1 class="print-header__title">MISSION BRIEF #04</h1>
-      <h2 class="print-header__subtitle">MISSION DELTA</h2>
-    </div>
-  </div>
-  <div class="print-header-right">
-    <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
-  </div>
-</header>
-  <main class="print-content">
-<article class='mission-card mission-card--info'>
+
+    <!-- PAGE 1 -->
+    <section class="print-page">
+      <header class="print-header">
+        <div class="print-header-left">
+          <img src="../assets/muprh-logo-font.svg" alt="Murph26" class="print-header__logo-mark">
+          <span class="print-header__logo-wordmark">JOINT TRAINING OPERATIONS</span>
+        </div>
+        <div class="print-header-center">
+          <div class="print-title-wrapper">
+            <h1 class="print-header__title">MISSION BRIEF #04</h1>
+            <h2 class="print-header__subtitle">MISSION DELTA</h2>
+          </div>
+        </div>
+        <div class="print-header-right">
+          <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
+        </div>
+      </header>
+      <main class="print-content">
+
+        <article class='mission-card mission-card--info'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><circle cx='12' cy='12' r='4'/><line x1='12' y1='3' x2='12' y2='21'/><line x1='3' y1='12' x2='21' y2='12'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 01 — REF JTO-01</div>
-    <h3>MISSION IDENTIFICATION</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><circle cx='12' cy='12' r='4'/><line x1='12' y1='3' x2='12' y2='21'/><line x1='3' y1='12' x2='21' y2='12'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 01 — REF JTO-01</div>
+              <h3>MISSION IDENTIFICATION</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
             <p class='mission-codename'>DELTA — READY</p>
-            <p class='mission-narrative'>IL TEAM È PRONTO. LA COORDINAZIONE È MASSIMA. IL LAVORO DIVENTA RIPETIBILE.</p>
-            <p class='mission-wod-note'>Missione 04 // Skill Endurance // Team Relay</p>
+            <p class='mission-narrative'>Questo è il briefing operativo finale prima della Missione Finale. L'obiettivo non è la massima intensità. L'obiettivo è arrivare preparati.</p>
+            <p class='mission-wod-note'>Precisione / Comunicazione / Ritmo sotto fatica accumulata.</p>
             <dl class='mission-intel'>
               <div>
                 <dt>Designazione</dt>
@@ -49,7 +371,7 @@
               </div>
               <div>
                 <dt>Orario Missione</dt>
-                <dd>14:30</dd>
+                <dd>17:00</dd>
               </div>
               <div>
                 <dt>Document ID</dt>
@@ -66,48 +388,46 @@
             </dl>
           </div>
         </article>
-<article class='mission-card mission-card--info'>
+
+        <article class='mission-card mission-card--info'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2l3 8 9 1-7 5 2 9-8-5-8 5 2-9-7-5 9-1Z'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 02 — REF JTO-02</div>
-    <h3>MISSION OBJECTIVE</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2l3 8 9 1-7 5 2 9-8-5-8 5 2-9-7-5 9-1Z'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 02 — REF JTO-02</div>
+              <h3>MISSION OBJECTIVE</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
-            <p class='mission-objective-copy'>Contenuto obiettivo DELTA in definizione.</p>
+            <p class='mission-objective-copy'>Preparare il Team alla Missione Finale mantenendo qualità tecnica, comunicazione chiara e disciplina di esecuzione nonostante la fatica accumulata.</p>
             <p class='mission-intended-stimulus'><strong>INTENDED STIMULUS</strong> SKILL ENDURANCE / TEAM RELAY / SUSTAINABLE PACE</p>
             <p class='mission-rule-title' style='white-space: nowrap;'>Intensità target — RPE 7 / 10</p>
-            <p class='mission-objective-copy' style='margin-bottom: 0;'>DELTA non deve bruciare la tecnica. La sensazione deve essere continua → continua → continua.</p>
+            <p class='mission-objective-copy' style='margin-bottom: 0;'>Delta deve sembrare controllata. Il Team dovrebbe concludere con fiducia, non con esaurimento.</p>
           </div>
         </article>
-<article class='mission-card mission-card--full mission-card--critical'>
+
+        <article class='mission-card mission-card--full mission-card--critical'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 03 — REF JTO-03</div>
-    <h3>MISSION WORKOUT</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 03 — REF JTO-03</div>
+              <h3>MISSION WORKOUT</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
             <div class='mission-wod-headline'>
-              <span class='wod-icon' aria-hidden='true' data-wod-icon='jump-rope'></span>
               <span class='wod-label'>TEAM</span>
               <span class='wod-join'>ANNIE</span>
               <span class='wod-time'>FOR TIME</span>
             </div>
 
-            <p class='mission-wod-description'>200-160-120-80-40 Double Unders + 200-160-120-80-40 Sit-ups.</p>
+            <p class='mission-wod-description'>200-160-120-80-40 Double Unders + 200-160-120-80-40 Sit-ups. Team di 4.</p>
 
-            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Mission Flow</p>
+            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.1rem;'>Mission Flow</p>
             <div class='mission-flow'>
-              <div class='flow-step'>DECLARE</div>
-              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
-              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
               <div class='flow-step'>DOUBLE UNDERS</div>
               <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
               <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
@@ -115,208 +435,398 @@
               <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
               <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
               <div class='flow-step'>NEXT ROUND</div>
+              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
+              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
+              <div class='flow-step'>MISSION COMPLETE</div>
             </div>
 
-            <p class='mission-rule-title' style='margin-top: 1rem;'>Mission Rules</p>
+            <p class='mission-rule-title' style='margin-top: 0.2rem;'>Mission Rules</p>
             <ol class='mission-rule-list'>
-              <li>I DU sono split as needed e ogni atleta dichiara prima il numero che tenterà.</li>
-              <li>In caso di errore: 8 Alternating DB Snatch @15/22,5 kg D/U.</li>
-              <li>Nei Sit-up il Team lavora in linea: P1 → P2 → P3 → P4 → repeat.</li>
+              <li>I Double Unders sono split as needed. Ogni atleta dichiara prima il numero che tenterà.</li>
+              <li>Il Team completa l'intero blocco di Double Unders prima di iniziare il corrispondente blocco di Sit-up.</li>
+              <li>Solo dopo aver completato tutti i Sit-up si passa al round successivo.</li>
+              <li>In caso di errore sui Double Unders: 8 Alternating DB Snatch, poi si riprende dal totale accumulato.</li>
             </ol>
           </div>
         </article>
-<article class='mission-card mission-card--full mission-card--info'>
+
+        <article class='mission-card mission-card--full mission-card--info'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 04 — REF JTO-04</div>
-    <h3>AUTHORIZED STANDARDS</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 04 — REF JTO-04</div>
+              <h3>AUTHORIZED STANDARDS</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
-            <p class='mission-objective-copy' style='margin-bottom: 0;'>Standard autorizzati DELTA in definizione.</p>
+            <table class='scaling-table'>
+              <thead>
+                <tr>
+                  <th class='scaling-exercise'>PARAMETRO</th>
+                  <th>PERFORMANCE</th>
+                  <th>FITNESS</th>
+                  <th>CROSSFIT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class='scaling-exercise'><span class='table-icon' aria-hidden='true'>➿</span> DOUBLE UNDERS</td>
+                  <td>200&ndash;160&ndash;120&ndash;80&ndash;40 REPS</td>
+                  <td>200&ndash;160&ndash;120&ndash;80&ndash;40 REPS</td>
+                  <td>200&ndash;160&ndash;120&ndash;80&ndash;40 REPS*</td>
+                </tr>
+                <tr>
+                  <td class='scaling-exercise'><span class='table-icon' aria-hidden='true'>🆙</span> SIT-UPS</td>
+                  <td>200&ndash;160&ndash;120&ndash;80&ndash;40 REPS</td>
+                  <td>200&ndash;160&ndash;120&ndash;80&ndash;40 REPS</td>
+                  <td>200&ndash;160&ndash;120&ndash;80&ndash;40 REPS</td>
+                </tr>
+                <tr>
+                  <td class='scaling-exercise'><span class='table-icon' aria-hidden='true'>🏋️</span> DB SNATCH PENALTY</td>
+                  <td>8 REPS @ 22,5 / 15 KG</td>
+                  <td>8 REPS @ 15 / 10 KG</td>
+                  <td>8 REPS @ 15 / 10 KG</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class='mission-legend'>* SINGLE UNDERS</p>
           </div>
         </article>
-  </main>
-<footer class="print-footer" data-total="3">
-  <ul class="print-footer__meta">
-    <li>Ref: M26-JTO-04-R01</li>
-    <li>Archive: M26-JTO-04</li>
-    <li>Rev: 01</li>
-    <li>DECLASSIFIED</li>
-  </ul>
-  <span class="print-footer__page"></span>
-</footer>
-</section>
-<section class="print-page">
-<header class="print-header print-header--compact">
-  <div class="print-header-left">
-    <img src="../assets/muprh-logo-font.svg" alt="Murph26" class="print-header__logo-mark">
-    <span class="print-header__logo-wordmark">JOINT TRAINING OPERATIONS</span>
-  </div>
-  <div class="print-header-center">
-    <div class="print-title-wrapper">
-      <h1 class="print-header__title">MISSION BRIEF #04</h1>
-      <h2 class="print-header__subtitle">MISSION DELTA</h2>
-    </div>
-  </div>
-  <div class="print-header-right">
-    <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
-  </div>
-</header>
-  <main class="print-content">
-<article class='mission-card mission-card--full mission-card--critical'>
+
+        <article class='mission-card mission-card--full mission-card--info'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M12 7v10M7 12h10'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 05 — REF JTO-05</div>
-    <h3>MISSION EXECUTION</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M12 7v10M7 12h10'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 05 — REF JTO-05</div>
+              <h3>MOVEMENT STANDARDS</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
-            <p class='mission-objective-copy' style='margin-bottom: 0;'>Esecuzione della Missione DELTA in definizione.</p>
+            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.1rem;'>Double Under</p>
+            <ol class='mission-rule-list'>
+              <li>L’atleta dichiara il numero di ripetizioni prima di iniziare il proprio blocco.</li>
+              <li>Le ripetizioni completate restano valide anche in caso di errore.</li>
+              <li>In caso di errore, l’atleta esegue la penalty prevista e riprende dalla ripetizione successiva.</li>
+              <li>Ogni ulteriore errore comporta una nuova penalty fino al completamento del numero dichiarato.</li>
+            </ol>
+
+            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0.2rem 0 0.1rem;'>Sit-up</p>
+            <ol class='mission-rule-list'>
+              <li>Le mani toccano il pavimento dietro la testa.</li>
+              <li>Le spalle superano i fianchi in cima.</li>
+            </ol>
+
+            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0.2rem 0 0.1rem;'>Alternating Dumbbell Snatch</p>
+            <ol class='mission-rule-list'>
+              <li>Alternare le braccia ad ogni ripetizione.</li>
+              <li>Blocco completo sopra la testa.</li>
+              <li>Fianchi e ginocchia completamente estesi.</li>
+            </ol>
           </div>
         </article>
-<article class='mission-card mission-card--full mission-card--critical'>
+
+        <article class='mission-card mission-card--full mission-card--critical'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4.8 4.8h14.4v14.4H4.8z'/><path d='M9.6 4.8v14.4M4.8 9.6h14.4M4.8 14.4h14.4'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 06 — REF JTO-06</div>
-    <h3>TEAM FLOW</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M12 7v10M7 12h10'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 06 — REF JTO-06</div>
+              <h3>MISSION EXECUTION</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
-            <p class='mission-objective-copy' style='margin-bottom: 0;'>Team Flow DELTA in definizione.</p>
+            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.1rem;'>Mission Flow</p>
+            <div class='mission-flow'>
+              <div class='flow-step'>DOUBLE UNDERS</div>
+              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
+              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
+              <div class='flow-step'>SIT-UPS</div>
+              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
+              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
+              <div class='flow-step'>NEXT ROUND</div>
+              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
+              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
+              <div class='flow-step'>MISSION COMPLETE</div>
+            </div>
+
+            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0.2rem 0 0.1rem;'>Double Under Flow</p>
+            <div class='mission-flow'>
+              <div class='flow-step'>DECLARE</div>
+              <span class='flow-arrow' aria-hidden='true'>→</span>
+              <div class='flow-step'>DOUBLE UNDERS</div>
+            </div>
+            <div class='mb04-print-du-fail'>
+              <span class='flow-arrow' aria-hidden='true'>↓</span>
+              <span class='mb04-print-fail-label'>IF FAILED</span>
+              <div class='mission-flow' style='margin: 0; justify-content: center; width: 100%;">
+                <div class='flow-step' style='border-color: #000;'>PENALTY — DB SNATCH</div>
+                <span class='flow-arrow' aria-hidden='true'>→</span>
+                <div class='flow-step'>REMAINING DOUBLE UNDERS</div>
+              </div>
+            </div>
+
+            <p class='mission-objective-copy' style='margin: 0.15rem 0 0.1rem;'>Prima di ogni tentativo l’atleta dichiara il numero di Double Unders che intende completare. In caso di errore le ripetizioni già completate restano valide: l’atleta esegue la penalty e riparte dalla ripetizione successiva fino al numero dichiarato. Ogni nuovo errore comporta una nuova penalty.</p>
+
+            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0.2rem 0 0.1rem;'>Example — Declared: 20 Reps</p>
+            <div class='mb04-print-example' aria-hidden='true'>
+              <span class='mb04-print-example-step'>0–13</span>
+              <span>→</span>
+              <span class='mb04-print-example-step mb04-print-example-penalty'>PENALTY</span>
+              <span>→</span>
+              <span class='mb04-print-example-step'>13–18</span>
+              <span>→</span>
+              <span class='mb04-print-example-step mb04-print-example-penalty'>PENALTY</span>
+              <span>→</span>
+              <span class='mb04-print-example-step mb04-print-example-ok'>18–20 ✓</span>
+            </div>
+
+            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0.2rem 0 0.1rem;'>Suggested Sit-up Strategy</p>
+            <div class='mission-flow'>
+              <div class='flow-step'>P1</div>
+              <span class='flow-arrow' aria-hidden='true'>→</span>
+              <div class='flow-step'>P2</div>
+              <span class='flow-arrow' aria-hidden='true'>→</span>
+              <div class='flow-step'>P3</div>
+              <span class='flow-arrow' aria-hidden='true'>→</span>
+              <div class='flow-step'>P4</div>
+              <span class='flow-arrow' aria-hidden='true'>→</span>
+              <div class='flow-step'>REPEAT</div>
+            </div>
+            <p class='mission-rule-title' style='margin: 0.1rem 0 0.15rem;'>1 FULL TEAM ROTATION = 4 REPS</p>
+            <p class='mission-objective-copy' style='margin-bottom: 0;'>Un Sit-up per atleta a rotazione. Questa soluzione crea un rapporto lavoro/recupero di circa 1:3 mantenendo alta la qualità del movimento.</p>
           </div>
         </article>
-  </main>
-<footer class="print-footer" data-total="3">
-  <ul class="print-footer__meta">
-    <li>Ref: M26-JTO-04-R01</li>
-    <li>Archive: M26-JTO-04</li>
-    <li>Rev: 01</li>
-    <li>DECLASSIFIED</li>
-  </ul>
-  <span class="print-footer__page"></span>
-</footer>
-</section>
-<section class="print-page">
-<header class="print-header print-header--compact">
-  <div class="print-header-left">
-    <img src="../assets/muprh-logo-font.svg" alt="Murph26" class="print-header__logo-mark">
-    <span class="print-header__logo-wordmark">JOINT TRAINING OPERATIONS</span>
-  </div>
-  <div class="print-header-center">
-    <div class="print-title-wrapper">
-      <h1 class="print-header__title">MISSION BRIEF #04</h1>
-      <h2 class="print-header__subtitle">MISSION DELTA</h2>
-    </div>
-  </div>
-  <div class="print-header-right">
-    <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
-  </div>
-</header>
-  <main class="print-content">
-<article class='mission-card mission-card--full mission-card--critical'>
+
+      </main>
+      <footer class="print-footer" data-total="2">
+        <ul class="print-footer__meta">
+          <li>Ref: M26-JTO-04-R01</li>
+          <li>Archive: M26-JTO-04</li>
+          <li>Rev: 01</li>
+          <li>DECLASSIFIED</li>
+        </ul>
+        <span class="print-footer__page" data-total="2"></span>
+      </footer>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="print-page">
+      <header class="print-header print-header--compact">
+        <div class="print-header-left">
+          <img src="../assets/muprh-logo-font.svg" alt="Murph26" class="print-header__logo-mark">
+          <span class="print-header__logo-wordmark">JOINT TRAINING OPERATIONS</span>
+        </div>
+        <div class="print-header-center">
+          <div class="print-title-wrapper">
+            <h1 class="print-header__title">MISSION BRIEF #04</h1>
+            <h2 class="print-header__subtitle">MISSION DELTA</h2>
+          </div>
+        </div>
+        <div class="print-header-right">
+          <img src="../assets/declassified-print-document.png" alt="DECLASSIFIED" class="print-declassified-stamp">
+        </div>
+      </header>
+      <main class="print-content">
+
+        <article class='mission-card mission-card--full mission-card--critical'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='11' width='12' height='10' rx='2'/><path d='M9 11V7a3 3 0 0 1 6 0v4'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 07 — REF JTO-07</div>
-    <h3>MISSION HAZARDS</h3>
-  </div>
-</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='11' width='12' height='10' rx='2'/><path d='M9 11V7a3 3 0 0 1 6 0v4'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 07 — REF JTO-07</div>
+              <h3>MISSION HAZARDS</h3>
+            </div>
+          </div>
           <div class='mission-card-body'>
             <div class='hazard-accordion'>
-              <details class='hazard-accordion-item'>
+              <details class='hazard-accordion-item' open>
                 <summary class='hazard-accordion-header'>
                   <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
-                  <span class='hazard-accordion-title'>Pacing</span>
+                  <span class='hazard-accordion-title'>WRONG DECLARATION</span>
                   <span class='hazard-accordion-toggle' aria-hidden='true'></span>
                 </summary>
                 <div class='hazard-accordion-content'>
-                  <p>Hazard DELTA in definizione.</p>
+                  <p>Se il numero dichiarato non viene completato, la serie non vale. La penalità è 8 Dumbbell Snatch. Scegli un numero che puoi sostenere.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item' open>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>LOSING CONCENTRATION</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>Un errore di solito non è un problema fisico, ma mentale. Resetta la corda e riconferma il prossimo obiettivo prima di partire.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item' open>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>PENALTY ACCUMULATION</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>Una serie fallita aggiunge 16 Snatch distribuiti su due atleti. Più errori = più costo. Preserva la qualità rispetto alla quantità.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item' open>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>POOR COMMUNICATION</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>Il Team deve sapere chi dichiara, chi salta e chi è il prossimo prima che l'atleta precedente finisca. Il silenzio crea errori.</p>
+                </div>
+              </details>
+              <details class='hazard-accordion-item' open>
+                <summary class='hazard-accordion-header'>
+                  <span class='hazard-accordion-icon' aria-hidden='true'>!</span>
+                  <span class='hazard-accordion-title'>RUSHING THE FINAL ROUNDS</span>
+                  <span class='hazard-accordion-toggle' aria-hidden='true'></span>
+                </summary>
+                <div class='hazard-accordion-content'>
+                  <p>I round più piccoli sembrano i più facili, ma è lì che gli errori si insinuano. Rallenta, dichiara con chiarezza e termina insieme.</p>
                 </div>
               </details>
             </div>
           </div>
         </article>
-<article class='mission-card mission-card--info'>
-          <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='8' y='4' width='8' height='14' rx='2'/><line x1='12' y1='4' x2='12' y2='1'/><line x1='10' y1='8' x2='14' y2='8'/><circle cx='12' cy='14' r='1.5'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 08 — REF JTO-08</div>
-    <h3>MISSION INTEL</h3>
-  </div>
-</div>
-          <div class='mission-card-body'>
-            <p class='mission-intel-statement'>READY DOESN'T MEAN RUSHED.</p>
-            <p class='mission-intel-secondary'>DELTA NON PREMIA LA VELOCITÀ. PREMIA LA COORDINAZIONE.</p>
 
-            <p class='mission-rule-title' style='text-align: left; margin: 0 0 0.5rem;'>Intelligence Strategica</p>
-            <p class='mission-objective-copy' style='margin-bottom: 0;'>Mission Intel DELTA in definizione.</p>
-          </div>
-        </article>
-<article class='mission-card mission-card--full mission-card--critical mission-card--scorecard'>
+        <article class='mission-card mission-card--info'>
           <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5M6 12l-5 5'/></svg>
-  </div>
-  <div class="section-heading">
-    
-    <h3>SCORECARD</h3>
-  </div>
-</div>
-          <div class='mission-card-body'>
-            <p class='mission-objective-copy' style='margin-bottom: 0;'>Scorecard DELTA in definizione.</p>
-          </div>
-        </article>
-<article class='mission-card mission-card--info'>
-          <div class="section-header">
-  <div class="section-icon">
-    <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5M6 12l-5 5'/></svg>
-  </div>
-  <div class="section-heading">
-    <div class="section-ref">SECT. 09 — REF JTO-09</div>
-    <h3>MISSION COMPLETION</h3>
-  </div>
-</div>
-          <div class='mission-card-body'>
-            <p class='mission-rule-title' style='text-align: left; margin: 0 0 0.5rem;'>Tempo di completamento</p>
-            <div class='mission-flow mission-flow--completion'>
-              <div class='flow-step'>DECLARE</div>
-              <span class='flow-arrow' aria-hidden='true'>↓</span>
-              <div class='flow-step'>DOUBLE UNDERS</div>
-              <span class='flow-arrow' aria-hidden='true'>↓</span>
-              <div class='flow-step'>SIT-UPS</div>
-              <span class='flow-arrow' aria-hidden='true'>↓</span>
-              <div class='flow-step'>MISSION COMPLETE</div>
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='8' y='4' width='8' height='14' rx='2'/><line x1='12' y1='4' x2='12' y2='1'/><line x1='10' y1='8' x2='14' y2='8'/><circle cx='12' cy='14' r='1.5'/></svg>
             </div>
-            <p class='mission-objective-copy' style='margin-bottom: 0.75rem;'>Tempo registrabile come memoria della Missione.</p>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 08 — REF JTO-08</div>
+              <h3>MISSION INTEL</h3>
+            </div>
+          </div>
+          <div class='mission-card-body'>
+            <p class='mission-intel-statement'>READY IS NOT ABOUT SPEED.<br>READY IS ABOUT TRUSTING THE PLAN.</p>
+            <p class='mission-intel-secondary'>IL TEAM HA GIÀ COMPLETATO IL LAVORO PIÙ DIFFICILE. NON AFFRETTARE L'ULTIMA PREPARAZIONE.</p>
 
-            <p class='mission-important' style='margin-bottom: 0;'>Nessuna classifica. Nessuna graduatoria. Nessun Team vincitore.</p>
+            <p class='mission-rule-title' style='text-align: left; margin: 0.15rem 0 0.1rem;'>Intelligence Strategica</p>
+            <p class='mission-objective-copy' style='margin-bottom: 0;'>Resta calmo. Comunica. Esegui. Concludi questa Missione pronto per la Missione Finale.</p>
           </div>
         </article>
-  </main>
-<footer class="print-footer" data-total="3">
-  <ul class="print-footer__meta">
-    <li>Ref: M26-JTO-04-R01</li>
-    <li>Archive: M26-JTO-04</li>
-    <li>Rev: 01</li>
-    <li>DECLASSIFIED</li>
-  </ul>
-  <span class="print-footer__page"></span>
-</footer>
-</section>
+
+        <article class='mission-card mission-card--full mission-card--info'>
+          <div class="section-header">
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/><polyline points='14 2 14 8 20 8'/><line x1='9' y1='13' x2='15' y2='13'/><line x1='9' y1='17' x2='15' y2='17'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 09 — REF JTO-09</div>
+              <h3>SCORECARD</h3>
+            </div>
+          </div>
+          <div class='mission-card-body'>
+            <p class='mission-intel-statement' style='font-size: 11pt; margin: 0 0 0.1rem;'>MISSION DELTA — TEAM ANNIE</p>
+
+            <div class='mb04-scorecard-meta'>
+              <div>TEAM NAME <span class='mb04-scorecard-line'>&nbsp;</span></div>
+              <div>CATEGORY <span class='mb04-scorecard-line' style='min-width: 6rem;'>&nbsp;PERFORMANCE &nbsp; FITNESS &nbsp; CROSSFIT</span></div>
+              <div>JUDGE <span class='mb04-scorecard-line'>&nbsp;</span></div>
+              <div>START TIME: 17:00</div>
+            </div>
+
+            <table class='mb04-scorecard'>
+              <thead>
+                <tr>
+                  <th>ROUND / TARGET</th>
+                  <th>DU DECLARATIONS / PROGRESS</th>
+                  <th>PENALTIES</th>
+                  <th>SIT-UPS</th>
+                  <th style='text-align: center;'>ROUND COMPLETE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ROUND 1 — 200</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td style='text-align: center;'><span class='mb04-scorecard-check'>&nbsp;</span></td>
+                </tr>
+                <tr>
+                  <td>ROUND 2 — 160</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td style='text-align: center;'><span class='mb04-scorecard-check'>&nbsp;</span></td>
+                </tr>
+                <tr>
+                  <td>ROUND 3 — 120</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td style='text-align: center;'><span class='mb04-scorecard-check'>&nbsp;</span></td>
+                </tr>
+                <tr>
+                  <td>ROUND 4 — 80</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td style='text-align: center;'><span class='mb04-scorecard-check'>&nbsp;</span></td>
+                </tr>
+                <tr>
+                  <td>ROUND 5 — 40</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td style='text-align: center;'><span class='mb04-scorecard-check'>&nbsp;</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class='mb04-scorecard-meta' style='margin-top: 0.2rem;'>
+              <div>FINAL TIME <span class='mb04-scorecard-line'>&nbsp;</span></div>
+              <div>TOTAL PENALTIES <span class='mb04-scorecard-line'>&nbsp;</span></div>
+              <div>JUDGE SIGNATURE <span class='mb04-scorecard-line' style='min-width: 6rem;'>&nbsp;</span></div>
+              <div>TEAM CAPTAIN <span class='mb04-scorecard-line' style='min-width: 6rem;'>&nbsp;</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class='mission-card mission-card--info'>
+          <div class="section-header">
+            <div class="section-icon">
+              <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5M6 12l-5 5'/></svg>
+            </div>
+            <div class="section-heading">
+              <div class="section-ref">SECT. 10 — REF JTO-10</div>
+              <h3>MISSION COMPLETION</h3>
+            </div>
+          </div>
+          <div class='mission-card-body'>
+            <p class='mission-rule-title' style='text-align: left; margin: 0 0 0.1rem;'>Tempo di completamento</p>
+            <p class='mission-objective-copy' style='margin-bottom: 0.15rem;'>Il completamento si ottiene quando il Team termina tutti i round previsti. Registra il tempo solo come memoria della Missione.</p>
+            <p style='margin: 0 0 0.2rem;'>TEMPO DI COMPLETAMENTO <span class='mb04-completion-line'>&nbsp;</span></p>
+            <p class='mission-objective-copy' style='margin-bottom: 0;'>Nessuna classifica. Nessuna graduatoria. Nessun Team vincitore.</p>
+          </div>
+        </article>
+
+      </main>
+      <footer class="print-footer" data-total="2">
+        <ul class="print-footer__meta">
+          <li>Ref: M26-JTO-04-R01</li>
+          <li>Archive: M26-JTO-04</li>
+          <li>Rev: 01</li>
+          <li>DECLASSIFIED</li>
+        </ul>
+        <span class="print-footer__page" data-total="2"></span>
+      </footer>
+    </section>
+
   </div>
+  <script src="../js/print-frame.js"></script>
 </body>
 </html>
