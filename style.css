@@ -2945,6 +2945,12 @@ z-index: 2;
 display: block;
 }
 
+a.operation-event {
+display: block;
+text-decoration: none;
+color: inherit;
+}
+
 .operation-time {
 font-family: 'Bebas Neue', sans-serif;
 font-size: 1.1rem;
