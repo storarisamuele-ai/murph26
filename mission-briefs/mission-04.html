@@ -18,6 +18,26 @@
   <link rel='apple-touch-icon' sizes='180x180' href='../apple-touch-icon.png'>
   <link rel='manifest' href='../manifest.json'>
   <meta name='theme-color' content='#0694B9'>
+<style>
+  .mb04-mission-flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0.75rem 0;
+  }
+  .mb04-mission-flow .rotation-card {
+    min-width: 0;
+  }
+  .mb04-mission-flow .rotation-teams {
+    word-break: break-word;
+  }
+  @media (max-width: 899px) {
+    .mb04-mission-flow {
+      grid-template-columns: 1fr auto 1fr;
+    }
+  }
+</style>
 </head>
 <body class='mission-brief'>
 
@@ -271,14 +291,26 @@
           </header>
           <div class='mission-card-body'>
             <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Mission Flow</p>
-            <div class='mission-flow mission-flow--vertical'>
-              <div class='flow-step'>DICHIARA</div>
-              <span class='flow-arrow' aria-hidden='true'>↓</span>
-              <div class='flow-step'>DOUBLE UNDERS</div>
-              <span class='flow-arrow' aria-hidden='true'>↓</span>
-              <div class='flow-step'>SIT-UP</div>
-              <span class='flow-arrow' aria-hidden='true'>↓</span>
-              <div class='flow-step'>PROSSIMO ROUND</div>
+            <div class='mb04-mission-flow'>
+              <div class='rotation-card'>
+                <span class='rotation-label'>01</span>
+                <div class='rotation-teams'>DICHIARA</div>
+              </div>
+              <span class='flow-arrow' aria-hidden='true'>→</span>
+              <div class='rotation-card'>
+                <span class='rotation-label'>02</span>
+                <div class='rotation-teams'>DOUBLE UNDERS</div>
+              </div>
+              <span class='flow-arrow' aria-hidden='true'>→</span>
+              <div class='rotation-card'>
+                <span class='rotation-label'>03</span>
+                <div class='rotation-teams'>SIT-UP</div>
+              </div>
+              <span class='flow-arrow' aria-hidden='true'>→</span>
+              <div class='rotation-card'>
+                <span class='rotation-label'>04</span>
+                <div class='rotation-teams'>PROSSIMO ROUND</div>
+              </div>
             </div>
 
             <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 1rem 0 0.5rem;'>Suggested Flow</p>
@@ -289,13 +321,17 @@
             <div class='suggested-flow'>
               <div class='suggested-flow-track'>
                 <div class='suggested-flow-step'>P1</div>
-                <span class='flow-arrow' aria-hidden='true'>↓</span>
+                <span class='suggested-flow-arrow suggested-flow-arrow--desktop' aria-hidden='true'>→</span>
+                <span class='suggested-flow-arrow suggested-flow-arrow--mobile' aria-hidden='true'>↓</span>
                 <div class='suggested-flow-step'>P2</div>
-                <span class='flow-arrow' aria-hidden='true'>↓</span>
+                <span class='suggested-flow-arrow suggested-flow-arrow--desktop' aria-hidden='true'>→</span>
+                <span class='suggested-flow-arrow suggested-flow-arrow--mobile' aria-hidden='true'>↓</span>
                 <div class='suggested-flow-step'>P3</div>
-                <span class='flow-arrow' aria-hidden='true'>↓</span>
+                <span class='suggested-flow-arrow suggested-flow-arrow--desktop' aria-hidden='true'>→</span>
+                <span class='suggested-flow-arrow suggested-flow-arrow--mobile' aria-hidden='true'>↓</span>
                 <div class='suggested-flow-step'>P4</div>
-                <span class='flow-arrow' aria-hidden='true'>↓</span>
+                <span class='suggested-flow-arrow suggested-flow-arrow--desktop' aria-hidden='true'>→</span>
+                <span class='suggested-flow-arrow suggested-flow-arrow--mobile' aria-hidden='true'>↓</span>
                 <div class='suggested-flow-step'>repeat</div>
               </div>
             </div>
@@ -381,19 +417,6 @@
           </div>
         </article>
 
-        <article class='mission-card scorecard mission-card--info'>
-          <header class='mission-card-header'>
-            <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/><polyline points='14 2 14 8 20 8'/><line x1='9' y1='13' x2='15' y2='13'/><line x1='9' y1='17' x2='15' y2='17'/></svg>
-
-            <h2 class='mission-card-title'>SCORECARD</h2>
-          </header>
-          <div class='mission-card-body'>
-            <p class='scorecard-web'>Registra ogni round: atleta, numero dichiarato, ripetizioni completate, tempo del round.</p>
-            <a class='scorecard-link' href='mission-04-scorecard.html' target='_blank' rel='noopener'>Stampa la Scorecard</a>
-            <p class='print-scorecard'>Apri la Field Scorecard per registrare i dati sul campo.</p>
-          </div>
-        </article>
-
         <article class='mission-card mission-card--info'>
           <header class='mission-card-header'>
             <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5M6 12l-5 5'/></svg>
@@ -414,6 +437,19 @@
             <p class='mission-objective-copy' style='margin-bottom: 0.75rem;'>Il completamento si ottiene quando il Team termina tutti i round previsti. Registra il tempo solo come memoria della Missione. L'obiettivo è la prontezza per la Missione Finale.</p>
 
             <p class='mission-important' style='margin-bottom: 0;'>Nessuna classifica. Nessuna graduatoria. Nessun Team vincitore.</p>
+          </div>
+        </article>
+
+        <article class='mission-card scorecard mission-card--info' style='grid-column: 1 / -1;'>
+          <header class='mission-card-header'>
+            <svg class='mission-card-icon' aria-hidden='true' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/><polyline points='14 2 14 8 20 8'/><line x1='9' y1='13' x2='15' y2='13'/><line x1='9' y1='17' x2='15' y2='17'/></svg>
+
+            <h2 class='mission-card-title'>SCORECARD</h2>
+          </header>
+          <div class='mission-card-body'>
+            <p class='scorecard-web'>Registra ogni round: atleta, numero dichiarato, ripetizioni completate, tempo del round.</p>
+            <a class='scorecard-link' href='mission-04-scorecard.html' target='_blank' rel='noopener'>Stampa la Scorecard</a>
+            <p class='print-scorecard'>Apri la Field Scorecard per registrare i dati sul campo.</p>
           </div>
         </article>
 
