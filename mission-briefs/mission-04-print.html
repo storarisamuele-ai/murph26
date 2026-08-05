@@ -19,15 +19,39 @@
 
     body[data-mission="mission-04"] .print-content {
       gap: 0.1rem;
+      margin-bottom: 6mm;
     }
 
     body[data-mission="mission-04"] .mission-card {
-      padding: 0.15rem;
+      break-inside: auto;
+      page-break-inside: auto;
+      padding: 0.1rem;
       margin-bottom: 2px;
     }
 
     body[data-mission="mission-04"] .section-header {
-      margin-bottom: 3px;
+      break-after: avoid;
+      page-break-after: avoid;
+      margin-bottom: 2px;
+    }
+
+    body[data-mission="mission-04"] .mission-card-body {
+      break-before: avoid;
+      page-break-before: avoid;
+    }
+
+    body[data-mission="mission-04"] .mission-rule-title {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body[data-mission="mission-04"] .mission-flow,
+    body[data-mission="mission-04"] .mb04-print-du-fail,
+    body[data-mission="mission-04"] .mb04-print-example,
+    body[data-mission="mission-04"] .mb04-scorecard,
+    body[data-mission="mission-04"] .mission-rule-list {
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
 
     body[data-mission="mission-04"] .section-icon,
@@ -247,6 +271,10 @@
       color: #000;
     }
 
+    body[data-mission="mission-04"] .hazard-accordion-item {
+      margin-bottom: 0.05rem;
+    }
+
     body[data-mission="mission-04"] .hazard-accordion-title {
       font-weight: 700;
       text-transform: uppercase;
@@ -268,14 +296,14 @@
     body[data-mission="mission-04"] .hazard-accordion-content p {
       display: block;
       margin: 0;
-      font-size: 7.5pt;
+      font-size: 7pt;
     }
 
     body[data-mission="mission-04"] .mb04-scorecard {
       width: 100%;
       border-collapse: collapse;
       font-size: 7pt;
-      margin: 0.2rem 0 0.1rem;
+      margin: 0.1rem 0 0.05rem;
     }
 
     body[data-mission="mission-04"] .mb04-scorecard th,
@@ -294,15 +322,15 @@
     }
 
     body[data-mission="mission-04"] .mb04-scorecard td {
-      height: 1.6rem;
+      height: 1.3rem;
     }
 
     body[data-mission="mission-04"] .mb04-scorecard-meta {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.25rem 0.5rem;
-      margin: 0.2rem 0;
-      font-size: 7.5pt;
+      gap: 0.15rem 0.3rem;
+      margin: 0.1rem 0;
+      font-size: 7pt;
     }
 
     body[data-mission="mission-04"] .mb04-scorecard-line {
@@ -603,14 +631,14 @@
         </article>
 
       </main>
-      <footer class="print-footer" data-total="2">
+      <footer class="print-footer">
         <ul class="print-footer__meta">
           <li>Ref: M26-JTO-04-R01</li>
           <li>Archive: M26-JTO-04</li>
           <li>Rev: 01</li>
           <li>DECLASSIFIED</li>
         </ul>
-        <span class="print-footer__page" data-total="2"></span>
+        <span class="print-footer__page" data-total="4"></span>
       </footer>
     </section>
 
@@ -815,14 +843,14 @@
         </article>
 
       </main>
-      <footer class="print-footer" data-total="2">
+      <footer class="print-footer">
         <ul class="print-footer__meta">
           <li>Ref: M26-JTO-04-R01</li>
           <li>Archive: M26-JTO-04</li>
           <li>Rev: 01</li>
           <li>DECLASSIFIED</li>
         </ul>
-        <span class="print-footer__page" data-total="2"></span>
+        <span class="print-footer__page" data-total="4"></span>
       </footer>
     </section>
 

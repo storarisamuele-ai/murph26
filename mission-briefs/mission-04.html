@@ -73,30 +73,22 @@
 
   .mb04-completion .mission-flow--completion {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
     margin: 0.5rem 0 1rem;
   }
   .mb04-completion .mission-flow--completion .flow-step {
-    flex: 1 1 auto;
-    width: auto;
-    max-width: 100%;
-    min-width: max-content;
-    min-height: 3rem;
+    width: 100%;
+    max-width: 280px;
+    min-height: 2.8rem;
     padding: 0.85rem 1rem;
-    white-space: nowrap;
-    word-break: keep-all;
+    white-space: normal;
+    text-align: center;
   }
-
-  @media (max-width: 599px) {
-    .mb04-completion .mission-flow--completion {
-      flex-direction: column;
-    }
-    .mb04-completion .mission-flow--completion .flow-step {
-      width: 100%;
-      min-height: 2.8rem;
-    }
+  .mb04-completion .mission-flow--completion .flow-arrow {
+    align-self: center;
+    color: var(--cyan);
   }
 
   .mb04-example {
@@ -594,14 +586,11 @@
             <p class='mission-rule-title' style='text-align: left; margin: 0 0 0.5rem;'>Tempo di completamento</p>
             <div class='mission-flow mission-flow--completion'>
               <div class='flow-step'>DECLARE</div>
-              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
-              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
+              <span class='flow-arrow' aria-hidden='true'>↓</span>
               <div class='flow-step'>DOUBLE UNDERS</div>
-              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
-              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
+              <span class='flow-arrow' aria-hidden='true'>↓</span>
               <div class='flow-step'>SIT-UPS</div>
-              <span class='flow-arrow flow-arrow--desktop' aria-hidden='true'>→</span>
-              <span class='flow-arrow flow-arrow--mobile' aria-hidden='true'>↓</span>
+              <span class='flow-arrow' aria-hidden='true'>↓</span>
               <div class='flow-step'>MISSION COMPLETE</div>
             </div>
             <p class='mission-objective-copy' style='margin-bottom: 0.75rem;'>Il completamento si ottiene quando il Team termina tutti i round previsti. Registra il tempo solo come memoria della Missione. L'obiettivo è la prontezza per la Missione Finale.</p>
