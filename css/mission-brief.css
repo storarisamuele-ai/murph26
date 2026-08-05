@@ -2088,7 +2088,7 @@ body.is-classified {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-top: 0.5rem;
-  color: var(--blue);
+  color: var(--cyan, var(--blue));
 }
 
 .classified-overlay__footer {
