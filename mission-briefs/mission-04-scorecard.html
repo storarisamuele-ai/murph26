@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang='it'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Mission 04 — Delta Ready | Field Scorecard</title>
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
+  <style>
+    :root {
+      --black: #000000;
+      --white: #ffffff;
+      --grey: #f0f0f0;
+      --line: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1a1a1a;
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .scorecard-page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 10mm;
+      background-color: var(--white);
+      box-shadow: 0 0 0 1px #ccc;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    @media print {
+      body {
+        background-color: var(--white);
+      }
+
+      .scorecard-page {
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+      }
+    }
+
+    .sc-header {
+      border-bottom: 1.5pt solid var(--line);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .sc-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.08em;
+      line-height: 1;
+    }
+
+    .sc-unit {
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #333;
+      margin-bottom: 0.25rem;
+    }
+
+    .sc-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .sc-mission {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .sc-doc-id,
+    .sc-reference {
+      font-family: 'Courier New', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #222;
+    }
+
+    .sc-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      margin-top: 0.1rem;
+      line-height: 1;
+    }
+
+    .sc-presc {
+      border: 1pt solid var(--line);
+      padding: 0.4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+      align-items: start;
+    }
+
+    .sc-presc-main {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.03em;
+      line-height: 1;
+    }
+
+    .sc-presc-sub {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .sc-presc-flow {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem;
+      line-height: 1;
+    }
+
+    .sc-presc-note {
+      grid-column: 1 / -1;
+      font-size: 0.65rem;
+      line-height: 1.4;
+      color: #222;
+    }
+
+    .sc-meta-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.3rem;
+      margin: 0.1rem 0;
+    }
+
+    .sc-form-item {
+      border: 1pt solid var(--line);
+      padding: 0.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .sc-form-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .sc-form-line {
+      border-bottom: 1pt solid var(--line);
+      min-height: 0.75rem;
+    }
+
+    .sc-category {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .sc-category-label {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
+      font-size: 0.65rem;
+    }
+
+    .sc-check {
+      width: 0.5rem;
+      height: 0.5rem;
+      border: 0.5pt solid var(--line);
+      display: inline-block;
+    }
+
+    .sc-grid {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 0.7rem;
+      margin: 0.15rem 0;
+    }
+
+    .sc-grid thead th {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      text-align: left;
+      border-bottom: 1.5pt solid var(--line);
+      border-top: 1pt solid var(--line);
+      padding: 0.15rem 0.2rem;
+      background-color: var(--white);
+      height: 0.7cm;
+      vertical-align: middle;
+    }
+
+    .sc-grid tbody tr {
+      border-bottom: 1pt solid #aaa;
+    }
+
+    .sc-grid tbody tr:nth-child(even) td {
+      background-color: var(--grey);
+    }
+
+    .sc-grid td {
+      height: 0.9cm;
+      padding: 0.1rem 0.2rem;
+      vertical-align: middle;
+      border-right: 0.5pt solid #ddd;
+    }
+
+    .sc-grid td:last-child,
+    .sc-grid th:last-child {
+      border-right: none;
+    }
+
+    .sc-grid .col-round { width: 18%; }
+    .sc-grid .col-du { width: 28%; }
+    .sc-grid .col-penalty { width: 16%; }
+    .sc-grid .col-situps { width: 17%; }
+    .sc-grid .col-complete { width: 21%; text-align: center; }
+
+    .sc-total-row {
+      font-weight: 700;
+      border-top: 1.5pt solid var(--line);
+      border-bottom: 1.5pt solid var(--line);
+    }
+
+    .sc-total-row td {
+      background-color: #e0e0e0;
+      height: 0.7cm;
+    }
+
+    .sc-result-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.25rem;
+      border: 1pt solid var(--line);
+      padding: 0.25rem;
+      margin: 0.1rem 0;
+    }
+
+    .sc-result-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .sc-result-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .sc-result-line {
+      border-bottom: 1pt solid var(--line);
+      min-height: 0.8rem;
+      margin-top: 0.1rem;
+    }
+
+    .sc-signatures {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+      margin: 0.1rem 0;
+    }
+
+    .sc-sign-item {
+      border: 1pt solid var(--line);
+      padding: 0.25rem;
+    }
+
+    .sc-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1pt solid var(--line);
+      padding-top: 0.3rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333;
+    }
+  </style>
+  <link rel="icon" href="../favicon.ico" sizes="any" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../manifest.json">
+</head>
+<body>
+  <main class='scorecard-page'>
+    <header class='sc-header'>
+      <div class='sc-unit'>Joint Training Operations</div>
+      <div class='sc-brand'>MURPH26</div>
+      <div class='sc-meta-row'>
+        <div>
+          <div class='sc-mission'>MISSION 04 — DELTA / READY</div>
+          <div class='sc-title'>FIELD SCORECARD</div>
+        </div>
+        <div>
+          <div class='sc-doc-id'>Document ID: M26-JTO-04-SC</div>
+          <div class='sc-reference'>Reference: M26-JTO-04-R01</div>
+        </div>
+      </div>
+    </header>
+
+    <section class='sc-presc'>
+      <div>
+        <div class='sc-presc-main'>TEAM ANNIE</div>
+        <div class='sc-presc-sub'>For Time · Team of 4</div>
+      </div>
+      <div class='sc-presc-flow'>
+        <span>DECLARE</span>
+        <span>→</span>
+        <span>DOUBLE UNDERS</span>
+        <span>→</span>
+        <span>SIT-UPS</span>
+        <span>→</span>
+        <span>REPEAT</span>
+      </div>
+      <div class='sc-presc-note'>
+        Declare attempts before each Double Under block. On error, complete 8 Alternating DB Snatch and continue from the accumulated rep. Penalty adds 16 Snatch total across two athletes.
+      </div>
+    </section>
+
+    <section class='sc-meta-form'>
+      <div class='sc-form-item'>
+        <div class='sc-form-label'>TEAM NAME</div>
+        <div class='sc-form-line'></div>
+      </div>
+      <div class='sc-form-item'>
+        <div class='sc-form-label'>CATEGORY</div>
+        <div class='sc-category'>
+          <span class='sc-category-label'><span class='sc-check'>&nbsp;</span> PERFORMANCE</span>
+          <span class='sc-category-label'><span class='sc-check'>&nbsp;</span> FITNESS</span>
+          <span class='sc-category-label'><span class='sc-check'>&nbsp;</span> CROSSFIT</span>
+        </div>
+      </div>
+      <div class='sc-form-item'>
+        <div class='sc-form-label'>JUDGE</div>
+        <div class='sc-form-line'></div>
+      </div>
+      <div class='sc-form-item'>
+        <div class='sc-form-label'>START TIME</div>
+        <div class='sc-form-label' style='font-family: "Bebas Neue", sans-serif; font-size: 0.85rem;'>17:00</div>
+      </div>
+    </section>
+
+    <table class='sc-grid'>
+      <thead>
+        <tr>
+          <th class='col-round'>ROUND / TARGET</th>
+          <th class='col-du'>DU DECLARATIONS / PROGRESS</th>
+          <th class='col-penalty'>PENALTIES</th>
+          <th class='col-situps'>SIT-UPS</th>
+          <th class='col-complete'>ROUND COMPLETE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ROUND 1 — 200</td><td></td><td></td><td></td><td><span class='sc-check'>&nbsp;</span></td></tr>
+        <tr><td>ROUND 2 — 160</td><td></td><td></td><td></td><td><span class='sc-check'>&nbsp;</span></td></tr>
+        <tr><td>ROUND 3 — 120</td><td></td><td></td><td></td><td><span class='sc-check'>&nbsp;</span></td></tr>
+        <tr><td>ROUND 4 — 80</td><td></td><td></td><td></td><td><span class='sc-check'>&nbsp;</span></td></tr>
+        <tr><td>ROUND 5 — 40</td><td></td><td></td><td></td><td><span class='sc-check'>&nbsp;</span></td></tr>
+        <tr class='sc-total-row'>
+          <td colspan='4'>TOTAL COMPLETED</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section class='sc-result-row'>
+      <div class='sc-result-item'>
+        <div class='sc-result-label'>FINAL TIME</div>
+        <div class='sc-result-line'></div>
+      </div>
+      <div class='sc-result-item'>
+        <div class='sc-result-label'>TOTAL PENALTIES</div>
+        <div class='sc-result-line'></div>
+      </div>
+    </section>
+
+    <section class='sc-signatures'>
+      <div class='sc-sign-item'>
+        <div class='sc-form-label'>JUDGE SIGNATURE</div>
+        <div class='sc-form-line'></div>
+      </div>
+      <div class='sc-sign-item'>
+        <div class='sc-form-label'>TEAM CAPTAIN</div>
+        <div class='sc-form-line'></div>
+      </div>
+    </section>
+
+    <footer class='sc-footer'>
+      <div>M26-JTO-04-SC · MISSION DELTA · FIELD SCORECARD</div>
+      <div>Page 1 / 1</div>
+    </footer>
+  </main>
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => window.print(), 1000);
+    });
+  </script>
+</body>
+</html>
