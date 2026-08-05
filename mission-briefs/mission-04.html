@@ -147,6 +147,118 @@
     .mb04-execution .mb04-section-label:not(:first-child) { margin-top: 1.5rem !important; }
     .mb04-execution .mb04-example-label { margin-top: 1rem !important; }
   }
+  @media (max-width: 899px) {
+    .mb04-execution .mb04-flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .mb04-execution .mb04-flow .rotation-card {
+      width: 100%;
+      max-width: 280px;
+      align-self: center;
+    }
+    .mb04-execution .mb04-flow .flow-arrow {
+      font-size: 0;
+    }
+    .mb04-execution .mb04-flow .flow-arrow::before {
+      content: '↓';
+      font-size: 1.25rem;
+      color: var(--cyan);
+    }
+    .mb04-execution .mb04-flow--du .mb04-penalty {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .mb04-execution .mb04-flow--du .mb04-penalty .rotation-teams::before {
+      content: '\2014';
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      margin-right: 0.25rem;
+      color: var(--pink);
+    }
+    .mb04-execution .mb04-flow--du .mb04-branch {
+      font-size: 0;
+    }
+    .mb04-execution .mb04-flow--du .mb04-branch::before {
+      content: '↓';
+      font-size: 1.1rem;
+      line-height: 1;
+      color: var(--pink);
+    }
+  }
+
+  @media (max-width: 599px) {
+    .mission-card .scaling-exercise {
+      width: 30%;
+      min-width: 0;
+    }
+    .mission-card .scaling-table th:not(.scaling-exercise),
+    .mission-card .scaling-table td:not(.scaling-exercise) {
+      width: 23.33%;
+      min-width: 0;
+    }
+    .scaling-table th:nth-child(2),
+    .scaling-table th:nth-child(3),
+    .scaling-table th:nth-child(4) {
+      font-size: 0;
+      white-space: nowrap;
+    }
+    .scaling-table th:nth-child(2)::before { content: 'PERF.'; }
+    .scaling-table th:nth-child(3)::before { content: 'FITN.'; }
+    .scaling-table th:nth-child(4)::before { content: 'CROSS.'; }
+    .scaling-table th:nth-child(2)::before,
+    .scaling-table th:nth-child(3)::before,
+    .scaling-table th:nth-child(4)::before {
+      font-size: 0.6875rem;
+      color: var(--pink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .scaling-table th,
+    .scaling-table td {
+      padding: 0.65rem 0.35rem;
+      overflow-wrap: anywhere;
+    }
+    .scaling-table td {
+      word-break: break-word;
+    }
+
+    .mb04-execution .suggested-flow-track {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .mb04-execution .suggested-flow-track .suggested-flow-arrow--desktop {
+      display: inline-flex;
+    }
+    .mb04-execution .suggested-flow-track .suggested-flow-arrow--mobile {
+      display: none;
+    }
+    .mb04-execution .suggested-flow-track .suggested-flow-step {
+      flex: 0 0 auto;
+      min-width: 1.4rem;
+      padding: 0.35rem 0.35rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+    .mb04-execution .suggested-flow-track .suggested-flow-step:last-child {
+      min-width: 2.8rem;
+      padding: 0.35rem 0.5rem;
+    }
+    .mb04-execution .suggested-flow-track .suggested-flow-arrow {
+      font-size: 0.85rem;
+    }
+  }
 </style>
 </head>
 <body class='mission-brief'>
