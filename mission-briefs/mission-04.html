@@ -262,7 +262,7 @@
             <table class='scaling-table' style='width: 100%;'>
               <thead>
                 <tr>
-                  <th class='scaling-exercise'>STANDARD</th>
+                  <th class='scaling-exercise'>PARAMETRO</th>
                   <th>PERFORMANCE</th>
                   <th>FITNESS</th>
                   <th>CROSSFIT</th>
@@ -270,25 +270,26 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class='scaling-exercise'>Double Unders</td>
+                  <td class='scaling-exercise'><span class='table-icon' aria-hidden='true'>➿</span> DOUBLE UNDERS</td>
+                  <td>200-160-120-80-40</td>
+                  <td>200-160-120-80-40</td>
+                  <td>200-160-120-80-40*</td>
+                </tr>
+                <tr>
+                  <td class='scaling-exercise'><span class='table-icon' aria-hidden='true'>🆙</span> SIT-UPS</td>
                   <td>200-160-120-80-40</td>
                   <td>200-160-120-80-40</td>
                   <td>200-160-120-80-40</td>
                 </tr>
                 <tr>
-                  <td class='scaling-exercise'>Sit-ups</td>
-                  <td>200-160-120-80-40</td>
-                  <td>200-160-120-80-40</td>
-                  <td>200-160-120-80-40</td>
-                </tr>
-                <tr>
-                  <td class='scaling-exercise'>Penalty — Alternating Dumbbell Snatch</td>
-                  <td>8 reps @ 22,5 / 15 kg</td>
-                  <td>8 reps @ 15 / 10 kg</td>
-                  <td>8 reps @ 15 / 10 kg</td>
+                  <td class='scaling-exercise'><span class='table-icon' aria-hidden='true'>🏋️</span> DB SNATCH PENALTY</td>
+                  <td>8 @ 22,5 / 15 kg</td>
+                  <td>8 @ 15 / 10 kg</td>
+                  <td>8 @ 15 / 10 kg</td>
                 </tr>
               </tbody>
             </table>
+            <p class='mission-objective-copy' style='margin-top: 0.5rem; font-size: 0.75rem; color: rgba(255,255,255,0.65);'>* SINGLE UNDERS</p>
           </div>
         </article>
 
@@ -327,28 +328,6 @@
             <h2 class='mission-card-title'>MISSION EXECUTION</h2>
           </header>
           <div class='mission-card-body'>
-            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Double Under Flow</p>
-            <div class='mb04-flow mb04-flow--du'>
-              <div class='rotation-card mb04-declare'>
-                <span class='rotation-label'>01</span>
-                <div class='rotation-teams'>DECLARE</div>
-              </div>
-              <span class='flow-arrow mb04-arrow1' aria-hidden='true'>→</span>
-              <div class='rotation-card mb04-du'>
-                <span class='rotation-label'>02</span>
-                <div class='rotation-teams'>DOUBLE UNDERS</div>
-              </div>
-              <span class='mb04-branch' aria-hidden='true'>↘</span>
-              <span class='mb04-if'>IF FAILED</span>
-              <span class='mb04-down' aria-hidden='true'>↓</span>
-              <div class='rotation-card mb04-penalty'>
-                <span class='rotation-label' style='color: var(--pink);'>PENALTY</span>
-                <div class='rotation-teams'>DB SNATCH</div>
-              </div>
-            </div>
-
-            <p class='mission-objective-copy' style='margin: 0.75rem 0 1rem;'>Prima di ogni tentativo l'atleta dichiara il numero di Double Unders che intende completare consecutivamente. In caso di errore esegue la penalty prevista prima di un nuovo tentativo.</p>
-
             <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Mission Flow</p>
             <div class='mb04-flow'>
               <div class='rotation-card'>
@@ -372,8 +351,30 @@
               </div>
             </div>
 
-            <p class='mission-objective-copy' style='margin: 0.75rem 0 1rem;'>Il Team deve completare tutti i Double Unders del blocco prima di iniziare i Sit-up.</p>
+            <p class='mission-objective-copy' style='margin: 0.5rem 0 0.75rem;'>Il Team deve completare tutti i Double Unders del blocco prima di iniziare i Sit-up.</p>
             <p class='mission-objective-copy' style='margin: 0 0 1rem;'>Solo dopo aver completato tutti i Sit-up si passa al blocco successivo.</p>
+
+            <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Double Under Flow</p>
+            <div class='mb04-flow mb04-flow--du'>
+              <div class='rotation-card mb04-declare'>
+                <span class='rotation-label'>01</span>
+                <div class='rotation-teams'>DECLARE</div>
+              </div>
+              <span class='flow-arrow mb04-arrow1' aria-hidden='true'>→</span>
+              <div class='rotation-card mb04-du'>
+                <span class='rotation-label'>02</span>
+                <div class='rotation-teams'>DOUBLE UNDERS</div>
+              </div>
+              <span class='mb04-branch' aria-hidden='true'>↘</span>
+              <span class='mb04-if'>IF FAILED</span>
+              <span class='mb04-down' aria-hidden='true'>↓</span>
+              <div class='rotation-card mb04-penalty'>
+                <span class='rotation-label' style='color: var(--pink);'>PENALTY</span>
+                <div class='rotation-teams'>DB SNATCH</div>
+              </div>
+            </div>
+
+            <p class='mission-objective-copy' style='margin: 0.5rem 0 0.75rem;'>Prima di ogni tentativo l'atleta dichiara il numero di Double Unders che intende completare consecutivamente. In caso di errore esegue la penalty prevista prima di un nuovo tentativo.</p>
 
             <p class='mission-rule-title' style='text-transform: uppercase; letter-spacing: 0.05em; text-align: left; margin: 0 0 0.5rem;'>Suggested Sit-up Strategy</p>
             <div class='suggested-flow'>
@@ -393,7 +394,10 @@
                 <div class='suggested-flow-step'>repeat</div>
               </div>
             </div>
-            <p class='mission-objective-copy' style='margin-bottom: 0.5rem; margin-top: 1rem;'>Un Sit-up per atleta a rotazione.</p>
+
+            <p style='font-family: "Bebas Neue", sans-serif; font-size: 1.25rem; letter-spacing: 0.05em; text-align: center; margin: 0.5rem 0;'>1 FULL TEAM ROTATION = <span style='color: var(--pink);'>4 REPS</span></p>
+
+            <p class='mission-objective-copy' style='margin-bottom: 0.5rem; margin-top: 0.75rem;'>Un Sit-up per atleta a rotazione.</p>
             <p class='mission-objective-copy' style='margin-bottom: 0;'>Questa soluzione crea un rapporto lavoro/recupero di circa 1:3 mantenendo alta la qualità del movimento.</p>
           </div>
         </article>
